@@ -115,7 +115,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt ?? post.content.slice(0, 155),
-    image: absoluteUrl("/babyonline-logo.svg"),
+    image: absoluteUrl("/babyonline-logo.png"),
     datePublished: post.publishedAt ?? post.createdAt,
     dateModified: post.updatedAt,
     author: {
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       name: "BabyOnline.hu",
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/babyonline-logo.svg"),
+        url: absoluteUrl("/babyonline-logo.png"),
       },
     },
     mainEntityOfPage: canonicalUrl,

@@ -42,7 +42,15 @@ export default function RendeleseimPage() {
   useEffect(() => {
     async function loadOrders() {
       try {
-        const response = await fetch("/api/orders", { cache: "no-store" });
+        const rawUser = localStorage.getItem("bo-auth-user");
+        const email = rawUser ? (JSON.parse(rawUser) as { email?: string }).email : "";
+        if (!email) {
+          setOrders([]);
+          return;
+        }
+        const response = await fetch(`/api/orders?email=${encodeURIComponent(email)}`, {
+          cache: "no-store",
+        });
         if (!response.ok) return;
         const data = (await response.json()) as { orders: Order[] };
         setOrders(data.orders ?? []);

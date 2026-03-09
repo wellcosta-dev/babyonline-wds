@@ -24,7 +24,7 @@ export default function AuthLayout({
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/babyonline-logo.svg"
+            src="/babyonline-logo.png"
             alt="BabyOnline.hu"
             className="h-10 w-auto"
           />

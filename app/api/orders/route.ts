@@ -8,14 +8,26 @@ import { awardLoyaltyPoints, getLoyaltyBalance, redeemLoyaltyPoints } from "@/li
 import { products } from "@/lib/mock-data";
 import { getShippingCost } from "@/lib/utils";
 import type { ShippingMethod } from "@/lib/shipping";
-import { requireAdmin } from "@/lib/server/api-auth";
+import { getSessionUser } from "@/lib/server/api-auth";
 
 export async function GET(request: NextRequest) {
   try {
-    const unauthorized = requireAdmin(request);
-    if (unauthorized) return unauthorized;
+    const session = getSessionUser(request);
+    const emailFilter = request.nextUrl.searchParams.get("email")?.trim().toLowerCase();
     const orders = await getOrders();
-    return NextResponse.json({ orders });
+
+    if (session?.role === "ADMIN") {
+      return NextResponse.json({ orders });
+    }
+
+    if (!emailFilter) {
+      return NextResponse.json({ orders: [] });
+    }
+
+    const filtered = orders.filter(
+      (order) => order.guestEmail?.trim().toLowerCase() === emailFilter
+    );
+    return NextResponse.json({ orders: filtered });
   } catch (error) {
     console.error("GET /api/orders error:", error);
     return NextResponse.json(
