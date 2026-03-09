@@ -45,7 +45,7 @@ export function MobileMenu() {
           >
             <div className="flex flex-col h-full">
               {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-neutral-pale">
+              <div className="relative flex items-center justify-center p-4 border-b border-neutral-pale">
                 <Link
                   href="/"
                   onClick={closeMobileMenu}
@@ -54,15 +54,15 @@ export function MobileMenu() {
                   <Image
                     src="/babyonline-logo.png"
                     alt="BabyOnline.hu"
-                    width={220}
-                    height={56}
-                    className="h-8 w-auto"
+                    width={260}
+                    height={72}
+                    className="h-10 w-auto"
                   />
                 </Link>
                 <button
                   type="button"
                   onClick={closeMobileMenu}
-                  className="p-2 rounded-lg hover:bg-primary-pale transition-colors"
+                  className="absolute right-4 p-2 rounded-lg hover:bg-primary-pale transition-colors"
                   aria-label="Menü bezárása"
                 >
                   <X className="size-6 text-neutral-dark" />

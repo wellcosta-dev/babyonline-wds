@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Facebook,
   Twitter,
   ArrowLeft,
   Calendar,
-  User,
   Clock,
   Sparkles,
   ArrowRight,
@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { InternalLinksBlock } from "@/components/seo/InternalLinksBlock";
-import { blogPosts, getBlogPostBySlug } from "@/lib/mock-data";
+import { getEffectiveBlogPosts } from "@/lib/server/blog-posts";
 import { getBlogFunnelLinks } from "@/lib/seo-content";
 import { cn } from "@/lib/utils";
 import { absoluteUrl } from "@/lib/seo";
@@ -61,7 +61,8 @@ interface BlogPostPageProps {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const blogPosts = await getEffectiveBlogPosts();
+  const post = blogPosts.find((entry) => entry.slug === slug);
 
   if (!post || !post.isPublished) {
     return {
@@ -91,7 +92,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const blogPosts = await getEffectiveBlogPosts();
+  const post = blogPosts.find((entry) => entry.slug === slug);
 
   if (!post || !post.isPublished) {
     notFound();
@@ -115,7 +117,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt ?? post.content.slice(0, 155),
-    image: absoluteUrl("/babyonline-logo.png"),
+    image: absoluteUrl(post.coverImage || "/babyonline-logo.png"),
     datePublished: post.publishedAt ?? post.createdAt,
     dateModified: post.updatedAt,
     author: {
@@ -169,10 +171,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             "relative h-48 md:h-64 w-full rounded-2xl overflow-hidden bg-gradient-to-br mb-8",
             coverGradients[postIndex % coverGradients.length]
           )}>
-            <div className="absolute inset-0 opacity-15">
-              <div className="absolute -top-16 -right-16 size-48 rounded-full bg-white/30" />
-              <div className="absolute bottom-8 left-8 size-32 rounded-full bg-white/20" />
-            </div>
+            {post.coverImage ? (
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority
+              />
+            ) : (
+              <div className="absolute inset-0 opacity-15">
+                <div className="absolute -top-16 -right-16 size-48 rounded-full bg-white/30" />
+                <div className="absolute bottom-8 left-8 size-32 rounded-full bg-white/20" />
+              </div>
+            )}
             <div className="absolute bottom-4 left-4 flex gap-2">
               {post.aiGenerated && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold">
@@ -207,7 +220,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {/* Meta */}
                 <div className="flex flex-wrap items-center gap-4 mb-8 pb-6 border-b border-gray-100">
                   <span className="flex items-center gap-1.5 text-sm text-neutral-medium">
-                    <User className="size-4" />
+                    <Image
+                      src="/fav-babyonline.png"
+                      alt="BabyOnline profil"
+                      width={16}
+                      height={16}
+                      className="rounded-full"
+                    />
                     {post.author}
                   </span>
                   <span className="flex items-center gap-1.5 text-sm text-neutral-medium">
@@ -279,9 +298,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {/* About author */}
                 <div className="bg-white rounded-2xl border border-gray-100 p-5">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="size-10 rounded-xl bg-gradient-to-br from-primary to-brand-cyan flex items-center justify-center text-white text-xs font-extrabold">
-                      BO
-                    </div>
+                    <Image
+                      src="/fav-babyonline.png"
+                      alt="BabyOnline profil"
+                      width={40}
+                      height={40}
+                      className="rounded-xl"
+                    />
                     <div>
                       <p className="text-sm font-bold text-neutral-dark tracking-tight">{post.author}</p>
                       <p className="text-xs text-neutral-medium">BabyOnline.hu</p>
@@ -308,13 +331,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                           href={`/blog/${related.slug}`}
                           className="group flex gap-3 items-start"
                         >
-                          <div className={cn(
-                            "flex-shrink-0 size-12 rounded-xl bg-gradient-to-br overflow-hidden",
-                            coverGradients[(i + 2) % coverGradients.length]
-                          )}>
-                            <div className="w-full h-full opacity-30">
-                              <div className="absolute -top-2 -right-2 size-6 rounded-full bg-white/30" />
-                            </div>
+                          <div className="relative flex-shrink-0 size-12 rounded-xl overflow-hidden bg-gray-100">
+                            {related.coverImage ? (
+                              <Image
+                                src={related.coverImage}
+                                alt={related.title}
+                                fill
+                                className="object-cover"
+                                sizes="48px"
+                              />
+                            ) : (
+                              <div className={cn(
+                                "w-full h-full bg-gradient-to-br",
+                                coverGradients[(i + 2) % coverGradients.length]
+                              )} />
+                            )}
                           </div>
                           <div className="flex-1 min-w-0">
                             <h4 className="text-xs font-bold text-neutral-dark tracking-tight line-clamp-2 group-hover:text-primary transition-colors">

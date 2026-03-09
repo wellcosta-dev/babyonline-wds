@@ -35,15 +35,29 @@ function formatDate(dateStr: string): string {
   });
 }
 
+function getCodFee(order: Order): number {
+  if (order.paymentMethod !== "cod") return 0;
+  const baseTotal =
+    order.subtotal - order.discount + order.shippingPrice - (order.loyaltyDiscount ?? 0);
+  const fee = order.total - baseTotal;
+  return fee > 0 ? fee : 0;
+}
+
 export default function RendeleseimPage() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadOrders() {
       try {
-        const rawUser = localStorage.getItem("bo-auth-user");
-        const email = rawUser ? (JSON.parse(rawUser) as { email?: string }).email : "";
+        const authResponse = await fetch("/api/auth/me", { cache: "no-store" });
+        if (!authResponse.ok) {
+          setOrders([]);
+          return;
+        }
+        const authPayload = (await authResponse.json()) as { user?: { email?: string } };
+        const email = authPayload.user?.email ?? "";
         if (!email) {
           setOrders([]);
           return;
@@ -56,6 +70,8 @@ export default function RendeleseimPage() {
         setOrders(data.orders ?? []);
       } catch {
         setOrders([]);
+      } finally {
+        setLoading(false);
       }
     }
     loadOrders();
@@ -68,8 +84,15 @@ export default function RendeleseimPage() {
       </h1>
 
       <div className="space-y-4">
+        {loading && (
+          <div className="card p-5 text-sm text-neutral-medium">Rendelések betöltése...</div>
+        )}
+        {!loading && orders.length === 0 && (
+          <div className="card p-5 text-sm text-neutral-medium">Még nincs rendelésed.</div>
+        )}
         {orders.map((order) => {
           const isExpanded = expandedId === order.id;
+          const codFee = getCodFee(order);
           return (
             <motion.div
               key={order.id}
@@ -148,6 +171,12 @@ export default function RendeleseimPage() {
                           <div className="flex justify-between text-neutral-medium">
                             <span>Szállítás</span>
                             <span>{formatPrice(order.shippingPrice)}</span>
+                          </div>
+                        )}
+                        {codFee > 0 && (
+                          <div className="flex justify-between text-neutral-medium">
+                            <span>Utánvét kezelési díj</span>
+                            <span>{formatPrice(codFee)}</span>
                           </div>
                         )}
                         <div className="flex justify-between font-bold text-neutral-dark pt-2">

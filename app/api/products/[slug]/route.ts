@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Product } from "@/types";
-import { getProductBySlug } from "@/lib/mock-data";
+import { getEffectiveProductBySlug } from "@/lib/server/products";
 
 type RouteParams = { params: Promise<{ slug: string }> };
 
@@ -10,7 +10,7 @@ export async function GET(
 ) {
   try {
     const { slug } = await params;
-    const product = getProductBySlug(slug);
+    const product = await getEffectiveProductBySlug(slug);
 
     if (!product) {
       return NextResponse.json(
@@ -35,7 +35,7 @@ export async function PUT(
 ) {
   try {
     const { slug } = await params;
-    const product = getProductBySlug(slug);
+    const product = await getEffectiveProductBySlug(slug);
 
     if (!product) {
       return NextResponse.json(
@@ -69,7 +69,7 @@ export async function DELETE(
 ) {
   try {
     const { slug } = await params;
-    const product = getProductBySlug(slug);
+    const product = await getEffectiveProductBySlug(slug);
 
     if (!product) {
       return NextResponse.json(

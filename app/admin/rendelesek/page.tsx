@@ -46,6 +46,8 @@ const filterTabs = [
   { id: "PROCESSING", label: "Feldolgozás" },
   { id: "SHIPPED", label: "Szállítva" },
   { id: "DELIVERED", label: "Teljesítve" },
+  { id: "CANCELLED", label: "Törölt" },
+  { id: "REFUNDED", label: "Visszatérítve" },
 ];
 
 export default function AdminRendelesekPage() {

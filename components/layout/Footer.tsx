@@ -97,7 +97,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/babyonlinehu/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="size-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
@@ -106,7 +106,7 @@ export function Footer() {
                 <Facebook className="size-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/babyonline.hu/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="size-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"

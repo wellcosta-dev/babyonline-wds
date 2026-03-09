@@ -33,10 +33,26 @@ export default function AdatvedelemPage() {
 
         <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-10 space-y-8">
           <Section title="1. Adatkezelő">
-            <p>
-              Az adatkezelő a BabyOnline.hu (székhelye: 1011 Budapest, Fő utca 1.), a továbbiakban „Adatkezelő".
-              Elérhetőség: <a href="mailto:hello@babyonline.hu" className="text-primary font-semibold hover:underline">hello@babyonline.hu</a>.
-            </p>
+            <div className="space-y-2">
+              <p>Az adatkezelő adatai:</p>
+              <ul className="list-disc pl-5 space-y-1.5">
+                <li>Cégnév: Kostyál Árpád e.v.</li>
+                <li>Székhely: 4531 Nyírpazony, Hunyadi utca 6.</li>
+                <li>Levelezési cím, panaszkezelés: 4531 Nyírpazony, Hunyadi utca 6.</li>
+                <li>
+                  E-mail:{" "}
+                  <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">
+                    hello@jatekonline.hu
+                  </a>
+                </li>
+                <li>Telefonszám: 06202982228</li>
+                <li>Weboldal: http://www.jatekonline.hu</li>
+                <li>Nyilvántartásba vevő hatóság: NAV</li>
+                <li>Nyilvántartási szám: 57916231</li>
+                <li>Adószám: 59871370-1-35</li>
+                <li>Képviselő: KOSTYÁL ÁRPÁD</li>
+              </ul>
+            </div>
           </Section>
 
           <Section title="2. Milyen adatokat gyűjtünk?">
@@ -76,6 +92,15 @@ export default function AdatvedelemPage() {
             </ul>
           </Section>
 
+          <Section title="6/A. Tárhelyszolgáltató">
+            <ul className="list-disc pl-5 space-y-1.5">
+              <li>Név: Hostinger International Ltd.</li>
+              <li>Székhely: 61 Lordou Vironos st., 6023 Larnaca, Ciprus</li>
+              <li>Elérhetőség: compliance@hostinger.com</li>
+              <li>Weboldal: https://www.hostinger.com</li>
+            </ul>
+          </Section>
+
           <Section title="6. Az Ön jogai">
             <ul className="list-disc pl-5 space-y-1.5">
               <li><strong>Hozzáférés joga:</strong> tájékoztatást kérhet a kezelt adatokról.</li>
@@ -98,7 +123,7 @@ export default function AdatvedelemPage() {
           <Section title="8. Kapcsolat">
             <p>
               Adatvédelmi kérdéseiddel fordulj hozzánk bizalommal:{" "}
-              <a href="mailto:hello@babyonline.hu" className="text-primary font-semibold hover:underline">hello@babyonline.hu</a>
+              <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">hello@jatekonline.hu</a>
             </p>
           </Section>
         </div>

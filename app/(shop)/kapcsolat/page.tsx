@@ -18,8 +18,8 @@ import { cn } from "@/lib/utils";
 const CONTACT_INFO = [
   {
     title: "E-mail",
-    value: "hello@babyonline.hu",
-    href: "mailto:hello@babyonline.hu",
+    value: "hello@jatekonline.hu",
+    href: "mailto:hello@jatekonline.hu",
     desc: "Általában 24 órán belül válaszolunk",
     icon: Mail,
     color: "text-primary",
@@ -27,8 +27,8 @@ const CONTACT_INFO = [
   },
   {
     title: "Telefon",
-    value: "+36 1 234 5678",
-    href: "tel:+36123456789",
+    value: "06202982228",
+    href: "tel:+36202982228",
     desc: "H-P: 9:00 – 17:00",
     icon: Phone,
     color: "text-brand-cyan",
@@ -36,7 +36,7 @@ const CONTACT_INFO = [
   },
   {
     title: "Cím",
-    value: "1011 Budapest, Fő utca 1.",
+    value: "4531 Nyírpazony, Hunyadi utca 6.",
     href: undefined,
     desc: "Személyes átvétel előzetes egyeztetés után",
     icon: MapPin,
@@ -239,7 +239,7 @@ export default function KapcsolatPage() {
                 <h3 className="text-sm font-bold text-neutral-dark tracking-tight mb-3">Kövess minket</h3>
                 <div className="flex gap-2">
                   <a
-                    href="https://facebook.com/babyonline.hu"
+                    href="https://www.facebook.com/babyonlinehu/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-50 text-blue-600 text-xs font-semibold hover:bg-blue-100 transition-colors"
@@ -248,7 +248,7 @@ export default function KapcsolatPage() {
                     Facebook
                   </a>
                   <a
-                    href="https://instagram.com/babyonline.hu"
+                    href="https://www.instagram.com/babyonline.hu/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-pink-50 text-pink-600 text-xs font-semibold hover:bg-pink-100 transition-colors"

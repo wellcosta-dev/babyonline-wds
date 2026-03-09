@@ -29,11 +29,39 @@ export function Header() {
   const wishlistCount = useWishlistStore((s) => s.items.length);
   const toggleMobileMenu = useUiStore((s) => s.toggleMobileMenu);
   const [isHydrated, setIsHydrated] = useState(false);
+  const [accountHref, setAccountHref] = useState("/bejelentkezes");
+  const [accountLabel, setAccountLabel] = useState("Bejelentkezés");
   const mainHeaderRef = useRef<HTMLElement | null>(null);
   const [mainHeaderHeight, setMainHeaderHeight] = useState(88);
 
   useEffect(() => {
     setIsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/auth/me", { cache: "no-store" })
+      .then((response) => response.json().then((payload) => ({ response, payload })))
+      .then(({ response, payload }) => {
+        if (!active) return;
+        if (!response.ok) {
+          setAccountHref("/bejelentkezes");
+          setAccountLabel("Bejelentkezés");
+          return;
+        }
+        const role = (payload.user?.role as "ADMIN" | "CUSTOMER" | undefined) ?? "CUSTOMER";
+        setAccountHref(role === "ADMIN" ? "/admin" : "/fiokom");
+        setAccountLabel(role === "ADMIN" ? "Admin" : "Fiókom");
+      })
+      .catch(() => {
+        if (active) {
+          setAccountHref("/bejelentkezes");
+          setAccountLabel("Bejelentkezés");
+        }
+      });
+    return () => {
+      active = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -79,7 +107,7 @@ export function Header() {
         className="bg-primary sticky top-0 z-40 shadow-lg"
       >
         <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between gap-2 sm:gap-3">
+          <div className="relative flex items-center justify-between gap-2 sm:gap-3">
             {/* Mobile hamburger */}
             <button
               type="button"
@@ -96,7 +124,7 @@ export function Header() {
               onClick={() =>
                 trackEvent("navigation_click", { location: "header", target: "home_logo" })
               }
-              className="flex items-center gap-2 group min-w-0 flex-1 lg:flex-none"
+              className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 group min-w-0 lg:static lg:translate-x-0 lg:flex-none"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -109,7 +137,7 @@ export function Header() {
                   width={320}
                   height={90}
                   priority
-                  className="h-8 sm:h-9 md:h-14 lg:h-16 w-auto max-w-full"
+                  className="h-10 sm:h-11 md:h-14 lg:h-16 w-auto max-w-full"
                 />
               </motion.div>
             </Link>
@@ -122,9 +150,9 @@ export function Header() {
             {/* Right icons */}
             <div className="flex items-center gap-0.5 sm:gap-1.5 shrink-0">
               <Link
-                href="/bejelentkezes"
+                href={accountHref}
                 className="focus-ring p-1.5 sm:p-2 rounded-lg hover:bg-white/15 transition-colors"
-                aria-label="Bejelentkezés"
+                aria-label={accountLabel}
               >
                 <User className="size-4 sm:size-5 text-white/90" />
               </Link>

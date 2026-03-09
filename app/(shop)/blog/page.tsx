@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Calendar,
-  User,
   BookOpen,
   Sparkles,
   Clock,
 } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { blogPosts } from "@/lib/mock-data";
+import { getEffectiveBlogPosts } from "@/lib/server/blog-posts";
 import { getBlogIntentLandingDefinitions } from "@/lib/seo-content";
 import { cn } from "@/lib/utils";
 import { absoluteUrl } from "@/lib/seo";
@@ -59,8 +59,9 @@ function getTagColor(tag: string): string {
   return key ? tagColors[key] : "bg-gray-100 text-neutral-dark/70";
 }
 
-export default function BlogPage() {
-  const publishedPosts = blogPosts.filter((p) => p.isPublished);
+export default async function BlogPage() {
+  const allPosts = await getEffectiveBlogPosts();
+  const publishedPosts = allPosts.filter((p) => p.isPublished);
   const featuredPost = publishedPosts[0];
   const restPosts = publishedPosts.slice(1);
   const intentPages = getBlogIntentLandingDefinitions();
@@ -144,14 +145,26 @@ export default function BlogPage() {
             className="group block mb-8 bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
             <div className="flex flex-col lg:flex-row">
-              <div className={cn(
-                "relative lg:w-1/2 aspect-[16/10] lg:aspect-auto lg:min-h-[320px] bg-gradient-to-br overflow-hidden",
-                coverGradients[0]
-              )}>
-                <div className="absolute inset-0 opacity-20">
-                  <div className="absolute -top-10 -right-10 size-40 rounded-full bg-white/30" />
-                  <div className="absolute bottom-10 left-10 size-24 rounded-full bg-white/20" />
-                </div>
+              <div className="relative lg:w-1/2 h-56 sm:h-64 lg:min-h-[320px] overflow-hidden">
+                {featuredPost.coverImage ? (
+                  <Image
+                    src={featuredPost.coverImage}
+                    alt={featuredPost.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div className={cn(
+                    "absolute inset-0 bg-gradient-to-br",
+                    coverGradients[0]
+                  )}>
+                    <div className="absolute inset-0 opacity-20">
+                      <div className="absolute -top-10 -right-10 size-40 rounded-full bg-white/30" />
+                      <div className="absolute bottom-10 left-10 size-24 rounded-full bg-white/20" />
+                    </div>
+                  </div>
+                )}
                 <div className="absolute top-4 left-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold">
                     <Sparkles className="size-3" /> Kiemelt cikk
@@ -181,7 +194,13 @@ export default function BlogPage() {
                     {formatDate(featuredPost.publishedAt ?? featuredPost.createdAt)}
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <User className="size-3.5" />
+                    <Image
+                      src="/fav-babyonline.png"
+                      alt="BabyOnline profil"
+                      width={14}
+                      height={14}
+                      className="rounded-full"
+                    />
                     {featuredPost.author}
                   </span>
                   <span className="flex items-center gap-1.5">
@@ -208,13 +227,25 @@ export default function BlogPage() {
                 className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all"
               >
                 {/* Cover */}
-                <div className={cn(
-                  "relative aspect-[16/10] bg-gradient-to-br overflow-hidden",
-                  coverGradients[(index + 1) % coverGradients.length]
-                )}>
-                  <div className="absolute inset-0 opacity-15">
-                    <div className="absolute -top-8 -right-8 size-28 rounded-full bg-white/30" />
-                  </div>
+                <div className="relative h-44 sm:h-48 overflow-hidden">
+                  {post.coverImage ? (
+                    <Image
+                      src={post.coverImage}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <div className={cn(
+                      "absolute inset-0 bg-gradient-to-br",
+                      coverGradients[(index + 1) % coverGradients.length]
+                    )}>
+                      <div className="absolute inset-0 opacity-15">
+                        <div className="absolute -top-8 -right-8 size-28 rounded-full bg-white/30" />
+                      </div>
+                    </div>
+                  )}
                   {post.aiGenerated && (
                     <div className="absolute top-3 right-3">
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-sm text-white text-[9px] font-bold">

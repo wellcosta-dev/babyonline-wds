@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export default function AuthLayout({
@@ -20,14 +21,18 @@ export default function AuthLayout({
       <header className="flex justify-center pt-8 pb-4">
         <Link
           href="/"
-          className="hover:opacity-90 transition-opacity"
+          className="hover:opacity-90 transition-opacity flex flex-col items-center gap-1"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/babyonline-logo.png"
             alt="BabyOnline.hu"
+            width={320}
+            height={90}
             className="h-10 w-auto"
           />
+          <span className="text-[11px] font-semibold text-neutral-medium tracking-wide">
+            Biztonsagos bejelentkezes
+          </span>
         </Link>
       </header>
       <div className={cn("flex-1 flex items-center justify-center px-4 py-8")}>

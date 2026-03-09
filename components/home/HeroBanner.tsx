@@ -74,15 +74,16 @@ export function HeroBanner() {
                 className="group relative block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 onClick={(event) => handleBannerClick(event, "/kategoriak/babakocsi")}
               >
-                <Image
-                  src="/babakocsik-banner.png"
-                  alt="Babakocsik banner"
-                  width={2048}
-                  height={614}
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+                <div className="relative h-[300px] sm:h-[340px] lg:h-auto lg:aspect-[2048/614]">
+                  <Image
+                    src="/babakocsik-banner.png"
+                    alt="Babakocsik banner"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/5" />
                 <div className="absolute left-4 top-4 inline-flex rounded-full border border-white/55 bg-white/90 px-3 py-1 text-xs font-bold text-primary shadow-sm">
                   Prémium választék
@@ -134,15 +135,16 @@ export function HeroBanner() {
                 className="group relative block overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 onClick={(event) => handleBannerClick(event, "/akciok")}
               >
-                <Image
-                  src="/akcios-termekek.png"
-                  alt="Akcios termekek banner"
-                  width={2048}
-                  height={614}
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+                <div className="relative h-[300px] sm:h-[340px] lg:h-auto lg:aspect-[2048/614]">
+                  <Image
+                    src="/akcios-termekek.png"
+                    alt="Akcios termekek banner"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/5" />
                 <div className="absolute left-4 top-4 inline-flex rounded-full border border-white/55 bg-white/90 px-3 py-1 text-xs font-bold text-primary shadow-sm">
                   Időszakos kedvezmények

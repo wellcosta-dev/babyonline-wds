@@ -33,10 +33,25 @@ export default function AszfPage() {
         <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-10 space-y-8">
           <Section title="1. Általános rendelkezések">
             <p>
-              Jelen Általános Szerződési Feltételek (ÁSZF) a BabyOnline.hu webáruház (üzemeltető: BabyOnline Kft., székhelye: 1011 Budapest, Fő utca 1.)
-              és a webáruházban vásárló (a továbbiakban: Vásárló) közötti jogviszonyra vonatkoznak.
-              A webáruház használatával a Vásárló elfogadja a jelen ÁSZF-ben foglalt feltételeket.
+              Jelen Általános Szerződési Feltételek (ÁSZF) a BabyOnline.hu webáruház és a vásárló
+              (a továbbiakban: Vásárló) közötti jogviszonyt szabályozzák. A webáruház használatával
+              a Vásárló elfogadja a jelen ÁSZF-ben foglalt feltételeket.
             </p>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 mt-3">
+              <p className="font-semibold text-neutral-dark mb-2">A szolgáltató adatai</p>
+              <ul className="list-disc pl-5 space-y-1.5">
+                <li>Cégnév: Kostyál Árpád e.v.</li>
+                <li>Székhely: 4531 Nyírpazony, Hunyadi utca 6.</li>
+                <li>Levelezési cím, panaszkezelés: 4531 Nyírpazony, Hunyadi utca 6.</li>
+                <li>E-mail: hello@jatekonline.hu</li>
+                <li>Telefonszám: 06202982228</li>
+                <li>Weboldal: http://www.jatekonline.hu</li>
+                <li>Nyilvántartásba vevő hatóság: NAV</li>
+                <li>Nyilvántartási szám: 57916231</li>
+                <li>Adószám: 59871370-1-35</li>
+                <li>Képviselő: KOSTYÁL ÁRPÁD</li>
+              </ul>
+            </div>
           </Section>
 
           <Section title="2. Megrendelés menete">
@@ -65,7 +80,7 @@ export default function AszfPage() {
           <Section title="5. Elállási jog">
             <ul className="list-disc pl-5 space-y-1.5">
               <li>A Vásárló a termék kézhezvételétől számított 14 napon belül indoklás nélkül elállhat a szerződéstől.</li>
-              <li>Az elállási szándékot írásban (e-mail) kell jelezni a hello@babyonline.hu címen.</li>
+              <li>Az elállási szándékot írásban (e-mail) kell jelezni a hello@jatekonline.hu címen.</li>
               <li>A terméket eredeti, sértetlen állapotban kell visszaküldeni.</li>
               <li>A visszatérítés a termék visszaérkezésétől számított 5 munkanapon belül történik.</li>
               <li>Higiéniai termékek bontott állapotban nem küldhetők vissza.</li>
@@ -75,7 +90,7 @@ export default function AszfPage() {
           <Section title="6. Jótállás és szavatosság">
             <p>
               A termékekre a magyar jogszabályok szerinti jótállási és szavatossági feltételek vonatkoznak.
-              Hibás termék esetén kérjük, vegyék fel velünk a kapcsolatot a hello@babyonline.hu címen.
+              Hibás termék esetén kérjük, vegyék fel velünk a kapcsolatot a hello@jatekonline.hu címen.
             </p>
           </Section>
 
@@ -88,7 +103,7 @@ export default function AszfPage() {
 
           <Section title="8. Panaszkezelés">
             <p>
-              Panaszait a hello@babyonline.hu e-mail címen, vagy a +36 1 234 5678 telefonszámon jelezheti.
+              Panaszait a hello@jatekonline.hu e-mail címen, vagy a 06202982228 telefonszámon jelezheti.
               A panaszokat 30 napon belül írásban megválaszoljuk. Vitás esetben a területileg illetékes
               békéltető testülethez vagy a bírósághoz fordulhat.
             </p>
@@ -100,6 +115,15 @@ export default function AszfPage() {
               és az elektronikus kereskedelemre vonatkozó jogszabályok rendelkezései az irányadók.
               Az ÁSZF módosításait a weboldalon tesszük közzé.
             </p>
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 mt-3">
+              <p className="font-semibold text-neutral-dark mb-2">Tárhelyszolgáltató</p>
+              <ul className="list-disc pl-5 space-y-1.5">
+                <li>Név: Hostinger International Ltd.</li>
+                <li>Székhely: 61 Lordou Vironos st., 6023 Larnaca, Ciprus</li>
+                <li>Elérhetőség: compliance@hostinger.com</li>
+                <li>Weboldal: https://www.hostinger.com</li>
+              </ul>
+            </div>
           </Section>
         </div>
       </div>

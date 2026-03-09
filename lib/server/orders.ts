@@ -1,5 +1,4 @@
 import type { Order } from "@/types";
-import { mockOrders } from "@/lib/mock-data";
 import { readJsonFile, writeJsonFile } from "@/lib/server/storage";
 import { getPrismaClient } from "@/lib/server/db";
 
@@ -64,12 +63,7 @@ export async function getOrders(): Promise<Order[]> {
     }
   }
   const stored = await readJsonFile<Order[]>(ORDERS_FILE, []);
-  const merged = [...stored, ...mockOrders];
-  const deduped = merged.filter(
-    (order, index, self) =>
-      index === self.findIndex((other) => other.id === order.id || other.orderNumber === order.orderNumber)
-  );
-  return deduped.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  return stored.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 }
 
 export async function getStoredOrders(): Promise<Order[]> {

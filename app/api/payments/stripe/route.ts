@@ -4,8 +4,8 @@ import { getSiteUrl } from "@/lib/seo";
 import { getOrderById, upsertStoredOrder } from "@/lib/server/orders";
 
 function toStripeMinorUnits(value: number, currency: string): number {
-  // In this project prices are stored in major units (e.g. 18 190 Ft).
-  // Stripe Checkout for HUF in this account expects two decimal places.
+  // This Stripe account expects HUF amounts with two decimals in Checkout.
+  // Example: 8 480 Ft -> 848000.
   if (currency === "huf") return Math.round(value * 100);
   return Math.round(value);
 }
@@ -40,30 +40,19 @@ export async function POST(request: NextRequest) {
     }
 
     const stripe = new Stripe(stripeSecretKey);
-    const lineItems = order.items.length > 0
-      ? order.items.map((item) => ({
-          quantity: Math.max(1, Number(item.quantity ?? 1)),
-          price_data: {
-            currency,
-            product_data: {
-              name: String(item.productName ?? "BabyOnline termék"),
-            },
-            unit_amount: Math.max(
-              0,
-              toStripeMinorUnits(Number(item.price ?? 0), currency)
-            ),
+    const lineItems = [
+      {
+        quantity: 1,
+        price_data: {
+          currency,
+          product_data: {
+            name: `BabyOnline rendelés (${orderNumber})`,
+            description: `Termékek: ${order.items.length} db • Szállítás: ${order.shippingMethod}`,
           },
-        }))
-      : [
-          {
-            quantity: 1,
-            price_data: {
-              currency,
-              product_data: { name: `Rendelés ${orderNumber}` },
-              unit_amount: amountMinor,
-            },
-          },
-        ];
+          unit_amount: amountMinor,
+        },
+      },
+    ];
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -97,12 +86,16 @@ export async function POST(request: NextRequest) {
       checkoutSessionId: session.id,
       amount,
       currency,
-      mode: "live",
+      mode: stripeSecretKey.startsWith("sk_live_") ? "live" : "test",
     });
   } catch (error) {
     console.error("POST /api/payments/stripe error:", error);
+    const message =
+      error instanceof Error && error.message
+        ? error.message
+        : "Failed to create payment intent";
     return NextResponse.json(
-      { error: "Failed to create payment intent" },
+      { error: message },
       { status: 500 }
     );
   }

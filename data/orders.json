@@ -1,9 +1,505 @@
 [
   {
+    "id": "ord-1773097852593",
+    "orderNumber": "BO-MMJSOJ3L-I8P3",
+    "guestEmail": "kostyalarpad@wellcosta.hu",
+    "status": "PENDING",
+    "items": [
+      {
+        "id": "oi-ord-1773097852593-0",
+        "productId": "prod-0001",
+        "productName": "FreeON univerzális légáteresztő betét babakocsiba, biztonsági gyermekülésbe - Grey (48716)",
+        "productImage": "/images/products/shopify/48716-3-4aada917.jpg",
+        "price": 6990,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpad@wellcosta.hu",
+      "phone": "+36202982228",
+      "street": "Kossuth u 1",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpad@wellcosta.hu",
+      "phone": "+36202982228",
+      "street": "Kossuth u 1",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls",
+    "shippingPrice": 1490,
+    "subtotal": 6990,
+    "discount": 0,
+    "total": 8480,
+    "paymentMethod": "card",
+    "paymentStatus": "PENDING",
+    "notes": "",
+    "loyaltyPointsRedeemed": 0,
+    "loyaltyDiscount": 0,
+    "loyaltyPointsGranted": false,
+    "createdAt": "2026-03-09T23:10:52.988Z",
+    "updatedAt": "2026-03-09T23:10:54.462Z"
+  },
+  {
+    "id": "ord-1773097749179",
+    "orderNumber": "BO-MMJSMBAZ-BFG1",
+    "guestEmail": "kostyalarpad@wellcosta.hu",
+    "status": "PENDING",
+    "items": [
+      {
+        "id": "oi-ord-1773097749179-0",
+        "productId": "prod-0001",
+        "productName": "FreeON univerzális légáteresztő betét babakocsiba, biztonsági gyermekülésbe - Grey (48716)",
+        "productImage": "/images/products/shopify/48716-3-4aada917.jpg",
+        "price": 6990,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpad@wellcosta.hu",
+      "phone": "+36202982228",
+      "street": "Kossuth u 1",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpad@wellcosta.hu",
+      "phone": "+36202982228",
+      "street": "Kossuth u 1",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls",
+    "shippingPrice": 1490,
+    "subtotal": 6990,
+    "discount": 0,
+    "total": 8480,
+    "paymentMethod": "card",
+    "paymentStatus": "PENDING",
+    "notes": "",
+    "loyaltyPointsRedeemed": 0,
+    "loyaltyDiscount": 0,
+    "loyaltyPointsGranted": false,
+    "createdAt": "2026-03-09T23:09:09.662Z",
+    "updatedAt": "2026-03-09T23:09:11.150Z"
+  },
+  {
+    "id": "ord-1773097662576",
+    "orderNumber": "BO-MMJSKGHB-ECA7",
+    "guestEmail": "kostyalarpad@wellcosta.hu",
+    "status": "PENDING",
+    "items": [
+      {
+        "id": "oi-ord-1773097662576-0",
+        "productId": "prod-0001",
+        "productName": "FreeON univerzális légáteresztő betét babakocsiba, biztonsági gyermekülésbe - Grey (48716)",
+        "productImage": "/images/products/shopify/48716-3-4aada917.jpg",
+        "price": 6990,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpad@wellcosta.hu",
+      "phone": "+36202982228",
+      "street": "Kossuth u 1",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpad@wellcosta.hu",
+      "phone": "+36202982228",
+      "street": "Kossuth u 1",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls",
+    "shippingPrice": 1490,
+    "subtotal": 6990,
+    "discount": 0,
+    "total": 8480,
+    "paymentMethod": "card",
+    "paymentStatus": "PENDING",
+    "notes": "",
+    "loyaltyPointsRedeemed": 0,
+    "loyaltyDiscount": 0,
+    "loyaltyPointsGranted": false,
+    "createdAt": "2026-03-09T23:07:43.590Z",
+    "updatedAt": "2026-03-09T23:07:43.590Z"
+  },
+  {
+    "id": "ord-1773096485236",
+    "orderNumber": "BO-MMJRV81G-A6KJ",
+    "guestEmail": "kostyalarpadev@gmail.com",
+    "status": "PENDING",
+    "items": [
+      {
+        "id": "oi-ord-1773096485236-0",
+        "productId": "prod-0000",
+        "productName": "FreeON univerzális légáteresztő betét babakocsiba, biztonsági gyermekülésbe - white/pink (48723)",
+        "productImage": "/images/products/shopify/48723-3-008d0c88.jpg",
+        "price": 6990,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpadev@gmail.com",
+      "phone": "+36202982228",
+      "street": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!, Kossuth út 46",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpadev@gmail.com",
+      "phone": "+36202982228",
+      "street": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!, Kossuth út 46",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls-csomagpont",
+    "shippingPickupPoint": {
+      "id": "4400-BORHALONYI",
+      "type": "parcel-shop",
+      "name": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!",
+      "postalCode": "4400",
+      "city": "Nyíregyháza",
+      "address": "Kossuth út 46"
+    },
+    "shippingPrice": 990,
+    "subtotal": 6990,
+    "discount": 0,
+    "total": 8970,
+    "paymentMethod": "cod",
+    "paymentStatus": "PENDING",
+    "notes": "",
+    "loyaltyPointsRedeemed": 0,
+    "loyaltyDiscount": 0,
+    "loyaltyPointsGranted": false,
+    "createdAt": "2026-03-09T22:48:05.771Z",
+    "updatedAt": "2026-03-09T22:48:05.771Z"
+  },
+  {
+    "id": "ord-1773096322264",
+    "orderNumber": "BO-MMJRRQAG-FT4Y",
+    "guestEmail": "arpadkostyal46@gmail.com",
+    "status": "PENDING",
+    "items": [
+      {
+        "id": "oi-ord-1773096322264-0",
+        "productId": "prod-0012",
+        "productName": "FreeON 2in1 cumisüveg és telefontartó babakocsihoz (45715)",
+        "productImage": "/images/products/shopify/45715-1-70197d32.jpg",
+        "price": 4690,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "arpadkostyal46@gmail.com",
+      "phone": "+36202982228",
+      "street": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!, Kossuth út 46",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "arpadkostyal46@gmail.com",
+      "phone": "+36202982228",
+      "street": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!, Kossuth út 46",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls-csomagpont",
+    "shippingPickupPoint": {
+      "id": "4400-BORHALONYI",
+      "type": "parcel-shop",
+      "name": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!",
+      "postalCode": "4400",
+      "city": "Nyíregyháza",
+      "address": "Kossuth út 46"
+    },
+    "shippingPrice": 990,
+    "subtotal": 4690,
+    "discount": 0,
+    "total": 6670,
+    "paymentMethod": "cod",
+    "paymentStatus": "PENDING",
+    "notes": "",
+    "loyaltyPointsRedeemed": 0,
+    "loyaltyDiscount": 0,
+    "loyaltyPointsGranted": false,
+    "createdAt": "2026-03-09T22:45:22.687Z",
+    "updatedAt": "2026-03-09T22:45:22.687Z"
+  },
+  {
+    "id": "ord-1773095139872",
+    "orderNumber": "BO-MMJR2DY8-P9BK",
+    "guestEmail": "kostyalarpadev@gmail.com",
+    "status": "PENDING",
+    "items": [
+      {
+        "id": "oi-ord-1773095139872-0",
+        "productId": "prod-0000",
+        "productName": "FreeON univerzális légáteresztő betét babakocsiba, biztonsági gyermekülésbe - white/pink (48723)",
+        "productImage": "/images/products/shopify/48723-3-008d0c88.jpg",
+        "price": 6990,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpadev@gmail.com",
+      "phone": "+36202982228",
+      "street": "GLS Automata INTERSPAR Nyíregyháza, Korányi Frigyes utca",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpadev@gmail.com",
+      "phone": "+36202982228",
+      "street": "GLS Automata INTERSPAR Nyíregyháza, Korányi Frigyes utca",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls-csomagautomata",
+    "shippingPickupPoint": {
+      "id": "HU4400-PARCELLOC020",
+      "type": "parcel-locker",
+      "name": "GLS Automata INTERSPAR Nyíregyháza",
+      "postalCode": "4400",
+      "city": "NYÍREGYHÁZA",
+      "address": "Korányi Frigyes utca"
+    },
+    "shippingPrice": 990,
+    "subtotal": 6990,
+    "discount": 0,
+    "total": 8970,
+    "paymentMethod": "cod",
+    "paymentStatus": "PENDING",
+    "notes": "",
+    "loyaltyPointsRedeemed": 0,
+    "loyaltyDiscount": 0,
+    "loyaltyPointsGranted": false,
+    "createdAt": "2026-03-09T22:25:40.347Z",
+    "updatedAt": "2026-03-09T22:25:40.347Z"
+  },
+  {
+    "id": "ord-001",
+    "orderNumber": "BO-ABC123-XY",
+    "guestEmail": "vasarlo@example.com",
+    "status": "CANCELLED",
+    "items": [
+      {
+        "id": "oi-001",
+        "productId": "clpampers001",
+        "productName": "Pampers Premium Care Pelenka",
+        "productImage": "/images/products/pampers-premium-care-pelenka-1.jpg",
+        "price": 6990,
+        "quantity": 2
+      }
+    ],
+    "shippingAddress": {
+      "name": "Kovács János",
+      "email": "vasarlo@example.com",
+      "phone": "+36301234567",
+      "street": "Fő utca 1.",
+      "city": "Budapest",
+      "postalCode": "1011",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Kovács János",
+      "street": "Fő utca 1.",
+      "city": "Budapest",
+      "postalCode": "1011",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls",
+    "shippingPrice": 0,
+    "subtotal": 13980,
+    "discount": 0,
+    "total": 13980,
+    "paymentMethod": "card",
+    "paymentStatus": "PAID",
+    "stripePaymentId": "pi_sim_xxx",
+    "glsTrackingId": "GLS-123456",
+    "createdAt": "2024-03-01T10:00:00.000Z",
+    "updatedAt": "2026-03-09T22:23:18.521Z"
+  },
+  {
+    "id": "ord-002",
+    "orderNumber": "BO-DEF456-ZW",
+    "guestEmail": "masik@example.com",
+    "status": "CANCELLED",
+    "items": [
+      {
+        "id": "oi-002",
+        "productId": "clchicco002",
+        "productName": "Chicco Babakocsi Sport",
+        "productImage": "/images/products/chicco-babakocsi-sport-1.jpg",
+        "price": 89990,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Nagy Anna",
+      "email": "masik@example.com",
+      "phone": "+36209876543",
+      "street": "Kossuth Lajos u. 15.",
+      "city": "Debrecen",
+      "postalCode": "4025",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Nagy Anna",
+      "street": "Kossuth Lajos u. 15.",
+      "city": "Debrecen",
+      "postalCode": "4025",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls",
+    "shippingPrice": 1490,
+    "subtotal": 89990,
+    "discount": 0,
+    "total": 91480,
+    "paymentMethod": "card",
+    "paymentStatus": "PAID",
+    "stripePaymentId": "pi_sim_yyy",
+    "glsTrackingId": "GLS-789012",
+    "createdAt": "2024-03-06T09:30:00.000Z",
+    "updatedAt": "2026-03-09T22:23:17.082Z"
+  },
+  {
+    "id": "ord-003",
+    "orderNumber": "BO-GHI789-QR",
+    "guestEmail": "harmadik@example.com",
+    "status": "CANCELLED",
+    "items": [
+      {
+        "id": "oi-003",
+        "productId": "clavent003",
+        "productName": "Avent Natural Cumisüveg Szett",
+        "productImage": "/images/products/avent-natural-cumisuveg-szett-1.jpg",
+        "price": 9990,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Szabó Péter",
+      "email": "harmadik@example.com",
+      "phone": "+36701234567",
+      "street": "Petőfi Sándor u. 8.",
+      "city": "Szeged",
+      "postalCode": "6720",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Szabó Péter",
+      "street": "Petőfi Sándor u. 8.",
+      "city": "Szeged",
+      "postalCode": "6720",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "magyar-posta",
+    "shippingPrice": 990,
+    "subtotal": 9990,
+    "discount": 0,
+    "total": 10980,
+    "paymentMethod": "card",
+    "paymentStatus": "PENDING",
+    "createdAt": "2024-03-08T14:00:00.000Z",
+    "updatedAt": "2026-03-09T22:23:15.176Z"
+  },
+  {
+    "id": "ord-1773093270643",
+    "orderNumber": "BO-MMJPYBN7-JICN",
+    "guestEmail": "kostyalarpad@wellcosta.hu",
+    "status": "CANCELLED",
+    "items": [
+      {
+        "id": "oi-ord-1773093270643-0",
+        "productId": "prod-0003",
+        "productName": "FreeON babafürdető szett (kád, állvány, pelenkázó lap) - Elefánt (48648)",
+        "productImage": "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48648-2.jpg?v=1767041911",
+        "price": 54990,
+        "quantity": 1
+      },
+      {
+        "id": "oi-ord-1773093270643-1",
+        "productId": "prod-0017",
+        "productName": "FreeON Fantasy 3in1 multifunkciós babakocsi - Szürke (44565)",
+        "productImage": "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44565-1.jpg?v=1767041884",
+        "price": 223990,
+        "quantity": 2
+      }
+    ],
+    "shippingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpad@wellcosta.hu",
+      "phone": "+36202982228",
+      "street": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!, Kossuth út 46",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "billingAddress": {
+      "name": "Kostyál Árpád",
+      "email": "kostyalarpad@wellcosta.hu",
+      "phone": "+36202982228",
+      "street": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!, Kossuth út 46",
+      "city": "Nyíregyháza",
+      "postalCode": "4400",
+      "country": "Magyarország"
+    },
+    "shippingMethod": "gls-csomagpont",
+    "shippingPickupPoint": {
+      "id": "4400-BORHALONYI",
+      "type": "parcel-shop",
+      "name": "Borháló Borkereskedés - Unikornis 2000 Kft  Csomagfeladás nem lehetséges!",
+      "postalCode": "4400",
+      "city": "Nyíregyháza",
+      "address": "Kossuth út 46"
+    },
+    "shippingPrice": 0,
+    "subtotal": 502970,
+    "discount": 0,
+    "total": 502970,
+    "paymentMethod": "card",
+    "paymentStatus": "PENDING",
+    "notes": "",
+    "loyaltyPointsRedeemed": 0,
+    "loyaltyDiscount": 0,
+    "loyaltyPointsGranted": false,
+    "createdAt": "2026-03-09T21:54:31.613Z",
+    "updatedAt": "2026-03-09T22:22:25.973Z"
+  },
+  {
     "id": "ord-1773019917430",
     "orderNumber": "BO-MMIIA3XY-DVBO",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773019917430-0",
@@ -52,13 +548,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-09T01:31:57.866Z",
-    "updatedAt": "2026-03-09T01:31:57.866Z"
+    "updatedAt": "2026-03-09T22:22:30.662Z"
   },
   {
     "id": "ord-1773017270299",
     "orderNumber": "BO-MMIGPDEJ-DTQ3",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773017270299-0",
@@ -107,13 +603,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-09T00:47:50.727Z",
-    "updatedAt": "2026-03-09T00:47:50.727Z"
+    "updatedAt": "2026-03-09T22:22:33.218Z"
   },
   {
     "id": "ord-1773016569626",
     "orderNumber": "BO-MMIGACRE-M3T1",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773016569626-0",
@@ -154,13 +650,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-09T00:36:09.983Z",
-    "updatedAt": "2026-03-09T00:36:09.983Z"
+    "updatedAt": "2026-03-09T22:22:36.987Z"
   },
   {
     "id": "ord-1773016548405",
     "orderNumber": "BO-MMIG9WDX-EA3S",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773016548405-0",
@@ -201,13 +697,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-09T00:35:48.781Z",
-    "updatedAt": "2026-03-09T00:35:48.781Z"
+    "updatedAt": "2026-03-09T22:22:39.192Z"
   },
   {
     "id": "ord-1773016524644",
     "orderNumber": "BO-MMIG9E1W-G8GJ",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773016524644-0",
@@ -248,13 +744,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-09T00:35:25.028Z",
-    "updatedAt": "2026-03-09T00:35:25.028Z"
+    "updatedAt": "2026-03-09T22:22:41.421Z"
   },
   {
     "id": "ord-1773016513324",
     "orderNumber": "BO-MMIG95BG-WMMJ",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773016513324-0",
@@ -295,13 +791,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-09T00:35:13.675Z",
-    "updatedAt": "2026-03-09T00:35:13.675Z"
+    "updatedAt": "2026-03-09T22:22:44.154Z"
   },
   {
     "id": "ord-1773016393100",
     "orderNumber": "BO-MMIG6KJW-JZ45",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773016393100-0",
@@ -342,13 +838,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-09T00:33:13.439Z",
-    "updatedAt": "2026-03-09T00:33:13.439Z"
+    "updatedAt": "2026-03-09T22:22:46.739Z"
   },
   {
     "id": "ord-1773016352531",
     "orderNumber": "BO-MMIG5P8Z-G3XY",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773016352531-0",
@@ -389,13 +885,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-09T00:32:32.961Z",
-    "updatedAt": "2026-03-09T00:32:32.961Z"
+    "updatedAt": "2026-03-09T22:22:50.940Z"
   },
   {
     "id": "ord-1773000258828",
     "orderNumber": "BO-MMI6KR9O-8O2F",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1773000258828-0",
@@ -452,13 +948,13 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-08T20:04:18.828Z",
-    "updatedAt": "2026-03-08T20:04:18.828Z"
+    "updatedAt": "2026-03-09T22:22:53.973Z"
   },
   {
     "id": "ord-1772989050848",
     "orderNumber": "BO-MMHZWJ4W-N80N",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1772989050848-0",
@@ -499,13 +995,13 @@
     "loyaltyDiscount": 201,
     "loyaltyPointsGranted": false,
     "createdAt": "2026-03-08T16:57:30.848Z",
-    "updatedAt": "2026-03-08T16:57:30.848Z"
+    "updatedAt": "2026-03-09T22:23:07.141Z"
   },
   {
     "id": "ord-1772987643735",
     "orderNumber": "BO-MMHZ2DEF-X066",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "DELIVERED",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1772987643735-0",
@@ -546,14 +1042,14 @@
     "loyaltyDiscount": 0,
     "loyaltyPointsGranted": true,
     "createdAt": "2026-03-08T16:34:03.735Z",
-    "updatedAt": "2026-03-08T16:34:25.802Z",
+    "updatedAt": "2026-03-09T22:22:56.723Z",
     "loyaltyPointsEarned": 201
   },
   {
     "id": "ord-1772987221396",
     "orderNumber": "BO-MMHYTBIS-ACDO",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1772987221396-0",
@@ -591,13 +1087,13 @@
     "paymentStatus": "PENDING",
     "notes": "",
     "createdAt": "2026-03-08T16:27:01.396Z",
-    "updatedAt": "2026-03-08T16:27:01.396Z"
+    "updatedAt": "2026-03-09T22:23:01.979Z"
   },
   {
     "id": "ord-1772987036554",
     "orderNumber": "BO-MMHYPCWA-XL3Q",
     "guestEmail": "kostyalarpad@wellcosta.hu",
-    "status": "PENDING",
+    "status": "CANCELLED",
     "items": [
       {
         "id": "oi-ord-1772987036554-0",
@@ -659,6 +1155,6 @@
     "paymentStatus": "PENDING",
     "notes": "",
     "createdAt": "2026-03-08T16:23:56.554Z",
-    "updatedAt": "2026-03-08T16:23:56.554Z"
+    "updatedAt": "2026-03-09T22:23:12.163Z"
   }
 ]

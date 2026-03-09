@@ -7,6 +7,13 @@ import {
   renderOrderStatusUpdateTemplate,
 } from "@/lib/email/templates";
 
+function resolveOrderRecipientEmail(order: Order): string | null {
+  if (order.guestEmail) return order.guestEmail;
+  if (order.shippingAddress?.email) return order.shippingAddress.email;
+  if (order.billingAddress?.email) return order.billingAddress.email;
+  return null;
+}
+
 function hasSmtpConfig(settings: EmailSettings): boolean {
   return Boolean(settings.smtpHost && settings.smtpUser && settings.smtpPass && settings.fromEmail);
 }
@@ -44,14 +51,16 @@ async function sendWithTemplate(
 
 export async function sendOrderConfirmationEmail(order: Order) {
   const settings = await getEmailSettings();
-  if (!settings.orderConfirmationEnabled || !order.guestEmail) return;
-  await sendWithTemplate(order.guestEmail, renderOrderConfirmationTemplate(order), settings);
+  const recipient = resolveOrderRecipientEmail(order);
+  if (!settings.orderConfirmationEnabled || !recipient) return;
+  await sendWithTemplate(recipient, renderOrderConfirmationTemplate(order), settings);
 }
 
 export async function sendOrderStatusUpdateEmail(order: Order) {
   const settings = await getEmailSettings();
-  if (!settings.orderStatusUpdateEnabled || !order.guestEmail) return;
-  await sendWithTemplate(order.guestEmail, renderOrderStatusUpdateTemplate(order), settings);
+  const recipient = resolveOrderRecipientEmail(order);
+  if (!settings.orderStatusUpdateEnabled || !recipient) return;
+  await sendWithTemplate(recipient, renderOrderStatusUpdateTemplate(order), settings);
 }
 
 export async function sendAdminNewOrderEmail(order: Order) {
@@ -77,6 +86,20 @@ export async function sendTestEmail(to: string) {
   await sendWithTemplate(
     to,
     { subject: "BabyOnline SMTP teszt", html, text: "BabyOnline SMTP teszt sikeres." },
+    settings
+  );
+}
+
+export async function sendCustomEmail(input: {
+  to: string;
+  subject: string;
+  text: string;
+  html: string;
+}) {
+  const settings = await getEmailSettings();
+  await sendWithTemplate(
+    input.to,
+    { subject: input.subject, text: input.text, html: input.html },
     settings
   );
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ShoppingBag,
   Minus,
@@ -14,7 +15,6 @@ import {
   Check,
   Clock,
   Star,
-  ChevronDown,
   LoaderCircle,
 } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
@@ -34,29 +34,19 @@ const TABS = [
   { id: "velemenyek", label: "Vélemények" },
 ] as const;
 
-const SAMPLE_REVIEWS = [
-  {
-    author: "Katalin M.",
-    rating: 5,
-    date: "2024.02.28",
-    text: "Nagyon elégedett vagyok a termékkel! Minőségben és árban is kiváló. A gyors szállítás miatt külön köszönöm.",
-    avatar: "KM",
-  },
-  {
-    author: "Péter K.",
-    rating: 4,
-    date: "2024.02.15",
-    text: "Jó termék, pontosan azt kaptam amit vártam. Egy kisebb javaslat: a csomagolás lehetne még környezetbarátabb.",
-    avatar: "PK",
-  },
-  {
-    author: "Anna V.",
-    rating: 5,
-    date: "2024.02.01",
-    text: "Már másodszor rendelek innen. Mindkét alkalommal gyorsan megérkezett és tökéletes állapotban. Ajánlom mindenkinek!",
-    avatar: "AV",
-  },
-];
+type ProductReview = {
+  id: string;
+  authorName: string;
+  rating: number;
+  content: string;
+  createdAt: string;
+};
+
+type ReviewResponse = {
+  reviews?: ProductReview[];
+  error?: string;
+  message?: string;
+};
 
 function StarRating({ rating, size = "md" }: { rating: number; size?: "sm" | "md" | "lg" }) {
   const sizeClass = size === "lg" ? "size-6" : size === "md" ? "size-5" : "size-4";
@@ -88,6 +78,14 @@ export default function ProductDetailPage() {
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [showAddedToast, setShowAddedToast] = useState(false);
   const [isCategoryNavigating, setIsCategoryNavigating] = useState(false);
+  const [approvedReviews, setApprovedReviews] = useState<ProductReview[]>([]);
+  const [reviewsLoading, setReviewsLoading] = useState(true);
+  const [reviewAuthor, setReviewAuthor] = useState("");
+  const [reviewText, setReviewText] = useState("");
+  const [reviewRating, setReviewRating] = useState(5);
+  const [reviewSubmitError, setReviewSubmitError] = useState<string | null>(null);
+  const [reviewSubmitSuccess, setReviewSubmitSuccess] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
   const addItem = useCartStore((s) => s.addItem);
   const setDrawerOpen = useCartStore((s) => s.setDrawerOpen);
@@ -98,6 +96,45 @@ export default function ProductDetailPage() {
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!product) return;
+    let active = true;
+    setReviewsLoading(true);
+    fetch(`/api/reviews?productId=${encodeURIComponent(product.id)}`, { cache: "no-store" })
+      .then((response) => response.json().then((payload: ReviewResponse) => ({ response, payload })))
+      .then(({ response, payload }) => {
+        if (!active) return;
+        if (!response.ok) {
+          throw new Error(payload.error ?? "Nem sikerült a vélemények betöltése.");
+        }
+        setApprovedReviews(payload.reviews ?? []);
+      })
+      .catch(() => {
+        if (active) setApprovedReviews([]);
+      })
+      .finally(() => {
+        if (active) setReviewsLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [product?.id, product]);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/auth/me", { cache: "no-store" })
+      .then((response) => {
+        if (!active) return;
+        setIsAuthenticated(response.ok);
+      })
+      .catch(() => {
+        if (active) setIsAuthenticated(false);
+      });
+    return () => {
+      active = false;
+    };
   }, []);
 
   if (!product) {
@@ -125,6 +162,11 @@ export default function ProductDetailPage() {
   const savings = hasSale ? product.price - product.salePrice! : 0;
   const inStock = product.stock > 0;
   const maxQuantity = product.stock > 0 ? product.stock : 99;
+  const totalReviewCount = approvedReviews.length;
+  const calculatedRating =
+    approvedReviews.length > 0
+      ? approvedReviews.reduce((sum, item) => sum + item.rating, 0) / approvedReviews.length
+      : 0;
 
   const breadcrumbItems = [
     { label: "Főoldal", href: "/" },
@@ -156,14 +198,7 @@ export default function ProductDetailPage() {
         : "https://schema.org/PreOrder",
       itemCondition: "https://schema.org/NewCondition",
     },
-    aggregateRating:
-      product.rating && product.reviewCount
-        ? {
-            "@type": "AggregateRating",
-            ratingValue: Number(product.rating.toFixed(1)),
-            reviewCount: product.reviewCount,
-          }
-        : undefined,
+    aggregateRating: undefined,
   };
 
   const breadcrumbStructuredData = {
@@ -222,6 +257,41 @@ export default function ProductDetailPage() {
     }, 160);
   };
 
+  const handleSubmitReview = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setReviewSubmitError(null);
+    setReviewSubmitSuccess(null);
+    const author = reviewAuthor.trim();
+    const content = reviewText.trim();
+    if (!author || content.length < 8) return;
+
+    fetch("/api/reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        productId: product.id,
+        authorName: author,
+        rating: reviewRating,
+        content,
+      }),
+    })
+      .then((response) => response.json().then((payload: ReviewResponse) => ({ response, payload })))
+      .then(({ response, payload }) => {
+        if (!response.ok) {
+          throw new Error(payload.error ?? "Nem sikerült beküldeni a véleményt.");
+        }
+        setReviewAuthor("");
+        setReviewText("");
+        setReviewRating(5);
+        setReviewSubmitSuccess(
+          payload.message ?? "Köszönjük az értékelésed. Egy adminisztrátor hamarosan jóváhagyja."
+        );
+      })
+      .catch((error) => {
+        setReviewSubmitError(error instanceof Error ? error.message : "Nem sikerült beküldeni a véleményt.");
+      });
+  };
+
   return (
     <>
       <div className="container mx-auto px-4 py-6 md:py-10">
@@ -271,15 +341,15 @@ export default function ProductDetailPage() {
             </h1>
 
             {/* Rating */}
-            {product.rating != null && (
+            {totalReviewCount > 0 && (
               <div className="flex items-center gap-3">
-                <StarRating rating={product.rating} size="md" />
+                <StarRating rating={calculatedRating} size="md" />
                 <a
                   href="#velemenyek"
                   onClick={() => setActiveTab("velemenyek")}
                   className="text-sm text-neutral-medium hover:text-primary transition-colors"
                 >
-                  {product.reviewCount ?? 0} vélemény
+                  {totalReviewCount} vélemény
                 </a>
               </div>
             )}
@@ -439,7 +509,7 @@ export default function ProductDetailPage() {
                 )}
               >
                 {tab.id === "velemenyek"
-                  ? `Vélemények (${product.reviewCount ?? 0})`
+                  ? `Vélemények (${totalReviewCount})`
                   : tab.label}
               </button>
             ))}
@@ -448,9 +518,10 @@ export default function ProductDetailPage() {
           {/* Tab content */}
           <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8">
             {activeTab === "leiras" && (
-              <div className="text-neutral-dark leading-relaxed text-[15px]">
-                {product.description}
-              </div>
+              <div
+                className="text-neutral-dark leading-relaxed text-[15px] prose prose-sm max-w-none prose-p:my-2 prose-li:my-1"
+                dangerouslySetInnerHTML={{ __html: product.description }}
+              />
             )}
 
             {activeTab === "spec" && (
@@ -494,39 +565,122 @@ export default function ProductDetailPage() {
                 {/* Summary */}
                 <div className="flex items-center gap-4 pb-5 border-b border-gray-100">
                   <div className="text-center">
-                    <div className="text-4xl font-extrabold text-neutral-dark tracking-tight">
-                      {product.rating?.toFixed(1) ?? "0.0"}
-                    </div>
-                    <StarRating rating={product.rating ?? 0} size="sm" />
-                    <p className="text-xs text-neutral-medium mt-1">{product.reviewCount ?? 0} vélemény</p>
+                    {totalReviewCount > 0 ? (
+                      <>
+                        <div className="text-4xl font-extrabold text-neutral-dark tracking-tight">
+                          {calculatedRating.toFixed(1)}
+                        </div>
+                        <StarRating rating={calculatedRating} size="sm" />
+                      </>
+                    ) : (
+                      <div className="text-sm font-bold text-neutral-medium">Még nincs értékelés</div>
+                    )}
+                    <p className="text-xs text-neutral-medium mt-1">{totalReviewCount} vélemény</p>
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-800">
-                  A lenti értékelések jelenleg mintavélemények a felület szemléltetésére.
-                </div>
-                {SAMPLE_REVIEWS.map((review, idx) => (
-                  <div
-                    key={idx}
-                    className="flex gap-4 py-4 border-b border-gray-50 last:border-0"
-                  >
-                    <div className="size-10 rounded-full bg-primary-pale flex items-center justify-center flex-shrink-0">
-                      <span className="text-xs font-bold text-primary">{review.avatar}</span>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-bold text-neutral-dark">
-                          {review.author}
-                        </span>
-                        <span className="text-xs text-neutral-medium">
-                          {review.date}
-                        </span>
-                      </div>
-                      <StarRating rating={review.rating} size="sm" />
-                      <p className="text-sm text-neutral-dark mt-2 leading-relaxed">{review.text}</p>
+                {isAuthenticated === false ? (
+                  <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary-pale/60 to-white p-4">
+                    <p className="text-sm font-bold text-neutral-dark">Véleményíráshoz bejelentkezés szükséges.</p>
+                    <p className="mt-1 text-xs text-neutral-medium">
+                      Így biztosítjuk, hogy valós vásárlói visszajelzések jelenjenek meg.
+                    </p>
+                    <div className="mt-3 flex gap-2">
+                      <Link href="/bejelentkezes" className="rounded-lg bg-primary px-3 py-2 text-xs font-bold text-white hover:bg-primary-light">
+                        Bejelentkezés
+                      </Link>
+                      <Link href="/regisztracio" className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-bold text-neutral-dark hover:bg-gray-50">
+                        Regisztráció
+                      </Link>
                     </div>
                   </div>
-                ))}
+                ) : (
+                  <form onSubmit={handleSubmitReview} className="rounded-xl border border-gray-200 bg-gray-50 p-4 space-y-3">
+                    <p className="text-sm font-bold text-neutral-dark">Írj véleményt</p>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <input
+                        value={reviewAuthor}
+                        onChange={(event) => setReviewAuthor(event.target.value)}
+                        placeholder="Név"
+                        required
+                        className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      />
+                      <select
+                        value={reviewRating}
+                        onChange={(event) => setReviewRating(Number(event.target.value))}
+                        className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      >
+                        {[5, 4, 3, 2, 1].map((value) => (
+                          <option key={value} value={value}>{value} csillag</option>
+                        ))}
+                      </select>
+                    </div>
+                    <textarea
+                      value={reviewText}
+                      onChange={(event) => setReviewText(event.target.value)}
+                      placeholder="Tapasztalatod a termékkel..."
+                      required
+                      minLength={8}
+                      rows={3}
+                      className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    />
+                    <button
+                      type="submit"
+                      className="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white hover:bg-primary-light transition-colors"
+                    >
+                      Vélemény küldése
+                    </button>
+                    {reviewSubmitError && (
+                      <p className="text-xs font-semibold text-red-600">{reviewSubmitError}</p>
+                    )}
+                    <AnimatePresence>
+                      {reviewSubmitSuccess && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -4 }}
+                          className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-semibold text-emerald-700"
+                        >
+                          {reviewSubmitSuccess}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </form>
+                )}
+                {reviewsLoading ? (
+                  <p className="text-sm text-neutral-medium">Vélemények betöltése...</p>
+                ) : approvedReviews.length === 0 ? (
+                  <p className="text-sm text-neutral-medium">
+                    Még nincs jóváhagyott vélemény ennél a terméknél.
+                  </p>
+                ) : (
+                  approvedReviews.map((review) => {
+                    const avatar = review.authorName.slice(0, 2).toUpperCase();
+                    const dateLabel = new Date(review.createdAt).toLocaleDateString("hu-HU");
+                    return (
+                      <div
+                        key={review.id}
+                        className="flex gap-4 py-4 border-b border-gray-50 last:border-0"
+                      >
+                        <div className="size-10 rounded-full bg-primary-pale flex items-center justify-center flex-shrink-0">
+                          <span className="text-xs font-bold text-primary">{avatar}</span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-sm font-bold text-neutral-dark">
+                              {review.authorName}
+                            </span>
+                            <span className="text-xs text-neutral-medium">
+                              {dateLabel}
+                            </span>
+                          </div>
+                          <StarRating rating={review.rating} size="sm" />
+                          <p className="text-sm text-neutral-dark mt-2 leading-relaxed">{review.content}</p>
+                        </div>
+                      </div>
+                    );
+                  })
+                )}
               </div>
             )}
           </div>

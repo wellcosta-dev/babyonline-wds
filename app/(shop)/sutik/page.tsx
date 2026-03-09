@@ -74,7 +74,7 @@ export default function SutikPage() {
           <Section title="Kapcsolat">
             <p>
               Sütikkel kapcsolatos kérdéseiddel fordulj hozzánk:{" "}
-              <a href="mailto:hello@babyonline.hu" className="text-primary font-semibold hover:underline">hello@babyonline.hu</a>
+              <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">hello@jatekonline.hu</a>
             </p>
           </Section>
         </div>

@@ -6,10 +6,15 @@ import {
   Pencil,
   Trash2,
   GripVertical,
-  ImageIcon,
+  Baby,
+  Shirt,
+  Car,
+  UtensilsCrossed,
+  Puzzle,
+  Shield,
+  Bath,
+  Lamp,
   Package,
-  Eye,
-  EyeOff,
   ArrowUpRight,
 } from "lucide-react";
 import Link from "next/link";
@@ -26,6 +31,18 @@ const categoryColors = [
   "from-rose-100 to-brand-pink/10",
   "from-sky-100 to-brand-cyan/10",
 ];
+
+const categoryIcons: Record<string, React.ElementType> = {
+  pelenkak: Baby,
+  babaruha: Shirt,
+  babakocsi: Car,
+  etetes: UtensilsCrossed,
+  jatekok: Puzzle,
+  biztonsag: Shield,
+  furdetes: Bath,
+  babaszoba: Lamp,
+  egyeb: Package,
+};
 
 export default function AdminKategoriakPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
@@ -66,10 +83,11 @@ export default function AdminKategoriakPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {categories.map((cat, i) => {
             const count = getCategoryProductCount(cat.id);
+            const Icon = categoryIcons[cat.slug] ?? Package;
             return (
               <div key={cat.id} className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                 <div className={cn("h-28 bg-gradient-to-br flex items-center justify-center", categoryColors[i % categoryColors.length])}>
-                  <Package className="size-10 text-neutral-medium/20" />
+                  <Icon className="size-10 text-neutral-medium/30" />
                 </div>
                 <div className="p-4">
                   <div className="flex items-start justify-between">
@@ -102,11 +120,12 @@ export default function AdminKategoriakPage() {
           <div className="divide-y divide-gray-50">
             {categories.map((cat, i) => {
               const count = getCategoryProductCount(cat.id);
+              const Icon = categoryIcons[cat.slug] ?? Package;
               return (
                 <div key={cat.id} className="flex items-center gap-4 px-5 py-3.5 hover:bg-gray-50/50 transition-colors group">
                   <GripVertical className="size-4 text-neutral-medium/30 cursor-grab" />
                   <div className={cn("size-10 rounded-xl bg-gradient-to-br flex items-center justify-center flex-shrink-0", categoryColors[i % categoryColors.length])}>
-                    <Package className="size-4 text-neutral-medium/30" />
+                    <Icon className="size-4 text-neutral-medium/60" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-xs font-bold text-neutral-dark tracking-tight">{cat.name}</h3>

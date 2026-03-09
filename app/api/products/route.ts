@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Product } from "@/types";
-import {
-  products,
-  getProductsByCategory,
-} from "@/lib/mock-data";
+import { getEffectiveCategories, getEffectiveProducts } from "@/lib/server/products";
 
 export async function GET(request: NextRequest) {
   try {
@@ -14,9 +11,16 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get("limit") ?? "50", 10);
     const offset = parseInt(searchParams.get("offset") ?? "0", 10);
 
-    let result: Product[] = category
-      ? getProductsByCategory(category)
-      : [...products];
+    const [allProducts, categories] = await Promise.all([
+      getEffectiveProducts(),
+      Promise.resolve(getEffectiveCategories()),
+    ]);
+    const categoryId = category
+      ? categories.find((entry) => entry.slug === category || entry.id === category)?.id
+      : undefined;
+    let result: Product[] = categoryId
+      ? allProducts.filter((product) => product.categoryId === categoryId)
+      : [...allProducts];
 
     if (search) {
       const searchLower = search.toLowerCase();

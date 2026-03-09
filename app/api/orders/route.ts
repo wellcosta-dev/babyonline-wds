@@ -5,10 +5,11 @@ import { getOrders, upsertStoredOrder } from "@/lib/server/orders";
 import { sendAdminNewOrderEmail, sendOrderConfirmationEmail } from "@/lib/email/sender";
 import { getLoyaltySettings } from "@/lib/loyalty/settings";
 import { awardLoyaltyPoints, getLoyaltyBalance, redeemLoyaltyPoints } from "@/lib/server/loyalty";
-import { products } from "@/lib/mock-data";
+import { getEffectiveProducts } from "@/lib/server/products";
 import { getShippingCost } from "@/lib/utils";
 import type { ShippingMethod } from "@/lib/shipping";
 import { getSessionUser } from "@/lib/server/api-auth";
+import { markAbandonedCartRecoveredByEmail } from "@/lib/server/abandoned-carts";
 
 export async function GET(request: NextRequest) {
   try {
@@ -87,9 +88,10 @@ export async function POST(request: NextRequest) {
     const id = providedOrderId || `ord-${Date.now()}`;
     const now = new Date().toISOString();
 
+    const availableProducts = await getEffectiveProducts();
     const items: OrderItem[] = body.items
       .map((item: Partial<OrderItem>, idx: number) => {
-        const product = products.find((entry) => entry.id === item.productId);
+        const product = availableProducts.find((entry) => entry.id === item.productId);
         if (!product) return null;
         const requestedQuantity = Number(item.quantity ?? 1);
         const maxQuantity = product.stock > 0 ? product.stock : 99;
@@ -189,6 +191,9 @@ export async function POST(request: NextRequest) {
 
     try {
       await upsertStoredOrder(order);
+      if (order.guestEmail) {
+        await markAbandonedCartRecoveredByEmail(order.guestEmail, order.orderNumber);
+      }
     } catch (storageError) {
       if (loyaltyWasRedeemed && order.guestEmail && loyaltyPointsRedeemed > 0) {
         await awardLoyaltyPoints(order.guestEmail, loyaltyPointsRedeemed);

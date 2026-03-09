@@ -139,7 +139,8 @@ for (const [handle, p] of productMap) {
 
   const localCatSlug = mapShopifyCategoryToLocal(p.productCategory);
   const categoryId = catIdMap[localCatSlug] || "cat-egyeb";
-  const plainDesc = stripHtml(p.bodyHtml);
+  const htmlDesc = (p.bodyHtml || "").trim();
+  const plainDesc = stripHtml(htmlDesc);
   const shortDesc = plainDesc.length > 150 ? plainDesc.slice(0, 147) + "..." : plainDesc;
   const price = parseFloat(p.price) || 0;
   const compareAt = parseFloat(p.compareAtPrice) || 0;
@@ -154,7 +155,7 @@ for (const [handle, p] of productMap) {
     id: `prod-${String(idx).padStart(4, "0")}`,
     slug: handle,
     name: p.title,
-    description: plainDesc.slice(0, 2000),
+    description: htmlDesc || plainDesc.slice(0, 2000),
     shortDesc,
     price: compareAt > price ? compareAt : price,
     salePrice: compareAt > price ? price : undefined,

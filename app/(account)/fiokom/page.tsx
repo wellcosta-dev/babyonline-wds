@@ -5,9 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Package, Heart, MapPin, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { mockOrders } from "@/lib/mock-data";
 import { formatPrice } from "@/lib/utils";
-import type { OrderStatus } from "@/types";
+import type { Order, OrderStatus } from "@/types";
+import { useWishlistStore } from "@/store/wishlistStore";
 
 const STATUS_LABELS: Record<OrderStatus, string> = {
   PENDING: "Feldolgozás alatt",
@@ -39,27 +39,47 @@ function formatDate(dateStr: string): string {
 
 export default function FiokomPage() {
   const [userName, setUserName] = useState("Vásárló");
-  const recentOrders = mockOrders.slice(0, 3);
-  const ordersCount = mockOrders.length;
-  const wishlistCount = 5;
-  const addressesCount = 2;
+  const [recentOrders, setRecentOrders] = useState<Order[]>([]);
+  const [ordersCount, setOrdersCount] = useState(0);
+  const [addressesCount, setAddressesCount] = useState(0);
+  const wishlistCount = useWishlistStore((state) => state.items.length);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      const raw = localStorage.getItem("bo-auth-user");
-      if (!raw) return;
-      const parsed = JSON.parse(raw) as { name?: string; email?: string };
-      if (parsed.name && parsed.name.trim().length > 0) {
-        setUserName(parsed.name.trim());
-        return;
+    let active = true;
+    async function loadAccountData() {
+      try {
+        const profileResponse = await fetch("/api/account/profile", { cache: "no-store" });
+        if (!profileResponse.ok) return;
+        const profilePayload = (await profileResponse.json()) as {
+          user?: { name?: string; email?: string; addresses?: unknown[] };
+        };
+        const user = profilePayload.user;
+        if (!user || !active) return;
+        if (user.name?.trim()) {
+          setUserName(user.name.trim());
+        } else if (user.email?.includes("@")) {
+          setUserName(user.email.split("@")[0]);
+        }
+        setAddressesCount(Array.isArray(user.addresses) ? user.addresses.length : 0);
+
+        if (user.email) {
+          const ordersResponse = await fetch(`/api/orders?email=${encodeURIComponent(user.email)}`, {
+            cache: "no-store",
+          });
+          if (!ordersResponse.ok || !active) return;
+          const orderPayload = (await ordersResponse.json()) as { orders?: Order[] };
+          const orders = orderPayload.orders ?? [];
+          setOrdersCount(orders.length);
+          setRecentOrders(orders.slice(0, 3));
+        }
+      } catch {
+        if (active) setUserName("Vásárló");
       }
-      if (parsed.email && parsed.email.includes("@")) {
-        setUserName(parsed.email.split("@")[0]);
-      }
-    } catch {
-      setUserName("Vásárló");
     }
+    loadAccountData();
+    return () => {
+      active = false;
+    };
   }, []);
 
   return (
@@ -143,6 +163,11 @@ export default function FiokomPage() {
           Legutóbbi rendelések
         </h2>
         <div className="space-y-4">
+          {recentOrders.length === 0 && (
+            <div className="card p-5 text-sm text-neutral-medium">
+              Még nincs rendelésed.
+            </div>
+          )}
           {recentOrders.map((order) => (
             <Link
               key={order.id}

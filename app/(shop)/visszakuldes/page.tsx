@@ -19,7 +19,7 @@ const STEPS = [
   {
     step: "1",
     title: "Jelezd a szándékod",
-    desc: "Írj nekünk e-mailt a hello@babyonline.hu címre a rendelésszámoddal és a visszaküldés okával.",
+    desc: "Írj nekünk e-mailt a hello@jatekonline.hu címre a rendelésszámoddal és a visszaküldés okával.",
     icon: Mail,
     color: "text-primary",
     bg: "bg-primary/10",
@@ -180,7 +180,7 @@ export default function VisszakuldesPage() {
           <div>
             <h3 className="text-sm font-bold text-amber-800 tracking-tight mb-1">Fontos tudnivaló</h3>
             <p className="text-xs text-amber-700 leading-relaxed">
-              Hibás vagy sérült termék esetén kérjük, készíts fotókat a hibáról és a csomagolásról, majd küldd el a hello@babyonline.hu címre.
+              Hibás vagy sérült termék esetén kérjük, készíts fotókat a hibáról és a csomagolásról, majd küldd el a hello@jatekonline.hu címre.
               Ebben az esetben a visszaszállítás költségét mi álljuk, és a lehető leggyorsabban intézzük a cserét vagy visszatérítést.
             </p>
           </div>
@@ -218,7 +218,7 @@ export default function VisszakuldesPage() {
             <div>
               <h3 className="text-sm font-bold text-neutral-dark tracking-tight">Kérdésed van?</h3>
               <p className="text-xs text-neutral-medium mt-0.5">
-                Írj nekünk: <a href="mailto:hello@babyonline.hu" className="text-primary font-semibold hover:underline">hello@babyonline.hu</a>
+                Írj nekünk: <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">hello@jatekonline.hu</a>
               </p>
             </div>
           </div>

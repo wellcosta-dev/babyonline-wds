@@ -1,16 +1,74 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Bell, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function BeallitasokPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [notice, setNotice] = useState<string | null>(null);
   const [notifications, setNotifications] = useState({
     orderUpdates: true,
     promotions: false,
     newsletter: true,
   });
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/account/profile", { cache: "no-store" })
+      .then((response) => response.json().then((payload) => ({ response, payload })))
+      .then(({ response, payload }) => {
+        if (!active || !response.ok) return;
+        const user = payload.user as { name?: string; email?: string; phone?: string } | undefined;
+        if (!user) return;
+        setName(user.name ?? "");
+        setEmail(user.email ?? "");
+        setPhone(user.phone ?? "");
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+
+    try {
+      const saved = localStorage.getItem("bo-account-notifications");
+      if (saved) {
+        setNotifications(JSON.parse(saved));
+      }
+    } catch {
+      // ignore invalid local storage
+    }
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const handleSaveProfile = async () => {
+    setNotice(null);
+    const response = await fetch("/api/account/profile", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode: "profile", name, phone }),
+    });
+    const payload = (await response.json()) as { error?: string };
+    if (!response.ok) {
+      setNotice(payload.error ?? "Nem sikerült menteni a profilt.");
+      return;
+    }
+    setNotice("Sikeres mentés.");
+  };
+
+  const toggleNotification = (key: keyof typeof notifications) => {
+    setNotifications((prev) => {
+      const next = { ...prev, [key]: !prev[key] };
+      localStorage.setItem("bo-account-notifications", JSON.stringify(next));
+      return next;
+    });
+  };
 
   return (
     <div>
@@ -35,7 +93,8 @@ export default function BeallitasokPage() {
               </label>
               <input
                 type="text"
-                defaultValue="Kovács Anna"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
                 className="input-field"
               />
             </div>
@@ -45,8 +104,9 @@ export default function BeallitasokPage() {
               </label>
               <input
                 type="email"
-                defaultValue="anna.kovacs@example.com"
-                className="input-field"
+                value={email}
+                disabled
+                className="input-field opacity-70"
               />
             </div>
             <div>
@@ -55,14 +115,16 @@ export default function BeallitasokPage() {
               </label>
               <input
                 type="tel"
-                defaultValue="+36 30 123 4567"
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
                 className="input-field"
               />
             </div>
           </div>
-          <button type="button" className="btn-primary mt-4">
+          <button type="button" className="btn-primary mt-4" onClick={handleSaveProfile} disabled={loading}>
             Mentés
           </button>
+          {notice && <p className="mt-3 text-sm text-neutral-medium">{notice}</p>}
         </motion.section>
 
         <motion.section
@@ -71,44 +133,12 @@ export default function BeallitasokPage() {
           transition={{ duration: 0.4, delay: 0.05 }}
           className="card p-6 md:p-8"
         >
-          <h2 className="font-display font-bold text-xl text-neutral-dark mb-6">
+          <h2 className="font-display font-bold text-xl text-neutral-dark mb-2">
             Jelszó módosítás
           </h2>
-          <div className="space-y-4 max-w-md">
-            <div>
-              <label className="block text-sm font-medium text-neutral-dark mb-2">
-                Jelenlegi jelszó
-              </label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                className="input-field"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-dark mb-2">
-                Új jelszó
-              </label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                className="input-field"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-neutral-dark mb-2">
-                Új jelszó megerősítése
-              </label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                className="input-field"
-              />
-            </div>
-          </div>
-          <button type="button" className="btn-primary mt-4">
-            Jelszó módosítása
-          </button>
+          <p className="text-sm text-neutral-medium">
+            A jelszó módosítása hamarosan elérhető. Jelenleg kérlek használd az „Elfelejtett jelszó” funkciót.
+          </p>
         </motion.section>
 
         <motion.section
@@ -153,12 +183,7 @@ export default function BeallitasokPage() {
                 </div>
                 <button
                   type="button"
-                  onClick={() =>
-                    setNotifications((prev) => ({
-                      ...prev,
-                      [item.key]: !prev[item.key],
-                    }))
-                  }
+                  onClick={() => toggleNotification(item.key)}
                   className={cn(
                     "relative w-12 h-6 rounded-full transition-colors",
                     notifications[item.key]

@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldCheck, Truck, RotateCcw, Headphones, CreditCard } from "lucide-react";
+import { ShieldCheck, Truck, RotateCcw, CreditCard } from "lucide-react";
 
 const badges = [
   {
@@ -35,14 +35,6 @@ const badges = [
     bg: "bg-accent/10",
     border: "border-accent/20",
   },
-  {
-    icon: Headphones,
-    title: "Ügyfélszolgálat",
-    desc: "H-P 8:00 – 17:00",
-    color: "text-brand-cyan",
-    bg: "bg-brand-cyan/10",
-    border: "border-brand-cyan/20",
-  },
 ];
 
 export function TrustBadges() {
@@ -52,7 +44,7 @@ export function TrustBadges() {
         <h2 className="text-xl md:text-2xl font-bold text-neutral-dark tracking-tight text-center mb-8">
           Miért válassz minket?
         </h2>
-        <div className="mx-auto w-full max-w-6xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+        <div className="mx-auto w-full max-w-5xl grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {badges.map(({ icon: Icon, title, desc, color, bg, border }) => (
             <div
               key={title}

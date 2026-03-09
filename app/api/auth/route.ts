@@ -2,7 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { loginUser, registerUser } from "@/lib/server/users";
 import { createSessionToken, getSessionCookieName } from "@/lib/server/session";
 
-function withSessionCookie(response: NextResponse, user: { id: string; email: string; role?: "CUSTOMER" | "ADMIN"; name?: string }) {
+function withSessionCookie(
+  request: NextRequest,
+  response: NextResponse,
+  user: { id: string; email: string; role?: "CUSTOMER" | "ADMIN"; name?: string }
+) {
+  const forwardedProto = request.headers.get("x-forwarded-proto")?.toLowerCase();
+  const isSecureRequest = forwardedProto === "https" || request.nextUrl.protocol === "https:";
   const token = createSessionToken({
     id: user.id,
     email: user.email,
@@ -12,7 +18,7 @@ function withSessionCookie(response: NextResponse, user: { id: string; email: st
   response.cookies.set(getSessionCookieName(), token, {
     httpOnly: true,
     sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: isSecureRequest,
     path: "/",
     maxAge: 60 * 60 * 24 * 7,
   });
@@ -46,7 +52,7 @@ export async function POST(request: NextRequest) {
         user,
         token: "session",
       });
-      return withSessionCookie(response, user);
+      return withSessionCookie(request, response, user);
     }
 
     const user = await loginUser({ email, password });
@@ -55,7 +61,7 @@ export async function POST(request: NextRequest) {
       user,
       token: "session",
     });
-    return withSessionCookie(response, user);
+    return withSessionCookie(request, response, user);
   } catch (error) {
     console.error("POST /api/auth error:", error);
     if (error instanceof Error) {

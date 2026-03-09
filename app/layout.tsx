@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { LayoutWrapper } from "@/components/layout/LayoutWrapper";
+import { NonAdminOnly } from "@/components/layout/NonAdminOnly";
 import { CartDrawer } from "@/components/shop/CartDrawer";
 import { ChatBot } from "@/components/ai/ChatBot";
 import { AnalyticsScripts } from "@/components/analytics/AnalyticsScripts";
 import { ConsentBanner } from "@/components/analytics/ConsentBanner";
+import { AbandonedCartTracker } from "@/components/analytics/AbandonedCartTracker";
+import { FreeShippingPopup } from "@/components/marketing/FreeShippingPopup";
 import { absoluteUrl, getSiteUrl } from "@/lib/seo";
 
 const playfair = Playfair_Display({
@@ -66,7 +69,7 @@ export default function RootLayout({
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "hello@babyonline.hu",
+      email: "hello@jatekonline.hu",
       areaServed: "HU",
       availableLanguage: "hu",
     },
@@ -90,7 +93,10 @@ export default function RootLayout({
         className={`${playfair.variable} ${inter.variable} font-body antialiased min-h-screen flex flex-col`}
       >
         <AnalyticsScripts />
-        <ConsentBanner />
+        <NonAdminOnly>
+          <ConsentBanner />
+          <FreeShippingPopup />
+        </NonAdminOnly>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
@@ -100,8 +106,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteStructuredData) }}
         />
         <LayoutWrapper>{children}</LayoutWrapper>
+        <AbandonedCartTracker />
         <CartDrawer />
-        <ChatBot />
+        <NonAdminOnly>
+          <ChatBot />
+        </NonAdminOnly>
       </body>
     </html>
   );

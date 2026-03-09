@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { User, Package, Heart, MapPin, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -19,6 +20,35 @@ export default function AccountLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/auth/me", { cache: "no-store" })
+      .then((response) => {
+        if (!active) return;
+        if (!response.ok) {
+          router.replace("/bejelentkezes");
+          return;
+        }
+        setReady(true);
+      })
+      .catch(() => {
+        if (active) router.replace("/bejelentkezes");
+      });
+    return () => {
+      active = false;
+    };
+  }, [router]);
+
+  if (!ready) {
+    return (
+      <div className="container mx-auto px-4 py-10 text-sm font-semibold text-neutral-medium">
+        Fiók betöltése...
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-6 md:py-8">

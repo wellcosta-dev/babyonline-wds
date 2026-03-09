@@ -20,6 +20,13 @@ import type {
   LoyaltySettings as LoyaltySettingsModel,
 } from "@/types";
 
+type NotificationSettingsModel = {
+  newOrderNotification: boolean;
+  lowStockAlert: boolean;
+  weeklySummary: boolean;
+  aiAgentAlert: boolean;
+};
+
 const sections = [
   { id: "shop", label: "Webshop", icon: Store, color: "text-primary", bg: "bg-primary/10" },
   { id: "shipping", label: "Szállítás", icon: Truck, color: "text-brand-cyan", bg: "bg-brand-cyan/10" },
@@ -150,10 +157,10 @@ function ShopSettings() {
         <InputField defaultValue="BabyOnline.hu" />
       </SettingRow>
       <SettingRow label="Email cím" description="Admin értesítésekhez">
-        <InputField defaultValue="hello@babyonline.hu" />
+        <InputField defaultValue="hello@jatekonline.hu" />
       </SettingRow>
       <SettingRow label="Telefonszám">
-        <InputField defaultValue="+36 1 234 5678" />
+        <InputField defaultValue="06202982228" />
       </SettingRow>
       <SettingRow label="Ingyenes szállítás határa" description="Forintban megadva">
         <InputField defaultValue="20000" />
@@ -231,18 +238,18 @@ function EmailSettings() {
     smtpUser: "",
     smtpPass: "",
     fromName: "BabyOnline.hu",
-    fromEmail: "hello@babyonline.hu",
-    replyTo: "hello@babyonline.hu",
+    fromEmail: "hello@jatekonline.hu",
+    replyTo: "hello@jatekonline.hu",
     orderConfirmationEnabled: true,
     orderStatusUpdateEnabled: true,
     adminNewOrderEnabled: true,
-    adminNotificationEmail: "hello@babyonline.hu",
+    adminNotificationEmail: "hello@jatekonline.hu",
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string>("");
   const [testingEmail, setTestingEmail] = useState(false);
-  const [testRecipient, setTestRecipient] = useState("hello@babyonline.hu");
+  const [testRecipient, setTestRecipient] = useState("hello@jatekonline.hu");
   const [templates, setTemplates] = useState<
     { type: string; title: string; html: string; subject: string }[]
   >([]);
@@ -605,24 +612,110 @@ function LoyaltySettings() {
 }
 
 function NotificationSettings() {
+  const [form, setForm] = useState<NotificationSettingsModel>({
+    newOrderNotification: true,
+    lowStockAlert: true,
+    weeklySummary: true,
+    aiAgentAlert: true,
+  });
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const response = await fetch("/api/admin/notification-settings", { cache: "no-store" });
+        const data = (await response.json()) as {
+          settings?: NotificationSettingsModel;
+          error?: string;
+        };
+        if (!response.ok || !data.settings) {
+          throw new Error(data.error ?? "Nem sikerült betölteni az értesítési beállításokat.");
+        }
+        setForm(data.settings);
+      } catch (error) {
+        setMessage(error instanceof Error ? error.message : "Betöltési hiba");
+      } finally {
+        setLoading(false);
+      }
+    }
+    load();
+  }, []);
+
+  async function save() {
+    setSaving(true);
+    setMessage("");
+    try {
+      const response = await fetch("/api/admin/notification-settings", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await response.json()) as {
+        settings?: NotificationSettingsModel;
+        error?: string;
+      };
+      if (!response.ok || !data.settings) {
+        throw new Error(data.error ?? "Mentési hiba");
+      }
+      setForm(data.settings);
+      setMessage("Értesítési beállítások mentve.");
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Mentési hiba");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center gap-2 text-sm text-neutral-medium">
+        <Loader2 className="size-4 animate-spin" />
+        Értesítési beállítások betöltése...
+      </div>
+    );
+  }
+
   return (
     <div>
       <h2 className="text-sm font-bold text-neutral-dark tracking-tight mb-4">Értesítési beállítások</h2>
       <SettingRow label="Új rendelés értesítés" description="Email értesítés minden új rendelésről">
-        <Toggle defaultChecked />
+        <Toggle
+          checked={form.newOrderNotification}
+          onChange={(checked) => setForm((prev) => ({ ...prev, newOrderNotification: checked }))}
+        />
       </SettingRow>
       <SettingRow label="Készlethiány riasztás" description="Értesítés ha egy termék készlete 5 alá csökken">
-        <Toggle defaultChecked />
+        <Toggle
+          checked={form.lowStockAlert}
+          onChange={(checked) => setForm((prev) => ({ ...prev, lowStockAlert: checked }))}
+        />
       </SettingRow>
       <SettingRow label="Heti összesítő" description="Heti bevételi és rendelési összesítő email">
-        <Toggle defaultChecked />
+        <Toggle
+          checked={form.weeklySummary}
+          onChange={(checked) => setForm((prev) => ({ ...prev, weeklySummary: checked }))}
+        />
       </SettingRow>
       <SettingRow label="AI agent riasztások" description="Értesítés ha egy agent hibát észlel">
-        <Toggle defaultChecked />
+        <Toggle
+          checked={form.aiAgentAlert}
+          onChange={(checked) => setForm((prev) => ({ ...prev, aiAgentAlert: checked }))}
+        />
       </SettingRow>
+      {message && (
+        <p className={cn("mt-3 text-xs font-medium", message.includes("mentve") ? "text-emerald-600" : "text-red-600")}>
+          {message}
+        </p>
+      )}
       <div className="flex justify-end mt-4">
-        <button className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-primary rounded-xl hover:bg-primary-dark shadow-sm shadow-primary/20 transition-colors">
-          <Save className="size-3.5" />
+        <button
+          onClick={save}
+          disabled={saving}
+          className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-primary rounded-xl hover:bg-primary-dark shadow-sm shadow-primary/20 transition-colors disabled:opacity-50"
+        >
+          {saving ? <Loader2 className="size-3.5 animate-spin" /> : <Save className="size-3.5" />}
           Mentés
         </button>
       </div>

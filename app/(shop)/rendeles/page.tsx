@@ -358,7 +358,10 @@ export default function RendelesPage() {
         });
 
         if (!checkoutResponse.ok) {
-          throw new Error("A Stripe fizetést most nem sikerült elindítani.");
+          const errorPayload = (await checkoutResponse.json().catch(() => null)) as
+            | { error?: string }
+            | null;
+          throw new Error(errorPayload?.error || "A Stripe fizetést most nem sikerült elindítani.");
         }
 
         const checkoutData = (await checkoutResponse.json()) as {

@@ -52,7 +52,7 @@ export function BlogPreview() {
                 href={`/blog/${post.slug}`}
                 className="block bg-white rounded-xl shadow-soft overflow-hidden transition-all duration-300 hover:shadow-medium hover:-translate-y-1"
               >
-                <div className="relative h-24 md:h-28 w-full overflow-hidden">
+                <div className="relative h-32 md:h-36 w-full overflow-hidden">
                   {post.coverImage ? (
                     <Image
                       src={post.coverImage}

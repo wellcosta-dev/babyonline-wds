@@ -11,7 +11,9 @@ import { useEffect, useMemo, useState } from "react";
 
 export default function KivansaglistaPage() {
   const [isHydrated, setIsHydrated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const wishlistIds = useWishlistStore((s) => s.items);
+  const setWishlistItems = useWishlistStore((s) => s.setItems);
   const removeWishlistItem = useWishlistStore((s) => s.removeItem);
   const addToCart = useCartStore((s) => s.addItem);
   const openCart = useCartStore((s) => s.setDrawerOpen);
@@ -19,6 +21,45 @@ export default function KivansaglistaPage() {
   useEffect(() => {
     setIsHydrated(true);
   }, []);
+
+  useEffect(() => {
+    if (!isHydrated) return;
+    let active = true;
+    fetch("/api/account/profile", { cache: "no-store" })
+      .then((response) => response.json().then((payload) => ({ response, payload })))
+      .then(({ response, payload }) => {
+        if (!active) return;
+        if (!response.ok) {
+          setIsAuthenticated(false);
+          return;
+        }
+        setIsAuthenticated(true);
+        const wishlist = (payload.user?.wishlist ?? []) as string[];
+        if (Array.isArray(wishlist) && wishlist.length > 0) {
+          setWishlistItems(wishlist);
+        }
+      })
+      .catch(() => {
+        if (active) setIsAuthenticated(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [isHydrated, setWishlistItems]);
+
+  useEffect(() => {
+    if (!isHydrated || !isAuthenticated) return;
+    const timeout = window.setTimeout(() => {
+      fetch("/api/account/profile", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "wishlist", wishlist: wishlistIds }),
+      }).catch(() => undefined);
+    }, 400);
+    return () => {
+      window.clearTimeout(timeout);
+    };
+  }, [wishlistIds, isHydrated, isAuthenticated]);
 
   const wishlistProducts = useMemo(
     () => products.filter((product) => wishlistIds.includes(product.id)),

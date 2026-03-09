@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, BookOpen, Calendar, Clock } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { InternalLinksBlock } from "@/components/seo/InternalLinksBlock";
-import { blogPosts } from "@/lib/mock-data";
+import { getEffectiveBlogPosts } from "@/lib/server/blog-posts";
 import {
   getBlogIntentAutomationLinks,
   getBlogIntentLandingBySlug,
@@ -66,6 +66,7 @@ export default async function BlogTopicPage({ params }: BlogTopicPageProps) {
   const intent = getBlogIntentLandingBySlug(slug);
   if (!intent) notFound();
 
+  const blogPosts = await getEffectiveBlogPosts();
   const published = blogPosts.filter((post) => post.isPublished);
   const matchedPosts = getBlogPostsForIntent(published, slug);
   const fallbackPosts = [...published].slice(0, 3);

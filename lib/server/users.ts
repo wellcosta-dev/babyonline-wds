@@ -23,6 +23,58 @@ function hashPassword(password: string): string {
   return createHash("sha256").update(password).digest("hex");
 }
 
+function getConfiguredAdminEmail(): string {
+  return normalizeEmail(process.env.ADMIN_EMAIL ?? "admin@babyonline.hu");
+}
+
+function getBootstrapAdminPassword(): string {
+  return String(process.env.ADMIN_BOOTSTRAP_PASSWORD ?? "").trim();
+}
+
+async function ensureAdminUserForBootstrap(
+  users: StoredUser[],
+  email: string,
+  password: string
+): Promise<StoredUser[]> {
+  const adminEmail = getConfiguredAdminEmail();
+  const bootstrapPassword = getBootstrapAdminPassword();
+  if (!bootstrapPassword) return users;
+  if (email !== adminEmail) return users;
+  if (password !== bootstrapPassword) return users;
+
+  const now = new Date().toISOString();
+  const existingIndex = users.findIndex((entry) => normalizeEmail(entry.email) === email);
+  if (existingIndex < 0) {
+    users.unshift({
+      id: `user-${Date.now()}`,
+      email,
+      name: "Admin",
+      phone: undefined,
+      role: "ADMIN",
+      addresses: [],
+      wishlist: [],
+      createdAt: now,
+      passwordHash: hashPassword(password),
+    });
+    await saveStoredUsers(users);
+    return users;
+  }
+
+  const existing = users[existingIndex];
+  const nextHash = hashPassword(password);
+  const roleChanged = existing.role !== "ADMIN";
+  const passwordChanged = existing.passwordHash !== nextHash;
+  if (roleChanged || passwordChanged) {
+    users[existingIndex] = {
+      ...existing,
+      role: "ADMIN",
+      passwordHash: nextHash,
+    };
+    await saveStoredUsers(users);
+  }
+  return users;
+}
+
 async function getStoredUsers(): Promise<StoredUser[]> {
   const prisma = getPrismaClient();
   if (prisma) {
@@ -123,12 +175,79 @@ export async function getUsers(): Promise<User[]> {
   return users.map(toPublicUser);
 }
 
+export async function getUserByEmail(emailInput: string): Promise<User | null> {
+  const email = normalizeEmail(emailInput);
+  const users = await getStoredUsers();
+  const found = users.find((entry) => normalizeEmail(entry.email) === email);
+  return found ? toPublicUser(found) : null;
+}
+
+export async function updateUserProfile(
+  emailInput: string,
+  input: { name?: string; phone?: string }
+): Promise<User> {
+  const email = normalizeEmail(emailInput);
+  const users = await getStoredUsers();
+  const index = users.findIndex((entry) => normalizeEmail(entry.email) === email);
+  if (index < 0) {
+    throw new Error("Felhasználó nem található.");
+  }
+  const existing = users[index];
+  users[index] = {
+    ...existing,
+    name: input.name?.trim() || existing.name,
+    phone: input.phone?.trim() || undefined,
+  };
+  await saveStoredUsers(users);
+  return toPublicUser(users[index]);
+}
+
+export async function updateUserAddresses(
+  emailInput: string,
+  addresses: User["addresses"]
+): Promise<User> {
+  const email = normalizeEmail(emailInput);
+  const users = await getStoredUsers();
+  const index = users.findIndex((entry) => normalizeEmail(entry.email) === email);
+  if (index < 0) {
+    throw new Error("Felhasználó nem található.");
+  }
+  users[index] = {
+    ...users[index],
+    addresses: Array.isArray(addresses) ? addresses : [],
+  };
+  await saveStoredUsers(users);
+  return toPublicUser(users[index]);
+}
+
+export async function updateUserWishlist(
+  emailInput: string,
+  wishlist: string[]
+): Promise<User> {
+  const email = normalizeEmail(emailInput);
+  const users = await getStoredUsers();
+  const index = users.findIndex((entry) => normalizeEmail(entry.email) === email);
+  if (index < 0) {
+    throw new Error("Felhasználó nem található.");
+  }
+  users[index] = {
+    ...users[index],
+    wishlist: Array.isArray(wishlist) ? wishlist : [],
+  };
+  await saveStoredUsers(users);
+  return toPublicUser(users[index]);
+}
+
 export async function loginUser(input: {
   email: string;
   password: string;
 }): Promise<User> {
   const email = normalizeEmail(input.email);
-  const users = await getStoredUsers();
+  const users = await ensureAdminUserForBootstrap(
+    await getStoredUsers(),
+    email,
+    String(input.password)
+  );
   const user = users.find((entry) => normalizeEmail(entry.email) === email);
 
   if (!user) {

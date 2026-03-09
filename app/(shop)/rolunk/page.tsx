@@ -241,7 +241,7 @@ export default function RolunkPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <a
-              href="mailto:hello@babyonline.hu"
+              href="mailto:hello@jatekonline.hu"
               className="group bg-white rounded-2xl border border-gray-100 p-5 flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 hover:border-primary/20 transition-all"
             >
               <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
@@ -249,11 +249,11 @@ export default function RolunkPage() {
               </div>
               <div>
                 <div className="text-sm font-bold text-neutral-dark tracking-tight">E-mail</div>
-                <div className="text-sm text-neutral-medium">hello@babyonline.hu</div>
+                <div className="text-sm text-neutral-medium">hello@jatekonline.hu</div>
               </div>
             </a>
             <a
-              href="tel:+36123456789"
+              href="tel:+36202982228"
               className="group bg-white rounded-2xl border border-gray-100 p-5 flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 hover:border-brand-cyan/20 transition-all"
             >
               <div className="size-12 rounded-xl bg-brand-cyan/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-cyan transition-colors">
@@ -261,7 +261,7 @@ export default function RolunkPage() {
               </div>
               <div>
                 <div className="text-sm font-bold text-neutral-dark tracking-tight">Telefon</div>
-                <div className="text-sm text-neutral-medium">+36 1 234 5678</div>
+                <div className="text-sm text-neutral-medium">06202982228</div>
               </div>
             </a>
             <div className="bg-white rounded-2xl border border-gray-100 p-5 flex items-center gap-4">
@@ -270,7 +270,7 @@ export default function RolunkPage() {
               </div>
               <div>
                 <div className="text-sm font-bold text-neutral-dark tracking-tight">Cím</div>
-                <div className="text-sm text-neutral-medium">1011 Budapest, Fő utca 1.</div>
+                <div className="text-sm text-neutral-medium">4531 Nyírpazony, Hunyadi utca 6.</div>
               </div>
             </div>
           </div>
