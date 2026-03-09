@@ -183,7 +183,7 @@ export async function upsertStoredOrder(order: Order): Promise<void> {
       console.error("Prisma upsertStoredOrder fallback to JSON:", error);
     }
   }
-  const current = await getStoredOrders();
+  const current = await readJsonFile<Order[]>(ORDERS_FILE, []);
   const index = current.findIndex(
     (entry) => entry.id === order.id || entry.orderNumber === order.orderNumber
   );
@@ -192,7 +192,7 @@ export async function upsertStoredOrder(order: Order): Promise<void> {
   } else {
     current.unshift(order);
   }
-  await saveStoredOrders(current);
+  await writeJsonFile(ORDERS_FILE, current);
 }
 
 export async function getOrderById(id: string): Promise<Order | undefined> {
