@@ -201,14 +201,17 @@ export async function POST(request: NextRequest) {
       throw storageError;
     }
 
-    try {
-      await Promise.all([
-        sendOrderConfirmationEmail(order),
-        sendAdminNewOrderEmail(order),
-      ]);
-    } catch (mailError) {
-      console.error("Order created but email sending failed:", mailError);
-    }
+    // Do not block checkout response on email delivery to avoid gateway timeouts.
+    Promise.allSettled([
+      sendOrderConfirmationEmail(order),
+      sendAdminNewOrderEmail(order),
+    ]).then((results) => {
+      for (const result of results) {
+        if (result.status === "rejected") {
+          console.error("Order created but email sending failed:", result.reason);
+        }
+      }
+    });
 
     return NextResponse.json(order, { status: 201 });
   } catch (error) {
