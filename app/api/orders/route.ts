@@ -1,0 +1,204 @@
+import { NextRequest, NextResponse } from "next/server";
+import type { Order, OrderItem, Address } from "@/types";
+import { generateOrderNumber } from "@/lib/utils";
+import { getOrders, upsertStoredOrder } from "@/lib/server/orders";
+import { sendAdminNewOrderEmail, sendOrderConfirmationEmail } from "@/lib/email/sender";
+import { getLoyaltySettings } from "@/lib/loyalty/settings";
+import { awardLoyaltyPoints, getLoyaltyBalance, redeemLoyaltyPoints } from "@/lib/server/loyalty";
+import { products } from "@/lib/mock-data";
+import { getShippingCost } from "@/lib/utils";
+import type { ShippingMethod } from "@/lib/shipping";
+import { requireAdmin } from "@/lib/server/api-auth";
+
+export async function GET(request: NextRequest) {
+  try {
+    const unauthorized = requireAdmin(request);
+    if (unauthorized) return unauthorized;
+    const orders = await getOrders();
+    return NextResponse.json({ orders });
+  } catch (error) {
+    console.error("GET /api/orders error:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch orders" },
+      { status: 500 }
+    );
+  }
+}
+
+const COD_FEE = 990;
+
+function computeCouponDiscount(subtotal: number, couponCode: string | undefined): number {
+  if (!couponCode) return 0;
+  const code = couponCode.trim().toUpperCase();
+  let percent = 0;
+  if (code === "BABA10") percent = 10;
+  else if (code === "UJSZULOTT") percent = 15;
+  if (percent <= 0) return 0;
+  return Math.round((subtotal * percent) / 100);
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+
+    if (!body.items || !Array.isArray(body.items) || body.items.length === 0) {
+      return NextResponse.json(
+        { error: "Order must have at least one item" },
+        { status: 400 }
+      );
+    }
+
+    if (!body.shippingAddress) {
+      return NextResponse.json(
+        { error: "Shipping address is required" },
+        { status: 400 }
+      );
+    }
+
+    const shippingAddress = body.shippingAddress as Address;
+    if (
+      !shippingAddress.name ||
+      !shippingAddress.street ||
+      !shippingAddress.city ||
+      !shippingAddress.postalCode ||
+      !shippingAddress.country
+    ) {
+      return NextResponse.json(
+        { error: "Shipping address must include name, street, city, postalCode, country" },
+        { status: 400 }
+      );
+    }
+
+    const providedOrderNumber = typeof body.orderNumber === "string" ? body.orderNumber.trim() : "";
+    const providedOrderId = typeof body.id === "string" ? body.id.trim() : "";
+    const orderNumber = providedOrderNumber || generateOrderNumber();
+    const id = providedOrderId || `ord-${Date.now()}`;
+    const now = new Date().toISOString();
+
+    const items: OrderItem[] = body.items
+      .map((item: Partial<OrderItem>, idx: number) => {
+        const product = products.find((entry) => entry.id === item.productId);
+        if (!product) return null;
+        const requestedQuantity = Number(item.quantity ?? 1);
+        const maxQuantity = product.stock > 0 ? product.stock : 99;
+        const quantity = Math.max(1, Math.min(maxQuantity, Math.floor(requestedQuantity)));
+        const unitPrice = product.salePrice ?? product.price;
+        return {
+          id: `oi-${id}-${idx}`,
+          productId: product.id,
+          productName: product.name,
+          productImage: product.images?.[0] ?? "/images/placeholder.jpg",
+          price: unitPrice,
+          quantity,
+          variant: item.variant,
+        } as OrderItem;
+      })
+      .filter((item: OrderItem | null): item is OrderItem => Boolean(item));
+
+    if (items.length === 0) {
+      return NextResponse.json(
+        { error: "A rendelésben nincs érvényes termék." },
+        { status: 400 }
+      );
+    }
+
+    const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+    const couponCode = typeof body.couponCode === "string" ? body.couponCode : undefined;
+    const discount = computeCouponDiscount(subtotal, couponCode);
+    const shippingMethod = (body.shippingMethod ?? "gls") as ShippingMethod;
+    const shippingPrice = getShippingCost(subtotal, shippingMethod);
+    const codFee = body.paymentMethod === "cod" ? COD_FEE : 0;
+    const computedTotal = Math.max(0, subtotal - discount + shippingPrice + codFee);
+    const loyaltySettings = await getLoyaltySettings();
+    const requestedPoints = Math.max(0, Number(body.loyaltyPointsRedeemed ?? 0));
+    let loyaltyPointsRedeemed = 0;
+    let loyaltyDiscount = 0;
+
+    if (loyaltySettings.enabled && requestedPoints > 0 && body.guestEmail) {
+      const balance = await getLoyaltyBalance(String(body.guestEmail));
+      const maxByBalance = balance.points;
+      const maxByTotal = Math.floor(computedTotal / loyaltySettings.pointValueHuf);
+      const maxByPercent = Math.floor(
+        (computedTotal * loyaltySettings.maxRedeemPercent) /
+          100 /
+          loyaltySettings.pointValueHuf
+      );
+      const allowed = Math.max(0, Math.min(maxByBalance, maxByTotal, maxByPercent));
+      loyaltyPointsRedeemed = Math.min(requestedPoints, allowed);
+      loyaltyDiscount = loyaltyPointsRedeemed * loyaltySettings.pointValueHuf;
+    }
+
+    const total = Math.max(0, computedTotal - loyaltyDiscount);
+
+    const paymentMethod = body.paymentMethod ?? "card";
+    const paymentStatusFromBody = String(body.paymentStatus ?? "");
+    const safePaymentStatus =
+      paymentStatusFromBody === "PAID" ||
+      paymentStatusFromBody === "PENDING" ||
+      paymentStatusFromBody === "FAILED" ||
+      paymentStatusFromBody === "REFUNDED"
+        ? paymentStatusFromBody
+        : paymentMethod === "card"
+          ? "PENDING"
+          : "PENDING";
+
+    const order: Order = {
+      id,
+      orderNumber,
+      userId: body.userId,
+      guestEmail: body.guestEmail,
+      status: "PENDING",
+      items,
+      shippingAddress,
+      billingAddress: (body.billingAddress as Address) ?? shippingAddress,
+      shippingMethod,
+      shippingPickupPoint: body.shippingPickupPoint,
+      shippingPrice,
+      subtotal,
+      discount,
+      couponCode,
+      total,
+      paymentMethod,
+      paymentStatus: safePaymentStatus,
+      stripePaymentId: typeof body.stripePaymentId === "string" ? body.stripePaymentId : undefined,
+      notes: body.notes,
+      loyaltyPointsRedeemed,
+      loyaltyDiscount,
+      loyaltyPointsGranted: false,
+      createdAt: now,
+      updatedAt: now,
+    };
+
+    let loyaltyWasRedeemed = false;
+    if (loyaltyPointsRedeemed > 0 && order.guestEmail) {
+      await redeemLoyaltyPoints(order.guestEmail, loyaltyPointsRedeemed);
+      loyaltyWasRedeemed = true;
+    }
+
+    try {
+      await upsertStoredOrder(order);
+    } catch (storageError) {
+      if (loyaltyWasRedeemed && order.guestEmail && loyaltyPointsRedeemed > 0) {
+        await awardLoyaltyPoints(order.guestEmail, loyaltyPointsRedeemed);
+      }
+      throw storageError;
+    }
+
+    try {
+      await Promise.all([
+        sendOrderConfirmationEmail(order),
+        sendAdminNewOrderEmail(order),
+      ]);
+    } catch (mailError) {
+      console.error("Order created but email sending failed:", mailError);
+    }
+
+    return NextResponse.json(order, { status: 201 });
+  } catch (error) {
+    console.error("POST /api/orders error:", error);
+    return NextResponse.json(
+      { error: "Failed to create order" },
+      { status: 500 }
+    );
+  }
+}
