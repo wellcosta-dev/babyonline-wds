@@ -167,6 +167,7 @@ export default function ProductDetailPage() {
     approvedReviews.length > 0
       ? approvedReviews.reduce((sum, item) => sum + item.rating, 0) / approvedReviews.length
       : 0;
+  const isFreeShippingEligible = displayPrice >= FREE_SHIPPING_THRESHOLD;
 
   const breadcrumbItems = [
     { label: "Főoldal", href: "/" },
@@ -197,8 +198,36 @@ export default function ProductDetailPage() {
         ? "https://schema.org/InStock"
         : "https://schema.org/PreOrder",
       itemCondition: "https://schema.org/NewCondition",
+      shippingDetails: isFreeShippingEligible
+        ? {
+            "@type": "OfferShippingDetails",
+            shippingRate: {
+              "@type": "MonetaryAmount",
+              value: 0,
+              currency: "HUF",
+            },
+            shippingDestination: {
+              "@type": "DefinedRegion",
+              addressCountry: "HU",
+            },
+          }
+        : undefined,
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "HU",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+      },
     },
-    aggregateRating: undefined,
+    aggregateRating:
+      totalReviewCount > 0
+        ? {
+            "@type": "AggregateRating",
+            ratingValue: Number(calculatedRating.toFixed(1)),
+            reviewCount: totalReviewCount,
+          }
+        : undefined,
   };
 
   const breadcrumbStructuredData = {
