@@ -14,10 +14,6 @@ export function AnalyticsScripts() {
     setHasConsent(value === "granted");
   }, []);
 
-  if (!hasConsent) {
-    return null;
-  }
-
   return (
     <>
       {gtmId ? (
@@ -46,7 +42,7 @@ export function AnalyticsScripts() {
         </>
       ) : null}
 
-      {gaId ? (
+      {gaId && hasConsent ? (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
