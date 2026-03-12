@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp, Filter, X, Star, RotateCcw } from "lucide-react";
 import { cn, formatPrice } from "@/lib/utils";
@@ -20,6 +20,10 @@ const AGE_GROUPS = [
 const RATING_OPTIONS = [4, 3, 2, 1] as const;
 
 const DEFAULT_PRICE_RANGE: [number, number] = [0, 100000];
+const MOBILE_FILTER_MOTION = {
+  duration: 0.34,
+  ease: [0.22, 1, 0.36, 1] as const,
+};
 
 interface FilterSectionProps {
   title: string;
@@ -30,7 +34,7 @@ interface FilterSectionProps {
 
 function FilterSection({ title, isOpen, onToggle, children }: FilterSectionProps) {
   return (
-    <div className="border-b border-gray-100 last:border-b-0">
+    <div className="border-b border-primary/10 last:border-b-0">
       <button
         type="button"
         onClick={onToggle}
@@ -142,8 +146,9 @@ export function ProductFilters({
 
   const panelContent = (
     <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between mb-2">
-        <h3 className="font-bold text-base text-neutral-dark tracking-tight">
+      <div className="sticky top-0 z-10 -mx-5 px-5 py-3.5 mb-2 bg-gradient-to-r from-primary/10 to-brand-pink/10 backdrop-blur border-b border-primary/15">
+        <div className="flex items-center justify-between">
+        <h3 className="font-extrabold text-base text-neutral-dark tracking-tight">
           Szűrők
         </h3>
         <div className="flex items-center gap-2">
@@ -161,13 +166,14 @@ export function ProductFilters({
             <button
               type="button"
               onClick={onMobileClose}
-              className="p-1.5 rounded-lg hover:bg-gray-100 text-neutral-medium"
+              className="p-2 rounded-xl bg-white/70 hover:bg-white text-neutral-medium shadow-sm"
               aria-label="Szűrők bezárása"
             >
               <X className="size-5" />
             </button>
           )}
         </div>
+      </div>
       </div>
 
       <div className="flex-1 overflow-y-auto">
@@ -362,27 +368,22 @@ export function ProductFilters({
   if (isMobileDrawer) {
     return (
       <motion.div
-        initial={{ x: "100%" }}
+        initial={{ x: "-100%" }}
         animate={{ x: 0 }}
-        exit={{ x: "100%" }}
-        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+        exit={{ x: "-100%" }}
+        transition={MOBILE_FILTER_MOTION}
         className="fixed inset-0 z-50 lg:hidden flex"
       >
-        <div
-          onClick={onMobileClose}
-          className="flex-1 bg-black/40"
-          aria-hidden="true"
-        />
-        <div className="w-full max-w-sm bg-white shadow-2xl flex flex-col">
+        <div className="w-[88vw] max-w-[380px] bg-gradient-to-b from-white via-[#fcfaff] to-[#f6f0ff] shadow-[0_20px_40px_rgba(49,15,110,0.22)] flex flex-col border-r border-primary/20 rounded-r-3xl overflow-hidden">
           <div className="flex-1 overflow-y-auto p-5 pb-3">
             {panelContent}
           </div>
-          <div className="border-t border-gray-100 p-4 bg-white">
+          <div className="border-t border-primary/10 p-4 bg-white/95 backdrop-blur">
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={clearFilters}
-                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-semibold text-neutral-dark hover:bg-gray-50 transition-colors"
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-white px-3 py-2.5 text-sm font-semibold text-neutral-dark hover:bg-primary-pale/30 transition-colors"
               >
                 <RotateCcw className="size-4" />
                 Törlés
@@ -397,6 +398,11 @@ export function ProductFilters({
             </div>
           </div>
         </div>
+        <div
+          onClick={onMobileClose}
+          className="flex-1 bg-black/40 backdrop-blur-[2px]"
+          aria-hidden="true"
+        />
       </motion.div>
     );
   }
@@ -411,17 +417,69 @@ export function ProductFilters({
 interface ProductFiltersTriggerProps {
   onClick: () => void;
   activeCount?: number;
+  variant?: "inline" | "floating";
+  className?: string;
+  isOpen?: boolean;
 }
 
 export function ProductFiltersTrigger({
   onClick,
   activeCount = 0,
+  variant = "inline",
+  className,
+  isOpen = false,
 }: ProductFiltersTriggerProps) {
+  if (variant === "floating") {
+    const [drawerOffsetPx, setDrawerOffsetPx] = useState(320);
+
+    useEffect(() => {
+      const updateOffset = () => {
+        if (typeof window === "undefined") return;
+        setDrawerOffsetPx(Math.min(window.innerWidth * 0.88, 380));
+      };
+      updateOffset();
+      window.addEventListener("resize", updateOffset);
+      return () => window.removeEventListener("resize", updateOffset);
+    }, []);
+
+    return (
+      <motion.button
+        type="button"
+        onClick={onClick}
+        animate={{ x: isOpen ? drawerOffsetPx : 0 }}
+        transition={MOBILE_FILTER_MOTION}
+        className={cn(
+          "fixed left-0 top-1/2 z-[60] -translate-y-1/2 lg:hidden",
+          "h-32 w-12 overflow-hidden rounded-r-3xl border border-l-0 border-primary/70 bg-primary shadow-[0_14px_32px_rgba(83,24,173,0.35)]",
+          "text-white",
+          "hover:brightness-105 active:scale-[0.98] will-change-transform",
+          className
+        )}
+        aria-label="Szűrők megnyitása"
+      >
+        <span className="absolute inset-0 flex items-center justify-center">
+          <span className="inline-flex origin-center items-center gap-1 -rotate-90 whitespace-nowrap text-[12px] font-black tracking-[0.06em] leading-none">
+            <Filter className="size-4 text-white" />
+            <span>SZŰRŐK</span>
+          </span>
+        </span>
+        {activeCount > 0 && (
+          <span className="absolute right-1 top-1 size-5 rounded-full bg-[#f5c300] text-black text-[10px] font-black flex items-center justify-center">
+            {activeCount}
+          </span>
+        )}
+      </motion.button>
+    );
+  }
+
   return (
     <button
       type="button"
       onClick={onClick}
-      className="lg:hidden inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-gray-200 text-sm font-semibold text-neutral-dark hover:border-primary/30 transition-colors"
+      className={cn(
+        "hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-gray-200 text-sm font-semibold text-neutral-dark hover:border-primary/30 transition-colors",
+        className
+      )}
     >
       <Filter className="size-4" />
       Szűrők

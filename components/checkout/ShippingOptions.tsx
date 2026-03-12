@@ -6,6 +6,8 @@ import { Truck, Mail, Package, ArrowLeft, ArrowRight, Check, MapPin, X, Loader2,
 import { cn, formatPrice, FREE_SHIPPING_THRESHOLD, getShippingCost } from "@/lib/utils";
 import {
   requiresGlsPickupPoint,
+  SHIPPING_METHOD_LOGOS,
+  SHIPPING_METHOD_LABELS,
   type GlsPickupPoint,
   type ShippingMethod,
 } from "@/lib/shipping";
@@ -21,7 +23,7 @@ const OPTIONS: {
 }[] = [
   {
     id: "gls",
-    name: "GLS Házhozszállítás",
+    name: SHIPPING_METHOD_LABELS.gls,
     description: "Házhoz szállítás futárral",
     estimatedDays: "1-2 munkanap",
     icon: Truck,
@@ -30,7 +32,7 @@ const OPTIONS: {
   },
   {
     id: "gls-csomagautomata",
-    name: "GLS Csomagautomata",
+    name: SHIPPING_METHOD_LABELS["gls-csomagautomata"],
     description: "Átvétel GLS automatából",
     estimatedDays: "1-2 munkanap",
     icon: Package,
@@ -39,7 +41,7 @@ const OPTIONS: {
   },
   {
     id: "gls-csomagpont",
-    name: "GLS Csomagpont",
+    name: SHIPPING_METHOD_LABELS["gls-csomagpont"],
     description: "Átvétel GLS átvevőponton",
     estimatedDays: "1-2 munkanap",
     icon: MapPin,
@@ -48,7 +50,7 @@ const OPTIONS: {
   },
   {
     id: "magyar-posta",
-    name: "Magyar Posta",
+    name: SHIPPING_METHOD_LABELS["magyar-posta"],
     description: "Postai kézbesítés",
     estimatedDays: "2-4 munkanap",
     icon: Mail,
@@ -213,7 +215,17 @@ export function ShippingOptions({
                 <Icon className={cn("size-6", option.color)} />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-bold text-sm text-neutral-dark tracking-tight">{option.name}</p>
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex h-6 w-12 items-center justify-center rounded-md border border-gray-100 bg-white px-1">
+                    <img
+                      src={SHIPPING_METHOD_LOGOS[option.id]}
+                      alt={`${option.name} logó`}
+                      className="max-h-4 w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </span>
+                  <p className="font-bold text-sm text-neutral-dark tracking-tight">{option.name}</p>
+                </div>
                 <p className="text-xs text-neutral-medium mt-0.5">{option.description}</p>
                 <p className="text-xs font-medium text-neutral-dark/60 mt-0.5">{option.estimatedDays}</p>
               </div>

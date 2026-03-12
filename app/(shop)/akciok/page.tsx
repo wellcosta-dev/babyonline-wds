@@ -146,6 +146,12 @@ export default function AkciokPage() {
         ]}
         className="mb-6"
       />
+      <ProductFiltersTrigger
+        variant="floating"
+        onClick={() => setFilterDrawerOpen((prev) => !prev)}
+        activeCount={activeFilterCount}
+        isOpen={filterDrawerOpen}
+      />
 
       {/* Header banner */}
       <div className="relative mb-8 rounded-2xl bg-gradient-to-r from-primary to-brand-pink overflow-hidden p-6 md:p-8">

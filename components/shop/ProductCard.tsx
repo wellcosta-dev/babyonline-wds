@@ -70,7 +70,7 @@ export function ProductCard({ product, listName = "Product Listing" }: ProductCa
       <a
         href={`/termekek/${product.slug}`}
         onClick={handleNavigate}
-        className="relative block overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-[0_10px_30px_rgba(15,23,42,0.08)]"
+        className="relative block overflow-hidden rounded-md border border-gray-200 bg-white shadow-[8px_10px_22px_rgba(15,23,42,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-[10px_14px_30px_rgba(15,23,42,0.18)]"
       >
         {showAddedToast && (
           <div className="absolute left-3 right-3 bottom-3 z-30 rounded-lg bg-neutral-dark/90 px-3 py-2 text-center text-xs font-semibold text-white backdrop-blur-sm">
@@ -79,7 +79,7 @@ export function ProductCard({ product, listName = "Product Listing" }: ProductCa
         )}
         {/* Loading overlay */}
         {isNavigating && (
-          <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px] z-20 flex items-center justify-center rounded-2xl">
+          <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px] z-20 flex items-center justify-center">
             <Loader2 className="size-6 text-neutral-dark animate-spin" />
           </div>
         )}
@@ -103,12 +103,23 @@ export function ProductCard({ product, listName = "Product Listing" }: ProductCa
             </div>
           )}
 
-          {/* Sale badge - top left */}
+          {/* Sale badge - bottom left */}
           {hasSale && (
             <span
-              className="absolute left-2.5 top-2.5 z-10 rounded-md border border-amber-300 bg-amber-100 px-2.5 py-1 text-sm font-extrabold text-amber-900 shadow-sm"
+              className={cn(
+                "absolute left-2.5 z-10 rounded-md border border-amber-300 bg-accent px-2.5 py-1 text-xs font-black uppercase tracking-wide text-black shadow-sm",
+                qualifiesFreeShipping ? "bottom-10" : "bottom-2.5"
+              )}
             >
-              -{discountAmount}%
+              AKCIÓ!
+            </span>
+          )}
+
+          {/* Free shipping badge - bottom left */}
+          {qualifiesFreeShipping && (
+            <span className="absolute left-2.5 bottom-2.5 z-10 inline-flex items-center gap-1 rounded-md border border-emerald-300 bg-emerald-600 px-2.5 py-1 text-[11px] font-extrabold text-white whitespace-nowrap shadow-sm">
+              <Truck className="size-3.5" strokeWidth={2.5} />
+              Ingyenes szállítás
             </span>
           )}
 
@@ -136,40 +147,16 @@ export function ProductCard({ product, listName = "Product Listing" }: ProductCa
 
         {/* Info area */}
         <div className="p-3.5">
-          <h3 className="mb-2.5 min-h-[2.8rem] line-clamp-2 text-base font-extrabold leading-snug tracking-tight text-neutral-dark group-hover:text-primary transition-colors">
+          <h3 className="mb-2 text-[15px] md:text-base font-extrabold leading-tight tracking-tight text-neutral-dark group-hover:text-primary transition-colors break-words [overflow-wrap:anywhere] line-clamp-none sm:line-clamp-3 md:line-clamp-2">
             {product.name}
           </h3>
 
-          {/* Stock badge */}
-          <div className="flex flex-wrap items-center gap-2 mb-2.5">
-            <span
-              className={cn(
-                "inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide",
-                inStock
-                  ? "border-emerald-200 bg-emerald-50 text-emerald-700"
-                  : "border-amber-200 bg-amber-50 text-amber-700"
-              )}
-            >
-              {inStock ? (
-                <><Check className="size-3" strokeWidth={3} /> Raktáron</>
-              ) : (
-                <><Clock className="size-3" strokeWidth={2.5} /> Előrendelhető</>
-              )}
-            </span>
-            {qualifiesFreeShipping && (
-              <span className="inline-flex items-center gap-1.5 rounded-md border border-sky-200 bg-sky-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-sky-700">
-                <Truck className="size-3" strokeWidth={2.5} />
-                Ingyenes szállítás
-              </span>
-            )}
-          </div>
-
           {/* Price row + cart button */}
-          <div className="border-t border-gray-100 pt-2 md:flex md:items-center md:justify-between md:gap-2">
+          <div className="border-t border-gray-100 pt-2">
             <div className="flex items-baseline gap-2 min-w-0 md:pt-0">
               {hasSale ? (
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-lg font-extrabold text-primary">
+                  <span className="text-xl font-black text-red-600">
                     {formatPrice(product.salePrice!)}
                   </span>
                   <span className="text-xs font-semibold text-neutral-medium line-through">
@@ -177,22 +164,46 @@ export function ProductCard({ product, listName = "Product Listing" }: ProductCa
                   </span>
                 </div>
               ) : (
-                <span className="text-lg font-extrabold text-primary">
+                <span className="text-xl font-black text-black">
                   {formatPrice(product.price)}
                 </span>
               )}
+            </div>
+            <div className="mt-1">
+              <span
+                className={cn(
+                  "inline-flex items-center gap-1.5 px-0 py-0.5 text-xs font-extrabold",
+                  inStock ? "text-black" : "text-neutral-dark"
+                )}
+              >
+                {inStock ? (
+                  <>
+                    <span className="inline-flex size-4.5 items-center justify-center rounded-full bg-emerald-700">
+                      <Check className="size-3 text-white" strokeWidth={3} />
+                    </span>
+                    Raktáron
+                  </>
+                ) : (
+                  <>
+                    <span className="inline-flex size-4.5 items-center justify-center rounded-full bg-brand-cyan">
+                      <Clock className="size-3 text-white" strokeWidth={2.5} />
+                    </span>
+                    Előrendelhető
+                  </>
+                )}
+              </span>
             </div>
             <button
               type="button"
               onClick={handleAddToCart}
               className={cn(
-                "mt-2 md:mt-0 inline-flex min-h-11 w-full md:w-auto items-center justify-center gap-1.5 rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-colors",
+                "mt-2 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border px-3.5 py-2.5 text-sm font-bold tracking-tight transition-all duration-200",
                 inStock
-                  ? "bg-primary text-white hover:bg-primary-light"
-                  : "border border-amber-300 bg-amber-50 text-amber-800 hover:bg-amber-100"
+                  ? "border-primary bg-primary text-white shadow-[4px_4px_0_rgba(79,0,121,0.22)] hover:bg-primary-light hover:shadow-[5px_5px_0_rgba(79,0,121,0.26)]"
+                  : "border-amber-300 bg-amber-50 text-amber-800 shadow-[4px_4px_0_rgba(146,64,14,0.12)] hover:bg-amber-100"
               )}
             >
-              <ShoppingCart className="size-3.5" />
+              <ShoppingCart className="size-4" />
               {inStock ? "Kosárba" : "Előrendelés"}
             </button>
           </div>

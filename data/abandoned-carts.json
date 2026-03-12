@@ -1,5 +1,24 @@
 [
   {
+    "id": "ac-1773355459332",
+    "sessionId": "session-1773355456917-ojnyi3",
+    "items": [
+      {
+        "productId": "prod-0003",
+        "productName": "FreeON babafürdető szett (kád, állvány, pelenkázó lap) - Elefánt (48648)",
+        "price": 54990,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 54990,
+    "totalItems": 1,
+    "status": "ACTIVE",
+    "reminderCount": 0,
+    "createdAt": "2026-03-12T22:44:19.329Z",
+    "lastActivityAt": "2026-03-12T22:44:19.329Z",
+    "updatedAt": "2026-03-12T22:44:19.329Z"
+  },
+  {
     "id": "ac-1773096298814",
     "sessionId": "session-1773093491320-i9gw4x",
     "userEmail": "hello@babyonline.hu",
@@ -17,8 +36,8 @@
     "status": "ACTIVE",
     "reminderCount": 0,
     "createdAt": "2026-03-09T22:44:58.810Z",
-    "lastActivityAt": "2026-03-09T23:17:17.108Z",
-    "updatedAt": "2026-03-09T23:17:17.108Z"
+    "lastActivityAt": "2026-03-12T23:10:59.320Z",
+    "updatedAt": "2026-03-12T23:10:59.320Z"
   },
   {
     "id": "ac-1773095121779",

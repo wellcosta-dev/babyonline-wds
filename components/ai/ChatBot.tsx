@@ -47,7 +47,7 @@ function getBotResponse(message: string): string {
     lower.includes("kiszállítás") ||
     lower.includes("infó")
   ) {
-    return `Szállítási információk:\n\n• Ingyenes szállítás 20 000 Ft feletti rendelés esetén\n• GLS: 1 490 Ft (1-2 munkanap)\n• Magyar Posta: 990 Ft (2-3 munkanap)\n• Foxpost: 890 Ft (1-2 munkanap)\n\n Magyarországra szállítunk.`;
+    return `Szállítási információk:\n\n• Ingyenes szállítás 20 000 Ft feletti rendelés esetén\n• GLS Házhozszállítás: 2 390 Ft (1-2 munkanap)\n• Magyar Posta: 2 390 Ft (2-3 munkanap)\n• Foxpost: 890 Ft (1-2 munkanap)\n\nMagyarországra szállítunk.`;
   }
 
   if (

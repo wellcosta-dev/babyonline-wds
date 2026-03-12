@@ -52,14 +52,14 @@ export function getShippingCost(subtotal: number, method: string): number {
   if (subtotal >= FREE_SHIPPING_THRESHOLD) return 0;
   switch (method) {
     case "gls":
-      return 1490;
+      return 2390;
     case "gls-csomagautomata":
       return 990;
     case "gls-csomagpont":
       return 990;
     case "magyar-posta":
-      return 990;
+      return 2390;
     default:
-      return 1490;
+      return 2390;
   }
 }

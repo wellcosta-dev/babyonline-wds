@@ -197,6 +197,12 @@ function KeresekContent() {
         ]}
         className="mb-6"
       />
+      <ProductFiltersTrigger
+        variant="floating"
+        onClick={() => setFilterDrawerOpen((prev) => !prev)}
+        activeCount={activeFilterCount}
+        isOpen={filterDrawerOpen}
+      />
 
       <div className="mb-6">
         <form action="/keresek" method="get" className="max-w-xl">

@@ -17,7 +17,7 @@ import { cn, formatPrice, FREE_SHIPPING_THRESHOLD } from "@/lib/utils";
 const SHIPPING_METHODS = [
   {
     name: "GLS Futárszolgálat",
-    price: "1 490 Ft",
+    price: "2 390 Ft",
     freeAbove: true,
     time: "1-2 munkanap",
     description: "Házhoz szállítás futárral, nyomon követhető csomagfeladással.",
@@ -27,7 +27,7 @@ const SHIPPING_METHODS = [
   },
   {
     name: "Magyar Posta",
-    price: "990 Ft",
+    price: "2 390 Ft",
     freeAbove: true,
     time: "2-4 munkanap",
     description: "Postai kézbesítés az ország bármely pontjára.",

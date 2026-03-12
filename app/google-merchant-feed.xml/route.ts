@@ -73,7 +73,7 @@ export async function GET() {
       const productType = escapeXml(category?.name || "Babatermék");
       const googleProductCategory = escapeXml(getGoogleProductCategory(category?.slug || ""));
       const availability = product.stock > 0 ? "in_stock" : "out_of_stock";
-      const shippingPrice = price >= FREE_SHIPPING_THRESHOLD ? 0 : 1490;
+      const shippingPrice = price >= FREE_SHIPPING_THRESHOLD ? 0 : 2390;
       const numericCandidate = extractDigits(product.sku || product.id);
       const gtin = looksLikeValidGtin(numericCandidate) ? numericCandidate : "";
       const identifierExists = gtin ? "yes" : "no";

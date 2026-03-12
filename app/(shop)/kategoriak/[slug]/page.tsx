@@ -241,6 +241,12 @@ export default function KategoriaPage() {
         ]}
         className="mb-6"
       />
+      <ProductFiltersTrigger
+        variant="floating"
+        onClick={() => setFilterDrawerOpen((prev) => !prev)}
+        activeCount={activeFilterCount}
+        isOpen={filterDrawerOpen}
+      />
 
       <div className="mb-8">
         <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-dark mb-2">

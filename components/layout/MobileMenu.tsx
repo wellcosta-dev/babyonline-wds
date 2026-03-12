@@ -3,17 +3,32 @@
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, User, Heart, ShoppingBag } from "lucide-react";
+import { BookOpen, ChevronRight, Heart, Home, ShoppingBag, User, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useUiStore } from "@/store/uiStore";
 import { useCartStore } from "@/store/cartStore";
-import { categories } from "@/lib/mock-data";
+import { categories, products } from "@/lib/mock-data";
+
+const MENU_LINKS = [
+  { href: "/", label: "Főoldal", icon: Home },
+  { href: "/termekek", label: "Termékek", icon: ShoppingBag },
+  { href: "/akciok", label: "Akciók", icon: ShoppingBag },
+  { href: "/blog", label: "Blog", icon: BookOpen },
+  { href: "/gyik", label: "GYIK", icon: ChevronRight },
+  { href: "/kapcsolat", label: "Kapcsolat", icon: ChevronRight },
+] as const;
 
 export function MobileMenu() {
   const isOpen = useUiStore((s) => s.isMobileMenuOpen);
   const closeMobileMenu = useUiStore((s) => s.closeMobileMenu);
   const itemCount = useCartStore((s) => s.itemCount());
   const toggleCartDrawer = useUiStore((s) => s.toggleCartDrawer);
+  const productCountByCategory = new Map(
+    categories.map((cat) => [
+      cat.id,
+      products.filter((product) => product.categoryId === cat.id && product.isActive).length,
+    ])
+  );
 
   const handleCartClick = () => {
     closeMobileMenu();
@@ -41,11 +56,11 @@ export function MobileMenu() {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-y-0 left-0 w-full max-w-sm bg-white shadow-heavy z-50 lg:hidden"
+            className="fixed inset-y-0 left-0 w-full max-w-sm bg-gradient-to-b from-[#f7f2ff] via-[#f3ecff] to-[#efe6ff] text-[#2f2047] shadow-heavy z-50 lg:hidden"
           >
             <div className="flex flex-col h-full">
               {/* Header */}
-              <div className="relative flex items-center justify-center p-4 border-b border-neutral-pale">
+              <div className="relative flex items-center justify-center p-4 border-b border-[#ddcef5]">
                 <Link
                   href="/"
                   onClick={closeMobileMenu}
@@ -62,17 +77,17 @@ export function MobileMenu() {
                 <button
                   type="button"
                   onClick={closeMobileMenu}
-                  className="absolute right-4 p-2 rounded-lg hover:bg-primary-pale transition-colors"
+                  className="absolute right-4 p-2.5 rounded-lg bg-[#e9dcff] hover:bg-[#dcc8ff] transition-colors"
                   aria-label="Menü bezárása"
                 >
-                  <X className="size-6 text-neutral-dark" />
+                  <X className="size-7 text-[#3f2b61]" />
                 </button>
               </div>
 
               {/* Menu links */}
-              <nav className="flex-1 overflow-y-auto py-6">
-                <div className="px-4 space-y-1">
-                  <p className="text-xs font-semibold text-neutral-medium uppercase tracking-wider mb-3">
+              <nav className="flex-1 overflow-y-auto py-5">
+                <div className="px-4 space-y-2">
+                  <p className="text-xs font-semibold text-[#6f5b91] uppercase tracking-wider mb-2">
                     Kategóriák
                   </p>
                   {categories.map((cat) => (
@@ -81,42 +96,60 @@ export function MobileMenu() {
                       href={`/kategoriak/${cat.slug}`}
                       onClick={closeMobileMenu}
                       className={cn(
-                        "block px-4 py-3 rounded-xl",
-                        "text-neutral-dark hover:bg-primary-pale hover:text-primary",
+                        "flex items-center justify-between px-4 py-3 rounded-xl border border-[#ddcef5] bg-white/70",
+                        "text-[#2f2047] hover:bg-white hover:border-[#cab4ef]",
                         "font-medium transition-colors"
                       )}
                     >
-                      {cat.name}
+                      <span>{cat.name}</span>
+                      <span className="rounded-full bg-[#f5c300] px-2 py-0.5 text-xs font-bold text-black">
+                        {productCountByCategory.get(cat.id) ?? 0}
+                      </span>
                     </Link>
                   ))}
-                  <Link
-                    href="/akciok"
-                    onClick={closeMobileMenu}
-                    className={cn(
-                      "block px-4 py-3 rounded-xl",
-                      "text-secondary hover:bg-secondary/10",
-                      "font-medium transition-colors"
-                    )}
-                  >
-                    Akciók
-                  </Link>
                 </div>
 
-                <div className="px-4 mt-8 pt-6 border-t border-neutral-pale">
-                  <p className="text-xs font-semibold text-neutral-medium uppercase tracking-wider mb-3">
+                <div className="px-4 mt-6 pt-5 border-t border-[#ddcef5]">
+                  <p className="text-xs font-semibold text-[#6f5b91] uppercase tracking-wider mb-2">
+                    Menüpontok
+                  </p>
+                  <div className="space-y-1.5">
+                    {MENU_LINKS.map((entry) => {
+                      const Icon = entry.icon;
+                      return (
+                        <Link
+                          key={entry.href}
+                          href={entry.href}
+                          onClick={closeMobileMenu}
+                          className={cn(
+                            "flex items-center gap-3 px-4 py-3 rounded-xl",
+                            "text-[#2f2047] hover:bg-white/85 hover:text-[#201336]",
+                            "transition-colors"
+                          )}
+                        >
+                          <Icon className="size-6 text-[#7f6ba3]" />
+                          <span>{entry.label}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="px-4 mt-6 pt-5 border-t border-[#ddcef5]">
+                  <p className="text-xs font-semibold text-[#6f5b91] uppercase tracking-wider mb-2">
                     Fiók
                   </p>
-                  <div className="space-y-1">
+                  <div className="space-y-1.5">
                     <Link
                       href="/bejelentkezes"
                       onClick={closeMobileMenu}
                       className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-xl",
-                        "text-neutral-dark hover:bg-primary-pale hover:text-primary",
+                        "text-[#2f2047] hover:bg-white/85 hover:text-[#201336]",
                         "transition-colors"
                       )}
                     >
-                      <User className="size-5" />
+                      <User className="size-6 text-[#7f6ba3]" />
                       <span>Bejelentkezés</span>
                     </Link>
                     <Link
@@ -124,11 +157,11 @@ export function MobileMenu() {
                       onClick={closeMobileMenu}
                       className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-xl",
-                        "text-neutral-dark hover:bg-primary-pale hover:text-primary",
+                        "text-[#2f2047] hover:bg-white/85 hover:text-[#201336]",
                         "transition-colors"
                       )}
                     >
-                      <Heart className="size-5" />
+                      <Heart className="size-6 text-[#7f6ba3]" />
                       <span>Kedvencek</span>
                     </Link>
                     <button
@@ -136,14 +169,14 @@ export function MobileMenu() {
                       onClick={handleCartClick}
                       className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-xl w-full text-left",
-                        "text-neutral-dark hover:bg-primary-pale hover:text-primary",
+                        "text-[#2f2047] hover:bg-white/85 hover:text-[#201336]",
                         "transition-colors"
                       )}
                     >
-                      <ShoppingBag className="size-5" />
+                      <ShoppingBag className="size-6 text-[#7f6ba3]" />
                       <span>Kosár</span>
                       {itemCount > 0 && (
-                        <span className="ml-auto bg-primary text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                        <span className="ml-auto bg-[#f5c300] text-black text-xs font-bold px-2 py-0.5 rounded-full">
                           {itemCount}
                         </span>
                       )}

@@ -8,6 +8,89 @@ export interface EmailTemplatePayload {
   text: string;
 }
 
+function getCustomerEmail(order: Order): string {
+  return order.shippingAddress.email ?? order.guestEmail ?? "-";
+}
+
+function getCustomerPhone(order: Order): string {
+  return order.shippingAddress.phone ?? order.billingAddress.phone ?? "-";
+}
+
+function formatOrderDateHu(dateIso: string): string {
+  const date = new Date(dateIso);
+  if (Number.isNaN(date.getTime())) return dateIso;
+  return new Intl.DateTimeFormat("hu-HU", {
+    timeZone: "Europe/Budapest",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
+}
+
+function getPaymentMethodLabel(paymentMethod: string): string {
+  switch (paymentMethod) {
+    case "cod":
+      return "Utánvét";
+    case "card":
+      return "Bankkártyás fizetés";
+    case "transfer":
+      return "Banki átutalás";
+    default:
+      return paymentMethod || "-";
+  }
+}
+
+function getShippingMethodLabel(shippingMethod: string): string {
+  switch (shippingMethod) {
+    case "gls":
+      return "GLS Házhozszállítás";
+    case "gls-csomagautomata":
+      return "GLS Csomagautomata";
+    case "gls-csomagpont":
+      return "GLS Csomagpont";
+    case "magyar-posta":
+      return "Magyar Posta";
+    default:
+      return shippingMethod || "-";
+  }
+}
+
+function formatShippingAddress(order: Order): string {
+  const shipping = order.shippingAddress;
+  return `${shipping.postalCode} ${shipping.city}, ${shipping.street}, ${shipping.country}`;
+}
+
+function orderMetaBlock(order: Order): string {
+  const rows = [
+    ["Rendelés dátuma", `${formatOrderDateHu(order.createdAt)} (magyar idő)`],
+    ["Megrendelő e-mail címe", getCustomerEmail(order)],
+    ["Megrendelő telefonszáma", getCustomerPhone(order)],
+    ["Szállítási cím", formatShippingAddress(order)],
+    ["Szállítási mód", getShippingMethodLabel(order.shippingMethod)],
+    ["Fizetési mód", getPaymentMethodLabel(order.paymentMethod)],
+  ];
+
+  return `
+    <div style="border:1px solid #e5e7eb;border-radius:12px;padding:12px;background:#ffffff;margin-bottom:16px;">
+      <div style="font-size:11px;color:#64748b;text-transform:uppercase;font-weight:700;letter-spacing:.04em;">Rendelés adatai</div>
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin-top:8px;">
+        ${rows
+          .map(
+            ([label, value]) => `
+          <tr>
+            <td style="padding:4px 0;color:#64748b;font-size:13px;width:42%;vertical-align:top;">${label}</td>
+            <td style="padding:4px 0;color:#0f172a;font-size:13px;font-weight:600;vertical-align:top;">${value}</td>
+          </tr>
+        `
+          )
+          .join("")}
+      </table>
+    </div>
+  `;
+}
+
 function getCodFee(order: Order): number {
   if (order.paymentMethod !== "cod") return 0;
   const baseTotal =
@@ -88,8 +171,8 @@ function addressBlock(order: Order): string {
             <div style="font-size:11px;color:#64748b;text-transform:uppercase;font-weight:700;letter-spacing:.04em;">Vásárló adatai</div>
             <div style="margin-top:8px;font-size:13px;color:#0f172a;line-height:1.5;">
               <div><strong>${shipping.name}</strong></div>
-              <div>${shipping.email ?? order.guestEmail ?? "-"}</div>
-              <div>${shipping.phone ?? "-"}</div>
+              <div>${getCustomerEmail(order)}</div>
+              <div>${getCustomerPhone(order)}</div>
             </div>
           </div>
         </td>
@@ -139,9 +222,14 @@ export function renderOrderConfirmationTemplate(order: Order): EmailTemplatePayl
     <div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:12px 14px;margin-bottom:16px;">
       <div style="font-size:13px;color:#64748b;">Rendelésszám</div>
       <div style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:-0.02em;">${order.orderNumber}</div>
-      <div style="margin-top:8px;font-size:13px;color:#334155;">Fizetési mód: <strong>${order.paymentMethod}</strong></div>
-      <div style="margin-top:2px;font-size:13px;color:#334155;">Szállítási mód: <strong>${order.shippingMethod}</strong></div>
+      <div style="margin-top:8px;font-size:13px;color:#334155;">Fizetési mód: <strong>${getPaymentMethodLabel(
+        order.paymentMethod
+      )}</strong></div>
+      <div style="margin-top:2px;font-size:13px;color:#334155;">Szállítási mód: <strong>${getShippingMethodLabel(
+        order.shippingMethod
+      )}</strong></div>
     </div>
+    ${orderMetaBlock(order)}
     ${addressBlock(order)}
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
       ${orderRows(order)}
@@ -198,7 +286,15 @@ export function renderOrderConfirmationTemplate(order: Order): EmailTemplatePayl
         "Megkaptuk a rendelésedet, hamarosan feldolgozzuk. Alább minden fontos részletet megtalálsz.",
       contentHtml,
     }),
-    text: `Sikeres rendelés: ${order.orderNumber}. Vásárló: ${order.shippingAddress.name}. Szállítási cím: ${order.shippingAddress.postalCode} ${order.shippingAddress.city}, ${order.shippingAddress.street}. Részösszeg: ${order.subtotal} Ft, szállítás: ${order.shippingPrice} Ft, végösszeg: ${order.total} Ft.`,
+    text: `Sikeres rendelés: ${order.orderNumber}. Rendelés dátuma (magyar idő): ${formatOrderDateHu(
+      order.createdAt
+    )}. Megrendelő e-mail: ${getCustomerEmail(order)}. Megrendelő telefonszám: ${getCustomerPhone(
+      order
+    )}. Szállítási cím: ${formatShippingAddress(order)}. Szállítási mód: ${getShippingMethodLabel(
+      order.shippingMethod
+    )}. Fizetési mód: ${getPaymentMethodLabel(order.paymentMethod)}. Részösszeg: ${order.subtotal} Ft, szállítás: ${
+      order.shippingPrice
+    } Ft, végösszeg: ${order.total} Ft.`,
   };
 }
 
@@ -219,6 +315,7 @@ export function renderOrderStatusUpdateTemplate(order: Order): EmailTemplatePayl
       <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;">${order.orderNumber}</div>
       <div style="margin-top:8px;font-size:14px;">Új státusz: <strong>${statusLabel}</strong></div>
     </div>
+    ${orderMetaBlock(order)}
     ${addressBlock(order)}
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
       ${orderRows(order)}
@@ -250,7 +347,15 @@ export function renderOrderStatusUpdateTemplate(order: Order): EmailTemplatePayl
       intro,
       contentHtml,
     }),
-    text: `A rendelés státusza frissült: ${order.orderNumber} -> ${statusLabel}. Vásárló: ${order.shippingAddress.name}. Szállítási cím: ${order.shippingAddress.postalCode} ${order.shippingAddress.city}, ${order.shippingAddress.street}. Szállítás: ${order.shippingPrice} Ft. Végösszeg: ${order.total} Ft.`,
+    text: `A rendelés státusza frissült: ${order.orderNumber} -> ${statusLabel}. Rendelés dátuma (magyar idő): ${formatOrderDateHu(
+      order.createdAt
+    )}. Megrendelő e-mail: ${getCustomerEmail(order)}. Megrendelő telefonszám: ${getCustomerPhone(
+      order
+    )}. Szállítási cím: ${formatShippingAddress(order)}. Szállítási mód: ${getShippingMethodLabel(
+      order.shippingMethod
+    )}. Fizetési mód: ${getPaymentMethodLabel(order.paymentMethod)}. Szállítás: ${
+      order.shippingPrice
+    } Ft. Végösszeg: ${order.total} Ft.`,
   };
 }
 
@@ -264,6 +369,7 @@ export function renderAdminNewOrderTemplate(order: Order): EmailTemplatePayload 
         order.total
       )}</strong></div>
     </div>
+    ${orderMetaBlock(order)}
     ${addressBlock(order)}
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
       ${orderRows(order)}
@@ -295,6 +401,12 @@ export function renderAdminNewOrderTemplate(order: Order): EmailTemplatePayload 
       intro: "Új rendelés érkezett a BabyOnline webshopból.",
       contentHtml,
     }),
-    text: `Új rendelés: ${order.orderNumber}, összeg: ${order.total} Ft, vásárló: ${order.shippingAddress.name}.`,
+    text: `Új rendelés: ${order.orderNumber}. Rendelés dátuma (magyar idő): ${formatOrderDateHu(
+      order.createdAt
+    )}. Megrendelő e-mail: ${getCustomerEmail(order)}. Megrendelő telefonszám: ${getCustomerPhone(
+      order
+    )}. Szállítási cím: ${formatShippingAddress(order)}. Szállítási mód: ${getShippingMethodLabel(
+      order.shippingMethod
+    )}. Fizetési mód: ${getPaymentMethodLabel(order.paymentMethod)}. Összeg: ${order.total} Ft.`,
   };
 }

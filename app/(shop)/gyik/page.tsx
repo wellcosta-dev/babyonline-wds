@@ -65,7 +65,7 @@ const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "Mennyibe kerül a szállítás?",
-        a: "GLS: 1 490 Ft, Magyar Posta: 990 Ft, Foxpost: 890 Ft. 20 000 Ft feletti rendelésnél minden szállítási mód ingyenes!",
+        a: "GLS Házhozszállítás: 2 390 Ft, Magyar Posta: 2 390 Ft, Foxpost: 890 Ft. 20 000 Ft feletti rendelésnél minden szállítási mód ingyenes!",
       },
       {
         q: "Hogyan követhetem nyomon a csomagomat?",

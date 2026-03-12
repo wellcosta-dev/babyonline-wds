@@ -9,6 +9,13 @@ import { categories, searchProducts } from "@/lib/mock-data";
 import { toAnalyticsItemFromProduct, trackEvent } from "@/lib/analytics";
 import type { Product } from "@/types";
 
+const SEARCH_TYPING_HINTS = [
+  "Sport babakocsi",
+  "Gyerek játékok",
+  "Babakocsi kiegészítők",
+  "Pelenkázó táska",
+] as const;
+
 export function SearchBar() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Product[]>([]);
@@ -17,6 +24,9 @@ export function SearchBar() {
   const [isNavigating, setIsNavigating] = useState(false);
   const [navigatingSlug, setNavigatingSlug] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [animatedHint, setAnimatedHint] = useState("");
+  const [hintIndex, setHintIndex] = useState(0);
+  const [isDeletingHint, setIsDeletingHint] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -49,6 +59,39 @@ export function SearchBar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (query.length > 0) return;
+
+    const activeHint = SEARCH_TYPING_HINTS[hintIndex];
+    const hasCompletedWord = animatedHint.length === activeHint.length;
+    const hasDeletedWord = animatedHint.length === 0;
+
+    const timeoutMs = isDeletingHint ? 45 : 85;
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (!isDeletingHint && hasCompletedWord) {
+      timer = setTimeout(() => setIsDeletingHint(true), 1150);
+      return () => clearTimeout(timer);
+    }
+
+    if (isDeletingHint && hasDeletedWord) {
+      timer = setTimeout(() => {
+        setIsDeletingHint(false);
+        setHintIndex((prev) => (prev + 1) % SEARCH_TYPING_HINTS.length);
+      }, 280);
+      return () => clearTimeout(timer);
+    }
+
+    timer = setTimeout(() => {
+      const next = isDeletingHint
+        ? activeHint.slice(0, Math.max(0, animatedHint.length - 1))
+        : activeHint.slice(0, animatedHint.length + 1);
+      setAnimatedHint(next);
+    }, timeoutMs);
+
+    return () => clearTimeout(timer);
+  }, [animatedHint, hintIndex, isDeletingHint, query.length]);
 
   const navigateToProduct = (slug: string) => {
     if (isNavigating) return;
@@ -115,7 +158,11 @@ export function SearchBar() {
         onChange={(e) => setQuery(e.target.value)}
         onFocus={() => { if (results.length > 0) setIsOpen(true); }}
         onKeyDown={handleKeyDown}
-        placeholder="Keresés termékek között..."
+        placeholder={
+          query.length > 0
+            ? "Keresés termékek között..."
+            : animatedHint || "Sport babakocsi"
+        }
         className={cn(
           "w-full pl-10 pr-10 py-2.5 rounded-xl",
           "border border-white/30 bg-white",

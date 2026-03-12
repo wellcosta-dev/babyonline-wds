@@ -187,6 +187,12 @@ export default function TermekekPage() {
         ]}
         className="mb-6"
       />
+      <ProductFiltersTrigger
+        variant="floating"
+        onClick={() => setFilterDrawerOpen((prev) => !prev)}
+        activeCount={activeFilterCount}
+        isOpen={filterDrawerOpen}
+      />
 
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <h1 className="font-extrabold text-2xl md:text-3xl text-neutral-dark tracking-tight">

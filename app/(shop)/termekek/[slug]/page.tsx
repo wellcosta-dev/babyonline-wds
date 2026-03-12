@@ -21,10 +21,9 @@ import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { ProductGallery } from "@/components/shop/ProductGallery";
 import { RecommendedProducts } from "@/components/shop/RecommendedProducts";
 import { WishlistButton } from "@/components/shop/WishlistButton";
-import { cn, formatPrice } from "@/lib/utils";
+import { cn, formatPrice, FREE_SHIPPING_THRESHOLD, getShippingCost } from "@/lib/utils";
 import { useCartStore } from "@/store/cartStore";
 import { getProductBySlug, categories } from "@/lib/mock-data";
-import { FREE_SHIPPING_THRESHOLD } from "@/lib/utils";
 import { absoluteUrl } from "@/lib/seo";
 import { getProductInternalLinks, getSeoProductLead } from "@/lib/seo-product-copy";
 import { toAnalyticsItemFromProduct, trackEvent } from "@/lib/analytics";
@@ -34,6 +33,29 @@ const TABS = [
   { id: "leiras", label: "Leírás" },
   { id: "spec", label: "Specifikációk" },
   { id: "velemenyek", label: "Vélemények" },
+] as const;
+
+const SHIPPING_OPTIONS = [
+  {
+    key: "gls",
+    label: "GLS Házhozszállítás",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a6/GLS_Logo_2021.svg",
+  },
+  {
+    key: "gls-csomagautomata",
+    label: "GLS Csomagautomata",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a6/GLS_Logo_2021.svg",
+  },
+  {
+    key: "gls-csomagpont",
+    label: "GLS Csomagpont",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a6/GLS_Logo_2021.svg",
+  },
+  {
+    key: "magyar-posta",
+    label: "MPL (Magyar Posta)",
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/6/69/Magyar_Posta_logo.svg",
+  },
 ] as const;
 
 type ProductReview = {
@@ -171,6 +193,8 @@ export default function ProductDetailPage() {
       ? approvedReviews.reduce((sum, item) => sum + item.rating, 0) / approvedReviews.length
       : 0;
   const isFreeShippingEligible = displayPrice >= FREE_SHIPPING_THRESHOLD;
+  const estimatedLoyaltyPoints = Math.max(0, Math.floor(displayPrice / 100));
+  const estimatedDeliveryLabel = inStock ? "1-2 munkanap" : "4-5 munkanap";
   const productSeoLead = getSeoProductLead(product, category?.name);
   const productInternalLinks = getProductInternalLinks(product, category?.slug);
 
@@ -389,6 +413,13 @@ export default function ProductDetailPage() {
             )}
 
             {/* Price block */}
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5">
+              <Star className="size-4 text-primary" />
+              <p className="text-sm font-semibold text-neutral-dark">
+                <span className="text-neutral-medium">Babapont jutalom:</span>{" "}
+                <span className="font-extrabold text-primary">+{estimatedLoyaltyPoints} pont</span>
+              </p>
+            </div>
             <div className="flex flex-wrap items-end gap-3">
               <span className="text-3xl font-extrabold text-primary tracking-tight">
                 {formatPrice(displayPrice)}
@@ -406,20 +437,31 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Stock badge */}
-            <div className="flex items-center gap-2">
-              <span
-                className={cn(
-                  "inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg",
-                  inStock
-                    ? "bg-emerald-500 text-white"
-                    : "bg-brand-cyan text-white"
-                )}
-              >
+            <div className="space-y-2">
+              <span className="inline-flex items-center gap-2.5">
                 {inStock ? (
-                  <><Check className="size-3.5" strokeWidth={3} /> Raktáron</>
+                  <>
+                    <span className="inline-flex size-5 items-center justify-center rounded-full bg-emerald-700">
+                      <Check className="size-3.5 text-white" strokeWidth={3} />
+                    </span>
+                    <span className="text-base font-extrabold text-black">Raktáron</span>
+                  </>
                 ) : (
-                  <><Clock className="size-3.5" strokeWidth={2.5} /> Előrendelhető</>
+                  <>
+                    <span className="inline-flex size-5 items-center justify-center rounded-full bg-brand-cyan">
+                      <Clock className="size-3 text-white" strokeWidth={2.5} />
+                    </span>
+                    <span className="text-base font-extrabold text-neutral-dark">Előrendelhető</span>
+                  </>
                 )}
+              </span>
+              <p className="text-sm text-neutral-dark">
+                <span className="font-bold">Várható szállítási idő:</span>{" "}
+                <span className="font-semibold">{estimatedDeliveryLabel}</span>
+              </p>
+              <span className="inline-flex items-center gap-2 rounded-full bg-primary-pale/60 px-4 py-1.5 text-sm font-extrabold text-neutral-dark">
+                <RotateCcw className="size-4 text-primary" />
+                30 napos visszaküldés
               </span>
             </div>
 
@@ -478,9 +520,60 @@ export default function ProductDetailPage() {
               </button>
             </div>
 
+            <div className="rounded-2xl border border-primary/15 bg-primary-pale/20 p-4">
+              <p className="text-sm font-bold text-neutral-dark mb-3">Szállítási módok</p>
+              <div className="space-y-2.5">
+                {SHIPPING_OPTIONS.map((option) => {
+                  const shippingFee = isFreeShippingEligible
+                    ? "Ingyenes"
+                    : formatPrice(getShippingCost(displayPrice, option.key));
+
+                  return (
+                    <div
+                      key={option.key}
+                      className="flex items-center justify-between gap-3 rounded-xl border border-gray-200/80 bg-white px-3 py-2.5"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <span className="inline-flex h-8 w-16 items-center justify-center rounded-lg border border-gray-100 bg-white px-1">
+                          <img
+                            src={option.logoUrl}
+                            alt={`${option.label} logó`}
+                            className="max-h-5 w-auto object-contain"
+                            loading="lazy"
+                          />
+                        </span>
+                        <span className="text-sm font-semibold text-neutral-dark truncate">
+                          {option.label}
+                        </span>
+                      </div>
+                      <span
+                        className={cn(
+                          "text-sm font-bold whitespace-nowrap",
+                          shippingFee === "Ingyenes" ? "text-emerald-600" : "text-neutral-dark"
+                        )}
+                      >
+                        {shippingFee}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+              <p className="mt-2 text-[11px] text-neutral-medium">
+                {formatPrice(FREE_SHIPPING_THRESHOLD)} felett minden szállítási mód ingyenes.
+              </p>
+            </div>
+
             <div className="flex items-center gap-3 pb-2">
               <WishlistButton productId={product.id} size="lg" />
               <span className="text-sm text-neutral-medium">Kívánságlistára</span>
+            </div>
+            <div className="pb-2">
+              <Link
+                href="#szallitasi-ido-jotallas"
+                className="inline-flex min-h-10 items-center justify-center rounded-xl border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/10 transition-colors"
+              >
+                Szállítási és jótállási információk
+              </Link>
             </div>
 
             {/* Benefits cards */}
@@ -738,6 +831,56 @@ export default function ProductDetailPage() {
             )}
           </div>
         </div>
+
+        <section
+          id="szallitasi-ido-jotallas"
+          className="mb-12 rounded-2xl border border-gray-200 bg-white p-5 md:p-6"
+        >
+          <h2 className="text-xl font-extrabold tracking-tight text-neutral-dark mb-4">
+            Jótállási idő
+          </h2>
+          <div className="space-y-3 text-sm leading-relaxed text-neutral-dark">
+            <p>
+              A kötelező (jogszabály által előírt) jótállás feltételei a jótállási időt
+              sávosan, a tartós fogyasztási cikk bruttó eladási árához igazodva határozza
+              meg. (Weboldalunkon bruttó eladási árat tüntettük fel.)
+            </p>
+            <p className="font-bold">A kötelező jótállás időtartama:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>
+                10 000 forintot elérő, de 250 000 forintot meg nem haladó eladási ár esetén
+                2 év,
+              </li>
+              <li>250 000 forint eladási ár felett 3 év.</li>
+            </ul>
+            <p>
+              A jogszabály által előírt kötelező jótállási időn felül a gyártó önkéntes
+              jótállást is vállalhat, melyet akár többletfeltételhez is köthet. Kérjük, az
+              önkéntes jótállás feltételeiről minden esetben körültekintően tájékozódjanak a
+              gyártó elérhetőségein! (270/2020. (VI. 12.) Korm. rendelet)
+            </p>
+            <p>
+              Valamint tájékoztatásul közöljük, hogy a 2021. január 1-től hatályos rendelet
+              csak a fogyasztó és vállalkozás közötti szerződés keretében eladott, a rendelet
+              mellékletében felsorolt új tartós fogyasztási cikkekre írja elő a kötelező
+              jótállás szabályait.
+            </p>
+            <p>
+              Fogyasztó lehet természetes személy, vagy mikro-, kis- és középvállalkozás.
+              Másik kitétel, hogy csak akkor minősül fogyasztónak egy személy/cég, ha a
+              szakmája, önálló foglalkozása vagy üzleti tevékenysége körén kívül köt
+              szerződést.
+            </p>
+            <p>
+              Fontos információ! Az oldalunkon található termékleírásokat és specifikációkat a
+              lehető legnagyobb gondossággal töltjük fel, azonban előfordulhatnak bennük
+              pontatlanságok vagy elírások. Amennyiben egy adott termékkel kapcsolatban
+              részletesebb vagy speciális információra van szükséged, javasoljuk, hogy keresd
+              fel a gyártó hivatalos weboldalát, vagy lépj kapcsolatba ügyfélszolgálatunkkal,
+              ahol készséggel állunk rendelkezésedre.
+            </p>
+          </div>
+        </section>
 
         {/* Recommended products */}
         {product.categoryId && (

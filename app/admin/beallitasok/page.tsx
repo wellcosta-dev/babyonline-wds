@@ -182,10 +182,10 @@ function ShippingSettings() {
   return (
     <div>
       <h2 className="text-sm font-bold text-neutral-dark tracking-tight mb-4">Szállítási beállítások</h2>
-      <SettingRow label="GLS futárszolgálat" description="Szállítási díj: 1 490 Ft">
+      <SettingRow label="GLS futárszolgálat" description="Szállítási díj: 2 390 Ft">
         <Toggle defaultChecked />
       </SettingRow>
-      <SettingRow label="Magyar Posta" description="Szállítási díj: 990 Ft">
+      <SettingRow label="Magyar Posta" description="Szállítási díj: 2 390 Ft">
         <Toggle defaultChecked />
       </SettingRow>
       <SettingRow label="Foxpost csomagautomata" description="Szállítási díj: 890 Ft">

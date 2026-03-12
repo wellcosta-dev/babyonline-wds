@@ -106,16 +106,16 @@ export function Header() {
         transition={{ duration: 0.4, delay: 0.1 }}
         className="bg-primary sticky top-0 z-40 shadow-lg"
       >
-        <div className="container mx-auto px-4 py-3">
-          <div className="relative flex items-center justify-between gap-2 sm:gap-3">
+        <div className="container mx-auto px-4 py-3.5 md:py-3">
+          <div className="relative flex items-center justify-between gap-2.5 sm:gap-3">
             {/* Mobile hamburger */}
             <button
               type="button"
               onClick={toggleMobileMenu}
-              className="focus-ring lg:hidden p-2 -ml-1 rounded-lg hover:bg-white/15 transition-colors shrink-0"
+              className="focus-ring lg:hidden p-3 -ml-1 rounded-xl hover:bg-white/15 transition-colors shrink-0"
               aria-label="Menü megnyitása"
             >
-              <Menu className="size-5 text-white" />
+              <Menu className="size-7 text-white" />
             </button>
 
             {/* Logo */}
@@ -137,7 +137,7 @@ export function Header() {
                   width={320}
                   height={90}
                   priority
-                  className="h-10 sm:h-11 md:h-14 lg:h-16 w-auto max-w-full"
+                  className="h-14 sm:h-12 md:h-14 lg:h-16 w-auto max-w-full"
                 />
               </motion.div>
             </Link>
@@ -148,13 +148,13 @@ export function Header() {
             </div>
 
             {/* Right icons */}
-            <div className="flex items-center gap-0.5 sm:gap-1.5 shrink-0">
+            <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
               <Link
                 href={accountHref}
-                className="focus-ring p-1.5 sm:p-2 rounded-lg hover:bg-white/15 transition-colors"
+                className="focus-ring p-2.5 sm:p-2 rounded-xl hover:bg-white/15 transition-colors"
                 aria-label={accountLabel}
               >
-                <User className="size-4 sm:size-5 text-white/90" />
+                <User className="size-6 sm:size-5 text-white/90" />
               </Link>
               <Link
                 href="/kivansaglista"
@@ -175,10 +175,10 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => useCartStore.getState().toggleDrawer()}
-                className="focus-ring p-1.5 sm:p-2 rounded-lg hover:bg-white/15 transition-colors relative"
+                className="focus-ring p-2.5 sm:p-2 rounded-xl hover:bg-white/15 transition-colors relative"
                 aria-label="Kosár"
               >
-                <ShoppingBag className="size-4 sm:size-5 text-white/90" />
+                <ShoppingBag className="size-6 sm:size-5 text-white/90" />
                 {isHydrated && itemCount > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}

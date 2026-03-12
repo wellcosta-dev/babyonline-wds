@@ -5,7 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, Trash2, ShoppingBag, Clock, Truck, Minus, Plus, ArrowRight } from "lucide-react";
 import { useCartStore, type CartItem } from "@/store/cartStore";
-import { SHIPPING_METHOD_LABELS, type ShippingMethod } from "@/lib/shipping";
+import {
+  SHIPPING_METHOD_LABELS,
+  SHIPPING_METHOD_LOGOS,
+  type ShippingMethod,
+} from "@/lib/shipping";
 import { cn, formatPrice, FREE_SHIPPING_THRESHOLD } from "@/lib/utils";
 
 function getItemPrice(item: CartItem): number {
@@ -351,7 +355,17 @@ export function CartDrawer() {
                             : "bg-gray-100 text-neutral-dark hover:bg-gray-200"
                         )}
                       >
-                        {SHIPPING_METHOD_LABELS[method]}
+                        <span className="flex items-center gap-1.5 text-left">
+                          <span className="inline-flex h-5 w-10 items-center justify-center rounded bg-white/90 px-1">
+                            <img
+                              src={SHIPPING_METHOD_LOGOS[method]}
+                              alt={`${SHIPPING_METHOD_LABELS[method]} logó`}
+                              className="max-h-3.5 w-auto object-contain"
+                              loading="lazy"
+                            />
+                          </span>
+                          <span className="leading-tight">{SHIPPING_METHOD_LABELS[method]}</span>
+                        </span>
                       </button>
                     ))}
                   </div>
