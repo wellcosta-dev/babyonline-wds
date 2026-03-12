@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -28,6 +28,7 @@ import { FREE_SHIPPING_THRESHOLD } from "@/lib/utils";
 import { absoluteUrl } from "@/lib/seo";
 import { getProductInternalLinks, getSeoProductLead } from "@/lib/seo-product-copy";
 import { toAnalyticsItemFromProduct, trackEvent } from "@/lib/analytics";
+import { sanitizeRichHtml } from "@/lib/sanitize-rich-html";
 
 const TABS = [
   { id: "leiras", label: "Leírás" },
@@ -158,6 +159,7 @@ export default function ProductDetailPage() {
   }
 
   const category = categories.find((c) => c.id === product.categoryId);
+  const safeDescriptionHtml = useMemo(() => sanitizeRichHtml(product.description), [product.description]);
   const hasSale = !!product.salePrice;
   const displayPrice = product.salePrice ?? product.price;
   const savings = hasSale ? product.price - product.salePrice! : 0;
@@ -556,7 +558,7 @@ export default function ProductDetailPage() {
                 </p>
                 <div
                   className="text-neutral-dark leading-relaxed text-[15px] prose prose-sm max-w-none prose-p:my-2 prose-li:my-1"
-                  dangerouslySetInnerHTML={{ __html: product.description }}
+                  dangerouslySetInnerHTML={{ __html: safeDescriptionHtml }}
                 />
                 <div className="mt-5 border-t border-gray-100 pt-4">
                   <p className="text-sm font-bold text-neutral-dark mb-2">Kapcsolódó oldalak</p>

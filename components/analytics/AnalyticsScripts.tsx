@@ -1,21 +1,46 @@
  "use client";
 
-import { useEffect, useState } from "react";
 import Script from "next/script";
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim();
 const gaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+const cookiebotId = "7d285d16-9001-408d-87f4-7febc70ff8c6";
 
 export function AnalyticsScripts() {
-  const [hasConsent, setHasConsent] = useState(false);
-
-  useEffect(() => {
-    const value = window.localStorage.getItem("bo-analytics-consent");
-    setHasConsent(value === "granted");
-  }, []);
-
   return (
     <>
+      <Script
+        id="cookiebot-cmp"
+        src="https://consent.cookiebot.com/uc.js"
+        data-cbid={cookiebotId}
+        data-blockingmode="auto"
+        type="text/javascript"
+        strategy="beforeInteractive"
+      />
+      <Script
+        id="google-consent-mode-default"
+        data-cookieconsent="ignore"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            window.gtag = window.gtag || gtag;
+            gtag("consent", "default", {
+              ad_personalization: "denied",
+              ad_storage: "denied",
+              ad_user_data: "denied",
+              analytics_storage: "denied",
+              functionality_storage: "denied",
+              personalization_storage: "denied",
+              security_storage: "granted",
+              wait_for_update: 500
+            });
+            gtag("set", "ads_data_redaction", true);
+            gtag("set", "url_passthrough", false);
+          `,
+        }}
+      />
       {gtmId ? (
         <>
           <Script
@@ -42,7 +67,7 @@ export function AnalyticsScripts() {
         </>
       ) : null}
 
-      {gaId && hasConsent ? (
+      {gaId ? (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}

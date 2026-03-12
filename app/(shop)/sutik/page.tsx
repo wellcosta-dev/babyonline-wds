@@ -1,4 +1,5 @@
 import { Cookie } from "lucide-react";
+import Script from "next/script";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 
 export default function SutikPage() {
@@ -76,6 +77,17 @@ export default function SutikPage() {
               Sütikkel kapcsolatos kérdéseiddel fordulj hozzánk:{" "}
               <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">hello@jatekonline.hu</a>
             </p>
+          </Section>
+
+          <Section title="Süti nyilatkozat">
+            <p>A részletes, automatikusan frissülő süti lista az alábbi blokkban érhető el:</p>
+            <Script
+              id="CookieDeclaration"
+              src="https://consent.cookiebot.com/7d285d16-9001-408d-87f4-7febc70ff8c6/cd.js"
+              type="text/javascript"
+              strategy="afterInteractive"
+              async
+            />
           </Section>
         </div>
       </div>

@@ -6,7 +6,6 @@ import { NonAdminOnly } from "@/components/layout/NonAdminOnly";
 import { CartDrawer } from "@/components/shop/CartDrawer";
 import { ChatBot } from "@/components/ai/ChatBot";
 import { AnalyticsScripts } from "@/components/analytics/AnalyticsScripts";
-import { ConsentBanner } from "@/components/analytics/ConsentBanner";
 import { AbandonedCartTracker } from "@/components/analytics/AbandonedCartTracker";
 import { FreeShippingPopup } from "@/components/marketing/FreeShippingPopup";
 import { absoluteUrl, getSiteUrl } from "@/lib/seo";
@@ -94,7 +93,6 @@ export default function RootLayout({
       >
         <AnalyticsScripts />
         <NonAdminOnly>
-          <ConsentBanner />
           <FreeShippingPopup />
         </NonAdminOnly>
         <script

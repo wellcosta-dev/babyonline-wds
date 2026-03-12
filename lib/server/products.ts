@@ -1,5 +1,6 @@
 import type { Category, Product } from "@/types";
 import { categories as baseCategories, products as baseProducts } from "@/lib/mock-data";
+import { sanitizeRichHtml } from "@/lib/sanitize-rich-html";
 import { readJsonFile, writeJsonFile } from "@/lib/server/storage";
 
 const PRODUCT_OVERRIDES_FILE = "product-overrides.json";
@@ -23,7 +24,9 @@ export function sanitizeProductPatch(input: Record<string, unknown>): Partial<Pr
   const output: Partial<Product> = {};
   if (typeof input.name === "string") output.name = input.name.trim();
   if (typeof input.slug === "string") output.slug = input.slug.trim();
-  if (typeof input.description === "string") output.description = input.description;
+  if (typeof input.description === "string") {
+    output.description = sanitizeRichHtml(input.description);
+  }
   if (typeof input.shortDesc === "string") output.shortDesc = input.shortDesc;
   if (typeof input.sku === "string") output.sku = input.sku.trim();
   if (typeof input.categoryId === "string") output.categoryId = input.categoryId.trim();
