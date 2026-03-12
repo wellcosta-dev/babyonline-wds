@@ -11,6 +11,7 @@ export interface CategorySeoContent {
   intro: string;
   tips: string[];
   internalLinks: SeoInternalLink[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export interface CategoryTipsLandingContent {
@@ -29,6 +30,16 @@ const CATEGORY_SEO_MAP: Record<string, Omit<CategorySeoContent, "internalLinks">
       "Érzékeny bőr esetén illatanyag- és alkoholmentes terméket keress.",
       "Nappali és éjszakai használatra külön típus is hasznos lehet.",
     ],
+    faqs: [
+      {
+        question: "Melyik pelenkaméretet válasszam?",
+        answer: "A baba aktuális testsúlyához igazodj, és ha szivárgást tapasztalsz, válts eggyel nagyobb méretre.",
+      },
+      {
+        question: "Mikor érdemes éjszakai pelenkát használni?",
+        answer: "Ha éjszaka gyakori az átázás, a magasabb nedvszívású éjszakai típus segít nyugodtabb alvásban.",
+      },
+    ],
   },
   babakocsi: {
     intro:
@@ -37,6 +48,16 @@ const CATEGORY_SEO_MAP: Record<string, Omit<CategorySeoContent, "internalLinks">
       "Nézd meg az összecsukási méretet, ha sokat utaztok autóval.",
       "Városi használathoz a fordulékony, könnyű váz a legpraktikusabb.",
       "Terepre nagyobb kerék és jobb rugózás ad kényelmesebb utazást.",
+    ],
+    faqs: [
+      {
+        question: "Újszülöttnek milyen babakocsi a legjobb?",
+        answer: "Teljesen dönthető vagy mózeskosaras megoldás ajánlott, ami megfelelő alátámasztást ad.",
+      },
+      {
+        question: "Milyen súlyú babakocsi praktikus mindennapra?",
+        answer: "Városi használatnál a könnyebb, kompakt modellek kényelmesebbek emeléshez és szállításhoz.",
+      },
     ],
   },
   etetes: {
@@ -47,6 +68,16 @@ const CATEGORY_SEO_MAP: Record<string, Omit<CategorySeoContent, "internalLinks">
       "A könnyen szétszedhető kialakítás tisztításkor sok időt spórol.",
       "Életkorhoz illesztett etetési eszközökkel kényelmesebb a használat.",
     ],
+    faqs: [
+      {
+        question: "Mikortól érdemes etetőszéket használni?",
+        answer: "Amikor a baba stabilan ül, jellemzően 6 hónapos kortól, mindig egyéni fejlődés szerint.",
+      },
+      {
+        question: "Mit jelent, hogy BPA-mentes?",
+        answer: "A termék nem tartalmaz Biszfenol-A vegyületet, ami babaetetési eszközöknél fontos szempont.",
+      },
+    ],
   },
   biztonsag: {
     intro:
@@ -56,6 +87,16 @@ const CATEGORY_SEO_MAP: Record<string, Omit<CategorySeoContent, "internalLinks">
       "ISOFIX kompatibilitás esetén gyorsabb és stabilabb a rögzítés.",
       "Otthoni biztonsági eszközöknél a tanúsítványokra is figyelj.",
     ],
+    faqs: [
+      {
+        question: "ISOFIX nélkül is biztonságos az autósülés?",
+        answer: "Igen, megfelelő öves rögzítéssel biztonságos lehet, de az ISOFIX csökkenti a hibás bekötés esélyét.",
+      },
+      {
+        question: "Mikor kell autósülést váltani?",
+        answer: "Ha a gyermek kinövi a magasság- vagy súlyhatárt, a következő méretkategóriára kell váltani.",
+      },
+    ],
   },
   furdetes: {
     intro:
@@ -64,6 +105,52 @@ const CATEGORY_SEO_MAP: Record<string, Omit<CategorySeoContent, "internalLinks">
       "Az ideális vízhőmérséklet 36-37 C, ezt mindig ellenőrizd.",
       "Puha, bőrbarát törölközővel és kiegészítőkkel csökkenthető az irritáció.",
       "A csúszásmentes, stabil kialakítás növeli a biztonságot.",
+    ],
+    faqs: [
+      {
+        question: "Milyen gyakran érdemes fürdetni az újszülöttet?",
+        answer: "Napi rövid esti rutin elegendő lehet, de mindig figyelj a baba bőrének állapotára.",
+      },
+      {
+        question: "Mekkora vízhőfok az ideális?",
+        answer: "Általában 36-37 C közötti hőmérséklet ajánlott babafürdetéshez.",
+      },
+    ],
+  },
+  babaszoba: {
+    intro:
+      "Babaszoba kategóriánkban kiságyak, matracok és praktikus kiegészítők segítik a nyugodt alvási környezet kialakítását. Olyan termékeket találsz, amelyek hosszú távon is kényelmesek és biztonságosak.",
+    tips: [
+      "A kiságy méretét és a matrac kompatibilitását együtt ellenőrizd.",
+      "A légáteresztő anyagok segítik a komfortos alvási környezetet.",
+      "A könnyen tisztítható huzatok napi szinten praktikusak.",
+    ],
+  },
+  jatekok: {
+    intro:
+      "Játék kategóriánkban fejlesztő és szórakoztató termékeket találsz különböző életkorokra. A kínálatot a biztonság, tartósság és fejlődést támogató funkciók alapján válogattuk.",
+    tips: [
+      "Válassz életkorhoz illesztett játékot a biztonságos használatért.",
+      "A többfunkciós játékok hosszabb ideig lekötik a figyelmet.",
+      "Mindig ellenőrizd a tisztíthatóságot és az anyagminőséget.",
+    ],
+  },
+  babaruha: {
+    intro:
+      "Babaruha kategóriánk puha, kényelmes és könnyen kezelhető darabokat kínál a mindennapokra. A praktikusság és bőrbarát anyaghasználat elsődleges szempont volt a válogatásnál.",
+    tips: [
+      "A réteges öltöztetéshez rugalmas alapdarabokat válassz.",
+      "A patentos, könnyen nyitható modellek gyorsabb pelenkázást tesznek lehetővé.",
+      "Mosásálló, puha anyagokkal hosszabb távon is jó választás marad.",
+    ],
+  },
+  egyeb: {
+    intro:
+      "Az egyéb kategóriában olyan hasznos kiegészítőket találsz, amelyek a napi baba-mama rutint teszik kényelmesebbé. Praktikus, jól kombinálható termékek egy helyen.",
+    tips: [
+      "A napi rutinhoz igazodva válassz hordozható, multifunkciós kiegészítőket.",
+      "Érdemes a legtöbbet használt termékeket készleten tartani otthon.",
+      "A könnyű tisztíthatóság és tartósság itt is kulcstényező.",
     ],
   },
 };

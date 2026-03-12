@@ -20,13 +20,40 @@ function toPriceHuf(value: number): string {
   return `${Math.max(0, Number(value || 0)).toFixed(2)} HUF`;
 }
 
+function extractDigits(value: string): string {
+  return value.replace(/\D+/g, "");
+}
+
+function looksLikeValidGtin(value: string): boolean {
+  return [8, 12, 13, 14].includes(value.length);
+}
+
+function getGoogleProductCategory(categorySlug: string): string {
+  switch (categorySlug) {
+    case "pelenkak":
+      return "Baby & Toddler > Diapering > Diapers";
+    case "etetes":
+      return "Baby & Toddler > Nursing & Feeding";
+    case "biztonsag":
+      return "Baby & Toddler > Baby Transport > Car Seats";
+    case "babakocsi":
+      return "Baby & Toddler > Baby Transport > Strollers";
+    case "furdetes":
+      return "Baby & Toddler > Bathing";
+    case "babaszoba":
+      return "Baby & Toddler > Nursery";
+    default:
+      return "Baby & Toddler";
+  }
+}
+
 export async function GET() {
   const [products, categories] = await Promise.all([
     getEffectiveProducts(),
     Promise.resolve(getEffectiveCategories()),
   ]);
 
-  const categoryById = new Map(categories.map((c) => [c.id, c.name]));
+  const categoryById = new Map(categories.map((c) => [c.id, c]));
   const activeProducts = products.filter((p) => p.isActive);
 
   const itemsXml = activeProducts
@@ -42,9 +69,15 @@ export async function GET() {
         .slice(1, 10)
         .map((image) => `      <g:additional_image_link>${escapeXml(absoluteUrl(image))}</g:additional_image_link>`)
         .join("\n");
-      const productType = escapeXml(categoryById.get(product.categoryId) || "Babatermék");
+      const category = categoryById.get(product.categoryId);
+      const productType = escapeXml(category?.name || "Babatermék");
+      const googleProductCategory = escapeXml(getGoogleProductCategory(category?.slug || ""));
       const availability = product.stock > 0 ? "in_stock" : "out_of_stock";
       const shippingPrice = price >= FREE_SHIPPING_THRESHOLD ? 0 : 1490;
+      const numericCandidate = extractDigits(product.sku || product.id);
+      const gtin = looksLikeValidGtin(numericCandidate) ? numericCandidate : "";
+      const identifierExists = gtin ? "yes" : "no";
+      const escapedMpn = escapeXml(product.sku || product.id);
 
       return `    <item>
       <g:id>${escapeXml(product.id)}</g:id>
@@ -56,9 +89,11 @@ ${additionalImages ? `${additionalImages}\n` : ""}      <g:availability>${availa
       <g:condition>new</g:condition>
       <g:price>${toPriceHuf(price)}</g:price>
 ${product.salePrice ? `      <g:sale_price>${toPriceHuf(product.salePrice)}</g:sale_price>\n` : ""}      <g:brand>BabyOnline.hu</g:brand>
-      <g:mpn>${escapeXml(product.sku || product.id)}</g:mpn>
-      <g:identifier_exists>yes</g:identifier_exists>
+${gtin ? `      <g:gtin>${gtin}</g:gtin>\n` : ""}      <g:mpn>${escapedMpn}</g:mpn>
+      <g:identifier_exists>${identifierExists}</g:identifier_exists>
+      <g:google_product_category>${googleProductCategory}</g:google_product_category>
       <g:product_type>${productType}</g:product_type>
+      <g:adult>no</g:adult>
       <g:shipping>
         <g:country>HU</g:country>
         <g:service>Standard</g:service>

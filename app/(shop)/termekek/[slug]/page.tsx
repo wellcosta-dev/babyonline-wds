@@ -26,6 +26,7 @@ import { useCartStore } from "@/store/cartStore";
 import { getProductBySlug, categories } from "@/lib/mock-data";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/utils";
 import { absoluteUrl } from "@/lib/seo";
+import { getProductInternalLinks, getSeoProductLead } from "@/lib/seo-product-copy";
 import { toAnalyticsItemFromProduct, trackEvent } from "@/lib/analytics";
 
 const TABS = [
@@ -168,6 +169,8 @@ export default function ProductDetailPage() {
       ? approvedReviews.reduce((sum, item) => sum + item.rating, 0) / approvedReviews.length
       : 0;
   const isFreeShippingEligible = displayPrice >= FREE_SHIPPING_THRESHOLD;
+  const productSeoLead = getSeoProductLead(product, category?.name);
+  const productInternalLinks = getProductInternalLinks(product, category?.slug);
 
   const breadcrumbItems = [
     { label: "Főoldal", href: "/" },
@@ -547,10 +550,29 @@ export default function ProductDetailPage() {
           {/* Tab content */}
           <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8">
             {activeTab === "leiras" && (
-              <div
-                className="text-neutral-dark leading-relaxed text-[15px] prose prose-sm max-w-none prose-p:my-2 prose-li:my-1"
-                dangerouslySetInnerHTML={{ __html: product.description }}
-              />
+              <div>
+                <p className="mb-4 rounded-xl border border-primary/20 bg-primary-pale/40 px-4 py-3 text-sm font-semibold text-neutral-dark">
+                  {productSeoLead}
+                </p>
+                <div
+                  className="text-neutral-dark leading-relaxed text-[15px] prose prose-sm max-w-none prose-p:my-2 prose-li:my-1"
+                  dangerouslySetInnerHTML={{ __html: product.description }}
+                />
+                <div className="mt-5 border-t border-gray-100 pt-4">
+                  <p className="text-sm font-bold text-neutral-dark mb-2">Kapcsolódó oldalak</p>
+                  <div className="flex flex-wrap gap-2">
+                    {productInternalLinks.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-dark hover:border-primary hover:text-primary transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             )}
 
             {activeTab === "spec" && (

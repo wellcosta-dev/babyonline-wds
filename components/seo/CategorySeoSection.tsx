@@ -41,6 +41,22 @@ export function CategorySeoSection({
         links={content.internalLinks}
         className="mt-5"
       />
+
+      {content.faqs && content.faqs.length > 0 && (
+        <div className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
+          <h3 className="text-lg md:text-xl font-extrabold tracking-tight text-neutral-dark mb-3">
+            Gyakori kérdések
+          </h3>
+          <div className="space-y-3">
+            {content.faqs.map((faq) => (
+              <div key={faq.question} className="rounded-xl bg-neutral-pale px-4 py-3">
+                <p className="text-sm font-bold text-neutral-dark">{faq.question}</p>
+                <p className="mt-1 text-sm text-neutral-medium leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

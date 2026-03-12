@@ -12,6 +12,7 @@ import { ProductGrid } from "@/components/shop/ProductGrid";
 import { CategorySeoSection } from "@/components/seo/CategorySeoSection";
 import { products, getCategoryBySlug } from "@/lib/mock-data";
 import { getCategorySeoContent } from "@/lib/seo-content";
+import { absoluteUrl } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import type { FilterState, Product, SortOption } from "@/types";
 
@@ -150,6 +151,31 @@ export default function KategoriaPage() {
     () => (category ? getCategorySeoContent(category.slug, category.name) : null),
     [category]
   );
+  const categoryStructuredData = useMemo(() => {
+    if (!category) return null;
+    return {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: category.name,
+      description: category.description ?? seoContent?.intro,
+      url: absoluteUrl(`/kategoriak/${category.slug}`),
+    };
+  }, [category, seoContent?.intro]);
+  const faqStructuredData = useMemo(() => {
+    if (!seoContent?.faqs?.length) return null;
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: seoContent.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    };
+  }, [seoContent]);
 
   const activeFilterCount =
     (filters.categories.length > 0 ? 1 : 0) +
@@ -195,6 +221,18 @@ export default function KategoriaPage() {
 
   return (
     <div className="container mx-auto px-4 py-6 md:py-8">
+      {categoryStructuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryStructuredData) }}
+        />
+      )}
+      {faqStructuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+        />
+      )}
       <Breadcrumb
         items={[
           { label: "Főoldal", href: "/" },

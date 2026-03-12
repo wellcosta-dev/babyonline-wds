@@ -1,9 +1,16 @@
 import type { MetadataRoute } from "next";
-import { blogPosts, categories, products } from "@/lib/mock-data";
 import { getBlogIntentLandingDefinitions } from "@/lib/seo-content";
 import { absoluteUrl } from "@/lib/seo";
+import { getEffectiveCategories, getEffectiveProducts } from "@/lib/server/products";
+import { getEffectiveBlogPosts } from "@/lib/server/blog-posts";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [categories, products, blogPosts] = await Promise.all([
+    Promise.resolve(getEffectiveCategories()),
+    getEffectiveProducts(),
+    getEffectiveBlogPosts(),
+  ]);
+
   const staticRoutes = [
     "/",
     "/termekek",
