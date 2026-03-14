@@ -21,6 +21,10 @@ function toPriceHuf(value: number): string {
   return `${Math.max(0, Number(value || 0)).toFixed(2)} HUF`;
 }
 
+function toCents(value: number): number {
+  return Math.round(Math.max(0, Number(value || 0)) * 100);
+}
+
 function extractDigits(value: string): string {
   return value.replace(/\D+/g, "");
 }
@@ -36,7 +40,7 @@ function toRfc3339(value?: string): string | undefined {
   return parsed.toISOString().replace(".000Z", "Z");
 }
 
-function getGoogleProductCategory(categorySlug: string): string {
+function getGoogleProductCategory(categorySlug: string): string | undefined {
   switch (categorySlug) {
     case "pelenkak":
       return "Baby & Toddler > Diapering > Diapers";
@@ -51,7 +55,7 @@ function getGoogleProductCategory(categorySlug: string): string {
     case "babaszoba":
       return "Baby & Toddler > Nursery";
     default:
-      return "Baby & Toddler";
+      return undefined;
   }
 }
 
@@ -80,11 +84,10 @@ export async function GET() {
         stripHtml(product.shortDesc || product.description || product.name).slice(0, 5000)
       );
       const basePrice = Math.max(0, Number(product.price ?? 0));
+      const basePriceCents = toCents(basePrice);
+      const salePriceCents = toCents(Number(product.salePrice ?? 0));
       const hasSalePrice =
-        typeof product.salePrice === "number" &&
-        Number.isFinite(product.salePrice) &&
-        product.salePrice > 0 &&
-        product.salePrice < basePrice;
+        typeof product.salePrice === "number" && salePriceCents > 0 && salePriceCents < basePriceCents;
       const effectivePrice = hasSalePrice ? Number(product.salePrice) : basePrice;
       const imageLink = absoluteUrl(product.images?.[0] || "/images/placeholder.jpg");
       const additionalImages = (product.images || [])
@@ -93,7 +96,10 @@ export async function GET() {
         .join("\n");
       const category = categoryById.get(product.categoryId);
       const productType = escapeXml(category?.name || "Babatermék");
-      const googleProductCategory = escapeXml(getGoogleProductCategory(category?.slug || ""));
+      const googleProductCategoryRaw = getGoogleProductCategory(category?.slug || "");
+      const googleProductCategory = googleProductCategoryRaw
+        ? escapeXml(googleProductCategoryRaw)
+        : undefined;
       const availability = product.stock > 0 ? "in_stock" : "out_of_stock";
       const shippingPrice =
         effectivePrice >= FREE_SHIPPING_THRESHOLD ? 0 : MERCHANT_STANDARD_SHIPPING_PRICE_HUF;
@@ -114,7 +120,7 @@ export async function GET() {
       );
       const saleStart = toRfc3339(activePromotion?.startAt);
       const saleEnd = toRfc3339(activePromotion?.endAt);
-      const saleWindow = saleStart && saleEnd ? `${saleStart}/${saleEnd}` : undefined;
+      const saleWindow = hasSalePrice && saleStart && saleEnd ? `${saleStart}/${saleEnd}` : undefined;
 
       return `    <item>
       <g:id>${escapeXml(product.id)}</g:id>
@@ -127,8 +133,7 @@ ${additionalImages ? `${additionalImages}\n` : ""}      <g:availability>${availa
       <g:price>${toPriceHuf(basePrice)}</g:price>
 ${hasSalePrice ? `      <g:sale_price>${toPriceHuf(Number(product.salePrice))}</g:sale_price>\n` : ""}${saleWindow ? `      <g:sale_price_effective_date>${saleWindow}</g:sale_price_effective_date>\n` : ""}      <g:brand>${brand}</g:brand>
 ${gtin ? `      <g:gtin>${gtin}</g:gtin>\n` : ""}${escapedMpn ? `      <g:mpn>${escapedMpn}</g:mpn>\n` : ""}      <g:identifier_exists>${identifierExists}</g:identifier_exists>
-      <g:google_product_category>${googleProductCategory}</g:google_product_category>
-      <g:product_type>${productType}</g:product_type>
+${googleProductCategory ? `      <g:google_product_category>${googleProductCategory}</g:google_product_category>\n` : ""}      <g:product_type>${productType}</g:product_type>
       <g:adult>no</g:adult>
       <g:shipping>
         <g:country>HU</g:country>

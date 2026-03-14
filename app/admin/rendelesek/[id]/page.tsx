@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { Loader2 } from "lucide-react";
+import { Loader2, PackageCheck } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
 import type { Order, OrderStatus } from "@/types";
 
@@ -23,6 +23,7 @@ export default function AdminRendelesReszletekPage() {
   const [order, setOrder] = useState<Order | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [glsLabelLoading, setGlsLabelLoading] = useState(false);
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
 
@@ -95,6 +96,67 @@ export default function AdminRendelesReszletekPage() {
       setError(sendError instanceof Error ? sendError.message : "Email küldési hiba.");
     } finally {
       setSaving(false);
+    }
+  }
+
+  function isGlsMethod(method: string): boolean {
+    return method === "gls" || method === "gls-csomagautomata" || method === "gls-csomagpont";
+  }
+
+  async function handleGenerateGlsLabel() {
+    if (!order) return;
+    setGlsLabelLoading(true);
+    setError("");
+    setNotice("");
+    try {
+      const response = await fetch(`/api/admin/orders/${order.id}/gls-label`, {
+        method: "POST",
+        cache: "no-store",
+      });
+      const payload = (await response.json()) as {
+        error?: string;
+        details?: unknown;
+        trackingId?: string;
+        labelUrl?: string;
+        labelBase64?: string;
+        labelContentType?: string;
+        order?: Order;
+      };
+      if (!response.ok) {
+        throw new Error(payload.error ?? "GLS matrica generálási hiba.");
+      }
+
+      if (payload.order) {
+        setOrder(payload.order);
+      }
+
+      if (payload.labelUrl && typeof window !== "undefined") {
+        window.open(payload.labelUrl, "_blank", "noopener,noreferrer");
+      } else if (payload.labelBase64 && typeof window !== "undefined") {
+        const mimeType = payload.labelContentType || "application/pdf";
+        const binary = atob(payload.labelBase64);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i += 1) {
+          bytes[i] = binary.charCodeAt(i);
+        }
+        const blob = new Blob([bytes], { type: mimeType });
+        const objectUrl = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = objectUrl;
+        anchor.download = `${order.orderNumber}-gls-matrica.pdf`;
+        anchor.click();
+        URL.revokeObjectURL(objectUrl);
+      }
+
+      setNotice(
+        payload.trackingId
+          ? `GLS matrica elkészült. Tracking: ${payload.trackingId}`
+          : "GLS matrica elkészült."
+      );
+    } catch (labelError) {
+      setError(labelError instanceof Error ? labelError.message : "GLS matrica generálási hiba.");
+    } finally {
+      setGlsLabelLoading(false);
     }
   }
 
@@ -254,10 +316,17 @@ export default function AdminRendelesReszletekPage() {
           Számla készítése (később)
         </button>
         <button
-          className="rounded-xl border border-gray-200 px-3 py-2 text-sm font-semibold text-neutral-dark hover:bg-gray-50"
-          disabled
+          onClick={handleGenerateGlsLabel}
+          disabled={glsLabelLoading || saving || !isGlsMethod(order.shippingMethod)}
+          className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 px-3 py-2 text-sm font-semibold text-neutral-dark hover:bg-gray-50 disabled:opacity-60"
+          title={
+            isGlsMethod(order.shippingMethod)
+              ? "GLS címke generálása"
+              : "Csak GLS szállítási módnál érhető el"
+          }
         >
-          GLS matrica generálása (később)
+          {glsLabelLoading ? <Loader2 className="size-4 animate-spin" /> : <PackageCheck className="size-4" />}
+          GLS matrica generálása
         </button>
       </div>
     </div>

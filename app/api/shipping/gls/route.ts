@@ -58,10 +58,27 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify(body),
     });
     if (!upstream.ok) {
-      return NextResponse.json({ error: "GLS címkekérés sikertelen." }, { status: 502 });
+      const contentType = upstream.headers.get("content-type")?.toLowerCase() ?? "";
+      const details = contentType.includes("application/json")
+        ? await upstream.json().catch(() => undefined)
+        : await upstream.text().catch(() => undefined);
+      return NextResponse.json(
+        { error: "GLS címkekérés sikertelen.", details },
+        { status: 502 }
+      );
     }
-    const payload = await upstream.json();
-    return NextResponse.json(payload);
+    const contentType = upstream.headers.get("content-type")?.toLowerCase() ?? "";
+    if (contentType.includes("application/json")) {
+      const payload = await upstream.json();
+      return NextResponse.json(payload);
+    }
+
+    const buffer = Buffer.from(await upstream.arrayBuffer());
+    const base64 = buffer.toString("base64");
+    return NextResponse.json({
+      labelBase64: base64,
+      labelContentType: contentType || "application/pdf",
+    });
   } catch (error) {
     console.error("POST /api/shipping/gls error:", error);
     return NextResponse.json(
