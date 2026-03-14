@@ -1,5 +1,51 @@
 [
   {
+    "id": "ord-1773497161107",
+    "orderNumber": "BO-MMQEF3IR-M6KC",
+    "guestEmail": "teszt+audit@pelda.hu",
+    "status": "CONFIRMED",
+    "items": [
+      {
+        "id": "oi-ord-1773497161107-0",
+        "productId": "prod-0196",
+        "productName": "FreeON testvérfellépő üléssel és kapaszkodóval (38138)",
+        "productImage": "/images/products/shopify/38138-b3151578.jpg",
+        "price": 39990,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "name": "Teszt Elek",
+      "street": "Fo utca 1",
+      "city": "Budapest",
+      "postalCode": "1111",
+      "country": "HU",
+      "email": "teszt+audit@pelda.hu",
+      "phone": "+3612345678"
+    },
+    "billingAddress": {
+      "name": "Teszt Elek",
+      "street": "Fo utca 1",
+      "city": "Budapest",
+      "postalCode": "1111",
+      "country": "HU",
+      "email": "teszt+audit@pelda.hu",
+      "phone": "+3612345678"
+    },
+    "shippingMethod": "gls",
+    "shippingPrice": 0,
+    "subtotal": 39990,
+    "discount": 0,
+    "total": 40980,
+    "paymentMethod": "cod",
+    "paymentStatus": "PENDING",
+    "loyaltyPointsRedeemed": 0,
+    "loyaltyDiscount": 0,
+    "loyaltyPointsGranted": false,
+    "createdAt": "2026-03-14T14:06:01.107Z",
+    "updatedAt": "2026-03-14T14:08:28.480Z"
+  },
+  {
     "id": "ord-1773097852593",
     "orderNumber": "BO-MMJSOJ3L-I8P3",
     "guestEmail": "kostyalarpad@wellcosta.hu",

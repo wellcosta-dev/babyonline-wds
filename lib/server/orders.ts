@@ -35,6 +35,7 @@ function mapDbOrder(order: any): Order {
     total: toNumber(order.total),
     paymentMethod: order.paymentMethod,
     paymentStatus: order.paymentStatus,
+    purchaseEventId: order.purchaseEventId ?? undefined,
     stripePaymentId: order.stripePaymentId ?? undefined,
     billingoInvoiceId: order.billingoInvoiceId ?? undefined,
     glsTrackingId: order.glsTrackingId ?? undefined,
@@ -44,6 +45,7 @@ function mapDbOrder(order: any): Order {
     loyaltyDiscount: order.loyaltyDiscount ? toNumber(order.loyaltyDiscount) : undefined,
     loyaltyPointsEarned: order.loyaltyPointsEarned ?? undefined,
     loyaltyPointsGranted: order.loyaltyPointsGranted ?? undefined,
+    attribution: (order.attribution as Order["attribution"]) ?? undefined,
     createdAt: new Date(order.createdAt).toISOString(),
     updatedAt: new Date(order.updatedAt).toISOString(),
   };
@@ -74,6 +76,15 @@ export async function getStoredOrders(): Promise<Order[]> {
         include: { items: true },
         orderBy: { createdAt: "desc" },
       });
+      if (dbOrders.length === 0) {
+        const fileOrders = await readJsonFile<Order[]>(ORDERS_FILE, []);
+        if (fileOrders.length > 0) {
+          for (const order of fileOrders) {
+            await upsertStoredOrder(order);
+          }
+          return fileOrders;
+        }
+      }
       return dbOrders.map(mapDbOrder);
     } catch (error) {
       console.error("Prisma getStoredOrders fallback to JSON:", error);
@@ -121,6 +132,8 @@ export async function upsertStoredOrder(order: Order): Promise<void> {
             couponCode: order.couponCode,
             paymentMethod: order.paymentMethod,
             paymentStatus: order.paymentStatus,
+            purchaseEventId: order.purchaseEventId,
+            attribution: (order.attribution as any) ?? undefined,
             stripePaymentId: order.stripePaymentId,
             billingoInvoiceId: order.billingoInvoiceId,
             glsTrackingId: order.glsTrackingId,
@@ -148,6 +161,8 @@ export async function upsertStoredOrder(order: Order): Promise<void> {
             couponCode: order.couponCode,
             paymentMethod: order.paymentMethod,
             paymentStatus: order.paymentStatus,
+            purchaseEventId: order.purchaseEventId,
+            attribution: (order.attribution as any) ?? undefined,
             stripePaymentId: order.stripePaymentId,
             billingoInvoiceId: order.billingoInvoiceId,
             glsTrackingId: order.glsTrackingId,

@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "supplier:smoke": "node scripts/smoke-supplier-extraction.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

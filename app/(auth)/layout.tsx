@@ -18,20 +18,20 @@ export default function AuthLayout({
         }}
       />
       {/* Minimal header: logo linking to home */}
-      <header className="flex justify-center pt-8 pb-4">
+      <header className="flex justify-center pt-8 md:pt-10 pb-4">
         <Link
           href="/"
-          className="hover:opacity-90 transition-opacity flex flex-col items-center gap-1"
+          className="hover:opacity-90 transition-opacity flex flex-col items-center gap-1.5"
         >
           <Image
             src="/babyonline-logo.png"
             alt="BabyOnline.hu"
-            width={320}
-            height={90}
-            className="h-10 w-auto"
+            width={640}
+            height={180}
+            className="h-24 md:h-28 w-auto"
           />
-          <span className="text-[11px] font-semibold text-neutral-medium tracking-wide">
-            Biztonsagos bejelentkezes
+          <span className="text-xs md:text-sm !font-display font-black text-neutral-dark tracking-wide">
+            Biztonságos bejelentkezés
           </span>
         </Link>
       </header>

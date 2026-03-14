@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { loginUser, registerUser } from "@/lib/server/users";
 import { createSessionToken, getSessionCookieName } from "@/lib/server/session";
+import {
+  clearAuthAttempts,
+  getAuthAttemptInfo,
+  registerAuthFailure,
+} from "@/lib/server/auth-rate-limit";
 
 function withSessionCookie(
   request: NextRequest,
@@ -29,8 +34,13 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const mode = (body.mode as "login" | "register" | undefined) ?? "login";
+    const loginTarget = (body.loginTarget as "customer" | "admin" | undefined) ?? "customer";
     const email = body.email?.trim();
     const password = body.password as string | undefined;
+    const ip =
+      request.headers.get("x-forwarded-for") ??
+      request.headers.get("x-real-ip") ??
+      "unknown";
 
     if (!email || !password) {
       return NextResponse.json(
@@ -55,7 +65,49 @@ export async function POST(request: NextRequest) {
       return withSessionCookie(request, response, user);
     }
 
-    const user = await loginUser({ email, password });
+    const attemptInfo = await getAuthAttemptInfo(ip, email, loginTarget);
+    if (attemptInfo.blocked) {
+      return NextResponse.json(
+        {
+          error: `Túl sok sikertelen próbálkozás. Próbáld újra ${attemptInfo.retryAfterSeconds} másodperc múlva.`,
+        },
+        { status: 429 }
+      );
+    }
+
+    let user;
+    try {
+      user = await loginUser({ email, password });
+    } catch {
+      const failureInfo = await registerAuthFailure(ip, email, loginTarget);
+      if (failureInfo.blocked) {
+        return NextResponse.json(
+          {
+            error: `Túl sok sikertelen próbálkozás. Próbáld újra ${failureInfo.retryAfterSeconds} másodperc múlva.`,
+          },
+          { status: 429 }
+        );
+      }
+      return NextResponse.json(
+        { error: "Hibás email cím vagy jelszó." },
+        { status: 400 }
+      );
+    }
+
+    if (loginTarget === "admin" && user.role !== "ADMIN") {
+      await registerAuthFailure(ip, email, "admin");
+      return NextResponse.json(
+        { error: "Ehhez az oldalhoz admin jogosultság szükséges." },
+        { status: 403 }
+      );
+    }
+    if (loginTarget === "customer" && user.role === "ADMIN") {
+      return NextResponse.json(
+        { error: "Admin belépéshez használd az admin login oldalt." },
+        { status: 403 }
+      );
+    }
+    await clearAuthAttempts(ip, email, loginTarget);
 
     const response = NextResponse.json({
       user,

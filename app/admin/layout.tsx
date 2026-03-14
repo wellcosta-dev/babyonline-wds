@@ -93,7 +93,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       .then((response) => {
         if (!active) return;
         if (!response.ok) {
-          router.replace("/");
+          router.replace("/admin-login");
           return;
         }
         return response.json() as Promise<{ user?: SessionUser }>;
@@ -101,14 +101,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       .then((payload) => {
         if (!active || !payload) return;
         if (payload.user?.role !== "ADMIN") {
-          router.replace("/");
+          router.replace("/admin-login");
           return;
         }
         setSessionUser(payload.user);
         setIsAuthorized(true);
       })
       .catch(() => {
-        if (active) router.replace("/");
+        if (active) router.replace("/admin-login");
       })
       .finally(() => {
         if (active) setAuthChecking(false);
@@ -189,12 +189,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   );
   const unreadCount = notifications.filter((item) => item.unread).length;
   const adminDisplayName = sessionUser?.name?.trim() || "Admin";
-  const adminDisplayEmail = sessionUser?.email || "hello@jatekonline.hu";
+  const adminDisplayEmail = sessionUser?.email || "hello@babyonline.hu";
 
   const handleLogout = async () => {
     await fetch("/api/auth/logout", { method: "POST" });
     localStorage.removeItem("bo-auth-user");
-    router.replace("/bejelentkezes");
+    router.replace("/admin-login");
   };
 
   const markAllRead = async () => {

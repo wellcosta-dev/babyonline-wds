@@ -43,7 +43,7 @@ export default function AszfPage() {
                 <li>Cégnév: Kostyál Árpád e.v.</li>
                 <li>Székhely: 4531 Nyírpazony, Hunyadi utca 6.</li>
                 <li>Levelezési cím, panaszkezelés: 4531 Nyírpazony, Hunyadi utca 6.</li>
-                <li>E-mail: hello@jatekonline.hu</li>
+                <li>E-mail: hello@babyonline.hu</li>
                 <li>Telefonszám: 06202982228</li>
                 <li>Weboldal: http://www.jatekonline.hu</li>
                 <li>Nyilvántartásba vevő hatóság: NAV</li>
@@ -80,7 +80,7 @@ export default function AszfPage() {
           <Section title="5. Elállási jog">
             <ul className="list-disc pl-5 space-y-1.5">
               <li>A Vásárló a termék kézhezvételétől számított 14 napon belül indoklás nélkül elállhat a szerződéstől.</li>
-              <li>Az elállási szándékot írásban (e-mail) kell jelezni a hello@jatekonline.hu címen.</li>
+              <li>Az elállási szándékot írásban (e-mail) kell jelezni a hello@babyonline.hu címen.</li>
               <li>A terméket eredeti, sértetlen állapotban kell visszaküldeni.</li>
               <li>A visszatérítés a termék visszaérkezésétől számított 5 munkanapon belül történik.</li>
               <li>Higiéniai termékek bontott állapotban nem küldhetők vissza.</li>
@@ -90,7 +90,7 @@ export default function AszfPage() {
           <Section title="6. Jótállás és szavatosság">
             <p>
               A termékekre a magyar jogszabályok szerinti jótállási és szavatossági feltételek vonatkoznak.
-              Hibás termék esetén kérjük, vegyék fel velünk a kapcsolatot a hello@jatekonline.hu címen.
+              Hibás termék esetén kérjük, vegyék fel velünk a kapcsolatot a hello@babyonline.hu címen.
             </p>
           </Section>
 
@@ -103,7 +103,7 @@ export default function AszfPage() {
 
           <Section title="8. Panaszkezelés">
             <p>
-              Panaszait a hello@jatekonline.hu e-mail címen, vagy a 06202982228 telefonszámon jelezheti.
+              Panaszait a hello@babyonline.hu e-mail címen, vagy a 06202982228 telefonszámon jelezheti.
               A panaszokat 30 napon belül írásban megválaszoljuk. Vitás esetben a területileg illetékes
               békéltető testülethez vagy a bírósághoz fordulhat.
             </p>

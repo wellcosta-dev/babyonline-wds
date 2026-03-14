@@ -95,6 +95,7 @@ export default function AdminDashboardPage() {
     lowStockCount,
     recentOrders,
     topProducts,
+    lowMarginProducts,
   } = useMemo(() => {
     const today = new Date();
     const todayKey = getLocalDateKey(today);
@@ -158,6 +159,25 @@ export default function AdminDashboardPage() {
       dailyRevenue: todayOrders.reduce((sum, order) => sum + order.total, 0),
       dailyOrders: todayOrders.length,
       lowStockCount: products.filter((product) => product.stock > 0 && product.stock < 5).length,
+      lowMarginProducts: products
+        .map((product) => {
+          const sellingPrice = Number(product.salePrice ?? product.price);
+          const purchasePrice = Number(product.purchasePrice);
+          if (!Number.isFinite(sellingPrice) || sellingPrice <= 0 || !Number.isFinite(purchasePrice) || purchasePrice <= 0) {
+            return null;
+          }
+          const profitFt = sellingPrice - purchasePrice;
+          const marginPercent = (profitFt / sellingPrice) * 100;
+          return {
+            id: product.id,
+            name: product.name,
+            marginPercent,
+            profitFt,
+          };
+        })
+        .filter((entry): entry is { id: string; name: string; marginPercent: number; profitFt: number } => Boolean(entry))
+        .filter((entry) => entry.marginPercent < 8)
+        .sort((a, b) => a.marginPercent - b.marginPercent),
       recentOrders: recent,
       topProducts: top,
     };
@@ -222,6 +242,27 @@ export default function AdminDashboardPage() {
           {loadError}
         </div>
       )}
+      {!loading && lowMarginProducts.length > 0 ? (
+        <div className="rounded-2xl border-2 border-red-300 bg-red-50 px-4 py-3 shadow-md shadow-red-100">
+          <div className="flex items-center gap-2 text-red-800">
+            <AlertTriangle className="size-4" />
+            <p className="text-sm font-extrabold tracking-tight">
+              Figyelem: {lowMarginProducts.length} termék árrése 8% alatt van
+            </p>
+          </div>
+          <p className="mt-1 text-xs text-red-700">
+            Kritikus termékek:{" "}
+            {lowMarginProducts
+              .slice(0, 3)
+              .map(
+                (entry) =>
+                  `${entry.name} (${entry.marginPercent.toFixed(1)}%, haszon ${formatPrice(Math.round(entry.profitFt))})`
+              )
+              .join(" · ")}
+            {lowMarginProducts.length > 3 ? " · ..." : ""}
+          </p>
+        </div>
+      ) : null}
 
       {loading ? (
         <div className="bg-indigo-50/70 rounded-2xl border border-violet-300 p-8 flex items-center gap-2 text-sm text-neutral-medium">

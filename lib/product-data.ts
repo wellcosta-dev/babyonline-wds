@@ -1,7 +1,7 @@
 import type { Product, Category } from "@/types";
 
 // Auto-generated from Shopify CSV export
-// Generated: 2026-03-09T22:37:51.973Z
+// Generated: 2026-03-14T18:20:31.349Z
 // Total products: 211
 
 export const shopifyCategories: Category[] = [
@@ -80,22 +80,25 @@ export const shopifyProducts: Product[] = [
   "price": 7190,
   "salePrice": 6990,
   "sku": "FREEON-48723",
+  "ean": "3830075048723",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-univerzalis-legatereszto-betet-babakocsiba",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48723-3-008d0c88.jpg",
-    "/images/products/shopify/48723-74daa534.jpg",
-    "/images/products/shopify/48723-2-3f56e203.jpg",
-    "/images/products/shopify/48723-1-c300fecc.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48723-3.jpg?v=1767042503",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48723.jpg?v=1767042503",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48723-2.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48723-1.jpg?v=1767041913"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.958Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 3.7,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.320Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 5,
+  "reviewCount": 55
 },
 {
   "id": "prod-0001",
@@ -106,22 +109,25 @@ export const shopifyProducts: Product[] = [
   "price": 7190,
   "salePrice": 6990,
   "sku": "FREEON-48716",
+  "ean": "3830075048716",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-univerzalis-legatereszto-betet-babakocsiba-grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48716-3-4aada917.jpg",
-    "/images/products/shopify/48716-bb8d4bf9.jpg",
-    "/images/products/shopify/48716-2-1fa5bd53.jpg",
-    "/images/products/shopify/48716-1-5bfe958f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48716-3.jpg?v=1767042508",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48716.jpg?v=1767042508",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48716-2.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48716-1.jpg?v=1767041913"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.2,
-  "reviewCount": 27
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 4,
+  "reviewCount": 68
 },
 {
   "id": "prod-0002",
@@ -132,23 +138,26 @@ export const shopifyProducts: Product[] = [
   "price": 97900,
   "salePrice": 89990,
   "sku": "FREEON-707",
+  "ean": "3830084383662",
+  "supplierUrl": "https://www.astibababolt.hu/FreeOn-Prince-Toys-akkumulatoros-kisauto-Ford-Rang",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/707-88ee32a5.jpg",
-    "/images/products/shopify/707-1-4959869a.jpg",
-    "/images/products/shopify/707-2-638c517c.jpg",
-    "/images/products/shopify/707-3-b7b48650.jpg",
-    "/images/products/shopify/707-4-d2dea05d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/707.jpg?v=1767041881",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/707-1.jpg?v=1767041881",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/707-2.jpg?v=1767041881",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/707-3.jpg?v=1767041881",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/707-4.jpg?v=1767041882"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.3,
-  "reviewCount": 21
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 4.8,
+  "reviewCount": 29
 },
 {
   "id": "prod-0003",
@@ -159,22 +168,25 @@ export const shopifyProducts: Product[] = [
   "price": 59990,
   "salePrice": 54990,
   "sku": "FREEON-48648",
+  "ean": "3830075048648",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-babafurdeto-szett-kad-allvany-pelenkazo-lap",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48648-2-cdc5f619.jpg",
-    "/images/products/shopify/48648-44c4fb3e.jpg",
-    "/images/products/shopify/48648-1-9e1d6dd1.jpg",
-    "/images/products/shopify/48648-3-4b616a52.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48648-2.jpg?v=1767041911",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48648.jpg?v=1767041911",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48648-1.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48648-3.jpg?v=1767041911"
   ],
   "categoryId": "cat-furdetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
   "rating": 4.1,
-  "reviewCount": 19
+  "reviewCount": 64
 },
 {
   "id": "prod-0004",
@@ -185,24 +197,27 @@ export const shopifyProducts: Product[] = [
   "price": 108990,
   "salePrice": 94990,
   "sku": "FREEON-46989",
+  "ean": "3830075046989",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Galaxy-I-size-biztonsagi-gyerekules-40-105",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46989-9d6fd43d.jpg",
-    "/images/products/shopify/46989-8-a29be3c0.jpg",
-    "/images/products/shopify/46989-7-0d2ccf99.jpg",
-    "/images/products/shopify/46989-6-c08cf47f.jpg",
-    "/images/products/shopify/46989-2-a015e467.jpg",
-    "/images/products/shopify/46989-1-9535fc65.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46989.jpg?v=1767042482",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46989-8.jpg?v=1767042482",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46989-7.jpg?v=1767042482",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46989-6.jpg?v=1767042482",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46989-2.jpg?v=1767042482",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46989-1.jpg?v=1767042482"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.8,
-  "reviewCount": 78
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 4.4,
+  "reviewCount": 49
 },
 {
   "id": "prod-0005",
@@ -213,21 +228,24 @@ export const shopifyProducts: Product[] = [
   "price": 6290,
   "salePrice": 5990,
   "sku": "FREEON-42622",
+  "ean": "3830075042622",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-pluss-autos-tukor-Mosomedve",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/42622-1-d975e67a.jpg",
-    "/images/products/shopify/42622-5b55db82.jpg",
-    "/images/products/shopify/42622-2-f7f8a7ff.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42622-1.jpg?v=1767041883",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42622.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42622-2.jpg?v=1767041882"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 5,
-  "reviewCount": 65
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 3.7,
+  "reviewCount": 64
 },
 {
   "id": "prod-0006",
@@ -238,23 +256,26 @@ export const shopifyProducts: Product[] = [
   "price": 47000,
   "salePrice": 44990,
   "sku": "FREEON-82559",
+  "ean": "3830084382559",
+  "supplierUrl": "https://www.astibababolt.hu/spd/82559/FreeON-Pollo-I-Size-biztonsagi-gyerekules-40-105-c",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82559-1-a4c5aca8.jpg",
-    "/images/products/shopify/82559-4-f986f490.jpg",
-    "/images/products/shopify/82559-f95621a2.jpg",
-    "/images/products/shopify/82559-2-90bd66aa.jpg",
-    "/images/products/shopify/82559-3-232c73e2.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82559-1.jpg?v=1767042602",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82559-4.jpg?v=1767042602",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82559.jpg?v=1767042602",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82559-2.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82559-3.jpg?v=1767041983"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 3.9,
-  "reviewCount": 72
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 4.8,
+  "reviewCount": 79
 },
 {
   "id": "prod-0007",
@@ -264,24 +285,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Space I-Size Biztonsági Gyerekülés Orange Edition – Forradalmi biztonság 40 cm-től 150 cm-ig A FreeON Space egy forradalmi megoldás, amely k...",
   "price": 103590,
   "sku": "FREEON-49331",
+  "ean": "3830075049331",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Space-I-size-biztonsagi-gyerekules-40-150cm",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49331-3-96f29787.jpg",
-    "/images/products/shopify/49331-2-98dbc016.jpg",
-    "/images/products/shopify/49331-5-f10bcc4b.jpg",
-    "/images/products/shopify/49331-1-a93a65c4.jpg",
-    "/images/products/shopify/49331-59991d96.jpg",
-    "/images/products/shopify/49331-4-09b17851.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49331-3.jpg?v=1767041915",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49331-2.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49331-5.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49331-1.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49331.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49331-4.jpg?v=1767041915"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.7,
-  "reviewCount": 73
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 3.5,
+  "reviewCount": 35
 },
 {
   "id": "prod-0008",
@@ -291,24 +315,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Space I-Size Biztonsági Gyerekülés Beige Edition – Időtlen elegancia és forradalmi biztonság A FreeON Space egy forradalmi újítás az autós u...",
   "price": 109990,
   "sku": "FREEON-82467",
+  "ean": "3830084382467",
+  "supplierUrl": "https://www.astibababolt.hu/spd/82467/FreeON-Space-I-size-biztonsagi-gyerekules-40-150cm",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82467-5-7b1ab584.jpg",
-    "/images/products/shopify/82467-7-c5195aa0.jpg",
-    "/images/products/shopify/82467-9-beb47333.jpg",
-    "/images/products/shopify/82467-8-4e8ed75e.jpg",
-    "/images/products/shopify/82467-6-cf1ff447.jpg",
-    "/images/products/shopify/82467-2-fc700c32.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82467-5.jpg?v=1767043467",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82467-7.jpg?v=1767043467",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82467-9.jpg?v=1767043467",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82467-8.jpg?v=1767043467",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82467-6.jpg?v=1767043467",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82467-2.jpg?v=1767041983"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.3,
-  "reviewCount": 56
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 3.6,
+  "reviewCount": 72
 },
 {
   "id": "prod-0009",
@@ -318,20 +345,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Pollo I-Size Biztonsági Gyerekülés Beige Edition – Elegancia és biztonság 40 cm-től 150 cm-ig A FreeON Pollo az ideális választás azoknak a ...",
   "price": 47000,
   "sku": "FREEON-82542",
+  "ean": "3830084382542",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Pollo-I-Size-biztonsagi-gyerekules-40-105-c",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82542-3c8280f0.jpg",
-    "/images/products/shopify/82542-1-c313cab1.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82542.jpg?v=1767043501",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82542-1.jpg?v=1767043501"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.8,
-  "reviewCount": 48
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.325Z",
+  "rating": 4.5,
+  "reviewCount": 80
 },
 {
   "id": "prod-0010",
@@ -341,22 +371,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Taurus Fix I-Size Ülésmagasító Black & Blue Edition – Új dimenzió a nagyobb gyermekek biztonságáért A FreeON Taurus Fix az ideális választás...",
   "price": 18990,
   "sku": "FREEON-49379",
+  "ean": "3830075049379",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Taurus-fix-I-size-ulesmagasito-125-150cm",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49379-1-77c9636c.jpg",
-    "/images/products/shopify/49379-2-a886a81a.jpg",
-    "/images/products/shopify/49379-3-e803435d.jpg",
-    "/images/products/shopify/49379-c11d6bb9.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49379-1.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49379-2.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49379-3.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49379.jpg?v=1767041952"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.1,
-  "reviewCount": 11
+  "createdAt": "2026-03-14T18:20:31.325Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.8,
+  "reviewCount": 45
 },
 {
   "id": "prod-0011",
@@ -366,23 +399,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Taurus Fix I-Size Ülésmagasító Black & Gray Edition – Elegancia és stabilitás a kamaszkor küszöbén A FreeON Taurus Fix az utazás új dimenzió...",
   "price": 18990,
   "sku": "FREEON-49362",
+  "ean": "3830075049362",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Taurus-fix-I-size-ulesmagasito-125-150cm-Bl",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49362-2-763abae7.jpg",
-    "/images/products/shopify/49362-4-c062052c.jpg",
-    "/images/products/shopify/49362-3-7eb211e7.jpg",
-    "/images/products/shopify/49362-1-b646530b.jpg",
-    "/images/products/shopify/49362-e8310d77.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49362-2.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49362-4.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49362-3.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49362-1.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49362.jpg?v=1767041911"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.1,
-  "reviewCount": 73
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 3.6,
+  "reviewCount": 41
 },
 {
   "id": "prod-0012",
@@ -392,23 +428,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON 2in1 Cumisüveg és Telefontartó Univerzális kiegészítő – Minden fontos eszköz karnyújtásnyira Tegye kényelmesebbé a babakocsis sétákat a Free...",
   "price": 4690,
   "sku": "FREEON-45715",
+  "ean": "3830075045715",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-2in1-cumisuveg-es-telefontarto-babakocsihoz",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/45715-1-70197d32.jpg",
-    "/images/products/shopify/45715-4-98c96485.jpg",
-    "/images/products/shopify/45715-74766eea.jpg",
-    "/images/products/shopify/45715-3-f622ff26.jpg",
-    "/images/products/shopify/45715-2-53c97851.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45715-1.jpg?v=1767043627",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45715-4.jpg?v=1767043627",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45715.jpg?v=1767043627",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45715-3.jpg?v=1767041883",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45715-2.jpg?v=1767041882"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 3.9,
-  "reviewCount": 40
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.4,
+  "reviewCount": 51
 },
 {
   "id": "prod-0013",
@@ -418,24 +457,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Space I-Size Biztonsági Gyerekülés Gray Edition – Forradalmi védelem születéstől 150 cm-ig A FreeON Space az autós utazás új generációját ké...",
   "price": 109990,
   "sku": "FREEON-82474",
+  "ean": "3830084382474",
+  "supplierUrl": "https://www.astibababolt.hu/spd/82474/FreeON-Space-I-size-biztonsagi-gyerekules-40-150cm",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82474-6f829a59.jpg",
-    "/images/products/shopify/82474-7-bb69dfd7.jpg",
-    "/images/products/shopify/82474-9-4f4291a1.jpg",
-    "/images/products/shopify/82474-8-9de7ffa2.jpg",
-    "/images/products/shopify/82474-3-3f7b4cea.jpg",
-    "/images/products/shopify/82474-5-8b95bf11.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82474.jpg?v=1767043668",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82474-7.jpg?v=1767043668",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82474-9.jpg?v=1767043668",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82474-8.jpg?v=1767043668",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82474-3.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82474-5.jpg?v=1767041982"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.960Z",
-  "updatedAt": "2026-03-09T22:37:51.960Z",
-  "rating": 4.3,
-  "reviewCount": 60
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.4,
+  "reviewCount": 44
 },
 {
   "id": "prod-0014",
@@ -445,22 +487,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Enjoy Rezgő-Zenélő Pihenőszék Szürke & Rózsaszín Design – Megnyugtató pihenés és játékos fejlődés A FreeON Enjoy pihenőszék egy igazi kis oá...",
   "price": 19990,
   "sku": "FREEON-45753",
+  "ean": "3830075045753",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Enjoy-rezgo-zenelo-pihenoszek-Szurke-rozsas",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/45753-092c4d00.jpg",
-    "/images/products/shopify/45753-3-0fa2570d.jpg",
-    "/images/products/shopify/45753-1-4bf5f7b1.jpg",
-    "/images/products/shopify/45753-2-2b6dfd03.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45753.jpg?v=1767043715",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45753-3.jpg?v=1767043715",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45753-1.jpg?v=1767043715",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45753-2.jpg?v=1767043715"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.7,
-  "reviewCount": 54
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.5,
+  "reviewCount": 41
 },
 {
   "id": "prod-0015",
@@ -470,21 +515,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Plüss Baba Visszapillantó Tükör Róka Design – Biztonságos pillantás a hátsó ülésre A FreeON plüss visszapillantó tükör segítségével vezetés ...",
   "price": 7090,
   "sku": "FREEON-42646",
+  "ean": "3830075042646",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-pluss-autos-tukor-Roka",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/42646-757d947c.jpg",
-    "/images/products/shopify/42646-1-e87e2816.jpg",
-    "/images/products/shopify/42646-2-a0c7c209.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42646.jpg?v=1767043718",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42646-1.jpg?v=1767043718",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42646-2.jpg?v=1767043718"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.9,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 3.9,
+  "reviewCount": 10
 },
 {
   "id": "prod-0016",
@@ -494,24 +542,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Allegro 3in1 Multifunkciós Babakocsi Fekete Elegancia – Komplett megoldás az első naptól 22 kg-ig Az innovatív FreeON Allegro szett a modern...",
   "price": 237990,
   "sku": "FREEON-82962",
+  "ean": "3830084382962",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Allegro-3in1-multifunkcios-babakocsi-Fekete",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82962-8fbca91f.jpg",
-    "/images/products/shopify/82962-3-409dea9a.jpg",
-    "/images/products/shopify/82962-5-a59723c0.jpg",
-    "/images/products/shopify/82962-6-f7fda876.jpg",
-    "/images/products/shopify/82962-4-7962e7bc.jpg",
-    "/images/products/shopify/82962-2-b7d4890a.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82962.jpg?v=1767043755",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82962-3.jpg?v=1767043755",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82962-5.jpg?v=1767043755",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82962-6.jpg?v=1767043755",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82962-4.jpg?v=1767043755",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82962-2.jpg?v=1767043755"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 5,
-  "reviewCount": 44
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 3.9,
+  "reviewCount": 51
 },
 {
   "id": "prod-0017",
@@ -521,24 +572,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Fantasy 3in1 Multifunkciós Babakocsi Gray Edition – Elegancia, tartósság és teljes felszereltség A FreeON Fantasy babakocsi a stílusos megje...",
   "price": 223990,
   "sku": "FREEON-44565",
+  "ean": "3830075044565",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Fantasy-3in1-Multifunkcios-babakocsi-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/44565-1-cc3bf49d.jpg",
-    "/images/products/shopify/44565-4-99a3775d.jpg",
-    "/images/products/shopify/44565-5-8dcff97e.jpg",
-    "/images/products/shopify/44565-7-87b0c31a.jpg",
-    "/images/products/shopify/44565-2-23072aa1.jpg",
-    "/images/products/shopify/44565-b87aa148.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44565-1.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44565-4.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44565-5.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44565-7.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44565-2.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44565.jpg?v=1767041884"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.8,
-  "reviewCount": 59
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.4,
+  "reviewCount": 24
 },
 {
   "id": "prod-0018",
@@ -548,21 +602,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON 3in1 iPad Tartó és Rendező Szett Szürke Edition – Intelligens megoldás utazáshoz és sétákhoz Tegye rendezetté és szórakoztatóvá az utazást a...",
   "price": 7890,
   "sku": "FREEON-42950",
+  "ean": "3830075042950",
+  "supplierUrl": "https://www.astibababolt.hu/Autos-kiegeszitokFreeON-3in1-Ipad-tarto-autoba-es-babakocsira",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/42950-2-9d353f2b.jpg",
-    "/images/products/shopify/42950-1-e15a63f9.jpg",
-    "/images/products/shopify/42950-01162c0f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42950-2.jpg?v=1767041883",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42950-1.jpg?v=1767041881",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42950.jpg?v=1767041881"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4,
-  "reviewCount": 61
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.2,
+  "reviewCount": 73
 },
 {
   "id": "prod-0019",
@@ -572,20 +629,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Neo Gyerekasztal Szett Modern Design – Asztal + 2 db szék a közös alkotáshoz A FreeON Neo játszóasztal szett modern megjelenésével és funkci...",
   "price": 28990,
   "sku": "FREEON-46620",
+  "ean": "3830075046620",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Neo-muanyag-gyerek-asztal-2-db-szekkel-Szur",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46620-a2733c27.jpg",
-    "/images/products/shopify/46620-1-7a3def71.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46620.jpg?v=1767043846",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46620-1.jpg?v=1767043846"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": true,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 3.8,
-  "reviewCount": 62
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.9,
+  "reviewCount": 33
 },
 {
   "id": "prod-0020",
@@ -595,21 +655,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Neo Gyerekasztal Szett Green Edition – Kreatív játszósarok asztallal és két székkel Varázsoljon inspiráló környezetet gyermeke számára a Fre...",
   "price": 28990,
   "sku": "FREEON-46637",
+  "ean": "3830075046637",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Neo-muanyag-gyerek-asztal-2-db-szekkel-Zold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46637-f6cd871f.jpg",
-    "/images/products/shopify/46637-1-36662221.jpg",
-    "/images/products/shopify/46637-2-c762b4e9.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46637.jpg?v=1767041911",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46637-1.jpg?v=1767041911",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46637-2.jpg?v=1767041911"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 3.6,
-  "reviewCount": 31
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.6,
+  "reviewCount": 43
 },
 {
   "id": "prod-0021",
@@ -619,24 +682,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Simple Sport Babakocsi Black & White Edition – Egyszerű, könnyű és rendkívül divatos A FreeON Simple a tökéletes választás a pörgős mindenna...",
   "price": 29990,
   "sku": "FREEON-48549",
+  "ean": "3830075048549",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Simple-sport-babakocsi-fekete-feher-mintas",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48549-dc9dd117.jpg",
-    "/images/products/shopify/48549-4-fe1e4959.jpg",
-    "/images/products/shopify/48549-2-afe9a56b.jpg",
-    "/images/products/shopify/48549-3-92cf1be6.jpg",
-    "/images/products/shopify/48549-1-14d060ce.jpg",
-    "/images/products/shopify/48549-5-97060e6f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48549.jpg?v=1767053837",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48549-4.jpg?v=1767053837",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48549-2.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48549-3.jpg?v=1767041911",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48549-1.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48549-5.jpg?v=1767041911"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4,
-  "reviewCount": 63
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.9,
+  "reviewCount": 84
 },
 {
   "id": "prod-0022",
@@ -646,20 +712,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Tányéralátét Szürke Oroszlán – Vidám és tiszta étkezések minden nap Tegye élvezetessé az önálló evés tanulását a FreeON szilikon al...",
   "price": 3990,
   "sku": "FREEON-46378",
+  "ean": "3830075046378",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-szilikon-tanyeralatet-Szurke-oroszlan",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46378-1-85f4b029.jpg",
-    "/images/products/shopify/46378-c41f1dad.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46378-1.jpg?v=1767053892",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46378.jpg?v=1767053892"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.5,
-  "reviewCount": 38
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.6,
+  "reviewCount": 46
 },
 {
   "id": "prod-0023",
@@ -669,22 +738,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Rozsdamentes Acél Evőeszköz Készlet Grey Edition – 3 darabos készlet az élvezetes tanuláshoz A FreeON evőeszköz készlet pasztell színeivel é...",
   "price": 4190,
   "sku": "FREEON-46286",
+  "ean": "3830075046286",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-acelmentes-evoeszkoz-keszlet-3db-os-Grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46286-5ed17421.jpg",
-    "/images/products/shopify/46286-3-75128a32.jpg",
-    "/images/products/shopify/46286-2-39e46dc4.jpg",
-    "/images/products/shopify/46286-1-7aa4efae.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46286.jpg?v=1767053921",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46286-3.jpg?v=1767053921",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46286-2.jpg?v=1767053921",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46286-1.jpg?v=1767053921"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 3.6,
-  "reviewCount": 52
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4,
+  "reviewCount": 30
 },
 {
   "id": "prod-0024",
@@ -694,24 +766,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Backpack Pelenkázó Hátizsák Gold Edition – Elegancia és praktikum minden kalandhoz A FreeON Gold pelenkázó hátizsák a modern édesanyák álma:...",
   "price": 18190,
   "sku": "FREEON-43131",
+  "ean": "3830075043131",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Backpack-pelenkazo-taska-hatizsak-Gold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/43131-557b3a13.jpg",
-    "/images/products/shopify/43131-6-2eae9589.jpg",
-    "/images/products/shopify/43131-7-c3bf5b8e.jpg",
-    "/images/products/shopify/43131-4-218ff683.jpg",
-    "/images/products/shopify/43131-2-e126bcd2.jpg",
-    "/images/products/shopify/43131-5-97114251.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/43131.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/43131-6.jpg?v=1767041883",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/43131-7.jpg?v=1767041883",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/43131-4.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/43131-2.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/43131-5.jpg?v=1767041885"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
+  "rating": 4.6,
+  "reviewCount": 16
 },
 {
   "id": "prod-0025",
@@ -721,20 +796,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Simply Pelenkázó Hátizsák Purple Edition – Modern stílus és pehelykönnyű kényelem A FreeON Simply hátizsák a tökéletes egyensúlyt képviseli ...",
   "price": 5190,
   "sku": "FREEON-49096",
+  "ean": "3830075049096",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-SImply-pelenkazo-taska-hatizsak-Purple",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49096-3814d465.jpg",
-    "/images/products/shopify/49096-1-c1398cce.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49096.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49096-1.jpg?v=1767041913"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
+  "createdAt": "2026-03-14T18:20:31.326Z",
+  "updatedAt": "2026-03-14T18:20:31.326Z",
   "rating": 4.5,
-  "reviewCount": 36
+  "reviewCount": 63
 },
 {
   "id": "prod-0026",
@@ -744,24 +822,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Little Explorer Gyerek Hátizsák Nyuszi Design – A legédesebb útitárs minden kis felfedezőnek Induljon a kaland a FreeON Little Explorer nyus...",
   "price": 8850,
   "sku": "FREEON-86625",
+  "ean": "3830084386625",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-gyerek-hatizsak-Little-Explorer-Nyuszi",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/86625-5ea0d65a.jpg",
-    "/images/products/shopify/86625-2-7b9c2fb9.jpg",
-    "/images/products/shopify/86625-3-19f1a8e5.jpg",
-    "/images/products/shopify/86625-1-717ec57d.jpg",
-    "/images/products/shopify/86625-4-63a44401.jpg",
-    "/images/products/shopify/86625-5-fbb70051.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86625.jpg?v=1767054025",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86625-2.jpg?v=1767054025",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86625-3.jpg?v=1767054025",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86625-1.jpg?v=1767054025",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86625-4.jpg?v=1767054025",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86625-5.jpg?v=1767054025"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 3.5,
-  "reviewCount": 38
+  "createdAt": "2026-03-14T18:20:31.327Z",
+  "updatedAt": "2026-03-14T18:20:31.327Z",
+  "rating": 4.7,
+  "reviewCount": 81
 },
 {
   "id": "prod-0027",
@@ -771,20 +852,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Swing Relax Elektromos Hinta Barna/Bézs Edition – Gyengéd gondoskodás és pihentető pihenés A FreeON Swing Relax elektromos hinta tökéletes v...",
   "price": 45490,
   "sku": "FREEON-60694",
+  "ean": "3830064560694",
+  "supplierUrl": "https://www.astibababolt.hu/FreeOn-elektromos-hinta",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/60694-dd19d656.jpg",
-    "/images/products/shopify/60694-1-99fb785d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/60694.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/60694-1.jpg?v=1767041952"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.1,
-  "reviewCount": 74
+  "createdAt": "2026-03-14T18:20:31.332Z",
+  "updatedAt": "2026-03-14T18:20:31.332Z",
+  "rating": 3.5,
+  "reviewCount": 12
 },
 {
   "id": "prod-0028",
@@ -794,21 +878,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Enjoy Rezgő-Zenélő Pihenőszék Szürke-Kék Design – Interaktív játék és nyugtató pihenés egyben A FreeON Enjoy egy kiváló minőségű pihenőszék,...",
   "price": 19990,
   "sku": "FREEON-45760",
+  "ean": "3830075045760",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Enjoy-rezgo-zenelo-pihenoszek-Szurke-kek",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/45760-777f97ac.jpg",
-    "/images/products/shopify/45760-2-8e9f6d15.jpg",
-    "/images/products/shopify/45760-1-44017e5f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45760.jpg?v=1767054082",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45760-2.jpg?v=1767054082",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45760-1.jpg?v=1767054082"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.3,
-  "reviewCount": 34
+  "createdAt": "2026-03-14T18:20:31.332Z",
+  "updatedAt": "2026-03-14T18:20:31.332Z",
+  "rating": 4.5,
+  "reviewCount": 28
 },
 {
   "id": "prod-0029",
@@ -818,20 +905,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Tányéralátét Rózsaszín Cica – Vidámság és tisztaság minden falatnál Varázsolja el gyermekét étkezés közben a FreeON szilikon alátét...",
   "price": 3990,
   "sku": "FREEON-46385",
+  "ean": "3830075046385",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-szilikon-tanyeralatet-Rozsaszin-cica",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46385-1-227eb3a3.jpg",
-    "/images/products/shopify/46385-e62c070e.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46385-1.jpg?v=1767041883",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46385.jpg?v=1767041882"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.8,
-  "reviewCount": 5
+  "createdAt": "2026-03-14T18:20:31.332Z",
+  "updatedAt": "2026-03-14T18:20:31.332Z",
+  "rating": 4.5,
+  "reviewCount": 15
 },
 {
   "id": "prod-0030",
@@ -841,23 +931,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Simple Sport Babakocsi Blue Leaves – Könnyed elegancia és kompakt kényelem A FreeON Simple sport babakocsi a modern szülők igényeire szabott...",
   "price": 29990,
   "sku": "FREEON-48556",
+  "ean": "3830075048556",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Simple-sport-babakocsi-Kek-level-mintas",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48556-c8e632ff.jpg",
-    "/images/products/shopify/48556-3-b2feb270.jpg",
-    "/images/products/shopify/48556-1-dca56c3e.jpg",
-    "/images/products/shopify/48556-2-94bfb3f1.jpg",
-    "/images/products/shopify/48556-4-c0875f8b.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48556.jpg?v=1767054195",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48556-3.jpg?v=1767054195",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48556-1.jpg?v=1767054195",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48556-2.jpg?v=1767054195",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48556-4.jpg?v=1767041911"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.7,
-  "reviewCount": 49
+  "createdAt": "2026-03-14T18:20:31.332Z",
+  "updatedAt": "2026-03-14T18:20:31.332Z",
+  "rating": 4.1,
+  "reviewCount": 74
 },
 {
   "id": "prod-0031",
@@ -867,22 +960,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Comfy Ülésmagasító Blue & Gray Edition – Élvonalban a biztonság és a kényelem A FreeON Comfy a modern design és a kiváló műszaki tulajdonság...",
   "price": 9690,
   "sku": "FREEON-49409",
+  "ean": "3830075049409",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Comfy-I-size-ulesmagasito-125-150cm-Bluegra",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49409-6c344e02.jpg",
-    "/images/products/shopify/49409-2-12f6eb91.jpg",
-    "/images/products/shopify/49409-1-5b9ac15f.jpg",
-    "/images/products/shopify/49409-3-80254a9d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49409.jpg?v=1767054220",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49409-2.jpg?v=1767054220",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49409-1.jpg?v=1767054220",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49409-3.jpg?v=1767054220"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.8,
-  "reviewCount": 61
+  "createdAt": "2026-03-14T18:20:31.333Z",
+  "updatedAt": "2026-03-14T18:20:31.333Z",
+  "rating": 4.9,
+  "reviewCount": 68
 },
 {
   "id": "prod-0032",
@@ -892,23 +988,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Rider I-Size Biztonsági Gyerekülés Grey Edition – Prémium védelem 100 cm-től 150 cm-ig (3–12 év) A FreeON Rider a legkorszerűbb biztonsági t...",
   "price": 56990,
   "sku": "FREEON-47009",
+  "ean": "3830075047009",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Rider-I-size-gyerekules-100-150-cm-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47009-2-80e45792.jpg",
-    "/images/products/shopify/47009-b46a145e.jpg",
-    "/images/products/shopify/47009-1-aecc3e4f.jpg",
-    "/images/products/shopify/47009-4-f58ea3de.jpg",
-    "/images/products/shopify/47009-3-6a17af6d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47009-2.jpg?v=1767041915",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47009.jpg?v=1767041916",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47009-1.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47009-4.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47009-3.jpg?v=1767041913"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.2,
-  "reviewCount": 70
+  "createdAt": "2026-03-14T18:20:31.333Z",
+  "updatedAt": "2026-03-14T18:20:31.333Z",
+  "rating": 3.9,
+  "reviewCount": 64
 },
 {
   "id": "prod-0033",
@@ -918,20 +1017,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Luxury Mozgásérzékelős Pihenőszék Luxury Edition – Intelligens gondoskodás és modern kényelem A FreeON Luxury pihenőszék több mint egy egysz...",
   "price": 44790,
   "sku": "FREEON-33058",
+  "ean": "3830071133058",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Luxury-mozgaserzekelos-pihenoszek",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/33058-1-9be81d3e.jpg",
-    "/images/products/shopify/33058-0e0ad90f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/33058-1.jpg?v=1767054273",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/33058.jpg?v=1767054273"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.961Z",
-  "updatedAt": "2026-03-09T22:37:51.961Z",
-  "rating": 4.6,
-  "reviewCount": 52
+  "createdAt": "2026-03-14T18:20:31.336Z",
+  "updatedAt": "2026-03-14T18:20:31.336Z",
+  "rating": 3.7,
+  "reviewCount": 60
 },
 {
   "id": "prod-0034",
@@ -941,20 +1043,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Tanulópohár Rózsaszín Edition – Az önálló ivás öröme, biztonságos köntösben Segítse gyermekét az önállóság útján a FreeON szilikon ...",
   "price": 3490,
   "sku": "FREEON-82917",
+  "ean": "3830084382917",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Szilikon-Pohar-Fogantyuval-Rozsaszin",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82917-6ed84d9a.jpg",
-    "/images/products/shopify/82917-1-678c6f0b.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82917.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82917-1.jpg?v=1767041982"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.962Z",
-  "updatedAt": "2026-03-09T22:37:51.962Z",
-  "rating": 3.7,
-  "reviewCount": 69
+  "createdAt": "2026-03-14T18:20:31.336Z",
+  "updatedAt": "2026-03-14T18:20:31.336Z",
+  "rating": 4.4,
+  "reviewCount": 19
 },
 {
   "id": "prod-0035",
@@ -964,19 +1069,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Swing Balance Zenélő Elektromos Hinta Balance Edition – Kifinomult stabilitás és személyre szabott nyugalom A FreeON Swing Balance a stabili...",
   "price": 48290,
   "sku": "FREEON-33041",
+  "ean": "3830071133041",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-zenelo-elektromos-hinta",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/33041-a7a09ec7.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/33041.jpg?v=1767041882"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.5,
-  "reviewCount": 22
+  "createdAt": "2026-03-14T18:20:31.336Z",
+  "updatedAt": "2026-03-14T18:20:31.336Z",
+  "rating": 4.8,
+  "reviewCount": 58
 },
 {
   "id": "prod-0036",
@@ -986,20 +1094,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Premium Puha Pelenkázó Lap Blue Edition – Maximális kényelem és higiénia a babaápolásban Kényeztesse babáját a FreeON Premium pelenkázó lapp...",
   "price": 9090,
   "sku": "FREEON-44596",
+  "ean": "3830075044596",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Premium-puha-pelenkazo-lap-50x70cm-Kek",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/44596-3eb030da.jpg",
-    "/images/products/shopify/44596-1-ae6bbda4.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44596.jpg?v=1767041883",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44596-1.jpg?v=1767041882"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 3.6,
-  "reviewCount": 32
+  "createdAt": "2026-03-14T18:20:31.336Z",
+  "updatedAt": "2026-03-14T18:20:31.336Z",
+  "rating": 4.9,
+  "reviewCount": 75
 },
 {
   "id": "prod-0037",
@@ -1009,21 +1120,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Olymp I-Size Gyerekülés Black Edition – Könnyű, biztonságos és stílusos utazás az iskolás években A FreeON Olymp a legújabb i-Size (ECE R129...",
   "price": 35800,
   "sku": "FREEON-82528",
+  "ean": "3830084382528",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Olymp-i-Size-gyerekules-100150-cm-Black",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82528-b39ab0e1.jpg",
-    "/images/products/shopify/82528-2-374175a5.jpg",
-    "/images/products/shopify/82528-1-df541ed6.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82528.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82528-2.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82528-1.jpg?v=1767041982"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.3,
-  "reviewCount": 42
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.1,
+  "reviewCount": 56
 },
 {
   "id": "prod-0038",
@@ -1033,21 +1147,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Rider I-Size Biztonsági Gyerekülés Black Edition – Kompromisszumok nélküli biztonság 100-150 cm között A FreeON Rider a legkorszerűbb bizton...",
   "price": 56990,
   "sku": "FREEON-47016",
+  "ean": "3830075047016",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Rider-I-size-gyerekules-100-150-cm-Fekete",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47016-aa29a4c1.jpg",
-    "/images/products/shopify/47016-2-29b2ce1b.jpg",
-    "/images/products/shopify/47016-1-699981cd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47016.jpg?v=1767054431",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47016-2.jpg?v=1767054431",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47016-1.jpg?v=1767041912"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.8,
-  "reviewCount": 64
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.4,
+  "reviewCount": 65
 },
 {
   "id": "prod-0039",
@@ -1057,22 +1174,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Bliss Babaöböl és Kiságy Bliss Edition – Meghitt közelség és biztonságos éjszakák A FreeON Bliss modell a tökéletes híd a szülői ágy és a sa...",
   "price": 55990,
   "sku": "FREEON-49584",
+  "ean": "3830075049584",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Bliss-babaobolkisagy-szuloi-agy-melle",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49584-a587670f.jpg",
-    "/images/products/shopify/49584-3-bf30b939.jpg",
-    "/images/products/shopify/49584-1-9c888430.jpg",
-    "/images/products/shopify/49584-2-a8b9c784.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49584.jpg?v=1767041954",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49584-3.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49584-1.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49584-2.jpg?v=1767041953"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.3,
-  "reviewCount": 30
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 3.7,
+  "reviewCount": 32
 },
 {
   "id": "prod-0040",
@@ -1082,20 +1202,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Maxim I-Size Gyerekülés Black Edition – Maximális biztonság 76 cm-től 150 cm-ig A FreeON Maxim egy kompromisszumok nélküli megoldás, amely 9...",
   "price": 78000,
   "sku": "FREEON-82498",
+  "ean": "3830084382498",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Maxim-i-Size-gyerekules-76150-cm-Black",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82498-f5581798.jpg",
-    "/images/products/shopify/82498-1-d10202a8.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82498.jpg?v=1767054534",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82498-1.jpg?v=1767054534"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.4,
-  "reviewCount": 76
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 3.7,
+  "reviewCount": 20
 },
 {
   "id": "prod-0041",
@@ -1105,19 +1228,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Olymp I-Size Gyerekülés Grey Edition – Ultrakönnyű biztonság az iskolás évek alatt A FreeON Olymp a bizonyíték arra, hogy a biztonság nem fe...",
   "price": 35800,
   "sku": "FREEON-82535",
+  "ean": "3830084382535",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Olymp-i-Size-gyerekules-100150-cm-Grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82535-927e8b96.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82535.jpg?v=1767041982"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.7,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.8,
+  "reviewCount": 11
 },
 {
   "id": "prod-0042",
@@ -1127,19 +1253,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Dynamic Automata Sportbabakocsi Black Edition – Dinamikus kényelem és intelligens összecsukás A FreeON Dynamic a mozgás szabadságát adja a c...",
   "price": 76990,
   "sku": "FREEON-82566",
+  "ean": "3830084382566",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Dynamic-sport-babakocsi-22-kg-ig-Black",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82566-01beb5c5.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82566.jpg?v=1767041982"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 3.5,
-  "reviewCount": 79
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.2,
+  "reviewCount": 21
 },
 {
   "id": "prod-0043",
@@ -1149,19 +1278,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Dynamic Automata Sportbabakocsi Green Edition – Természetes elegancia és intelligens technológia A FreeON Dynamic Green a modern szülők igén...",
   "price": 76990,
   "sku": "FREEON-82580",
+  "ean": "3830084382580",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Dynamic-sport-babakocsi-22-kg-ig-Green",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82580-1ed2d564.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82580.jpg?v=1767041983"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.7,
-  "reviewCount": 50
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 3.7,
+  "reviewCount": 69
 },
 {
   "id": "prod-0044",
@@ -1171,19 +1303,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Puha Pelenkázó Lap Love Bunny Edition – Extra nagy méret a felhőtlen kényelemért A FreeON Love Bunny pelenkázó lap a gyengédség és a funkcio...",
   "price": 10490,
   "sku": "FREEON-38725",
+  "ean": "3830071138725",
+  "supplierUrl": "https://www.astibababolt.hu/spd/38725/FreeON-pelenkazo-lap-puha-85x72-cm-Love-bunny",
+  "manufacturer": "FreeOn",
   "stock": 0,
   "images": [
-    "/images/products/shopify/38725-bb1315b4.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38725.jpg?v=1767041882"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.8,
-  "reviewCount": 49
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 3.9,
+  "reviewCount": 28
 },
 {
   "id": "prod-0045",
@@ -1193,23 +1328,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Bubaba Utazómatrac Safari Kingdom Edition – Otthonos kényelem minden utazás alkalmával A Bubaba by FreeON utazómatraccal gyermeke bárhol úgy...",
   "price": 16700,
   "sku": "FREEON-87172",
+  "ean": "3830084387172",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Bubabab-Utazomatrac-Safari-kingdom",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/87172-b3c14ddc.jpg",
-    "/images/products/shopify/87172-4-379d16f6.jpg",
-    "/images/products/shopify/87172-1-f2f15403.jpg",
-    "/images/products/shopify/87172-3-88ce9616.jpg",
-    "/images/products/shopify/87172-2-99644122.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/87172.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/87172-4.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/87172-1.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/87172-3.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/87172-2.jpg?v=1767041993"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
   "rating": 4.5,
-  "reviewCount": 18
+  "reviewCount": 35
 },
 {
   "id": "prod-0046",
@@ -1219,20 +1357,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Hálós Fürdőszobai Tároló Mosómedve Edition – Rend és higiénia a vidám fürdőzésért Búcsúzzon el a fürdőkád szélén felhalmozott vizes játékokt...",
   "price": 4090,
   "sku": "FREEON-47108",
+  "ean": "3830075047108",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-halos-furdoszobai-tarolo-Mosomedve",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47108-c67673b3.jpg",
-    "/images/products/shopify/47108-1-659c9a3c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47108.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47108-1.jpg?v=1767041912"
   ],
   "categoryId": "cat-furdetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 3.7,
-  "reviewCount": 59
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.4,
+  "reviewCount": 11
 },
 {
   "id": "prod-0047",
@@ -1242,20 +1383,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Dupla Cumisüveg Melegentartó Beige Edition – Frissesség és ideális hőmérséklet útközben is A FreeON termotáska praktikus megoldást nyújt a m...",
   "price": 2990,
   "sku": "FREEON-82085",
+  "ean": "3830084382085",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-dupla-cumisuveg-melegentarto-Gray",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82085-a57cb64e.jpg",
-    "/images/products/shopify/82085-1-55d8389c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82085.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82085-1.jpg?v=1767041983"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.6,
-  "reviewCount": 17
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.7,
+  "reviewCount": 84
 },
 {
   "id": "prod-0048",
@@ -1265,24 +1409,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Nano Automata Sportbabakocsi Light Grey Edition – Ultrakönnyű elegancia újszülött kortól 22 kg-ig A FreeON Nano a stílus és a mobilitás töké...",
   "price": 77990,
   "sku": "FREEON-39197",
+  "ean": "3830071139197",
+  "supplierUrl": "https://www.astibababolt.hu/Sport-babakocsiFreeON-Nano-sport-babakocsi-Vilagos",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/39197-6cf196b8.jpg",
-    "/images/products/shopify/39197-3-6a076a52.jpg",
-    "/images/products/shopify/39197-2-5b1ce42b.jpg",
-    "/images/products/shopify/39197-1-97465021.jpg",
-    "/images/products/shopify/39197-4-188a06fb.jpg",
-    "/images/products/shopify/39197-5-6f815a89.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39197.jpg?v=1767054803",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39197-3.jpg?v=1767054803",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39197-2.jpg?v=1767054803",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39197-1.jpg?v=1767054803",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39197-4.jpg?v=1767054803",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39197-5.jpg?v=1767054803"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4.2,
-  "reviewCount": 25
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.4,
+  "reviewCount": 39
 },
 {
   "id": "prod-0049",
@@ -1292,24 +1439,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Small Animals Gyerek Hátizsák Yellow Edition – Vidám útitárs a legkisebb kalandoroknak A FreeON Small Animals hátizsák több, mint egy egysze...",
   "price": 6990,
   "sku": "FREEON-49027",
+  "ean": "3830075049027",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Small-animals-gyerek-hatizsak-Sarga",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49027-1e332de4.jpg",
-    "/images/products/shopify/49027-1-b2021a05.jpg",
-    "/images/products/shopify/49027-4-a488726c.jpg",
-    "/images/products/shopify/49027-8-40728380.jpg",
-    "/images/products/shopify/49027-2-bd2de0d4.jpg",
-    "/images/products/shopify/49027-3-6a57ccee.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49027.jpg?v=1767054829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49027-1.jpg?v=1767054829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49027-4.jpg?v=1767054829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49027-8.jpg?v=1767054829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49027-2.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49027-3.jpg?v=1767041915"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.965Z",
-  "updatedAt": "2026-03-09T22:37:51.965Z",
-  "rating": 4,
-  "reviewCount": 16
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.2,
+  "reviewCount": 22
 },
 {
   "id": "prod-0050",
@@ -1319,21 +1469,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Levi Székmagasító Etetőszék Owl Edition – Rugalmas étkezés otthon és útközben A FreeON Levi a tökéletes megoldás, ha helyet szeretne spóroln...",
   "price": 17990,
   "sku": "FREEON-49560",
+  "ean": "3830075049560",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Levi-szekre-teheto-etetoszek-Bagoly",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49560-b7293c05.jpg",
-    "/images/products/shopify/49560-2-031d107d.jpg",
-    "/images/products/shopify/49560-1-3eb27fb1.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49560.jpg?v=1767054864",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49560-2.jpg?v=1767054864",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49560-1.jpg?v=1767041951"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.966Z",
-  "updatedAt": "2026-03-09T22:37:51.966Z",
-  "rating": 4.2,
-  "reviewCount": 11
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 3.7,
+  "reviewCount": 72
 },
 {
   "id": "prod-0051",
@@ -1343,24 +1496,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Unique Sportbabakocsi Black & Silver Edition – Az elegancia és a technológia találkozása A FreeON Unique nem csupán egy babakocsi, hanem a m...",
   "price": 64990,
   "sku": "FREEON-48846",
+  "ean": "3830075048846",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Unique-sport-babakocsi-blacksilver",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48846-216506d5.jpg",
-    "/images/products/shopify/48846-5-b0df001e.jpg",
-    "/images/products/shopify/48846-1-4409a58d.jpg",
-    "/images/products/shopify/48846-2-c2d00039.jpg",
-    "/images/products/shopify/48846-3-5d9e9670.jpg",
-    "/images/products/shopify/48846-4-89612136.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48846.jpg?v=1767054895",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48846-5.jpg?v=1767054895",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48846-1.jpg?v=1767054895",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48846-2.jpg?v=1767054895",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48846-3.jpg?v=1767054895",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48846-4.jpg?v=1767054895"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.966Z",
-  "updatedAt": "2026-03-09T22:37:51.966Z",
-  "rating": 4.8,
-  "reviewCount": 42
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
+  "rating": 4.4,
+  "reviewCount": 34
 },
 {
   "id": "prod-0052",
@@ -1370,22 +1526,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Trex I-Size Gyerekülés Black Edition – Új generációs védelem 76 cm-től 142 cm-ig A FreeON Trex az i-Size (ECE R129) szabvány legszigorúbb kö...",
   "price": 71390,
   "sku": "FREEON-47153",
+  "ean": "3830075047153",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Trex-I-size-gyerekules-76-142-cm-Fekete",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47153-7b2bd6ba.jpg",
-    "/images/products/shopify/47153-3-66e231ea.jpg",
-    "/images/products/shopify/47153-1-d6fd93ad.jpg",
-    "/images/products/shopify/47153-2-4582e6b8.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47153.jpg?v=1767054965",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47153-3.jpg?v=1767054965",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47153-1.jpg?v=1767054965",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47153-2.jpg?v=1767054965"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.966Z",
-  "updatedAt": "2026-03-09T22:37:51.966Z",
+  "createdAt": "2026-03-14T18:20:31.337Z",
+  "updatedAt": "2026-03-14T18:20:31.337Z",
   "rating": 4.1,
-  "reviewCount": 58
+  "reviewCount": 12
 },
 {
   "id": "prod-0053",
@@ -1395,24 +1554,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Opty 3 az 1-ben Babakocsi Szett Grey Edition – Teljes körű mobilitás születéstől 22 kg-ig A FreeON Opty szett a modern szülők svájci bicskáj...",
   "price": 188000,
   "sku": "FREEON-86182",
+  "ean": "3830084386182",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Opty-3-az-1-ben-babakocsi-szett-szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/86182-3-af89904b.jpg",
-    "/images/products/shopify/86182-1-d5a736f6.jpg",
-    "/images/products/shopify/86182-4-b33997af.jpg",
-    "/images/products/shopify/86182-5-36b2d79f.jpg",
-    "/images/products/shopify/86182-afd21a24.jpg",
-    "/images/products/shopify/86182-6-778be5a6.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86182-3.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86182-1.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86182-4.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86182-5.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86182.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86182-6.jpg?v=1767041994"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.966Z",
-  "updatedAt": "2026-03-09T22:37:51.966Z",
-  "rating": 3.6,
-  "reviewCount": 27
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 4.3,
+  "reviewCount": 65
 },
 {
   "id": "prod-0054",
@@ -1422,19 +1584,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Colt I-Size Gyerekülés Black Edition – Maximális védelem újszülött kortól 150 cm-ig A FreeON Colt nem csupán egy autósülés, hanem egy hosszú...",
   "price": 74000,
   "sku": "FREEON-82504",
+  "ean": "3830084382504",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Colt-i-Size-gyerekules-40150-cm-Black",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82504-be4e5c68.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82504.jpg?v=1767041982"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.966Z",
-  "updatedAt": "2026-03-09T22:37:51.966Z",
-  "rating": 4.9,
-  "reviewCount": 56
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 3.9,
+  "reviewCount": 14
 },
 {
   "id": "prod-0055",
@@ -1444,24 +1609,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Maxim I-Size Gyerekülés Grey Edition – Kompromisszumok nélküli biztonság 76 cm-től 150 cm-ig A FreeON Maxim az i-Size generáció megbízható t...",
   "price": 78000,
   "sku": "FREEON-82481",
+  "ean": "3830084382481",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Maxim-i-Size-gyerekules-76150-cm-Grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82481-4fa7ac3a.jpg",
-    "/images/products/shopify/82481-2-4cbfa1af.jpg",
-    "/images/products/shopify/82481-3-2ad88c36.jpg",
-    "/images/products/shopify/82481-1-565c2868.jpg",
-    "/images/products/shopify/82481-4-3305a139.jpg",
-    "/images/products/shopify/82481-5-cb420aed.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82481.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82481-2.jpg?v=1767055044",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82481-3.jpg?v=1767055044",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82481-1.jpg?v=1767055044",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82481-4.jpg?v=1767055044",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82481-5.jpg?v=1767055044"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.966Z",
-  "updatedAt": "2026-03-09T22:37:51.966Z",
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
   "rating": 4.6,
-  "reviewCount": 36
+  "reviewCount": 49
 },
 {
   "id": "prod-0056",
@@ -1471,24 +1639,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Dynamic Sportbabakocsi Pink Edition – Automata kényelem újszülött kortól 22 kg-ig A FreeON Dynamic a könnyed utazás új dimenzióját hozza el....",
   "price": 68800,
   "sku": "FREEON-82597",
+  "ean": "3830084382597",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Dynamic-sport-babakocsi-22-kg-ig-Pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82597-b4f67913.jpg",
-    "/images/products/shopify/82597-1-62d97ca9.jpg",
-    "/images/products/shopify/82597-2-e1e7c8bd.jpg",
-    "/images/products/shopify/82597-3-f3bde495.jpg",
-    "/images/products/shopify/82597-5-07f378c3.jpg",
-    "/images/products/shopify/82597-4-d15986a7.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82597.jpg?v=1767055099",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82597-1.jpg?v=1767055099",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82597-2.jpg?v=1767055099",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82597-3.jpg?v=1767055099",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82597-5.jpg?v=1767055099",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82597-4.jpg?v=1767055099"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.966Z",
-  "updatedAt": "2026-03-09T22:37:51.966Z",
-  "rating": 4.2,
-  "reviewCount": 74
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 3.8,
+  "reviewCount": 60
 },
 {
   "id": "prod-0057",
@@ -1498,19 +1669,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Dynamic Sportbabakocsi Grey Edition – Intelligens mobilitás születéstől 22 kg-ig A FreeON Dynamic a modern városi élet és az utazások tökéle...",
   "price": 68800,
   "sku": "FREEON-82573",
+  "ean": "3830084382573",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Dynamic-sport-babakocsi-22-kg-ig-Grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82573-6cca54a5.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82573.jpg?v=1767041983"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.966Z",
-  "updatedAt": "2026-03-09T22:37:51.966Z",
-  "rating": 3.5,
-  "reviewCount": 35
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 3.9,
+  "reviewCount": 59
 },
 {
   "id": "prod-0058",
@@ -1520,22 +1694,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Levi Székmagasító Etetőszék Zig Zag Edition – Dinamikus stílus és kényelem bárhol A FreeON Levi egy innovatív székmagasító, amely lehetővé t...",
   "price": 17990,
   "sku": "FREEON-49577",
+  "ean": "3830075049577",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Levi-szekre-teheto-etetoszek-ZIg-zag",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49577-2e1184d3.jpg",
-    "/images/products/shopify/49577-1-1f4c06ad.jpg",
-    "/images/products/shopify/49577-2-b1c78269.jpg",
-    "/images/products/shopify/49577-3-d0a2620c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49577.jpg?v=1767055148",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49577-1.jpg?v=1767055148",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49577-2.jpg?v=1767055148",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49577-3.jpg?v=1767055148"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 4.3,
-  "reviewCount": 6
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 4.4,
+  "reviewCount": 78
 },
 {
   "id": "prod-0059",
@@ -1545,19 +1722,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Sun Plus Sportbabakocsi Green Edition – Könnyed elegancia a mindennapi sétákhoz ⚠️ KIFUTÓ TERMÉK: Utolsó darabok a készlet erejéig! A FreeON...",
   "price": 33390,
   "sku": "FREEON-63213",
+  "ean": "3830064563213",
+  "supplierUrl": "https://www.astibababolt.hu/FreeOn-Sun-Plus-babakocsi",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/63213-9e080d21.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/63213.jpg?v=1767041952"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
   "rating": 4.4,
-  "reviewCount": 30
+  "reviewCount": 22
 },
 {
   "id": "prod-0060",
@@ -1567,24 +1747,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Thermo Kulacs Szürke Oroszlán Edition – Frissesség minden kortyban, egész nap A FreeON thermo kulacs a modern szülők és gyermekek elengedhet...",
   "price": 4690,
   "sku": "FREEON-380715",
+  "ean": "3830084380715",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-thermo-kulacs-480ml-Szurke-oroszlan",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/380715-b71c9433.jpg",
-    "/images/products/shopify/380715-2-d890a525.jpg",
-    "/images/products/shopify/380715-1-ccfec39f.jpg",
-    "/images/products/shopify/380715-3-ba51450d.jpg",
-    "/images/products/shopify/380715-5-874f493e.jpg",
-    "/images/products/shopify/380715-4-5c5d8411.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380715.jpg?v=1767055211",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380715-2.jpg?v=1767055211",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380715-1.jpg?v=1767055211",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380715-3.jpg?v=1767055211",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380715-5.jpg?v=1767055211",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380715-4.jpg?v=1767055211"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 3.7,
-  "reviewCount": 53
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 3.6,
+  "reviewCount": 41
 },
 {
   "id": "prod-0061",
@@ -1594,20 +1777,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Tányéralátét Menta Medve – Játékos védelem az asztalnak, örömteli étkezés a babának Varázsolja szórakoztatóvá és tisztábbá az étkez...",
   "price": 3990,
   "sku": "FREEON-46392",
+  "ean": "3830075046392",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-szilikon-tanyeralatet-Menta-medve",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46392-1-2a284028.jpg",
-    "/images/products/shopify/46392-15e1c320.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46392-1.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46392.jpg?v=1767041882"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 3.8,
-  "reviewCount": 38
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 4.7,
+  "reviewCount": 8
 },
 {
   "id": "prod-0062",
@@ -1617,23 +1803,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Lotus I-Size Gyerekülés Gray Edition – 360°-os forgathatóság és memóriahabos kényelem A FreeON Lotus a technológiai tökéletesség és az ergon...",
   "price": 108990,
   "sku": "FREEON-49348",
+  "ean": "3830075049348",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Lotus-I-size-gyerekules-40-125-cm-Gray",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49348-127e638d.jpg",
-    "/images/products/shopify/49348-4-9faedf62.jpg",
-    "/images/products/shopify/49348-3-8145ca6a.jpg",
-    "/images/products/shopify/49348-2-07ae5df7.jpg",
-    "/images/products/shopify/49348-1-7c648412.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49348.jpg?v=1767055238",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49348-4.jpg?v=1767055238",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49348-3.jpg?v=1767055238",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49348-2.jpg?v=1767055238",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49348-1.jpg?v=1767055238"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 4.1,
-  "reviewCount": 34
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 4,
+  "reviewCount": 38
 },
 {
   "id": "prod-0063",
@@ -1643,24 +1832,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Lotus I-Size Gyerekülés Blue Edition – Intelligens védelem és 360°-os szabadság A FreeON Lotus kék kiadása modern választás a stílusos utazá...",
   "price": 108990,
   "sku": "FREEON-49355",
+  "ean": "3830075049355",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Lotus-I-size-gyerekules-40-125-cm-Blue",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49355-234c9868.jpg",
-    "/images/products/shopify/49355-4-2bb25b3a.jpg",
-    "/images/products/shopify/49355-5-001e8c96.jpg",
-    "/images/products/shopify/49355-3-922a9526.jpg",
-    "/images/products/shopify/49355-1-3de7819b.jpg",
-    "/images/products/shopify/49355-2-38dcd1c0.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49355.jpg?v=1767063377",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49355-4.jpg?v=1767063377",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49355-5.jpg?v=1767063377",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49355-3.jpg?v=1767063377",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49355-1.jpg?v=1767063377",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49355-2.jpg?v=1767063377"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 3.7,
-  "reviewCount": 62
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 4.7,
+  "reviewCount": 8
 },
 {
   "id": "prod-0064",
@@ -1670,20 +1862,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Pohár Fogantyúval Grey Edition – Biztonságos és stílusos lépés az önállóság felé A FreeON szilikon pohár segít gyermekének elsajátí...",
   "price": 3490,
   "sku": "FREEON-82900",
+  "ean": "3830084382900",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Szilikon-Pohar-Fogantyuval-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82900-1-50f2c1bd.jpg",
-    "/images/products/shopify/82900-1f15a462.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82900-1.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82900.jpg?v=1767041983"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 4.9,
-  "reviewCount": 45
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 4.5,
+  "reviewCount": 31
 },
 {
   "id": "prod-0065",
@@ -1693,24 +1888,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON LAN 2 az 1-ben Etetőszék Light Green Edition – Pihenőszék és etetőszék egyben, újszülött kortól A FreeON LAN több mint egy egyszerű etetőszé...",
   "price": 38600,
   "sku": "FREEON-85871",
+  "ean": "3830084385871",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-LAN-2-az-1-ben-etetoszek-Vilagos-zold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85871-18e228f8.jpg",
-    "/images/products/shopify/85871-2-38236d1b.jpg",
-    "/images/products/shopify/85871-1-1cfff373.jpg",
-    "/images/products/shopify/85871-5-90997096.jpg",
-    "/images/products/shopify/85871-4-79acbe19.jpg",
-    "/images/products/shopify/85871-3-938f627e.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85871.jpg?v=1767063425",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85871-2.jpg?v=1767063425",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85871-1.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85871-5.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85871-4.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85871-3.jpg?v=1767041993"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
   "rating": 4.6,
-  "reviewCount": 28
+  "reviewCount": 21
 },
 {
   "id": "prod-0066",
@@ -1720,22 +1918,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Colt I-Size Gyerekülés Grey Edition – Maximális védelem újszülött kortól 150 cm-ig A FreeON Colt az egyik legsokoldalúbb választás a piacon,...",
   "price": 74000,
   "sku": "FREEON-82511",
+  "ean": "3830084382511",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Colt-i-Size-gyerekules-40150-cm-Grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82511-353e6b28.jpg",
-    "/images/products/shopify/82511-3-4417e6bd.jpg",
-    "/images/products/shopify/82511-2-7efe893c.jpg",
-    "/images/products/shopify/82511-1-4bf74221.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82511.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82511-3.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82511-2.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82511-1.jpg?v=1767041982"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 4.2,
-  "reviewCount": 16
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 4.3,
+  "reviewCount": 53
 },
 {
   "id": "prod-0067",
@@ -1745,19 +1946,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Puha Pelenkázólap Animals Edition – Kényelem és biztonság minden peluscserekor A FreeON puha pelenkázólap a praktikum és a gondoskodás talál...",
   "price": 8990,
   "sku": "FREEON-49836",
+  "ean": "3830075049836",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-puha-pelenkazo-lap-50x70cm-Allatos",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49836-027d7153.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49836.jpg?v=1767041953"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 3.8,
-  "reviewCount": 28
+  "createdAt": "2026-03-14T18:20:31.338Z",
+  "updatedAt": "2026-03-14T18:20:31.338Z",
+  "rating": 4.9,
+  "reviewCount": 53
 },
 {
   "id": "prod-0068",
@@ -1767,21 +1971,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Libra Ülésmagasító Gray Edition – Biztonság és kényelem a nagyobb kalandoroknak A FreeON Libra az utolsó fontos lépcsőfok a gyermekek autós ...",
   "price": 8690,
   "sku": "FREEON-49386",
+  "ean": "3830075049386",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Libra-I-size-ulesmagasito-125-150cm-Gray",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49386-144e468e.jpg",
-    "/images/products/shopify/49386-3-4b1d9c68.jpg",
-    "/images/products/shopify/49386-1-935d4f22.jpg",
-    "/images/products/shopify/49386-2-b0bf9cfd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49386.jpg?v=1767063487",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49386-3.jpg?v=1767063487",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49386-1.jpg?v=1767063487",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49386-2.jpg?v=1767063487"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 3.8,
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4.2,
   "reviewCount": 63
 },
 {
@@ -1792,20 +1999,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Előke Szürke Oroszlán – Tiszta ruha, vidám falatozás A FreeON szilikon előke a modern szülők titkos fegyvere. A puha, élelmiszeripa...",
   "price": 2390,
   "sku": "FREEON-49430",
+  "ean": "3830075049430",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-szilikon-eloke-Szurke-oroszlanos",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49430-4455c042.jpg",
-    "/images/products/shopify/49430-1-2306500f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49430.jpg?v=1767041951",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49430-1.jpg?v=1767041951"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 4.2,
-  "reviewCount": 60
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4,
+  "reviewCount": 43
 },
 {
   "id": "prod-0070",
@@ -1815,22 +2025,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Glamour Pelenkázó Hátizsák Brown Edition – A kényelem és az elegancia új mércéje A FreeON Glamour több, mint egy egyszerű pelenkázótáska. Mo...",
   "price": 19990,
   "sku": "FREEON-49010",
+  "ean": "3830075049010",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Glamour-pelenkazo-hatizsak-Barna",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49010-1-881e8cfc.jpg",
-    "/images/products/shopify/49010-2-0ae45fd7.jpg",
-    "/images/products/shopify/49010-e2cc8bb7.jpg",
-    "/images/products/shopify/49010-3-768dd556.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49010-1.jpg?v=1767063532",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49010-2.jpg?v=1767063532",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49010.jpg?v=1767063532",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49010-3.jpg?v=1767041914"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 4.3,
-  "reviewCount": 58
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4.7,
+  "reviewCount": 64
 },
 {
   "id": "prod-0071",
@@ -1840,24 +2053,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON EOS 3 az 1-ben Etetőszék Bükkfa design – Etetőszékből kreatív játszósarok pillanatok alatt A FreeON EOS megoldást kínál a gyermekek gyors nö...",
   "price": 47990,
   "sku": "FREEON-44275",
+  "ean": "3830075044275",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-EOS-3in1-atalakithato-etetoszek",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/44275-4e650c40.jpg",
-    "/images/products/shopify/44275-3-cc6c5227.jpg",
-    "/images/products/shopify/44275-7-00efce44.jpg",
-    "/images/products/shopify/44275-6-02df2227.jpg",
-    "/images/products/shopify/44275-5-3607a7a7.jpg",
-    "/images/products/shopify/44275-4-e9c14008.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44275.jpg?v=1767063636",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44275-3.jpg?v=1767063636",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44275-7.jpg?v=1767063636",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44275-6.jpg?v=1767063636",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44275-5.jpg?v=1767063636",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44275-4.jpg?v=1767063636"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.967Z",
-  "updatedAt": "2026-03-09T22:37:51.967Z",
-  "rating": 4,
-  "reviewCount": 15
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4.1,
+  "reviewCount": 48
 },
 {
   "id": "prod-0072",
@@ -1867,20 +2083,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON LED-es Baba Visszapillantó Tükör Biztonság és láthatóság a nap 24 órájában A FreeON LED-es visszapillantó tükör megoldást nyújt a szülők egy...",
   "price": 9090,
   "sku": "FREEON-38145",
+  "ean": "3830071138145",
+  "supplierUrl": "https://www.astibababolt.hu/autos-kiegeszitokFreeON-LED-es-baba-visszapillanto",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/38145-1-4caa04cd.jpg",
-    "/images/products/shopify/38145-7fb7cfe3.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38145-1.jpg?v=1767041881",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38145.jpg?v=1767041881"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.6,
-  "reviewCount": 18
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4.3,
+  "reviewCount": 7
 },
 {
   "id": "prod-0073",
@@ -1890,23 +2109,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Glamour Pelenkázó Hátizsák Black Edition – Időtlen stílus és professzionális rendszerezés A FreeON Glamour fekete változata a funkcionalitás...",
   "price": 19990,
   "sku": "FREEON-46538",
+  "ean": "3830075046538",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-hatizsak-Glamour",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46538-5fee8d4b.jpg",
-    "/images/products/shopify/46538-3-816ff0aa.jpg",
-    "/images/products/shopify/46538-4-d4cfdbab.jpg",
-    "/images/products/shopify/46538-1-5e85207e.jpg",
-    "/images/products/shopify/46538-2-696d57de.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46538.jpg?v=1767063764",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46538-3.jpg?v=1767063764",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46538-4.jpg?v=1767063764",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46538-1.jpg?v=1767063764",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46538-2.jpg?v=1767041883"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.5,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 3.7,
+  "reviewCount": 66
 },
 {
   "id": "prod-0074",
@@ -1916,24 +2138,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Opty 3 az 1-ben Szett Green Edition – Komplett utazási rendszer újszülött kortól 22 kg-ig A FreeON Opty egyetlen intelligens megoldásban kín...",
   "price": 188000,
   "sku": "FREEON-86175",
+  "ean": "3830084386175",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Opty-3-az-1-ben-babakocsi-szett-zold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/86175-3-5a63495d.jpg",
-    "/images/products/shopify/86175-1-0e9032a9.jpg",
-    "/images/products/shopify/86175-7-bdb6cbde.jpg",
-    "/images/products/shopify/86175-5-ac1ccd5c.jpg",
-    "/images/products/shopify/86175-21b8eaf4.jpg",
-    "/images/products/shopify/86175-6-204d9b97.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86175-3.jpg?v=1767063789",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86175-1.jpg?v=1767063789",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86175-7.jpg?v=1767063789",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86175-5.jpg?v=1767063789",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86175.jpg?v=1767063789",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86175-6.jpg?v=1767063789"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.7,
-  "reviewCount": 16
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 3.7,
+  "reviewCount": 38
 },
 {
   "id": "prod-0075",
@@ -1943,24 +2168,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Simple Sport Babakocsi Beige Cica Edition – Könnyed szabadság a városi sétákhoz A FreeON Simple babakocsi neve magáért beszél: egyszerű hasz...",
   "price": 29990,
   "sku": "FREEON-48570",
+  "ean": "3830075048570",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Simple-sport-babakocsi-Beige-cica",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48570-2e554983.jpg",
-    "/images/products/shopify/48570-4-5e514d12.jpg",
-    "/images/products/shopify/48570-2-2e00f46d.jpg",
-    "/images/products/shopify/48570-3-89d54883.jpg",
-    "/images/products/shopify/48570-1-4e80a1e6.jpg",
-    "/images/products/shopify/48570-5-6b8e1514.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48570.jpg?v=1767063816",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48570-4.jpg?v=1767063816",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48570-2.jpg?v=1767063816",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48570-3.jpg?v=1767063816",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48570-1.jpg?v=1767063816",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48570-5.jpg?v=1767041911"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.8,
-  "reviewCount": 52
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4.7,
+  "reviewCount": 38
 },
 {
   "id": "prod-0076",
@@ -1970,24 +2198,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Unique Sport Babakocsi Black & Gold Edition – Automata kényelem és prémium elegancia A FreeON Unique a modern édesanyák álma: egy babakocsi,...",
   "price": 63890,
   "sku": "FREEON-48839",
+  "ean": "3830075048839",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Unique-sport-babakocsi-blackgold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48839-1f89f090.jpg",
-    "/images/products/shopify/48839-5-56dded9b.jpg",
-    "/images/products/shopify/48839-6-8ba7a121.jpg",
-    "/images/products/shopify/48839-1-26d53d59.jpg",
-    "/images/products/shopify/48839-3-0ede4176.jpg",
-    "/images/products/shopify/48839-2-d817e979.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48839.jpg?v=1767063844",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48839-5.jpg?v=1767063844",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48839-6.jpg?v=1767063844",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48839-1.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48839-3.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48839-2.jpg?v=1767041913"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.5,
-  "reviewCount": 19
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 5,
+  "reviewCount": 26
 },
 {
   "id": "prod-0077",
@@ -1997,24 +2228,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Glamour Pelenkázó Hátizsák Pink Edition – Elegancia és gondoskodás pasztell színekben A FreeON Glamour Pink változata a modern szülői lét el...",
   "price": 17990,
   "sku": "FREEON-46545",
+  "ean": "3830075046545",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Glamour-pelenkazo-hatizsak-Pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46545-6bf483ba.jpg",
-    "/images/products/shopify/46545-4-0474b35e.jpg",
-    "/images/products/shopify/46545-1-80768c85.jpg",
-    "/images/products/shopify/46545-2-f347e529.jpg",
-    "/images/products/shopify/46545-3-812ec0bb.jpg",
-    "/images/products/shopify/46545-5-3c81f7cb.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46545.jpg?v=1767063885",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46545-4.jpg?v=1767063885",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46545-1.jpg?v=1767063885",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46545-2.jpg?v=1767063885",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46545-3.jpg?v=1767063885",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46545-5.jpg?v=1767041884"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.8,
-  "reviewCount": 69
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4.9,
+  "reviewCount": 71
 },
 {
   "id": "prod-0078",
@@ -2024,20 +2258,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Lars Etetőszék Szürke Csillagos – Praktikus kényelem kétféle magasságban A FreeON Lars etetőszék az egyszerűségében rejti erejét. Legyen szó...",
   "price": 17990,
   "sku": "FREEON-44633",
+  "ean": "3830075044633",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Lars-etetoszek-Szurke-csillagos",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/44633-1-9c9dceb6.jpg",
-    "/images/products/shopify/44633-49c6d43a.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44633-1.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44633.jpg?v=1767041883"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4,
-  "reviewCount": 40
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4.8,
+  "reviewCount": 82
 },
 {
   "id": "prod-0079",
@@ -2047,20 +2284,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Pohár Zöld Edition – Tanulópohár dupla fogantyúval a biztos fogásért Az önálló ivás elsajátítása nagy kaland! A FreeON szilikon tan...",
   "price": 3490,
   "sku": "FREEON-82894",
+  "ean": "3830084382894",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Szilikon-Pohar-Fogantyuval-Zold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82894-e4739758.jpg",
-    "/images/products/shopify/82894-1-0aab3a5d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82894.jpg?v=1767063940",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82894-1.jpg?v=1767063940"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.4,
-  "reviewCount": 79
+  "createdAt": "2026-03-14T18:20:31.339Z",
+  "updatedAt": "2026-03-14T18:20:31.339Z",
+  "rating": 4.7,
+  "reviewCount": 35
 },
 {
   "id": "prod-0080",
@@ -2070,20 +2310,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Előke Rózsaszín Kutyás – Higiénikus és vidám étkezésekhez A FreeON szilikon előke a legjobb választás az önálló étkezést tanuló kis...",
   "price": 2090,
   "sku": "FREEON-47269",
+  "ean": "3830075047269",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-szilikon-eloke-Rozsaszin-kutyas",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47269-4a07cc56.jpg",
-    "/images/products/shopify/47269-1-66076e46.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47269.jpg?v=1767063967",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47269-1.jpg?v=1767063967"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.8,
-  "reviewCount": 78
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 4.8,
+  "reviewCount": 77
 },
 {
   "id": "prod-0081",
@@ -2093,20 +2336,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Babakocsi Napernyő Sötét szürke – 360 fokos védelem a káros napsugarak ellen A FreeON napernyő elengedhetetlen kelléke a nyári babakocsis sé...",
   "price": 5590,
   "sku": "FREEON-44527",
+  "ean": "3830075044527",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-babakocsi-napernyo-Sotet-szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/44527-3edb71ea.jpg",
-    "/images/products/shopify/44527-1-9457c47f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44527.jpg?v=1767063991",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44527-1.jpg?v=1767063991"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.5,
-  "reviewCount": 37
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 4.8,
+  "reviewCount": 20
 },
 {
   "id": "prod-0082",
@@ -2116,20 +2362,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Szilikon Mackós Tányér Rózsaszín – Vákuumos rögzítéssel a balesetmentes étkezésekért A FreeON mackó formájú tányérja nemcsak az asztal dísze...",
   "price": 6390,
   "sku": "FREEON-39692",
+  "ean": "3830071139692",
+  "supplierUrl": "https://www.astibababolt.hu/Baba-tanyer-evoeszkozFreeON-szilikon-tanyer-Rozsas",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/39692-7979ba82.jpg",
-    "/images/products/shopify/39692-1-c6602ae0.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39692.jpg?v=1767064014",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39692-1.jpg?v=1767064014"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.6,
-  "reviewCount": 53
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 4.1,
+  "reviewCount": 6
 },
 {
   "id": "prod-0083",
@@ -2139,21 +2388,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Univerzális Napellenző Szürke – UPF 50+ védelem minden típusú babakocsihoz A FreeON napellenző a tökéletes megoldás, ha a babakocsi saját ku...",
   "price": 2590,
   "sku": "FREEON-47115",
+  "ean": "3830075047115",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-napellenzo-babakocsira-szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47115-d0b931b5.jpg",
-    "/images/products/shopify/47115-1-2e1e2624.jpg",
-    "/images/products/shopify/47115-2-4bcd74bd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47115.jpg?v=1767064097",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47115-1.jpg?v=1767064097",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47115-2.jpg?v=1767064097"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.6,
-  "reviewCount": 33
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 4.2,
+  "reviewCount": 26
 },
 {
   "id": "prod-0084",
@@ -2163,20 +2415,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Univerzális Szúnyogháló Black Edition – Komplex védelem a rovarok ellen, minden helyzetben A FreeON univerzális szúnyogháló elengedhetetlen ...",
   "price": 2090,
   "sku": "FREEON-47078",
+  "ean": "3830075047078",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-univerzalis-szunyoghalo-Fekete",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47078-7e34e727.jpg",
-    "/images/products/shopify/47078-1-f69256f1.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47078.jpg?v=1767064113",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47078-1.jpg?v=1767064113"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.7,
-  "reviewCount": 67
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 5,
+  "reviewCount": 28
 },
 {
   "id": "prod-0085",
@@ -2186,20 +2441,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Eldobható Előke Szett Elefántos Minta – Higiénikus kényelem és 3 rétegű védelem utazáshoz A FreeON eldobható előke leveszi a válláról a mosá...",
   "price": 1390,
   "sku": "FREEON-44374",
+  "ean": "3830075044374",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-eldobhato-eloke-12-db-Elefantos",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/44374-8603e222.jpg",
-    "/images/products/shopify/44374-1-ea2bbc62.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44374.jpg?v=1767064132",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44374-1.jpg?v=1767064132"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.6,
-  "reviewCount": 41
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 5,
+  "reviewCount": 36
 },
 {
   "id": "prod-0086",
@@ -2209,23 +2467,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Solo Sport Babakocsi Tégla vörös – Sokoldalú társ minden családi kalandhoz A FreeON Solo a szabadság élményét hozza el a mindennapokba. Tága...",
   "price": 49090,
   "sku": "FREEON-44404",
+  "ean": "3830075044404",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Solo-sportbabakocsi-Tegla-voros",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/44404-1-e1d2c528.jpg",
-    "/images/products/shopify/44404-9fc783b6.jpg",
-    "/images/products/shopify/44404-3-6f33d6bf.jpg",
-    "/images/products/shopify/44404-2-d1971f84.jpg",
-    "/images/products/shopify/44404-4-77659f2f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44404-1.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44404.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44404-3.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44404-2.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44404-4.jpg?v=1767041882"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
   "rating": 3.6,
-  "reviewCount": 38
+  "reviewCount": 74
 },
 {
   "id": "prod-0087",
@@ -2235,24 +2496,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Tao Sport Babakocsi Green Edition – Ultra-kompakt társ kihúzható bőrönd-fogantyúval A FreeON Tao a modern utazók igényeire született. Akár 2...",
   "price": 51990,
   "sku": "FREEON-81996",
+  "ean": "3830084381996",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Tao-sport-babakocsi-22-kg-ig-Green",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/81996-1-ff971f1f.jpg",
-    "/images/products/shopify/81996-3-13004b15.jpg",
-    "/images/products/shopify/81996-5-d04376a7.jpg",
-    "/images/products/shopify/81996-9-fde407cc.jpg",
-    "/images/products/shopify/81996-6-af22ee78.jpg",
-    "/images/products/shopify/81996-4-49f93ae7.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81996-1.jpg?v=1767064191",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81996-3.jpg?v=1767064191",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81996-5.jpg?v=1767064191",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81996-9.jpg?v=1767064191",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81996-6.jpg?v=1767064191",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81996-4.jpg?v=1767041954"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.8,
-  "reviewCount": 59
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 4,
+  "reviewCount": 22
 },
 {
   "id": "prod-0088",
@@ -2262,24 +2526,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON 2in1 Babaöböl és Etetőszék Szürke & Fa design – Multifunkciós kényelem az első naptól 15 kg-ig Miért vásárolna két külön bútort, ha a FreeON...",
   "price": 86990,
   "sku": "FREEON-84959",
+  "ean": "3830084384959",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-2in1-babaobol-etetoszek-szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/84959-1c4a74a4.jpg",
-    "/images/products/shopify/84959-2-98e38bb2.jpg",
-    "/images/products/shopify/84959-1-06170e18.jpg",
-    "/images/products/shopify/84959-3-8048e0b9.jpg",
-    "/images/products/shopify/84959-4-f6105130.jpg",
-    "/images/products/shopify/84959-5-2e005ce3.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84959.jpg?v=1767055829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84959-2.jpg?v=1767055829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84959-1.jpg?v=1767055829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84959-3.jpg?v=1767055829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84959-4.jpg?v=1767055829",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84959-5.jpg?v=1767055829"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.6,
-  "reviewCount": 50
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 3.7,
+  "reviewCount": 49
 },
 {
   "id": "prod-0089",
@@ -2289,19 +2556,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Autós Napellenző Autós állatok – 2 darabos szett a hűvös és vidám utazásért Ne hagyja, hogy az erős napsütés és a hőség megzavarja gyermeke ...",
   "price": 3290,
   "sku": "FREEON-81934",
+  "ean": "3830084381934",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-autos-napellenzo-Autos-allatos",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/81934-83564980.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81934.jpg?v=1767041953"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.8,
-  "reviewCount": 78
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 4.9,
+  "reviewCount": 70
 },
 {
   "id": "prod-0090",
@@ -2311,21 +2581,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Összecsukható Babakád Szürke – Kompakt tárolás és intelligens hőmérséklet-védelem A fürdetés az egyik legfontosabb bizalmi pillanat Ön és ba...",
   "price": 13490,
   "sku": "FREEON-42349",
+  "ean": "3830075042349",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-osszecsukhato-babakad-szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/42349-81218fab.jpg",
-    "/images/products/shopify/42349-2-9bd65477.jpg",
-    "/images/products/shopify/42349-1-403a0d71.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42349.jpg?v=1767064262",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42349-2.jpg?v=1767064262",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42349-1.jpg?v=1767041881"
   ],
   "categoryId": "cat-furdetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.5,
-  "reviewCount": 83
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 3.6,
+  "reviewCount": 16
 },
 {
   "id": "prod-0091",
@@ -2335,23 +2608,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Tao Sport Babakocsi Pink Edition – Elegáns utazás és különleges bőrönd-funkció A FreeON Tao a szabadság új dimenzióját nyitja meg a családok...",
   "price": 51990,
   "sku": "FREEON-82009",
+  "ean": "3830084382009",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Tao-sport-babakocsi-22-kg-ig-Pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82009-72bce22a.jpg",
-    "/images/products/shopify/82009-2-2c771cb1.jpg",
-    "/images/products/shopify/82009-1-c15342d5.jpg",
-    "/images/products/shopify/82009-3-a49f8224.jpg",
-    "/images/products/shopify/82009-4-654a2cc2.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82009.jpg?v=1767064289",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82009-2.jpg?v=1767064289",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82009-1.jpg?v=1767064289",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82009-3.jpg?v=1767064289",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82009-4.jpg?v=1767064289"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.8,
-  "reviewCount": 70
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 3.6,
+  "reviewCount": 67
 },
 {
   "id": "prod-0092",
@@ -2361,24 +2637,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON Vega Gyerekülés Black Edition – Új generációs biztonság 100-tól 150 cm-ig A FreeON Vega több mint egy egyszerű ülésmagasító háttámlával. Ez ...",
   "price": 27990,
   "sku": "FREEON-49133",
+  "ean": "3830075049133",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Vega-I-size-gyerekules-100-150cm-Black",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49133-3503b30c.jpg",
-    "/images/products/shopify/49133-5-2359b930.jpg",
-    "/images/products/shopify/49133-2-21622c60.jpg",
-    "/images/products/shopify/49133-3-8f8c4aa0.jpg",
-    "/images/products/shopify/49133-1-1f35b68c.jpg",
-    "/images/products/shopify/49133-4-1eeee272.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49133.jpg?v=1767064318",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49133-5.jpg?v=1767064318",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49133-2.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49133-3.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49133-1.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49133-4.jpg?v=1767041914"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.7,
-  "reviewCount": 29
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 4.8,
+  "reviewCount": 68
 },
 {
   "id": "prod-0093",
@@ -2388,20 +2667,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4090,
   "sku": "FREEON-47092",
+  "ean": "3830075047092",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-halos-furdoszobai-tarolo-Roka",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47092-acd70358.jpg",
-    "/images/products/shopify/47092-1-462b4ff2.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47092.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47092-1.jpg?v=1767041912"
   ],
   "categoryId": "cat-furdetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
   "rating": 4,
-  "reviewCount": 14
+  "reviewCount": 54
 },
 {
   "id": "prod-0094",
@@ -2411,23 +2693,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 39990,
   "sku": "FREEON-49102",
+  "ean": "3830075049102",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Uran-I-size-gyerekules-76-150cm-Black",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49102-9bb5d5c2.jpg",
-    "/images/products/shopify/49102-3-f8459ae3.jpg",
-    "/images/products/shopify/49102-2-671a91d9.jpg",
-    "/images/products/shopify/49102-4-c01309d1.jpg",
-    "/images/products/shopify/49102-1-cc184cc1.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49102.jpg?v=1767064363",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49102-3.jpg?v=1767064363",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49102-2.jpg?v=1767064363",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49102-4.jpg?v=1767064363",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49102-1.jpg?v=1767041913"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 3.8,
-  "reviewCount": 79
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 3.5,
+  "reviewCount": 9
 },
 {
   "id": "prod-0095",
@@ -2437,24 +2722,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 39990,
   "sku": "FREEON-49126",
+  "ean": "3830075049126",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Uran-I-size-gyerekules-76-150cm-Khaki",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49126-2-39ed52c2.jpg",
-    "/images/products/shopify/49126-5-5d48fa1c.jpg",
-    "/images/products/shopify/49126-4-14c42585.jpg",
-    "/images/products/shopify/49126-3-b114367c.jpg",
-    "/images/products/shopify/49126-1-80984619.jpg",
-    "/images/products/shopify/49126-68247098.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49126-2.jpg?v=1767064382",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49126-5.jpg?v=1767064382",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49126-4.jpg?v=1767064382",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49126-3.jpg?v=1767064382",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49126-1.jpg?v=1767064382",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49126.jpg?v=1767064382"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.7,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 3.6,
+  "reviewCount": 66
 },
 {
   "id": "prod-0096",
@@ -2464,23 +2752,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Egyszerű, könnyű, kompakt és divatos. Újszülött kortól (legfeljebb 15 kg-ig, vagy 36 hónapos korig) használható. Jellemzők: Több pozícióban állítha...",
   "price": 29990,
   "sku": "FREEON-48532",
+  "ean": "3830075048532",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Simple-sport-babakocsi-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48532-3df2e3b2.jpg",
-    "/images/products/shopify/48532-1-3776da35.jpg",
-    "/images/products/shopify/48532-2-340e5a8e.jpg",
-    "/images/products/shopify/48532-3-33398b8e.jpg",
-    "/images/products/shopify/48532-4-6a5135de.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48532.jpg?v=1767242626",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48532-1.jpg?v=1767242626",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48532-2.jpg?v=1767242626",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48532-3.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48532-4.jpg?v=1767041911"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.968Z",
-  "updatedAt": "2026-03-09T22:37:51.968Z",
-  "rating": 4.1,
-  "reviewCount": 63
+  "createdAt": "2026-03-14T18:20:31.340Z",
+  "updatedAt": "2026-03-14T18:20:31.340Z",
+  "rating": 4.9,
+  "reviewCount": 11
 },
 {
   "id": "prod-0097",
@@ -2490,21 +2781,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Potty Simple Bili – Púderrózsaszín A Potty Simple bili letisztult formavilágával és praktikus kialakításával ideális választás a szobatisztaságra s...",
   "price": 2200,
   "sku": "FREEON-48754",
+  "ean": "3830075048754",
+  "supplierUrl": "https://www.astibababolt.hu/Potty-Simple-Bili-Puderrozsaszin",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48754-569a09b8.jpg",
-    "/images/products/shopify/48754-2-fb03e1d6.jpg",
-    "/images/products/shopify/48754-1-3f6a7a14.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48754.jpg?v=1767242652",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48754-2.jpg?v=1767242652",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48754-1.jpg?v=1767242652"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.3,
-  "reviewCount": 14
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.9,
+  "reviewCount": 48
 },
 {
   "id": "prod-0098",
@@ -2514,20 +2808,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4090,
   "sku": "FREEON-47085",
+  "ean": "3830075047085",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-halos-furdoszobai-tarolo-Maci",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47085-6b48f503.jpg",
-    "/images/products/shopify/47085-1-c45c817f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47085.jpg?v=1767041915",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47085-1.jpg?v=1767041913"
   ],
   "categoryId": "cat-furdetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.3,
-  "reviewCount": 9
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.8,
+  "reviewCount": 74
 },
 {
   "id": "prod-0099",
@@ -2537,24 +2834,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON LAN 2 az 1-ben etetőszék Kényelmes, biztonságos és tökéletesen alkalmazkodik gyermekedhez A FreeON LAN multifunkciós etetőszék tökéletes vál...",
   "price": 38600,
   "sku": "FREEON-85864",
+  "ean": "3830084385864",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-LAN-2-az-1-ben-etetoszek-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85864-a57225e5.jpg",
-    "/images/products/shopify/85864-1-70f33ee4.jpg",
-    "/images/products/shopify/85864-6-66c53f4d.jpg",
-    "/images/products/shopify/85864-7-bd6b92c3.jpg",
-    "/images/products/shopify/85864-5-95e73f0a.jpg",
-    "/images/products/shopify/85864-2-a1dfc096.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85864.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85864-1.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85864-6.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85864-7.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85864-5.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85864-2.jpg?v=1767041993"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.7,
-  "reviewCount": 46
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.8,
+  "reviewCount": 28
 },
 {
   "id": "prod-0100",
@@ -2564,21 +2864,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4690,
   "sku": "FREEON-380708",
+  "ean": "3830084380708",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-thermo-kulacs-480ml-Beige-maci",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/380708-8de140ae.jpg",
-    "/images/products/shopify/380708-1-5cc0edae.jpg",
-    "/images/products/shopify/380708-2-a73e92df.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380708.jpg?v=1767242746",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380708-1.jpg?v=1767242746",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/380708-2.jpg?v=1767242746"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.5,
-  "reviewCount": 28
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.8,
+  "reviewCount": 27
 },
 {
   "id": "prod-0101",
@@ -2588,23 +2891,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 39990,
   "sku": "FREEON-49119",
+  "ean": "3830075049119",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Uran-I-size-gyerekules-76-150cm-Gray",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49119-4074b6f5.jpg",
-    "/images/products/shopify/49119-4-85135f43.jpg",
-    "/images/products/shopify/49119-1-79a4391d.jpg",
-    "/images/products/shopify/49119-2-b63f669d.jpg",
-    "/images/products/shopify/49119-3-e26774af.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49119.jpg?v=1767242828",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49119-4.jpg?v=1767242828",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49119-1.jpg?v=1767242828",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49119-2.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49119-3.jpg?v=1767041913"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.8,
-  "reviewCount": 72
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.9,
+  "reviewCount": 49
 },
 {
   "id": "prod-0102",
@@ -2614,20 +2920,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 6390,
   "sku": "FREEON-39678",
+  "ean": "3830071139678",
+  "supplierUrl": "https://www.astibababolt.hu/Baba-tanyer-evoeszkozFreeON-szilikon-tanyer-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/39678-cb11991f.jpg",
-    "/images/products/shopify/39678-1-23557545.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39678.jpg?v=1767242863",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/39678-1.jpg?v=1767242863"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.6,
-  "reviewCount": 16
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.9,
+  "reviewCount": 63
 },
 {
   "id": "prod-0103",
@@ -2637,23 +2946,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 17400,
   "sku": "FREEON-83495",
+  "ean": "3830084383495",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Free2Play-Max-a-macko-jatszoszonyeg",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/83495-1d3814b5.jpg",
-    "/images/products/shopify/83495-3-bb3303fa.jpg",
-    "/images/products/shopify/83495-2-cfd7e68c.jpg",
-    "/images/products/shopify/83495-1-44831b80.jpg",
-    "/images/products/shopify/83495-4-b6827129.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83495.jpg?v=1767242891",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83495-3.jpg?v=1767242891",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83495-2.jpg?v=1767242891",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83495-1.jpg?v=1767242891",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83495-4.jpg?v=1767242891"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.6,
-  "reviewCount": 68
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.4,
+  "reviewCount": 76
 },
 {
   "id": "prod-0104",
@@ -2663,23 +2975,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 62990,
   "sku": "FREEON-49300",
+  "ean": "3830075049027",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Reno-sportbabakocsi-Green",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49300-198a04b4.jpg",
-    "/images/products/shopify/49300-2-091d2ee4.jpg",
-    "/images/products/shopify/49300-1-99ef1799.jpg",
-    "/images/products/shopify/49300-4-777ef1f0.jpg",
-    "/images/products/shopify/49300-3-8a283c2f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49300.jpg?v=1767242924",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49300-2.jpg?v=1767242924",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49300-1.jpg?v=1767242924",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49300-4.jpg?v=1767242924",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49300-3.jpg?v=1767242924"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.9,
-  "reviewCount": 72
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.6,
+  "reviewCount": 21
 },
 {
   "id": "prod-0105",
@@ -2689,24 +3004,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 37990,
   "sku": "FREEON-80579",
+  "ean": "3830084380579",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-fa-konyha-kiegeszitokkel",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/80579-8865cd8a.jpg",
-    "/images/products/shopify/80579-3-7358c1ae.jpg",
-    "/images/products/shopify/80579-7-f9a1596e.jpg",
-    "/images/products/shopify/80579-6-21df3548.jpg",
-    "/images/products/shopify/80579-5-bf5fac1c.jpg",
-    "/images/products/shopify/80579-4-08e7818c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80579.jpg?v=1767242950",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80579-3.jpg?v=1767242950",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80579-7.jpg?v=1767242950",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80579-6.jpg?v=1767242950",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80579-5.jpg?v=1767242950",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80579-4.jpg?v=1767242950"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.7,
-  "reviewCount": 46
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.9,
+  "reviewCount": 23
 },
 {
   "id": "prod-0106",
@@ -2716,20 +3034,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Fedezze fel a FreeON állítható szekrényzárat, amelyet kifejezetten úgy terveztünk, hogy a kis felfedezők otthoni kalandjait biztonságosabbá tegye. ...",
   "price": 1190,
   "sku": "FREEON-65361",
+  "ean": "3830064565361",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-Allithato-szekrenyzar-1-db",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/65361-bfa90f89.jpg",
-    "/images/products/shopify/65361-1-b9568b9e.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65361.jpg?v=1767242973",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65361-1.jpg?v=1767242973"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.5,
-  "reviewCount": 84
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.4,
+  "reviewCount": 51
 },
 {
   "id": "prod-0107",
@@ -2739,20 +3060,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON multifunkciós csipeszei kicsik, de nélkülözhetetlen társai lesznek a szülőknek a mindennapokban. Tökéletes segítséget nyújtanak a pólya, t...",
   "price": 1390,
   "sku": "FREEON-67358",
+  "ean": "3830064567358",
+  "supplierUrl": "https://www.astibababolt.hu/Babakocsi-kiegeszitokFreeON-multifunkcios-csipesz",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/67358-a272a978.jpg",
-    "/images/products/shopify/67358-1-595d2734.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/67358.jpg?v=1767243017",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/67358-1.jpg?v=1767243017"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4,
-  "reviewCount": 41
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.6,
+  "reviewCount": 29
 },
 {
   "id": "prod-0108",
@@ -2762,21 +3086,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 3990,
   "sku": "FREEON-80845",
+  "ean": "3830084380845",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-osztott-szilikon-tanyer-gray",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/80845-8b2fbd86.jpg",
-    "/images/products/shopify/80845-1-b7656ed3.jpg",
-    "/images/products/shopify/80845-2-a4d1431c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80845.jpg?v=1767243051",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80845-1.jpg?v=1767243051",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80845-2.jpg?v=1767243051"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.6,
-  "reviewCount": 84
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.5,
+  "reviewCount": 38
 },
 {
   "id": "prod-0109",
@@ -2786,21 +3113,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 62990,
   "sku": "FREEON-49294",
+  "ean": "3830075049294",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Reno-sportbabakocsi-Pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49294-da26a972.jpg",
-    "/images/products/shopify/49294-1-47939404.jpg",
-    "/images/products/shopify/49294-2-0a41ad5e.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49294.jpg?v=1767243076",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49294-1.jpg?v=1767243076",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49294-2.jpg?v=1767243076"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.2,
-  "reviewCount": 14
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.5,
+  "reviewCount": 22
 },
 {
   "id": "prod-0110",
@@ -2810,21 +3140,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 62990,
   "sku": "FREEON-49317",
+  "ean": "3830075049317",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Reno-sportbabakocsi-Grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49317-2252a0b7.jpg",
-    "/images/products/shopify/49317-1-d139bb18.jpg",
-    "/images/products/shopify/49317-2-5783210c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49317.jpg?v=1767243115",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49317-1.jpg?v=1767243115",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49317-2.jpg?v=1767243115"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.7,
-  "reviewCount": 84
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.8,
+  "reviewCount": 27
 },
 {
   "id": "prod-0111",
@@ -2834,22 +3167,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 5690,
   "sku": "FREEON-81828",
+  "ean": "3830084381828",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-babakocsi-napernyo-Szurke828",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/81828-b4dca520.jpg",
-    "/images/products/shopify/81828-1-79b800e3.jpg",
-    "/images/products/shopify/81828-2-4ddeeda6.jpg",
-    "/images/products/shopify/81828-3-98d7ed97.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81828.jpg?v=1767243174",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81828-1.jpg?v=1767243174",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81828-2.jpg?v=1767243174",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81828-3.jpg?v=1767243174"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.5,
-  "reviewCount": 31
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.8,
+  "reviewCount": 48
 },
 {
   "id": "prod-0112",
@@ -2859,24 +3195,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON All Around pelenkázótáska ideális választás minden szülő számára, aki praktikus és stílusos megoldást keres. Több mint 10 éves tapasztalat...",
   "price": 20290,
   "sku": "FREEON-46521",
+  "ean": "3830075046521",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-pelenkazo-taska-All-around",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46521-70e5fa70.jpg",
-    "/images/products/shopify/46521-3-52de01a8.jpg",
-    "/images/products/shopify/46521-4-865b3407.jpg",
-    "/images/products/shopify/46521-5-c7012891.jpg",
-    "/images/products/shopify/46521-1-6d2e1d34.jpg",
-    "/images/products/shopify/46521-2-a0df621d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46521.jpg?v=1767244127",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46521-3.jpg?v=1767244127",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46521-4.jpg?v=1767244127",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46521-5.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46521-1.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46521-2.jpg?v=1767041884"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.8,
-  "reviewCount": 10
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.3,
+  "reviewCount": 44
 },
 {
   "id": "prod-0113",
@@ -2886,22 +3225,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 5590,
   "sku": "FREEON-81811",
+  "ean": "3830084381811",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-babakocsi-napernyo-Fekete",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/81811-3be7b7b8.jpg",
-    "/images/products/shopify/81811-2-67904e92.jpg",
-    "/images/products/shopify/81811-1-2e04d3fa.jpg",
-    "/images/products/shopify/81811-3-ce027a24.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81811.jpg?v=1767244181",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81811-2.jpg?v=1767244181",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81811-1.jpg?v=1767244181",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81811-3.jpg?v=1767244181"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.6,
-  "reviewCount": 59
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.7,
+  "reviewCount": 38
 },
 {
   "id": "prod-0114",
@@ -2911,21 +3253,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON Gama biztonsági ajtórács tökéletes választás a kicsik védelmében - az önműködő záródású ajtórács mindig gondoskodik róla, hogy a játék köz...",
   "price": 26990,
   "sku": "FREEON-45005",
+  "ean": "3830075045005",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Gama-biztonsagi-ajtoracs",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/45005-ce7f822c.jpg",
-    "/images/products/shopify/45005-2-d9d161f0.jpg",
-    "/images/products/shopify/45005-1-6de37b83.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45005.jpg?v=1767244210",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45005-2.jpg?v=1767244210",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45005-1.jpg?v=1767244210"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
   "rating": 4.6,
-  "reviewCount": 6
+  "reviewCount": 13
 },
 {
   "id": "prod-0115",
@@ -2935,21 +3280,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 29990,
   "sku": "FREEON-80890",
+  "ean": "3830084380890",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-negyzet-alaku-jaroka-Panda",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/80890-f21dcc56.jpg",
-    "/images/products/shopify/80890-1-9c379b90.jpg",
-    "/images/products/shopify/80890-2-66caeb3f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80890.jpg?v=1767041954",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80890-1.jpg?v=1767041954",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80890-2.jpg?v=1767041953"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.8,
-  "reviewCount": 21
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.5,
+  "reviewCount": 77
 },
 {
   "id": "prod-0116",
@@ -2959,19 +3307,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 3490,
   "sku": "FREEON-82887",
+  "ean": "3830084382887",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Szilikon-Talka-Rozsaszin",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82887-f3807eae.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82887.jpg?v=1767041982"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.1,
-  "reviewCount": 24
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.6,
+  "reviewCount": 63
 },
 {
   "id": "prod-0117",
@@ -2981,21 +3332,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 5590,
   "sku": "FREEON-81804",
+  "ean": "3830084381804",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-babakocsi-napernyo-Barna",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/81804-edfd8740.jpg",
-    "/images/products/shopify/81804-1-8a809ff6.jpg",
-    "/images/products/shopify/81804-2-915a6085.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81804.jpg?v=1767244287",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81804-1.jpg?v=1767244287",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81804-2.jpg?v=1767244287"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.7,
-  "reviewCount": 53
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.6,
+  "reviewCount": 60
 },
 {
   "id": "prod-0118",
@@ -3005,20 +3359,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 5590,
   "sku": "FREEON-48693",
+  "ean": "3830075048693",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-babakocsi-napernyo-beige",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48693-6bd3d739.jpg",
-    "/images/products/shopify/48693-1-b1f21374.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48693.jpg?v=1767244307",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48693-1.jpg?v=1767244307"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.6,
-  "reviewCount": 33
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.5,
+  "reviewCount": 58
 },
 {
   "id": "prod-0119",
@@ -3028,24 +3385,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 14990,
   "sku": "FREEON-82047",
+  "ean": "3830084382047",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Easy-move-3in1-kenguru-gray",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82047-295b8d46.jpg",
-    "/images/products/shopify/82047-6-032d43d1.jpg",
-    "/images/products/shopify/82047-7-438af5d3.jpg",
-    "/images/products/shopify/82047-5-7e5bd5c5.jpg",
-    "/images/products/shopify/82047-4-7ce5b2bd.jpg",
-    "/images/products/shopify/82047-3-114fcf95.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82047.jpg?v=1767244338",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82047-6.jpg?v=1767244338",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82047-7.jpg?v=1767244338",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82047-5.jpg?v=1767244338",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82047-4.jpg?v=1767244338",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82047-3.jpg?v=1767244338"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.4,
-  "reviewCount": 78
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.6,
+  "reviewCount": 27
 },
 {
   "id": "prod-0120",
@@ -3055,21 +3415,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 14990,
   "sku": "FREEON-82030",
+  "ean": "3830084382030",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Easy-move-3in1-kenguru-pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82030-933155f1.jpg",
-    "/images/products/shopify/82030-1-32fb35c0.jpg",
-    "/images/products/shopify/82030-2-e41276e5.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82030.jpg?v=1767041954",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82030-1.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82030-2.jpg?v=1767041952"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4,
-  "reviewCount": 16
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.4,
+  "reviewCount": 8
 },
 {
   "id": "prod-0121",
@@ -3079,20 +3442,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2390,
   "sku": "FREEON-49423",
+  "ean": "3830075049423",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-szilikon-eloke-Zold-macis",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49423-97afd738.jpg",
-    "/images/products/shopify/49423-1-96cdd981.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49423.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49423-1.jpg?v=1767041951"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.8,
-  "reviewCount": 58
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 3.9,
+  "reviewCount": 78
 },
 {
   "id": "prod-0122",
@@ -3102,19 +3468,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 31990,
   "sku": "FREEON-82689",
+  "ean": "3830084382689",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Kai-etetoszek-Turquoise",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82689-9a001e73.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82689.jpg?v=1767041983"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.7,
-  "reviewCount": 8
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.1,
+  "reviewCount": 84
 },
 {
   "id": "prod-0123",
@@ -3124,24 +3493,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON utazóágy ideális választás otthonon kívüli pihenéshez és alváshoz, akár nyaraláson, akár rokonlátogatás során. A kényelmes, biztonságos ki...",
   "price": 22590,
   "sku": "FREEON-FR83013",
+  "ean": "3830084383013",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-utazoagy-napozoagy-Zold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/FR83013-e453ca18.jpg",
-    "/images/products/shopify/FR83013-5-e0d78478.jpg",
-    "/images/products/shopify/FR83013-4-2d1cabb5.jpg",
-    "/images/products/shopify/FR83013-3-e4cc1e49.jpg",
-    "/images/products/shopify/FR83013-1-2bcf2462.jpg",
-    "/images/products/shopify/FR83013-2-a9b4dfdf.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/FR83013.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/FR83013-5.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/FR83013-4.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/FR83013-3.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/FR83013-1.jpg?v=1767041993",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/FR83013-2.jpg?v=1767041993"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.2,
-  "reviewCount": 47
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.6,
+  "reviewCount": 19
 },
 {
   "id": "prod-0124",
@@ -3151,19 +3523,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Bűbájos mintás designjával a FreeON autós napellenző tökéletes választás, hogy gyermekeinket megvédjük a nap erős sugaraitól és a káros UV-sugárzás...",
   "price": 7090,
   "sku": "FREEON-32587",
+  "ean": "3830071132587",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-autos-napellenzo-Mintas",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/32587-e00048eb.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/32587.jpg?v=1767041883"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.9,
-  "reviewCount": 55
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.1,
+  "reviewCount": 81
 },
 {
   "id": "prod-0125",
@@ -3173,22 +3548,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 12290,
   "sku": "FREEON-82221",
+  "ean": "3830084382221",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Finn-pelenkazo-hatizsak",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82221-733fd720.jpg",
-    "/images/products/shopify/82221-3-6f3dc2bb.jpg",
-    "/images/products/shopify/82221-2-0e7ff58e.jpg",
-    "/images/products/shopify/82221-1-b11ec71f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82221.jpg?v=1767245363",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82221-3.jpg?v=1767245363",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82221-2.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82221-1.jpg?v=1767041983"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.6,
-  "reviewCount": 26
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.2,
+  "reviewCount": 19
 },
 {
   "id": "prod-0126",
@@ -3198,20 +3576,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON sarokvédő segít megőrizni kicsinyeink biztonságát otthonunkban. A bútorok éles sarkai komoly veszélyt jelenthetnek a játszadozó gyerekek s...",
   "price": 1190,
   "sku": "FREEON-65330",
+  "ean": "3830064565330",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-sarokvedo",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/65330-091401b0.jpg",
-    "/images/products/shopify/65330-1-ff98b46c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65330.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65330-1.jpg?v=1767041952"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.2,
-  "reviewCount": 63
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.341Z",
+  "rating": 4.9,
+  "reviewCount": 40
 },
 {
   "id": "prod-0127",
@@ -3221,22 +3602,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 13990,
   "sku": "FREEON-82979",
+  "ean": "3830084382979",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-interaktiv-zenelo-fa",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82979-13810bbb.jpg",
-    "/images/products/shopify/82979-1-a02b39da.jpg",
-    "/images/products/shopify/82979-2-385be947.jpg",
-    "/images/products/shopify/82979-3-1ab4cbe4.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82979.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82979-1.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82979-2.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82979-3.jpg?v=1767041984"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.7,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.341Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.9,
+  "reviewCount": 21
 },
 {
   "id": "prod-0128",
@@ -3246,21 +3630,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 28990,
   "sku": "FREEON-84935",
+  "ean": "3830084384935",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Serene-pihenoszek-Grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/84935-bdabab75.jpg",
-    "/images/products/shopify/84935-1-95978ecf.jpg",
-    "/images/products/shopify/84935-2-7223ef2d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84935.jpg?v=1767284383",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84935-1.jpg?v=1767284383",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84935-2.jpg?v=1767284383"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.5,
-  "reviewCount": 82
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.9,
+  "reviewCount": 66
 },
 {
   "id": "prod-0129",
@@ -3270,20 +3657,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 6990,
   "sku": "FREEON-81927",
+  "ean": "3830084381927",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-autos-napellenzo-Rokas",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/81927-057761cb.jpg",
-    "/images/products/shopify/81927-1-762b878d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81927.jpg?v=1767041954",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81927-1.jpg?v=1767041954"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.7,
-  "reviewCount": 28
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.4,
+  "reviewCount": 44
 },
 {
   "id": "prod-0130",
@@ -3293,20 +3683,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "- 6 hónapos kortól, 20 kg-os súlyig. - Erős és stabil etetőszék - 3 magassági fokozatba állítható ülő felület - 3 pozícióba állítható lábtartó - Az...",
   "price": 33990,
   "sku": "FREEON-34347",
+  "ean": "3830057734347",
+  "supplierUrl": "https://www.astibababolt.hu/FreeOn-Chef-fa-etetoszek-Natur",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/34347-285ce856.jpg",
-    "/images/products/shopify/34347-1-adce7c47.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/34347.jpg?v=1767396634",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/34347-1.jpg?v=1767396634"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.4,
-  "reviewCount": 77
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.3,
+  "reviewCount": 23
 },
 {
   "id": "prod-0131",
@@ -3316,6 +3709,9 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 3390,
   "sku": "FREEON-49522",
+  "ean": "3830075049522",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-szilikon-labda-pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [],
   "categoryId": "cat-jatekok",
@@ -3323,10 +3719,10 @@ export const shopifyProducts: Product[] = [
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.8,
-  "reviewCount": 75
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.5,
+  "reviewCount": 72
 },
 {
   "id": "prod-0132",
@@ -3336,22 +3732,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON WC szűkítő tökéletes választás a kicsiknek, amikor eljön az idő, hogy a felnőtt WC-t használják. A modern szülői trendekkel összhangban te...",
   "price": 7590,
   "sku": "FREEON-38763",
+  "ean": "3830071138763",
+  "supplierUrl": "https://www.astibababolt.hu/Bili-wc-szukito-fellepoFreeON-WC-szukito-Feher-szu",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/38763-b52024a6.jpg",
-    "/images/products/shopify/38763-1-499b3787.jpg",
-    "/images/products/shopify/38763-3-0d53d059.jpg",
-    "/images/products/shopify/38763-2-01c758d7.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38763.jpg?v=1767396662",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38763-1.jpg?v=1767396662",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38763-3.jpg?v=1767396662",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38763-2.jpg?v=1767396662"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.7,
-  "reviewCount": 63
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.4,
+  "reviewCount": 31
 },
 {
   "id": "prod-0133",
@@ -3361,22 +3760,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 13290,
   "sku": "FREEON-82061",
+  "ean": "3830084382061",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Style-pelenkazo-taska",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82061-1df271f3.jpg",
-    "/images/products/shopify/82061-1-a3ece6d2.jpg",
-    "/images/products/shopify/82061-2-8bc57df4.jpg",
-    "/images/products/shopify/82061-3-5a842570.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82061.jpg?v=1767396692",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82061-1.jpg?v=1767396692",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82061-2.jpg?v=1767396692",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82061-3.jpg?v=1767396692"
   ],
   "categoryId": "cat-pelenkak",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 3.8,
-  "reviewCount": 6
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.4,
+  "reviewCount": 70
 },
 {
   "id": "prod-0134",
@@ -3386,19 +3788,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Védd meg autód belső terét a FreeON Deluxe autósülés védővel! Ez a kiváló minőségű termék nem csak a kisgyermeked autósülésének nyújt tökéletes véd...",
   "price": 6490,
   "sku": "FREEON-67341",
+  "ean": "3830064567341",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-autosules-vedo",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/67341-a709c511.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/67341.jpg?v=1767041953"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.969Z",
-  "updatedAt": "2026-03-09T22:37:51.969Z",
-  "rating": 4.6,
-  "reviewCount": 74
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.2,
+  "reviewCount": 72
 },
 {
   "id": "prod-0135",
@@ -3408,23 +3813,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 69490,
   "sku": "FREEON-38152",
+  "ean": "3830071138152",
+  "supplierUrl": "https://www.astibababolt.hu/EtetoszekFreeON-Sven-etetoszek-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/38152-433f58d8.jpg",
-    "/images/products/shopify/38152-1-3c21237b.jpg",
-    "/images/products/shopify/38152-2-cdf91192.jpg",
-    "/images/products/shopify/38152-3-1a0d433e.jpg",
-    "/images/products/shopify/38152-4-e70d0313.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38152.jpg?v=1767396742",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38152-1.jpg?v=1767396742",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38152-2.jpg?v=1767396742",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38152-3.jpg?v=1767396742",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38152-4.jpg?v=1767396742"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.5,
-  "reviewCount": 30
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.1,
+  "reviewCount": 11
 },
 {
   "id": "prod-0136",
@@ -3434,19 +3842,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4390,
   "sku": "FREEON-82788",
+  "ean": "3830084382788",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-bebijatek-Elefant",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82788-6c2c9040.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82788.jpg?v=1767041983"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.8,
-  "reviewCount": 54
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 3.7,
+  "reviewCount": 17
 },
 {
   "id": "prod-0137",
@@ -3456,23 +3867,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 14990,
   "sku": "FREEON-46057",
+  "ean": "3830075046057",
+  "supplierUrl": "https://www.astibababolt.hu/spd/46057/FreeON-Easy-move-3in1-kenguru",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46057-59428db2.jpg",
-    "/images/products/shopify/46057-2-aa1f7855.jpg",
-    "/images/products/shopify/46057-3-fb7f22a0.jpg",
-    "/images/products/shopify/46057-1-7a4a9a0b.jpg",
-    "/images/products/shopify/46057-4-2ccc3f40.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46057.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46057-2.jpg?v=1767041883",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46057-3.jpg?v=1767041885",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46057-1.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46057-4.jpg?v=1767041883"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.2,
-  "reviewCount": 13
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 3.9,
+  "reviewCount": 74
 },
 {
   "id": "prod-0138",
@@ -3482,20 +3896,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 1990,
   "sku": "FREEON-49454-1",
+  "ean": "3830075049454",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-szilikon-ragoka-okker",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49454-1-8cbf8189.jpg",
-    "/images/products/shopify/49454-1-1-ef8ab9e4.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49454-1.jpg?v=1767041951",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49454-1-1.jpg?v=1767041952"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.6,
-  "reviewCount": 59
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.4,
+  "reviewCount": 66
 },
 {
   "id": "prod-0139",
@@ -3505,21 +3922,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 11690,
   "sku": "FREEON-82719",
+  "ean": "3830084382719",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-jatek-penztargep",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82719-ef2d5dfb.jpg",
-    "/images/products/shopify/82719-1-c5873c54.jpg",
-    "/images/products/shopify/82719-2-294879f1.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82719.jpg?v=1767396873",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82719-1.jpg?v=1767396873",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82719-2.jpg?v=1767396873"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.7,
-  "reviewCount": 75
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.9,
+  "reviewCount": 5
 },
 {
   "id": "prod-0140",
@@ -3529,24 +3949,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 69490,
   "sku": "FREEON-31306",
+  "ean": "3830071131306",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Sven-etetoszek-Menta",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/31306-135a129f.jpg",
-    "/images/products/shopify/31306-2-5c869fc6.jpg",
-    "/images/products/shopify/31306-1-6380e6b7.jpg",
-    "/images/products/shopify/31306-3-6f1820a1.jpg",
-    "/images/products/shopify/31306-4-54c21c00.jpg",
-    "/images/products/shopify/31306-5-420cfa09.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31306.jpg?v=1767396968",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31306-2.jpg?v=1767396968",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31306-1.jpg?v=1767396968",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31306-3.jpg?v=1767396968",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31306-4.jpg?v=1767396968",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31306-5.jpg?v=1767396968"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.7,
-  "reviewCount": 63
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.1,
+  "reviewCount": 44
 },
 {
   "id": "prod-0141",
@@ -3556,21 +3979,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 69490,
   "sku": "FREEON-31290",
+  "ean": "3830071131290",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Sven-etetoszek-Puder",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/31290-fea02019.jpg",
-    "/images/products/shopify/31290-1-a51a4af8.jpg",
-    "/images/products/shopify/31290-2-ae71bbac.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31290.jpg?v=1767396958",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31290-1.jpg?v=1767396958",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/31290-2.jpg?v=1767396958"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.4,
-  "reviewCount": 76
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.8,
+  "reviewCount": 59
 },
 {
   "id": "prod-0142",
@@ -3580,23 +4006,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 30200,
   "sku": "FREEON-81606-1",
+  "ean": "3830084381606",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-osszehajthato-strandkocsi-Fekete-81606-1",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/81606-1-5311e8e6.jpg",
-    "/images/products/shopify/81606-1-3-bcea69ad.jpg",
-    "/images/products/shopify/81606-1-1-904eb678.jpg",
-    "/images/products/shopify/81606-1-2-8a197195.jpg",
-    "/images/products/shopify/81606-1-4-71f683fd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81606-1.jpg?v=1767397032",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81606-1-3.jpg?v=1767397032",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81606-1-1.jpg?v=1767397032",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81606-1-2.jpg?v=1767041954",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81606-1-4.jpg?v=1767041953"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.9,
-  "reviewCount": 58
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.8,
+  "reviewCount": 56
 },
 {
   "id": "prod-0143",
@@ -3606,21 +4035,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4990,
   "sku": "FREEON-46422",
+  "ean": "3830075046422",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-bambusz-tanyer-Koala",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46422-f74d3b6a.jpg",
-    "/images/products/shopify/46422-1-c09dcfc5.jpg",
-    "/images/products/shopify/46422-2-fff8da9e.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46422.jpg?v=1767041884",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46422-1.jpg?v=1767397061",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46422-2.jpg?v=1767397061"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.6,
-  "reviewCount": 19
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.3,
+  "reviewCount": 70
 },
 {
   "id": "prod-0144",
@@ -3630,21 +4062,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 55990,
   "sku": "FREEON-38237",
+  "ean": "3830071138237",
+  "supplierUrl": "https://www.astibababolt.hu/EtetoszekFreeOn-Tin-etetoszek-Menta",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/38237-e5a3e2ae.jpg",
-    "/images/products/shopify/38237-1-6bfc96f2.jpg",
-    "/images/products/shopify/38237-2-4d1a0ca0.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38237.jpg?v=1767397095",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38237-1.jpg?v=1767397095",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38237-2.jpg?v=1767397095"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.7,
-  "reviewCount": 8
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4,
+  "reviewCount": 65
 },
 {
   "id": "prod-0145",
@@ -3654,22 +4089,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 50490,
   "sku": "FREEON-45111",
+  "ean": "3830075045111",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Star-etetoszek-grey",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/45111-55cdc3a8.jpg",
-    "/images/products/shopify/45111-3-ca417802.jpg",
-    "/images/products/shopify/45111-2-0d5e4eb8.jpg",
-    "/images/products/shopify/45111-1-2bcfc9e9.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45111.jpg?v=1767397143",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45111-3.jpg?v=1767397143",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45111-2.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45111-1.jpg?v=1767041882"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.1,
-  "reviewCount": 34
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4,
+  "reviewCount": 46
 },
 {
   "id": "prod-0146",
@@ -3679,19 +4117,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 3490,
   "sku": "FREEON-82863",
+  "ean": "3830084382863",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Szilikon-Talka-Zold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82863-f550afcf.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82863.jpg?v=1767041983"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.5,
-  "reviewCount": 83
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.8,
+  "reviewCount": 70
 },
 {
   "id": "prod-0147",
@@ -3701,19 +4142,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Tökéletes rendet teremt az autóban a FreeON Delux autós rendezővel! Ez a kiváló minőségű termék segít abban, hogy az autóban mindig rend legyen, mé...",
   "price": 6690,
   "sku": "FREEON-64043",
+  "ean": "3830064564043",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-Delux-auto-rendezo",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/64043-86205638.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/64043.jpg?v=1767041953"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.5,
-  "reviewCount": 78
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.7,
+  "reviewCount": 51
 },
 {
   "id": "prod-0148",
@@ -3723,23 +4167,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Tedd könnyebbé a kicsik számára a nagyvilág felfedezését a FreeON két lépcsős fellépővel! Ez a praktikus kiegészítő segít a gyermekednek elérni a m...",
   "price": 5190,
   "sku": "FREEON-42332",
+  "ean": "3830075042332",
+  "supplierUrl": "https://www.astibababolt.hu/Bili-wc-szukito-fellepoFreeON-ket-lepcsos-fellepo",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/42332-bee3bf5f.jpg",
-    "/images/products/shopify/42332-1-c2ee9891.jpg",
-    "/images/products/shopify/42332-2-0ad023fb.jpg",
-    "/images/products/shopify/42332-3-dcd7f901.jpg",
-    "/images/products/shopify/42332-4-f434f969.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42332.jpg?v=1767397269",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42332-1.jpg?v=1767397269",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42332-2.jpg?v=1767397269",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42332-3.jpg?v=1767397269",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42332-4.jpg?v=1767397269"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.6,
-  "reviewCount": 42
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 3.7,
+  "reviewCount": 71
 },
 {
   "id": "prod-0149",
@@ -3749,21 +4196,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2690,
   "sku": "FREEON-49485",
+  "ean": "3830075049485",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-nyuszis-ragoka-pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49485-90ea02cc.jpg",
-    "/images/products/shopify/49485-1-c1998c6d.jpg",
-    "/images/products/shopify/49485-2-81e9dfa5.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49485.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49485-1.jpg?v=1767397295",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49485-2.jpg?v=1767397295"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.3,
-  "reviewCount": 73
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.7,
+  "reviewCount": 14
 },
 {
   "id": "prod-0150",
@@ -3773,19 +4223,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4390,
   "sku": "FREEON-82771",
+  "ean": "3830084382771",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-bebijatek-Maci",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82771-1ef55184.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82771.jpg?v=1767041983"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.2,
-  "reviewCount": 33
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.3,
+  "reviewCount": 31
 },
 {
   "id": "prod-0151",
@@ -3795,21 +4248,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON L alakú fiókzár remek megoldást kínál, hogy megóvja kisgyermekét a fiókokban rejlő veszélyektől. A zárszerkezet használata könnyedén elsaj...",
   "price": 1190,
   "sku": "FREEON-65354",
+  "ean": "3830064565354",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-L-alaku-fiokzar",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/65354-15a8faa0.jpg",
-    "/images/products/shopify/65354-1-2d82c5e2.jpg",
-    "/images/products/shopify/65354-2-2919d672.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65354.jpg?v=1767397447",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65354-1.jpg?v=1767397447",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65354-2.jpg?v=1767397447"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.7,
-  "reviewCount": 50
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.5,
+  "reviewCount": 40
 },
 {
   "id": "prod-0152",
@@ -3819,19 +4275,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Potty Simple Bili – Púderrózsaszín A Potty Simple bili letisztult formavilágával és praktikus kialakításával ideális választás a szobatisztaságra s...",
   "price": 2200,
   "sku": "FREEON-48761",
+  "ean": "3830075048761",
+  "supplierUrl": "https://www.astibababolt.hu/Potty-Simple-Bili-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48761-ab6760d4.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48761.jpg?v=1767041911"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.1,
-  "reviewCount": 39
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4,
+  "reviewCount": 61
 },
 {
   "id": "prod-0153",
@@ -3841,19 +4300,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Fedezze fel a FreeON autós napellenzőt, amely tökéletes választás azoknak a szülőknek, akik a legjobbat szeretnék biztosítani csemetéjüknek utazás ...",
   "price": 2990,
   "sku": "FREEON-64067",
+  "ean": "3830064564067",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-napellenzo",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/64067-3bec8ace.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/64067.jpg?v=1767041953"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.9,
-  "reviewCount": 51
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.4,
+  "reviewCount": 32
 },
 {
   "id": "prod-0154",
@@ -3863,19 +4325,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON bébikomp - ABC Pink tökéletes választás a kis felfedezők számára! Kényelmes ülőhellyel és szórakoztató játékokkal felszerelt, melyek segít...",
   "price": 33590,
   "sku": "FREEON-35351",
+  "ean": "3830057735351",
+  "supplierUrl": "https://www.astibababolt.hu/FreeOn-bebikomp-ABC-Pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/35351-a8af474c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/35351.jpg?v=1767041883"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.7,
-  "reviewCount": 54
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 3.7,
+  "reviewCount": 12
 },
 {
   "id": "prod-0155",
@@ -3885,20 +4350,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Fedezze fel a FreeON szekrényzárakat, amelyekkel könnyedén biztonságossá teheti a kicsi számára az ajtókat és szekrényeket. A kétoldalú ragasztóval...",
   "price": 1190,
   "sku": "FREEON-65347",
+  "ean": "3830064565347",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-szekrenyzar-2db",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/65347-c0ac7f03.jpg",
-    "/images/products/shopify/65347-1-d5d2bd54.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65347.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65347-1.jpg?v=1767041951"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.7,
-  "reviewCount": 58
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.2,
+  "reviewCount": 81
 },
 {
   "id": "prod-0156",
@@ -3908,21 +4376,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 14990,
   "sku": "FREEON-42318",
+  "ean": "3830075042318",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Potty-bili-Repulo",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/42318-92df163c.jpg",
-    "/images/products/shopify/42318-1-76691df0.jpg",
-    "/images/products/shopify/42318-2-749a63be.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42318.jpg?v=1767041881",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42318-1.jpg?v=1767041881",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42318-2.jpg?v=1767041881"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.7,
-  "reviewCount": 62
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4,
+  "reviewCount": 13
 },
 {
   "id": "prod-0157",
@@ -3932,23 +4403,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON utazóágy tökéletes megoldás, ha szeretné gyermekének kényelmes és biztonságos fekhelyet biztosítani otthon, utazás során vagy vendégségben...",
   "price": 24490,
   "sku": "FREEON-83068",
+  "ean": "3830084383044",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-utazoagy-Szurke",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/83068-c72f9cbe.jpg",
-    "/images/products/shopify/83068-3-5990c57a.jpg",
-    "/images/products/shopify/83068-1-fd463197.jpg",
-    "/images/products/shopify/83068-4-70fcfd33.jpg",
-    "/images/products/shopify/83068-2-af19e7b0.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83068.jpg?v=1767520162",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83068-3.jpg?v=1767520162",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83068-1.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83068-4.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83068-2.jpg?v=1767041983"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.5,
-  "reviewCount": 13
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4,
+  "reviewCount": 72
 },
 {
   "id": "prod-0158",
@@ -3958,24 +4432,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON utazóágy tökéletes megoldás, ha szeretné gyermekének kényelmes és biztonságos fekhelyet biztosítani otthon, utazás során vagy vendégségben...",
   "price": 24490,
   "sku": "FREEON-83044",
+  "ean": "3830084383044",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-utazoagy-Beige-83044",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/83044-8c581ab9.jpg",
-    "/images/products/shopify/83044-1-6e6dc46d.jpg",
-    "/images/products/shopify/83044-3-6f0d9bb6.jpg",
-    "/images/products/shopify/83044-5-895f4b4e.jpg",
-    "/images/products/shopify/83044-4-f5072094.jpg",
-    "/images/products/shopify/83044-2-ee98b6f9.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83044.jpg?v=1767520186",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83044-1.jpg?v=1767520186",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83044-3.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83044-5.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83044-4.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83044-2.jpg?v=1767041983"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.8,
-  "reviewCount": 75
+  "createdAt": "2026-03-14T18:20:31.342Z",
+  "updatedAt": "2026-03-14T18:20:31.342Z",
+  "rating": 4.3,
+  "reviewCount": 79
 },
 {
   "id": "prod-0159",
@@ -3985,24 +4462,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON utazóágy tökéletes megoldás, ha szeretné gyermekének kényelmes és biztonságos fekhelyet biztosítani otthon, utazás során vagy vendégségben...",
   "price": 24490,
   "sku": "FREEON-83051",
+  "ean": "3830084383051",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-utazoagy-Zold",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/83051-6d5ae019.jpg",
-    "/images/products/shopify/83051-6-a3e023c1.jpg",
-    "/images/products/shopify/83051-2-aa25c654.jpg",
-    "/images/products/shopify/83051-4-ef8a7b72.jpg",
-    "/images/products/shopify/83051-3-65fe587f.jpg",
-    "/images/products/shopify/83051-1-fd3dc8d7.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83051.jpg?v=1767520233",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83051-6.jpg?v=1767520233",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83051-2.jpg?v=1767520233",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83051-4.jpg?v=1767520233",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83051-3.jpg?v=1767520233",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83051-1.jpg?v=1767520233"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4,
-  "reviewCount": 65
+  "createdAt": "2026-03-14T18:20:31.343Z",
+  "updatedAt": "2026-03-14T18:20:31.343Z",
+  "rating": 3.6,
+  "reviewCount": 64
 },
 {
   "id": "prod-0160",
@@ -4012,21 +4492,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 6290,
   "sku": "FREEON-42639",
+  "ean": "3830075042639",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-pluss-autos-tukor-Maci",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/42639-cd468aa2.jpg",
-    "/images/products/shopify/42639-1-a23294fc.jpg",
-    "/images/products/shopify/42639-2-06bb5e02.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42639.jpg?v=1767520314",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42639-1.jpg?v=1767520314",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42639-2.jpg?v=1767520314"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4,
-  "reviewCount": 47
+  "createdAt": "2026-03-14T18:20:31.343Z",
+  "updatedAt": "2026-03-14T18:20:31.343Z",
+  "rating": 4.4,
+  "reviewCount": 63
 },
 {
   "id": "prod-0161",
@@ -4036,19 +4519,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON pohártartó a legjobb választás minden szülő számára, aki praktikus megoldást keres babakocsijához. Ez a pohártartó a legtöbb babakocsi mod...",
   "price": 2990,
   "sku": "FREEON-64036",
+  "ean": "3830064564036",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-pohartarto",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/64036-13bbd3a6.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/64036.jpg?v=1767041952"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.7,
-  "reviewCount": 14
+  "createdAt": "2026-03-14T18:20:31.343Z",
+  "updatedAt": "2026-03-14T18:20:31.343Z",
+  "rating": 4.3,
+  "reviewCount": 26
 },
 {
   "id": "prod-0162",
@@ -4058,19 +4544,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON márka, mely már több mint egy évtizede szolgálja az európai piacot, olyan babafelszereléseket kínál, melyek megfelelnek a modern szülői tr...",
   "price": 4190,
   "sku": "FREEON-47283",
+  "ean": "3830075047283",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-nyakparna",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/47283-208aeaf9.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/47283.jpg?v=1767041912"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.7,
-  "reviewCount": 58
+  "createdAt": "2026-03-14T18:20:31.343Z",
+  "updatedAt": "2026-03-14T18:20:31.343Z",
+  "rating": 4.8,
+  "reviewCount": 78
 },
 {
   "id": "prod-0163",
@@ -4080,21 +4569,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "FreeON gyerek hátizsák – Little Explorer Oroszlán Ez az aranyos FreeON Little Explorer Oroszlán hátizsák tökéletes társ minden kis felfedező számár...",
   "price": 8850,
   "sku": "FREEON-86618",
+  "ean": "3830084386618",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-gyerek-hatizsak-Little-Explorer-Oroszlan",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/86618-f0a91eea.jpg",
-    "/images/products/shopify/86618-1-ad5bf11f.jpg",
-    "/images/products/shopify/86618-2-9aca64dd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86618.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86618-1.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86618-2.jpg?v=1767041994"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
+  "createdAt": "2026-03-14T18:20:31.343Z",
+  "updatedAt": "2026-03-14T18:20:31.343Z",
   "rating": 3.9,
-  "reviewCount": 83
+  "reviewCount": 17
 },
 {
   "id": "prod-0164",
@@ -4104,20 +4596,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON márka magas minőségű, biztonságos és trendi gyerek termékeit kínálja immáron több mint egy évtizede az európai piacon. A Neo műanyag gyere...",
   "price": 28990,
   "sku": "FREEON-46644",
+  "ean": "3830075046644",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Neo-muanyag-gyerek-asztal-2-db-szekkel-Pink",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46644-c522d923.jpg",
-    "/images/products/shopify/46644-1-e5a00b42.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46644.jpg?v=1767520611",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46644-1.jpg?v=1767520611"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.5,
-  "reviewCount": 21
+  "createdAt": "2026-03-14T18:20:31.343Z",
+  "updatedAt": "2026-03-14T18:20:31.343Z",
+  "rating": 4.5,
+  "reviewCount": 25
 },
 {
   "id": "prod-0165",
@@ -4127,24 +4622,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 6990,
   "sku": "FREEON-49034",
+  "ean": "3830075049034",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Small-animals-gyerek-hatizsak-Rozsaszin",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49034-d2f427ef.jpg",
-    "/images/products/shopify/49034-1-bd1fecfb.jpg",
-    "/images/products/shopify/49034-4-cc9dd228.jpg",
-    "/images/products/shopify/49034-3-f13be3b8.jpg",
-    "/images/products/shopify/49034-2-46e8c3ac.jpg",
-    "/images/products/shopify/49034-6-9c0f17ed.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49034.jpg?v=1767520658",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49034-1.jpg?v=1767520658",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49034-4.jpg?v=1767520658",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49034-3.jpg?v=1767041915",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49034-2.jpg?v=1767041915",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49034-6.jpg?v=1767041914"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.7,
-  "reviewCount": 18
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.5,
+  "reviewCount": 35
 },
 {
   "id": "prod-0166",
@@ -4154,20 +4652,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 3090,
   "sku": "FREEON-49232",
+  "ean": "3830075049232",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-fellepo",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49232-0abc7e3a.jpg",
-    "/images/products/shopify/49232-1-d1449758.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49232.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49232-1.jpg?v=1767041913"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.8,
-  "reviewCount": 16
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.8,
+  "reviewCount": 23
 },
 {
   "id": "prod-0167",
@@ -4177,20 +4678,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2990,
   "sku": "FREEON-86243",
+  "ean": "3830084386243",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-dupla-cumisuveg-melegentarto-fekete",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/86243-9171429e.jpg",
-    "/images/products/shopify/86243-1-b4a36b2f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86243.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86243-1.jpg?v=1767041993"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.4,
-  "reviewCount": 18
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.2,
+  "reviewCount": 25
 },
 {
   "id": "prod-0168",
@@ -4200,23 +4704,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 23990,
   "sku": "FREEON-48686",
+  "ean": "3830075048686",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Cosmo-plus-I-size-ulesmagasito-Black",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48686-8b310833.jpg",
-    "/images/products/shopify/48686-1-1f63536e.jpg",
-    "/images/products/shopify/48686-4-68a56203.jpg",
-    "/images/products/shopify/48686-3-1f2b223b.jpg",
-    "/images/products/shopify/48686-2-890d354d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48686.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48686-1.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48686-4.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48686-3.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48686-2.jpg?v=1767041912"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4,
-  "reviewCount": 39
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 3.8,
+  "reviewCount": 49
 },
 {
   "id": "prod-0169",
@@ -4226,21 +4733,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON lépcsős wc szűkítő kapaszkodóval olyan finom átmenetet biztosít gyermekének a pelenkától a felnőtt WC-ig, ami egyszerre kényelmes, biztons...",
   "price": 8690,
   "sku": "FREEON-42325",
+  "ean": "3830075042325",
+  "supplierUrl": "https://www.astibababolt.hu/bili-wc-szukito-fellepo-lepcsos-freeon",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/42325-9b1839ce.jpg",
-    "/images/products/shopify/42325-1-225ae290.jpg",
-    "/images/products/shopify/42325-2-11ab5ee4.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42325.jpg?v=1767520867",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42325-1.jpg?v=1767520867",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/42325-2.jpg?v=1767041882"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.5,
-  "reviewCount": 73
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.9,
+  "reviewCount": 21
 },
 {
   "id": "prod-0170",
@@ -4250,22 +4760,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 8690,
   "sku": "FREEON-49393",
+  "ean": "3830075049393",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Libra-I-size-ulesmagasito-125-150cm-Khaki",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49393-1eb70a9d.jpg",
-    "/images/products/shopify/49393-2-18ce18cd.jpg",
-    "/images/products/shopify/49393-3-97311e75.jpg",
-    "/images/products/shopify/49393-1-abd47a2c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49393.jpg?v=1767520910",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49393-2.jpg?v=1767520910",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49393-3.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49393-1.jpg?v=1767041953"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.8,
-  "reviewCount": 74
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.3,
+  "reviewCount": 44
 },
 {
   "id": "prod-0171",
@@ -4275,23 +4788,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 27990,
   "sku": "FREEON-49140",
+  "ean": "3830075049140",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Vega-I-size-gyerekules-100-150cm-Gray",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49140-bac50568.jpg",
-    "/images/products/shopify/49140-1-248d4bf1.jpg",
-    "/images/products/shopify/49140-2-01ee796b.jpg",
-    "/images/products/shopify/49140-3-52464a0b.jpg",
-    "/images/products/shopify/49140-4-d0202364.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49140.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49140-1.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49140-2.jpg?v=1767041915",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49140-3.jpg?v=1767041914",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49140-4.jpg?v=1767041914"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.8,
-  "reviewCount": 65
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.2,
+  "reviewCount": 13
 },
 {
   "id": "prod-0172",
@@ -4301,23 +4817,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 13990,
   "sku": "FREEON-80647",
+  "ean": "3830084380647",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-fa-keszsegfejleszto-kocka",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/80647-25897d08.jpg",
-    "/images/products/shopify/80647-2-cf50c951.jpg",
-    "/images/products/shopify/80647-1-ea375f96.jpg",
-    "/images/products/shopify/80647-4-3fa32042.jpg",
-    "/images/products/shopify/80647-3-878293ac.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80647.jpg?v=1767521046",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80647-2.jpg?v=1767521046",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80647-1.jpg?v=1767521046",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80647-4.jpg?v=1767521046",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80647-3.jpg?v=1767041954"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.6,
-  "reviewCount": 41
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 3.6,
+  "reviewCount": 9
 },
 {
   "id": "prod-0173",
@@ -4327,20 +4846,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4500,
   "sku": "FREEON-37995",
+  "ean": "3830071137995",
+  "supplierUrl": "https://www.astibababolt.hu/HigieniaFreeON-Happy-Frog-kisfiu-piszoar",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/37995-3114e377.jpg",
-    "/images/products/shopify/37995-1-876ddb83.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/37995.jpg?v=1767041882",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/37995-1.jpg?v=1767041883"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.4,
-  "reviewCount": 26
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.8,
+  "reviewCount": 32
 },
 {
   "id": "prod-0174",
@@ -4350,20 +4872,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4190,
   "sku": "FREEON-85345",
+  "ean": "3830084385345",
+  "supplierUrl": "https://www.astibababolt.hu/HigieniaFreeON-Happy-Frog-kisfiu-piszoar-kek",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85345-8de4a4f0.jpg",
-    "/images/products/shopify/85345-1-1e9df4a9.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85345.jpg?v=1767521115",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85345-1.jpg?v=1767521115"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.5,
-  "reviewCount": 20
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.6,
+  "reviewCount": 47
 },
 {
   "id": "prod-0175",
@@ -4373,22 +4898,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 28990,
   "sku": "FREEON-84942",
+  "ean": "3830084384942",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Serene-pihenoszek-Beige",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/84942-af55f4fa.jpg",
-    "/images/products/shopify/84942-3-45032c76.jpg",
-    "/images/products/shopify/84942-1-b5ca5854.jpg",
-    "/images/products/shopify/84942-2-ef70d93e.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84942.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84942-3.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84942-1.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/84942-2.jpg?v=1767041983"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 4.2,
-  "reviewCount": 62
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.1,
+  "reviewCount": 57
 },
 {
   "id": "prod-0176",
@@ -4398,24 +4926,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4790,
   "sku": "FREEON-85130",
+  "ean": "3830084385130",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-fa-vaghato-gyumolcsok",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85130-8c6624c0.jpg",
-    "/images/products/shopify/85130-3-b83e1544.jpg",
-    "/images/products/shopify/85130-5-b8ad7fa5.jpg",
-    "/images/products/shopify/85130-4-ffc733d2.jpg",
-    "/images/products/shopify/85130-2-d007b3cf.jpg",
-    "/images/products/shopify/85130-1-0eccc5f3.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85130.jpg?v=1767521193",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85130-3.jpg?v=1767521193",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85130-5.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85130-4.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85130-2.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85130-1.jpg?v=1767041984"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.970Z",
-  "updatedAt": "2026-03-09T22:37:51.970Z",
-  "rating": 3.7,
-  "reviewCount": 81
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.7,
+  "reviewCount": 9
 },
 {
   "id": "prod-0177",
@@ -4425,23 +4956,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 6200,
   "sku": "FREEON-85086",
+  "ean": "3830084385086",
+  "supplierUrl": "https://www.astibababolt.hu/Free2Play-Zenei-Puzzle-Dzsungel",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85086-532cc7b0.jpg",
-    "/images/products/shopify/85086-1-5c71fd84.jpg",
-    "/images/products/shopify/85086-4-ee219745.jpg",
-    "/images/products/shopify/85086-2-2fc1f05b.jpg",
-    "/images/products/shopify/85086-3-a8935ba2.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85086.jpg?v=1767521230",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85086-1.jpg?v=1767521230",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85086-4.jpg?v=1767521230",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85086-2.jpg?v=1767521230",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85086-3.jpg?v=1767521230"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.1,
-  "reviewCount": 44
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.7,
+  "reviewCount": 75
 },
 {
   "id": "prod-0178",
@@ -4451,24 +4985,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 7890,
   "sku": "FREEON-85116",
+  "ean": "3830084385116",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-activity-tabla-farmos",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85116-f4713036.jpg",
-    "/images/products/shopify/85116-1-06e7807a.jpg",
-    "/images/products/shopify/85116-7-7429593a.jpg",
-    "/images/products/shopify/85116-4-738439b9.jpg",
-    "/images/products/shopify/85116-6-174d6493.jpg",
-    "/images/products/shopify/85116-3-ff5c9439.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85116.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85116-1.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85116-7.jpg?v=1767041985",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85116-4.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85116-6.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85116-3.jpg?v=1767041984"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.3,
-  "reviewCount": 51
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 3.8,
+  "reviewCount": 48
 },
 {
   "id": "prod-0179",
@@ -4478,19 +5015,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 3390,
   "sku": "FREEON-49546",
+  "ean": "3830075049546",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-szilikon-labda-green",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49546-4e159dfd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49546.jpg?v=1767041952"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.8,
-  "reviewCount": 22
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.7,
+  "reviewCount": 39
 },
 {
   "id": "prod-0180",
@@ -4500,21 +5040,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Csecsemővel a házban az otthoni biztonság kritikus fontosságú. A FreeON konnektorvédőkkel biztosítani tudja, hogy kicsinye ne tehesse ujjait vagy m...",
   "price": 1490,
   "sku": "FREEON-65378",
+  "ean": "3830064565378",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-konnektorvedo-10-db",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/65378-6a62783a.jpg",
-    "/images/products/shopify/65378-2-4f81d085.jpg",
-    "/images/products/shopify/65378-1-6295152d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65378.jpg?v=1767521306",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65378-2.jpg?v=1767521306",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/65378-1.jpg?v=1767521306"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.2,
-  "reviewCount": 76
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 3.9,
+  "reviewCount": 50
 },
 {
   "id": "prod-0181",
@@ -4524,19 +5067,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON univerzális esővédő tökéletes választás minden szülő számára, aki gondoskodni szeretne arról, hogy kisbabája mindig száraz és biztonságos ...",
   "price": 4190,
   "sku": "FREEON-38046",
+  "ean": "3830071138046",
+  "supplierUrl": "https://www.astibababolt.hu/Babakocsi-kiegeszitokFreeON-univerzalis-esovedo",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/38046-8555d4ca.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38046.jpg?v=1767041882"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 5,
-  "reviewCount": 7
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.1,
+  "reviewCount": 43
 },
 {
   "id": "prod-0182",
@@ -4546,20 +5092,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4990,
   "sku": "FREEON-46415",
+  "ean": "3830075046415",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-bambusz-tanyer-Nyuszi",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/46415-174977a5.jpg",
-    "/images/products/shopify/46415-1-41aebe2d.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46415.jpg?v=1767521384",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/46415-1.jpg?v=1767521384"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.7,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.9,
+  "reviewCount": 41
 },
 {
   "id": "prod-0183",
@@ -4569,21 +5118,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2690,
   "sku": "FREEON-49492",
+  "ean": "3830075049492",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-nyuszis-ragoka-okker",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49492-689579b9.jpg",
-    "/images/products/shopify/49492-1-b831fcba.jpg",
-    "/images/products/shopify/49492-2-d06af6eb.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49492.jpg?v=1767041952",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49492-1.jpg?v=1767521452",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49492-2.jpg?v=1767521452"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.7,
-  "reviewCount": 54
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 3.6,
+  "reviewCount": 44
 },
 {
   "id": "prod-0184",
@@ -4593,20 +5145,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4990,
   "sku": "FREEON-82856",
+  "ean": "3830084382856",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-bambusz-tanyer-Rokas",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82856-0bbcc188.jpg",
-    "/images/products/shopify/82856-1-10332e0b.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82856.jpg?v=1767521475",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82856-1.jpg?v=1767521475"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.7,
-  "reviewCount": 57
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 3.9,
+  "reviewCount": 59
 },
 {
   "id": "prod-0185",
@@ -4616,24 +5171,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "Óvjuk meg autónk belső terét a FreeON 3in1 autósülés védővel! Ez a multifunkcionális termék, amelyet a több mint 10 éve az európai piacon tevékenyk...",
   "price": 7990,
   "sku": "FREEON-45708",
+  "ean": "3830075045708",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-autosules-vedo-3in1",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/45708-1-539eca1b.jpg",
-    "/images/products/shopify/45708-4-bda7b5eb.jpg",
-    "/images/products/shopify/45708-6-a33a5f55.jpg",
-    "/images/products/shopify/45708-2-09135e32.jpg",
-    "/images/products/shopify/45708-ef8ebcdc.jpg",
-    "/images/products/shopify/45708-3-16ab06bd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45708-1.jpg?v=1767521527",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45708-4.jpg?v=1767521527",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45708-6.jpg?v=1767521527",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45708-2.jpg?v=1767521527",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45708.jpg?v=1767521527",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/45708-3.jpg?v=1767041883"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.2,
-  "reviewCount": 78
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.6,
+  "reviewCount": 66
 },
 {
   "id": "prod-0186",
@@ -4643,21 +5201,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2690,
   "sku": "FREEON-49508",
+  "ean": "3830075049508",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-nyuszis-ragoka-green",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49508-e02793a2.jpg",
-    "/images/products/shopify/49508-1-65a89922.jpg",
-    "/images/products/shopify/49508-2-a9c136fd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49508.jpg?v=1767521576",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49508-1.jpg?v=1767521576",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49508-2.jpg?v=1767521576"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.7,
-  "reviewCount": 55
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 3.5,
+  "reviewCount": 20
 },
 {
   "id": "prod-0187",
@@ -4667,22 +5228,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 9690,
   "sku": "FREEON-49416",
+  "ean": "3830075049416",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Comfy-I-size-ulesmagasito-125-150cm-Pinkgra",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49416-1-b7dc75e5.jpg",
-    "/images/products/shopify/49416-c527f66c.jpg",
-    "/images/products/shopify/49416-2-4665e6a8.jpg",
-    "/images/products/shopify/49416-3-08e1bd3e.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49416-1.jpg?v=1767521651",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49416.jpg?v=1767521651",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49416-2.jpg?v=1767041953",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49416-3.jpg?v=1767041953"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.8,
-  "reviewCount": 47
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.3,
+  "reviewCount": 35
 },
 {
   "id": "prod-0188",
@@ -4692,23 +5256,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 19990,
   "sku": "FREEON-85154",
+  "ean": "3830084385154",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-fa-szerelopad",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85154-1-d478478c.jpg",
-    "/images/products/shopify/85154-8-471b3813.jpg",
-    "/images/products/shopify/85154-6-a4a777ec.jpg",
-    "/images/products/shopify/85154-7-19d8ae6b.jpg",
-    "/images/products/shopify/85154-3-aab4296f.jpg",
-    "/images/products/shopify/85154-2-62ddd8de.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85154-1.jpg?v=1767521690",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85154-8.jpg?v=1767521690",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85154-6.jpg?v=1767521690",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85154-7.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85154-3.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85154-2.jpg?v=1767041984"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.6,
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.9,
   "reviewCount": 9
 },
 {
@@ -4719,21 +5286,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A McLaren Formula 1 , egy részletesen kidolgozott, hivatalosan licencelt távirányítós autómodell, amely a McLaren Formula 1 versenyautó hű mása. Ez...",
   "price": 95990,
   "sku": "FREEON-706F1",
+  "ean": "3830084383655",
+  "supplierUrl": "https://www.astibababolt.hu/McLaren-Formula1-elektromos-kisauto",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/706F1-323e6519.jpg",
-    "/images/products/shopify/706F1-2-6caf7fd3.jpg",
-    "/images/products/shopify/706F1-1-c4601464.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/706F1.jpg?v=1767521720",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/706F1-2.jpg?v=1767521720",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/706F1-1.jpg?v=1767521720"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.6,
-  "reviewCount": 62
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.3,
+  "reviewCount": 8
 },
 {
   "id": "prod-0190",
@@ -4743,22 +5313,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2490,
   "sku": "FREEON-85093",
+  "ean": "3830084385093",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-farm-puzzle",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85093-d058a71e.jpg",
-    "/images/products/shopify/85093-1-95d026d2.jpg",
-    "/images/products/shopify/85093-2-9298e148.jpg",
-    "/images/products/shopify/85093-3-3afe3a30.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85093.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85093-1.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85093-2.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85093-3.jpg?v=1767041983"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.4,
-  "reviewCount": 79
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.1,
+  "reviewCount": 37
 },
 {
   "id": "prod-0191",
@@ -4768,21 +5341,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON baba visszapillantó tükörrel minden autóút biztonságosabbá válik! A tükör segítségével könnyedén láthatod kicsinyedet vezetés közben, így ...",
   "price": 3490,
   "sku": "FREEON-64050",
+  "ean": "3830064564050",
+  "supplierUrl": "https://www.astibababolt.hu/Freeon-baba-visszapillanto-tukor-autoba",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/64050-6885e2c6.jpg",
-    "/images/products/shopify/64050-1-0c08005c.jpg",
-    "/images/products/shopify/64050-2-da712040.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/64050.jpg?v=1767521838",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/64050-1.jpg?v=1767521838",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/64050-2.jpg?v=1767521838"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.8,
-  "reviewCount": 41
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 3.9,
+  "reviewCount": 77
 },
 {
   "id": "prod-0192",
@@ -4792,22 +5368,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 17990,
   "sku": "FREEON-33072",
+  "ean": "3830071133072",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Lars-etetoszek",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/33072-812f15ff.jpg",
-    "/images/products/shopify/33072-1-b8a22659.jpg",
-    "/images/products/shopify/33072-3-12609f04.jpg",
-    "/images/products/shopify/33072-2-f243b268.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/33072.jpg?v=1767521863",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/33072-1.jpg?v=1767521863",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/33072-3.jpg?v=1767521863",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/33072-2.jpg?v=1767521863"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.6,
-  "reviewCount": 53
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.9,
+  "reviewCount": 14
 },
 {
   "id": "prod-0193",
@@ -4817,20 +5396,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON süni bili tökéletes választás a kicsik számára. A bili barna színben pompázik, rajta egy aranyos süni képével, ami garantáltan megszerette...",
   "price": 7990,
   "sku": "FREEON-737522",
+  "ean": "3830057737522",
+  "supplierUrl": "https://www.astibababolt.hu/FreeOn-bili",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/737522-18a7445d.jpg",
-    "/images/products/shopify/737522-1-5e5c9b72.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/737522.jpg?v=1767041994",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/737522-1.jpg?v=1767041993"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.9,
-  "reviewCount": 67
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.3,
+  "reviewCount": 28
 },
 {
   "id": "prod-0194",
@@ -4840,22 +5422,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 4890,
   "sku": "FREEON-85123",
+  "ean": "3830084385123",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-epitokocka-keszlet-36-db-farmos",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85123-ffda12b5.jpg",
-    "/images/products/shopify/85123-3-b723718c.jpg",
-    "/images/products/shopify/85123-2-b2044b7c.jpg",
-    "/images/products/shopify/85123-1-85cdfd35.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85123.jpg?v=1767521940",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85123-3.jpg?v=1767521940",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85123-2.jpg?v=1767521940",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85123-1.jpg?v=1767521940"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.5,
-  "reviewCount": 69
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4,
+  "reviewCount": 81
 },
 {
   "id": "prod-0195",
@@ -4865,21 +5450,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2390,
   "sku": "FREEON-86236",
+  "ean": "3830084386236",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-cumisuveg-melegentarto-Fekete",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/86236-d181056f.jpg",
-    "/images/products/shopify/86236-1-7eca9b06.jpg",
-    "/images/products/shopify/86236-2-79296d06.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86236.jpg?v=1767521960",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86236-1.jpg?v=1767521960",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86236-2.jpg?v=1767521960"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4,
-  "reviewCount": 6
+  "createdAt": "2026-03-14T18:20:31.344Z",
+  "updatedAt": "2026-03-14T18:20:31.344Z",
+  "rating": 4.1,
+  "reviewCount": 55
 },
 {
   "id": "prod-0196",
@@ -4890,12 +5478,15 @@ export const shopifyProducts: Product[] = [
   "price": 44990,
   "salePrice": 39990,
   "sku": "FREEON-38138",
+  "ean": "3830071138138",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-babakocsi-kiegeszitoFreeON-testverfellepo-u",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/38138-b3151578.jpg",
-    "/images/products/shopify/38138-1-0c983b10.jpg",
-    "/images/products/shopify/38138-2-8edfb640.jpg",
-    "/images/products/shopify/38138-3-ee013a96.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38138.jpg?v=1767522021",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38138-1.jpg?v=1767522021",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38138-2.jpg?v=1767522021",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/38138-3.jpg?v=1767522021"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [
@@ -4908,10 +5499,10 @@ export const shopifyProducts: Product[] = [
   "weight": 2.5,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.3,
-  "reviewCount": 75
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 4.7,
+  "reviewCount": 19
 },
 {
   "id": "prod-0197",
@@ -4921,19 +5512,22 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2490,
   "sku": "FREEON-81781",
+  "ean": "3830084381781",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-babakocsi-led-lampa-szett-2-db",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/81781-c642f6cb.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/81781.jpg?v=1767041953"
   ],
   "categoryId": "cat-babakocsi",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.6,
-  "reviewCount": 40
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 3.8,
+  "reviewCount": 84
 },
 {
   "id": "prod-0198",
@@ -4943,20 +5537,23 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 3990,
   "sku": "FREEON-49607",
+  "ean": "3830075049607",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-wc-szukito",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/49607-1-269c70a7.jpg",
-    "/images/products/shopify/49607-f99777e0.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49607-1.jpg?v=1767522092",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/49607.jpg?v=1767522092"
   ],
   "categoryId": "cat-egyeb",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.4,
-  "reviewCount": 67
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 3.5,
+  "reviewCount": 62
 },
 {
   "id": "prod-0199",
@@ -4966,24 +5563,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A Free2Play Think & Play fejlesztő asztal egy színes, interaktív játékközpont, amely játékosan fejleszti a kicsik kézügyességét, koncentrációját és...",
   "price": 16900,
   "sku": "FREEON-86724",
+  "ean": "3830084386724",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Free2Play-Activity-asztal-Think-Play",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/86724-4bb07b4f.jpg",
-    "/images/products/shopify/86724-3-5730602a.jpg",
-    "/images/products/shopify/86724-1-8865aecc.jpg",
-    "/images/products/shopify/86724-2-8b615f2e.jpg",
-    "/images/products/shopify/86724-4-3ea255bc.jpg",
-    "/images/products/shopify/86724-5-0a01530f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86724.jpg?v=1767522137",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86724-3.jpg?v=1767522137",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86724-1.jpg?v=1767522137",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86724-2.jpg?v=1767522137",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86724-4.jpg?v=1767522137",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/86724-5.jpg?v=1767522137"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.9,
-  "reviewCount": 11
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 4.8,
+  "reviewCount": 69
 },
 {
   "id": "prod-0200",
@@ -4993,21 +5593,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 15600,
   "sku": "FREEON-83563",
+  "ean": "3830084383563",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-osszehajthato-jatszoszonyeg-200x150-cm-Magic-Road",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/83563-a0ee7b46.jpg",
-    "/images/products/shopify/83563-1-0c34598f.jpg",
-    "/images/products/shopify/83563-2-4442a723.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83563.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83563-1.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/83563-2.jpg?v=1767041983"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.8,
-  "reviewCount": 81
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 4.2,
+  "reviewCount": 78
 },
 {
   "id": "prod-0201",
@@ -5017,24 +5620,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 5790,
   "sku": "FREEON-80616",
+  "ean": "3830084380616",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-hit-the-ball-kalapalosformaberako",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/80616-e58543f6.jpg",
-    "/images/products/shopify/80616-2-6f226114.jpg",
-    "/images/products/shopify/80616-1-b5b59371.jpg",
-    "/images/products/shopify/80616-5-f3d7879e.jpg",
-    "/images/products/shopify/80616-4-cb9f6db2.jpg",
-    "/images/products/shopify/80616-3-2ab34dbd.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80616.jpg?v=1767522228",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80616-2.jpg?v=1767522228",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80616-1.jpg?v=1767522228",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80616-5.jpg?v=1767522228",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80616-4.jpg?v=1767041954",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80616-3.jpg?v=1767041953"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.3,
-  "reviewCount": 67
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 5,
+  "reviewCount": 32
 },
 {
   "id": "prod-0202",
@@ -5044,23 +5650,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 7490,
   "sku": "FREEON-80586",
+  "ean": "3830084380586",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-5in1-My-first-music-set",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/80586-deecccbb.jpg",
-    "/images/products/shopify/80586-2-d19af4ec.jpg",
-    "/images/products/shopify/80586-3-ae1ba065.jpg",
-    "/images/products/shopify/80586-1-b69137aa.jpg",
-    "/images/products/shopify/80586-4-79d30b9c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80586.jpg?v=1767522283",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80586-2.jpg?v=1767522283",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80586-3.jpg?v=1767522283",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80586-1.jpg?v=1767522283",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80586-4.jpg?v=1767522283"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.1,
-  "reviewCount": 75
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 4.9,
+  "reviewCount": 29
 },
 {
   "id": "prod-0203",
@@ -5070,23 +5679,26 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 3200,
   "sku": "FREEON-85161",
+  "ean": "3830084385161",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-Domino-Safari-Fa-tarsasjatek-28-d",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85161-1-8477579a.jpg",
-    "/images/products/shopify/85161-1d6884fb.jpg",
-    "/images/products/shopify/85161-4-1a20f66e.jpg",
-    "/images/products/shopify/85161-3-eb8c3301.jpg",
-    "/images/products/shopify/85161-2-2ca3864b.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85161-1.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85161.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85161-4.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85161-3.jpg?v=1767041984",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85161-2.jpg?v=1767041983"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.9,
-  "reviewCount": 24
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 4.7,
+  "reviewCount": 71
 },
 {
   "id": "prod-0204",
@@ -5096,24 +5708,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 10990,
   "sku": "FREEON-48709",
+  "ean": "3830075048709",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-FoldGo-hordozhato-textil-etetoszek-szekmaga",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48709-6f40a893.jpg",
-    "/images/products/shopify/48709-1-ade2227a.jpg",
-    "/images/products/shopify/48709-2-89bd2092.jpg",
-    "/images/products/shopify/48709-5-0ee4abdc.jpg",
-    "/images/products/shopify/48709-4-e0865c48.jpg",
-    "/images/products/shopify/48709-3-0c0f966a.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48709.jpg?v=1767522357",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48709-1.jpg?v=1767522357",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48709-2.jpg?v=1767041913",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48709-5.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48709-4.jpg?v=1767041912",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48709-3.jpg?v=1767041911"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.1,
-  "reviewCount": 62
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 4.7,
+  "reviewCount": 15
 },
 {
   "id": "prod-0205",
@@ -5123,22 +5738,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 36990,
   "sku": "FREEON-44282",
+  "ean": "3830075044282",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-Athena-gyerek-fa-asztal-2-db-szekkel-Macis",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/44282-1793ca09.jpg",
-    "/images/products/shopify/44282-2-4db304d2.jpg",
-    "/images/products/shopify/44282-3-5a3b4457.jpg",
-    "/images/products/shopify/44282-1-ecb81b31.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44282.jpg?v=1767522390",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44282-2.jpg?v=1767522390",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44282-3.jpg?v=1767522390",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/44282-1.jpg?v=1767522390"
   ],
   "categoryId": "cat-babaszoba",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 4.9,
-  "reviewCount": 13
+  "createdAt": "2026-03-14T18:20:31.345Z",
+  "updatedAt": "2026-03-14T18:20:31.345Z",
+  "rating": 4.7,
+  "reviewCount": 25
 },
 {
   "id": "prod-0206",
@@ -5148,21 +5766,24 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 2390,
   "sku": "FREEON-82078",
+  "ean": "3830084382078",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-cumisuveg-melegentarto-gray",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/82078-6f0d55b8.jpg",
-    "/images/products/shopify/82078-1-1ca72712.jpg",
-    "/images/products/shopify/82078-2-283c9e1f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82078.jpg?v=1767041983",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82078-1.jpg?v=1767041982",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/82078-2.jpg?v=1767041982"
   ],
   "categoryId": "cat-etetes",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.9,
-  "reviewCount": 34
+  "createdAt": "2026-03-14T18:20:31.346Z",
+  "updatedAt": "2026-03-14T18:20:31.346Z",
+  "rating": 4.1,
+  "reviewCount": 7
 },
 {
   "id": "prod-0207",
@@ -5172,22 +5793,25 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 14990,
   "sku": "FREEON-48471",
+  "ean": "3830075048471",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-leesesgatlo-135x57cm-Sweet-dreams",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/48471-101679cf.jpg",
-    "/images/products/shopify/48471-3-925f065b.jpg",
-    "/images/products/shopify/48471-2-e4fdb859.jpg",
-    "/images/products/shopify/48471-1-7f431d4c.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48471.jpg?v=1767522446",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48471-3.jpg?v=1767522446",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48471-2.jpg?v=1767522446",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/48471-1.jpg?v=1767522446"
   ],
   "categoryId": "cat-biztonsag",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.7,
-  "reviewCount": 28
+  "createdAt": "2026-03-14T18:20:31.347Z",
+  "updatedAt": "2026-03-14T18:20:31.347Z",
+  "rating": 4.9,
+  "reviewCount": 81
 },
 {
   "id": "prod-0208",
@@ -5197,24 +5821,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 14990,
   "sku": "FREEON-80630",
+  "ean": "3830084380630",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-fa-vasut-szett-vagonokkal-allatok",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/80630-f4fc941b.jpg",
-    "/images/products/shopify/80630-1-94829a3e.jpg",
-    "/images/products/shopify/80630-4-b38b4e0f.jpg",
-    "/images/products/shopify/80630-5-cfec41c6.jpg",
-    "/images/products/shopify/80630-9-68786218.jpg",
-    "/images/products/shopify/80630-8-868f1426.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80630.jpg?v=1767522497",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80630-1.jpg?v=1767522497",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80630-4.jpg?v=1767522497",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80630-5.jpg?v=1767522497",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80630-9.jpg?v=1767522497",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80630-8.jpg?v=1767522497"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.7,
-  "reviewCount": 62
+  "createdAt": "2026-03-14T18:20:31.347Z",
+  "updatedAt": "2026-03-14T18:20:31.347Z",
+  "rating": 4,
+  "reviewCount": 71
 },
 {
   "id": "prod-0209",
@@ -5224,24 +5851,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 16540,
   "sku": "FREEON-85147",
+  "ean": "3830084385147",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-fa-babahaz-butorokkal",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/85147-5-279ebe7f.jpg",
-    "/images/products/shopify/85147-1-2934aabc.jpg",
-    "/images/products/shopify/85147-4c962ae7.jpg",
-    "/images/products/shopify/85147-2-4103c765.jpg",
-    "/images/products/shopify/85147-3-ef477c2f.jpg",
-    "/images/products/shopify/85147-4-a16ca30f.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85147-5.jpg?v=1767522541",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85147-1.jpg?v=1767522541",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85147.jpg?v=1767522541",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85147-2.jpg?v=1767522541",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85147-3.jpg?v=1767522541",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/85147-4.jpg?v=1767522541"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.971Z",
-  "updatedAt": "2026-03-09T22:37:51.971Z",
-  "rating": 3.6,
-  "reviewCount": 77
+  "createdAt": "2026-03-14T18:20:31.347Z",
+  "updatedAt": "2026-03-14T18:20:31.347Z",
+  "rating": 4.2,
+  "reviewCount": 24
 },
 {
   "id": "prod-0210",
@@ -5251,24 +5881,27 @@ export const shopifyProducts: Product[] = [
   "shortDesc": "A FreeON több mint 10 éve az európai piacon tevékenykedő baba és gyermekfelszerelések széles választékát kínáló márka. Küldetésük, hogy olyan termé...",
   "price": 6210,
   "sku": "FREEON-80654",
+  "ean": "3830084380654",
+  "supplierUrl": "https://www.astibababolt.hu/FreeON-free2play-autok-a-lejton",
+  "manufacturer": "FreeOn",
   "stock": 10,
   "images": [
-    "/images/products/shopify/80654-2-6ae299f3.jpg",
-    "/images/products/shopify/80654-386b0171.jpg",
-    "/images/products/shopify/80654-1-e887ba94.jpg",
-    "/images/products/shopify/80654-5-adfbd397.jpg",
-    "/images/products/shopify/80654-3-bfea8f8d.jpg",
-    "/images/products/shopify/80654-4-7cf39f51.jpg"
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80654-2.jpg?v=1767041954",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80654.jpg?v=1767522635",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80654-1.jpg?v=1767522635",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80654-5.jpg?v=1767522635",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80654-3.jpg?v=1767522635",
+    "https://cdn.shopify.com/s/files/1/0988/0764/4489/files/80654-4.jpg?v=1767041953"
   ],
   "categoryId": "cat-jatekok",
   "tags": [],
   "weight": 1,
   "isActive": true,
   "isFeatured": false,
-  "createdAt": "2026-03-09T22:37:51.972Z",
-  "updatedAt": "2026-03-09T22:37:51.972Z",
-  "rating": 4,
-  "reviewCount": 78
+  "createdAt": "2026-03-14T18:20:31.347Z",
+  "updatedAt": "2026-03-14T18:20:31.347Z",
+  "rating": 4.7,
+  "reviewCount": 29
 },
 ];
 

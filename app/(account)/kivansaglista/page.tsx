@@ -35,7 +35,7 @@ export default function KivansaglistaPage() {
         }
         setIsAuthenticated(true);
         const wishlist = (payload.user?.wishlist ?? []) as string[];
-        if (Array.isArray(wishlist) && wishlist.length > 0) {
+        if (Array.isArray(wishlist)) {
           setWishlistItems(wishlist);
         }
       })

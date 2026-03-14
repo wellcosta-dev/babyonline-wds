@@ -80,6 +80,13 @@ async function getStoredUsers(): Promise<StoredUser[]> {
   if (prisma) {
     try {
       const dbUsers = await prisma.user.findMany({ orderBy: { createdAt: "desc" } });
+      if (dbUsers.length === 0) {
+        const fileUsers = await readJsonFile<StoredUser[]>(USERS_FILE, []);
+        if (fileUsers.length > 0) {
+          await saveStoredUsers(fileUsers);
+          return fileUsers;
+        }
+      }
       return dbUsers.map((user) => ({
         id: user.id,
         email: user.email,
@@ -236,6 +243,23 @@ export async function updateUserWishlist(
   };
   await saveStoredUsers(users);
   return toPublicUser(users[index]);
+}
+
+export async function deleteUserByEmail(emailInput: string): Promise<void> {
+  const email = normalizeEmail(emailInput);
+  const prisma = getPrismaClient();
+  if (prisma) {
+    try {
+      await prisma.user.delete({ where: { email } });
+      return;
+    } catch (error) {
+      console.error("Prisma deleteUserByEmail fallback to JSON:", error);
+    }
+  }
+
+  const users = await getStoredUsers();
+  const next = users.filter((entry) => normalizeEmail(entry.email) !== email);
+  await saveStoredUsers(next);
 }
 
 export async function loginUser(input: {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -16,6 +16,7 @@ import {
   Clock,
   Star,
   LoaderCircle,
+  PencilLine,
 } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { ProductGallery } from "@/components/shop/ProductGallery";
@@ -23,11 +24,13 @@ import { RecommendedProducts } from "@/components/shop/RecommendedProducts";
 import { WishlistButton } from "@/components/shop/WishlistButton";
 import { cn, formatPrice, FREE_SHIPPING_THRESHOLD, getShippingCost } from "@/lib/utils";
 import { useCartStore } from "@/store/cartStore";
-import { getProductBySlug, categories } from "@/lib/mock-data";
+import { categories } from "@/lib/mock-data";
 import { absoluteUrl } from "@/lib/seo";
 import { getProductInternalLinks, getSeoProductLead } from "@/lib/seo-product-copy";
 import { toAnalyticsItemFromProduct, trackEvent } from "@/lib/analytics";
+import { MERCHANT_RETURN_DAYS } from "@/lib/merchant-policy";
 import { sanitizeRichHtml } from "@/lib/sanitize-rich-html";
+import type { Product } from "@/types";
 
 const TABS = [
   { id: "leiras", label: "Leírás" },
@@ -95,7 +98,8 @@ export default function ProductDetailPage() {
   const params = useParams();
   const router = useRouter();
   const slug = params.slug as string;
-  const product = getProductBySlug(slug);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [productLoading, setProductLoading] = useState(true);
 
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<(typeof TABS)[number]["id"]>("leiras");
@@ -110,9 +114,33 @@ export default function ProductDetailPage() {
   const [reviewSubmitError, setReviewSubmitError] = useState<string | null>(null);
   const [reviewSubmitSuccess, setReviewSubmitSuccess] = useState<string | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [isAdminSession, setIsAdminSession] = useState(false);
+  const [highlightWarranty, setHighlightWarranty] = useState(false);
+  const warrantyRef = useRef<HTMLElement | null>(null);
 
   const addItem = useCartStore((s) => s.addItem);
   const setDrawerOpen = useCartStore((s) => s.setDrawerOpen);
+
+  useEffect(() => {
+    let active = true;
+    setProductLoading(true);
+    fetch(`/api/products/${encodeURIComponent(slug)}`, { cache: "no-store" })
+      .then((response) => response.json().then((payload) => ({ response, payload })))
+      .then(({ response, payload }) => {
+        if (!active) return;
+        if (!response.ok) throw new Error(payload?.error ?? "A termék nem található.");
+        setProduct(payload as Product);
+      })
+      .catch(() => {
+        if (active) setProduct(null);
+      })
+      .finally(() => {
+        if (active) setProductLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [slug]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -149,17 +177,44 @@ export default function ProductDetailPage() {
   useEffect(() => {
     let active = true;
     fetch("/api/auth/me", { cache: "no-store" })
-      .then((response) => {
+      .then((response) =>
+        response
+          .json()
+          .then((payload: { user?: { role?: "ADMIN" | "CUSTOMER" } }) => ({ response, payload }))
+          .catch(() => ({ response, payload: undefined as { user?: { role?: "ADMIN" | "CUSTOMER" } } | undefined }))
+      )
+      .then(({ response, payload }) => {
         if (!active) return;
         setIsAuthenticated(response.ok);
+        setIsAdminSession(Boolean(response.ok && payload?.user?.role === "ADMIN"));
       })
       .catch(() => {
-        if (active) setIsAuthenticated(false);
+        if (active) {
+          setIsAuthenticated(false);
+          setIsAdminSession(false);
+        }
       });
     return () => {
       active = false;
     };
   }, []);
+
+  useEffect(() => {
+    if (!product) return;
+    trackEvent("view_item", {
+      currency: "HUF",
+      value: product.salePrice ?? product.price,
+      items: [toAnalyticsItemFromProduct(product, { listName: "Product Detail" })],
+    });
+  }, [product]);
+
+  if (productLoading) {
+    return (
+      <div className="container mx-auto px-4 py-16 md:py-24 text-center text-neutral-medium">
+        Termék betöltése...
+      </div>
+    );
+  }
 
   if (!product) {
     return (
@@ -181,7 +236,7 @@ export default function ProductDetailPage() {
   }
 
   const category = categories.find((c) => c.id === product.categoryId);
-  const safeDescriptionHtml = useMemo(() => sanitizeRichHtml(product.description), [product.description]);
+  const safeDescriptionHtml = sanitizeRichHtml(product.description);
   const hasSale = !!product.salePrice;
   const displayPrice = product.salePrice ?? product.price;
   const savings = hasSale ? product.price - product.salePrice! : 0;
@@ -216,7 +271,7 @@ export default function ProductDetailPage() {
     image: (product.images ?? []).slice(0, 5).map((image) => absoluteUrl(image)),
     brand: {
       "@type": "Brand",
-      name: "BabyOnline.hu",
+      name: product.manufacturer || "FreeOn",
     },
     offers: {
       "@type": "Offer",
@@ -225,7 +280,7 @@ export default function ProductDetailPage() {
       price: displayPrice,
       availability: inStock
         ? "https://schema.org/InStock"
-        : "https://schema.org/PreOrder",
+        : "https://schema.org/OutOfStock",
       itemCondition: "https://schema.org/NewCondition",
       shippingDetails: isFreeShippingEligible
         ? {
@@ -245,7 +300,7 @@ export default function ProductDetailPage() {
         "@type": "MerchantReturnPolicy",
         applicableCountry: "HU",
         returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-        merchantReturnDays: 30,
+        merchantReturnDays: MERCHANT_RETURN_DAYS,
         returnMethod: "https://schema.org/ReturnByMail",
       },
     },
@@ -293,14 +348,6 @@ export default function ProductDetailPage() {
     router.push("/rendeles");
   };
 
-  useEffect(() => {
-    trackEvent("view_item", {
-      currency: "HUF",
-      value: product.salePrice ?? product.price,
-      items: [toAnalyticsItemFromProduct(product, { listName: "Product Detail" })],
-    });
-  }, [product]);
-
   const handleCategoryNavigation = (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
       return;
@@ -313,6 +360,12 @@ export default function ProductDetailPage() {
     window.setTimeout(() => {
       router.push(href);
     }, 160);
+  };
+
+  const handleWarrantyJump = () => {
+    setHighlightWarranty(true);
+    window.setTimeout(() => setHighlightWarranty(false), 1400);
+    warrantyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const handleSubmitReview = (event: React.FormEvent<HTMLFormElement>) => {
@@ -364,9 +417,9 @@ export default function ProductDetailPage() {
         <Breadcrumb items={breadcrumbItems} className="mb-6" />
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-8 lg:gap-10 mb-16 items-start">
           {/* LEFT: Gallery */}
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center lg:items-start lg:sticky lg:top-24 self-start">
             <ProductGallery
               images={product.images}
               productName={product.name}
@@ -374,7 +427,7 @@ export default function ProductDetailPage() {
           </div>
 
           {/* RIGHT: Product info */}
-          <div className="space-y-5">
+          <div className="space-y-5 relative group/product-info">
             {category && (
               <Link
                 href={`/kategoriak/${category.slug}`}
@@ -394,9 +447,20 @@ export default function ProductDetailPage() {
               </Link>
             )}
 
-            <h1 className="text-2xl md:text-3xl font-extrabold text-neutral-dark tracking-tight leading-tight">
+            <h1 className="text-2xl md:text-3xl font-extrabold text-neutral-dark tracking-tight leading-tight pr-36">
               {product.name}
             </h1>
+            {isAdminSession ? (
+              <a
+                href={`/admin/termekek/${product.id}`}
+                target="_blank"
+                rel="noreferrer"
+                className="hidden lg:inline-flex absolute right-0 top-0 items-center gap-2 rounded-full border border-violet-200 bg-white/95 px-4 py-2 text-xs font-bold text-violet-700 shadow-sm backdrop-blur transition-all duration-200 opacity-0 translate-y-1 group-hover/product-info:opacity-100 group-hover/product-info:translate-y-0 hover:bg-violet-50 hover:border-violet-300"
+              >
+                <PencilLine className="size-3.5" />
+                Termék szerkesztése
+              </a>
+            ) : null}
 
             {/* Rating */}
             {totalReviewCount > 0 && (
@@ -435,6 +499,21 @@ export default function ProductDetailPage() {
                 </>
               )}
             </div>
+            {isAdminSession && Number.isFinite(product.purchasePrice) && Number(product.purchasePrice) > 0 ? (
+              <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-bold">
+                {(() => {
+                  const purchasePrice = Number(product.purchasePrice);
+                  const profitFt = displayPrice - purchasePrice;
+                  const marginPercent = displayPrice > 0 ? (profitFt / displayPrice) * 100 : 0;
+                  const lowMargin = marginPercent < 8;
+                  return (
+                    <span className={lowMargin ? "text-red-700" : "text-violet-700"}>
+                      {marginPercent.toFixed(1)}% Haszon: {formatPrice(Math.round(profitFt))}
+                    </span>
+                  );
+                })()}
+              </div>
+            ) : null}
 
             {/* Stock badge */}
             <div className="space-y-2">
@@ -568,46 +647,47 @@ export default function ProductDetailPage() {
               <span className="text-sm text-neutral-medium">Kívánságlistára</span>
             </div>
             <div className="pb-2">
-              <Link
-                href="#szallitasi-ido-jotallas"
+              <button
+                type="button"
+                onClick={handleWarrantyJump}
                 className="inline-flex min-h-10 items-center justify-center rounded-xl border border-primary/30 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/10 transition-colors"
               >
                 Szállítási és jótállási információk
-              </Link>
+              </button>
             </div>
 
             {/* Benefits cards */}
             <div className="grid grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-3 bg-brand-cyan/10 border border-brand-cyan/20 rounded-2xl px-4 py-4">
-                <div className="size-11 rounded-xl bg-brand-cyan/20 flex items-center justify-center flex-shrink-0">
-                  <Truck className="size-5 text-brand-cyan" />
+              <div className="group flex items-center gap-3 bg-brand-cyan/10 border border-brand-cyan/20 rounded-2xl px-4 py-4 transition hover:-translate-y-0.5 hover:shadow-md">
+                <div className="size-11 rounded-xl bg-brand-cyan/20 flex items-center justify-center flex-shrink-0 transition group-hover:scale-105 group-hover:rotate-3">
+                  <Truck className="size-5 text-brand-cyan transition group-hover:-translate-y-0.5" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-neutral-dark">Ingyenes szállítás</p>
                   <p className="text-xs text-neutral-medium">{formatPrice(FREE_SHIPPING_THRESHOLD)} felett</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-2xl px-4 py-4">
-                <div className="size-11 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  <RotateCcw className="size-5 text-primary" />
+              <div className="group flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-2xl px-4 py-4 transition hover:-translate-y-0.5 hover:shadow-md">
+                <div className="size-11 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 transition group-hover:scale-105 group-hover:rotate-3">
+                  <RotateCcw className="size-5 text-primary transition group-hover:-translate-y-0.5" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-neutral-dark">30 napos visszaküldés</p>
                   <p className="text-xs text-neutral-medium">Kérdés nélkül</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 bg-brand-pink/10 border border-brand-pink/20 rounded-2xl px-4 py-4">
-                <div className="size-11 rounded-xl bg-brand-pink/20 flex items-center justify-center flex-shrink-0">
-                  <Package className="size-5 text-brand-pink" />
+              <div className="group flex items-center gap-3 bg-brand-pink/10 border border-brand-pink/20 rounded-2xl px-4 py-4 transition hover:-translate-y-0.5 hover:shadow-md">
+                <div className="size-11 rounded-xl bg-brand-pink/20 flex items-center justify-center flex-shrink-0 transition group-hover:scale-105 group-hover:rotate-3">
+                  <Package className="size-5 text-brand-pink transition group-hover:-translate-y-0.5" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-neutral-dark">1-2 napos kiszállítás</p>
                   <p className="text-xs text-neutral-medium">Gyors feldolgozás</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 bg-accent/10 border border-accent/20 rounded-2xl px-4 py-4">
-                <div className="size-11 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <ShieldCheck className="size-5 text-accent" />
+              <div className="group flex items-center gap-3 bg-accent/10 border border-accent/20 rounded-2xl px-4 py-4 transition hover:-translate-y-0.5 hover:shadow-md">
+                <div className="size-11 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0 transition group-hover:scale-105 group-hover:rotate-3">
+                  <ShieldCheck className="size-5 text-accent transition group-hover:-translate-y-0.5" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-neutral-dark">Biztonságos fizetés</p>
@@ -834,7 +914,11 @@ export default function ProductDetailPage() {
 
         <section
           id="szallitasi-ido-jotallas"
-          className="mb-12 rounded-2xl border border-gray-200 bg-white p-5 md:p-6"
+          ref={warrantyRef}
+          className={cn(
+            "mb-12 rounded-2xl border border-gray-200 bg-white p-5 md:p-6 transition-all duration-500",
+            highlightWarranty && "ring-2 ring-primary/40 shadow-lg shadow-primary/10"
+          )}
         >
           <h2 className="text-xl font-extrabold tracking-tight text-neutral-dark mb-4">
             Jótállási idő

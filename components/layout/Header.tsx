@@ -31,6 +31,7 @@ export function Header() {
   const [isHydrated, setIsHydrated] = useState(false);
   const [accountHref, setAccountHref] = useState("/bejelentkezes");
   const [accountLabel, setAccountLabel] = useState("Bejelentkezés");
+  const [isAdminSession, setIsAdminSession] = useState(false);
   const mainHeaderRef = useRef<HTMLElement | null>(null);
   const [mainHeaderHeight, setMainHeaderHeight] = useState(88);
 
@@ -47,16 +48,19 @@ export function Header() {
         if (!response.ok) {
           setAccountHref("/bejelentkezes");
           setAccountLabel("Bejelentkezés");
+          setIsAdminSession(false);
           return;
         }
         const role = (payload.user?.role as "ADMIN" | "CUSTOMER" | undefined) ?? "CUSTOMER";
         setAccountHref(role === "ADMIN" ? "/admin" : "/fiokom");
         setAccountLabel(role === "ADMIN" ? "Admin" : "Fiókom");
+        setIsAdminSession(role === "ADMIN");
       })
       .catch(() => {
         if (active) {
           setAccountHref("/bejelentkezes");
           setAccountLabel("Bejelentkezés");
+          setIsAdminSession(false);
         }
       });
     return () => {
@@ -149,6 +153,11 @@ export function Header() {
 
             {/* Right icons */}
             <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+              {isAdminSession ? (
+                <span className="hidden md:inline-flex items-center rounded-full border border-amber-200 bg-amber-300 px-2.5 py-1 text-[11px] font-extrabold text-neutral-dark mr-1 whitespace-nowrap">
+                  Admin bejelentkezve
+                </span>
+              ) : null}
               <Link
                 href={accountHref}
                 className="focus-ring p-2.5 sm:p-2 rounded-xl hover:bg-white/15 transition-colors"

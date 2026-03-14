@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Product } from "@/types";
 import { getEffectiveCategories, getEffectiveProducts } from "@/lib/server/products";
+import { maybeTriggerAutomaticSupplierSync } from "@/lib/server/supplier-sync";
 
 export async function GET(request: NextRequest) {
   try {
+    await maybeTriggerAutomaticSupplierSync();
     const { searchParams } = new URL(request.url);
     const category = searchParams.get("category");
     const sort = searchParams.get("sort");

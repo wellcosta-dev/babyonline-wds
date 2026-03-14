@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { Eye, EyeOff, Loader2, Shield, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const loginSchema = z.object({
@@ -41,6 +41,7 @@ export default function LoginPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           mode: "login",
+          loginTarget: "customer",
           email: data.email,
           password: data.password,
           remember: data.remember ?? false,
@@ -68,19 +69,27 @@ export default function LoginPage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="w-full max-w-md"
+      className="w-full max-w-xl"
     >
-      <div className="card p-8 shadow-medium">
-        <div className="text-center mb-8">
-          <h1 className="text-2xl font-display font-bold text-neutral-dark mb-2">
+      <div className="relative overflow-hidden rounded-3xl border border-violet-100 bg-white p-8 shadow-xl">
+        <div className="pointer-events-none absolute -top-20 -right-20 size-52 rounded-full bg-violet-100/80 blur-2xl" />
+        <div className="pointer-events-none absolute -bottom-20 -left-20 size-52 rounded-full bg-brand-cyan/10 blur-2xl" />
+        <div className="relative text-center mb-8">
+          <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-violet-600 text-white shadow-lg shadow-violet-200">
+            <Sparkles className="size-6" />
+          </div>
+          <h1
+            className="text-3xl font-display font-black text-neutral-dark mb-2 tracking-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Bejelentkezés
           </h1>
-          <p className="text-neutral-medium text-sm">
-            Üdvözöljük újra a BabyOnline-nál
+          <p className="text-neutral-medium text-sm max-w-sm mx-auto">
+            Modern, gyors és biztonságos belépés a vásárlói fiókodhoz.
           </p>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+        <form onSubmit={handleSubmit(onSubmit)} className="relative space-y-5">
           <div>
             <label
               htmlFor="email"
@@ -92,7 +101,10 @@ export default function LoginPage() {
               id="email"
               type="email"
               {...register("email")}
-              className={cn("input-field", errors.email && "border-error focus:ring-error/30")}
+              className={cn(
+                "h-12 w-full rounded-xl border border-gray-200 bg-white px-4 text-sm outline-none transition focus:border-violet-400 focus:ring-4 focus:ring-violet-100",
+                errors.email && "border-error focus:ring-error/20"
+              )}
               placeholder="email@pelda.hu"
             />
             {errors.email && (
@@ -113,7 +125,7 @@ export default function LoginPage() {
                 type={showPassword ? "text" : "password"}
                 {...register("password")}
                 className={cn(
-                  "input-field pr-12",
+                  "h-12 w-full rounded-xl border border-gray-200 bg-white px-4 pr-12 text-sm outline-none transition focus:border-violet-400 focus:ring-4 focus:ring-violet-100",
                   errors.password && "border-error focus:ring-error/30"
                 )}
                 placeholder="••••••••"
@@ -152,16 +164,26 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isSubmitting || isAuthLoading}
-            className="btn-primary w-full"
+            className="h-12 w-full rounded-xl bg-violet-600 text-white font-bold text-sm transition hover:bg-violet-700 disabled:opacity-60"
           >
-            Bejelentkezés
+            {isSubmitting || isAuthLoading ? "Belépés..." : "Bejelentkezés"}
           </button>
           {submitError && (
-            <p className="text-sm text-error text-center">{submitError}</p>
+            <p className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-error text-center">
+              {submitError}
+            </p>
           )}
         </form>
 
-        <p className="mt-6 text-center text-sm text-neutral-medium">
+        <div className="mt-6 rounded-2xl border border-violet-100 bg-violet-50/60 px-4 py-3 text-xs text-violet-800 flex items-start gap-2">
+          <Shield className="size-4 mt-0.5" />
+          <p>
+            Bruteforce védelem aktív: több sikertelen próbálkozás után ideiglenes zárolás lép életbe.
+          </p>
+        </div>
+
+        <div className="mt-6 text-center text-sm text-neutral-medium space-y-2">
+          <p>
           Nincs még fiókod?{" "}
           <Link
             href="/regisztracio"
@@ -169,7 +191,8 @@ export default function LoginPage() {
           >
             Regisztrálj!
           </Link>
-        </p>
+          </p>
+        </div>
       </div>
       {isAuthLoading && (
         <div className="fixed inset-0 z-[70] bg-white/75 backdrop-blur-[2px] flex items-center justify-center">

@@ -6,7 +6,8 @@ Ez a dokumentum a webshopban jelenleg implementalt esemeny taxonomiat foglalja o
 
 - Data layer neve: `dataLayer`
 - GTM env: `NEXT_PUBLIC_GTM_ID`
-- GA4 env: `NEXT_PUBLIC_GA_ID`
+- GA4 env: `NEXT_PUBLIC_GA_ID` (csak fallback, GTM nelkul)
+- Meta Pixel env: `NEXT_PUBLIC_META_PIXEL_ID`
 - Site URL env: `NEXT_PUBLIC_SITE_URL`
 - Script init: `components/analytics/AnalyticsScripts.tsx`
 - Event helper: `lib/analytics.ts`
@@ -23,8 +24,8 @@ Ez a dokumentum a webshopban jelenleg implementalt esemeny taxonomiat foglalja o
 | `apply_coupon` | Ervenyes kupon alkalmazasakor | `coupon` | `app/(shop)/kosar/page.tsx` |
 | `begin_checkout` | Checkout funnel inditasakor | `currency`, `value`, `coupon`, `items[]` | `app/(shop)/rendeles/page.tsx` |
 | `add_shipping_info` | Szallitasi lepes tovabblepes | `currency`, `value`, `coupon`, `shipping_tier`, `items[]` | `app/(shop)/rendeles/page.tsx` |
-| `add_payment_info` | Fizetesi mod valasztas/leadashoz | `currency`, `value`, `coupon`, `payment_type`, `shipping_tier`, `items[]` | `app/(shop)/rendeles/page.tsx` |
-| `purchase` | Sikeres rendelesc letrehozas | `transaction_id`, `currency`, `value`, `shipping`, `coupon`, `items[]` | `app/(shop)/rendeles/page.tsx` |
+| `add_payment_info` | Fizetesi mod valasztas/leadashoz | `currency`, `value`, `coupon`, `payment_type`, `shipping_tier`, `event_id`, `items[]` | `app/(shop)/rendeles/page.tsx` |
+| `purchase` | Sikeres rendeles (COD vagy Stripe visszaigazolas) | `transaction_id`, `currency`, `value`, `shipping`, `coupon`, `event_id`, `items[]` | `app/(shop)/rendeles/page.tsx`, `app/(shop)/rendeles/megerosites/page.tsx` |
 
 ## 3) `items[]` schema (egyseges)
 
@@ -89,4 +90,15 @@ Import utan csere:
 
 Fontos:
 
-- Ha GTM-bol kuldod a GA4 eventeket, akkor ne kuldj ugyanazt az eventet parhuzamosan kulon direkt `gtag` hivasokbol, mert duplazodas lehet.
+- GTM-központu uzemmodban az app csak `dataLayer` eventet kuld; direkt `gtag("event")` csak GTM nelkuli fallback eset.
+
+## 8) Google Ads + Meta deduplikacio alap
+
+- `purchase` esemenyhez kotelezo az `event_id` (frontend + server dedup).
+- Google Ads purchase mapping alapja:
+  - `transaction_id`
+  - `value`
+  - `currency`
+- Meta hybrid:
+  - Browser: Pixel `Purchase` ugyanazzal az `event_id`-val
+  - Server: CAPI `Purchase` webhook/order alapon ugyanazzal az `event_id`-val

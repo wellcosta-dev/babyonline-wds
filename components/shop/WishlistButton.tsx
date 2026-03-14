@@ -31,6 +31,13 @@ export function WishlistButton({ productId, size = "md" }: WishlistButtonProps) 
   const [popKey, setPopKey] = useState(0);
   const handleToggle = () => {
     toggleItem(productId);
+    const nextWishlist = useWishlistStore.getState().items;
+    // Persist immediately for authenticated users; ignore errors for guests.
+    fetch("/api/account/profile", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode: "wishlist", wishlist: nextWishlist }),
+    }).catch(() => undefined);
     setPopKey((k) => k + 1);
   };
 

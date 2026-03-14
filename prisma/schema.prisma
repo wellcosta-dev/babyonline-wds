@@ -15,16 +15,33 @@ model Product {
   name            String
   description     String      @db.Text
   shortDesc       String?
+  manufacturerSku String?
+  ean             String?
+  unitName        String?
   price           Decimal     @db.Decimal(10, 2)
   salePrice       Decimal?    @db.Decimal(10, 2)
+  purchasePrice   Decimal?    @db.Decimal(10, 2)
+  vatRate         String?
   sku             String      @unique
   stock           Int         @default(0)
   images          Json
+  documents       Json?
   categoryId      String
+  categoryIds     String[]
+  manufacturer    String?
   category        Category    @relation(fields: [categoryId], references: [id])
   tags            String[]
   weight          Float?
+  weightUnit      String?
+  sizeValue       String?
+  sizeUnit        String?
   attributes      Json?
+  supplierUrl     String?
+  excludedPaymentMethods String[]
+  excludedShippingMethods String[]
+  promotions      Json?
+  rating          Float?
+  reviewCount     Int?
   ageGroups       String[]
   embedding       Unsupported("vector(1536)")?
   metaTitle       String?
@@ -78,6 +95,8 @@ model Order {
   couponCode        String?
   paymentMethod     String
   paymentStatus     PaymentStatus @default(PENDING)
+  purchaseEventId   String?
+  attribution       Json?
   stripePaymentId   String?
   billingoInvoiceId String?
   glsTrackingId     String?
@@ -187,6 +206,13 @@ model NewsletterSubscriber {
   email     String   @unique
   isActive  Boolean  @default(true)
   createdAt DateTime @default(now())
+}
+
+model AppState {
+  key       String   @id
+  value     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 enum OrderStatus {

@@ -42,6 +42,9 @@ for (const row of records) {
       seoDescription: row["SEO Description"] || "",
       status: row["Status"] || "active",
       barcode: row["Variant Barcode"] || "",
+      supplierUrl:
+        row["beszallito-link (product.metafields.custom.beszallito_link)"] || "",
+      googleMpn: row["Google Shopping / MPN"] || "",
       costPerItem: row["Cost per item"] || "",
     });
   }
@@ -160,6 +163,11 @@ for (const [handle, p] of productMap) {
     price: compareAt > price ? compareAt : price,
     salePrice: compareAt > price ? price : undefined,
     sku: p.sku || `BO-${String(idx).padStart(4, "0")}`,
+    manufacturerSku: p.googleMpn || undefined,
+    ean: p.barcode || undefined,
+    supplierUrl: p.supplierUrl || undefined,
+    // Current catalog is exclusively FreeOn; keep brand uniform for feed compliance.
+    manufacturer: "FreeOn",
     stock: p.inventoryQty > 0 ? p.inventoryQty : 0,
     images: p.images.slice(0, 6),
     categoryId,

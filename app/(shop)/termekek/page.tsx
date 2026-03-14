@@ -11,7 +11,6 @@ import { ProductGrid } from "@/components/shop/ProductGrid";
 import { InternalLinksBlock } from "@/components/seo/InternalLinksBlock";
 import { parseFiltersFromSearchParams, withFilterSearchParams } from "@/lib/filter-query";
 import { cn } from "@/lib/utils";
-import { products, getCategoryBySlug } from "@/lib/mock-data";
 import { getCollectionInternalLinks } from "@/lib/seo-content";
 import type { FilterState, Product, SortOption } from "@/types";
 
@@ -35,17 +34,9 @@ const DEFAULT_FILTERS: FilterState = {
 
 function filterAndSortProducts(
   allProducts: Product[],
-  filters: FilterState,
-  categorySlug?: string
+  filters: FilterState
 ): Product[] {
   let result = [...allProducts];
-
-  if (categorySlug) {
-    const category = getCategoryBySlug(categorySlug);
-    if (category) {
-      result = result.filter((p) => p.categoryId === category.id);
-    }
-  }
 
   if (filters.categories.length > 0) {
     result = result.filter((p) => filters.categories.includes(p.categoryId));
@@ -103,10 +94,36 @@ export default function TermekekPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loadingProducts, setLoadingProducts] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    setLoadingProducts(true);
+    fetch("/api/products?limit=5000", { cache: "no-store" })
+      .then((response) => response.json().then((payload) => ({ response, payload })))
+      .then(({ response, payload }) => {
+        if (!active) return;
+        if (!response.ok) throw new Error(payload?.error ?? "Nem sikerült betölteni a termékeket.");
+        const items = Array.isArray(payload?.products) ? (payload.products as Product[]) : [];
+        setProducts(items.filter((entry) => entry.isActive));
+      })
+      .catch(() => {
+        if (active) setProducts([]);
+      })
+      .finally(() => {
+        if (active) setLoadingProducts(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
   const priceBounds: [number, number] = useMemo(() => {
+    if (products.length === 0) return [0, 100000];
     const prices = products.map((p) => p.salePrice ?? p.price);
     return [Math.min(...prices), Math.max(...prices)];
-  }, []);
+  }, [products]);
 
   const [filters, setFilters] = useState<FilterState>(() =>
     parseFiltersFromSearchParams(
@@ -152,7 +169,7 @@ export default function TermekekPage() {
 
   const filteredProducts = useMemo(
     () => filterAndSortProducts(products, filters),
-    [filters]
+    [filters, products]
   );
   const collectionLinks = useMemo(() => getCollectionInternalLinks(), []);
 
@@ -301,6 +318,9 @@ export default function TermekekPage() {
             listName="Termékek lista"
             onResetFilters={handleResetFilters}
           />
+          {loadingProducts ? (
+            <p className="mt-4 text-sm text-neutral-medium">Termékek betöltése...</p>
+          ) : null}
           <section className="mt-8 md:mt-10 rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
             <h2 className="text-xl md:text-2xl font-extrabold tracking-tight text-neutral-dark mb-3">
               Baba-mama vásárlási útmutató

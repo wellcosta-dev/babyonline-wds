@@ -10,6 +10,8 @@ import { getShippingCost } from "@/lib/utils";
 import type { ShippingMethod } from "@/lib/shipping";
 import { getSessionUser } from "@/lib/server/api-auth";
 import { markAbandonedCartRecoveredByEmail } from "@/lib/server/abandoned-carts";
+import { sendMetaPurchaseEvent } from "@/lib/server/meta-conversions";
+import { upsertOrderAttribution } from "@/lib/server/order-attribution";
 
 export async function GET(request: NextRequest) {
   try {
@@ -145,6 +147,21 @@ export async function POST(request: NextRequest) {
     const total = Math.max(0, computedTotal - loyaltyDiscount);
 
     const paymentMethod = body.paymentMethod ?? "card";
+    const purchaseEventId = typeof body.purchaseEventId === "string" ? body.purchaseEventId : undefined;
+    const attribution = body.attribution as
+      | {
+          fbp?: string;
+          fbc?: string;
+          fbclid?: string;
+          gclid?: string;
+          utmSource?: string;
+          utmMedium?: string;
+          utmCampaign?: string;
+          utmTerm?: string;
+          utmContent?: string;
+          landingPath?: string;
+        }
+      | undefined;
     const paymentStatusFromBody = String(body.paymentStatus ?? "");
     const safePaymentStatus =
       paymentStatusFromBody === "PAID" ||
@@ -174,11 +191,26 @@ export async function POST(request: NextRequest) {
       total,
       paymentMethod,
       paymentStatus: safePaymentStatus,
+      purchaseEventId,
       stripePaymentId: typeof body.stripePaymentId === "string" ? body.stripePaymentId : undefined,
       notes: body.notes,
       loyaltyPointsRedeemed,
       loyaltyDiscount,
       loyaltyPointsGranted: false,
+      attribution: attribution
+        ? {
+            fbp: attribution.fbp,
+            fbc: attribution.fbc,
+            fbclid: attribution.fbclid,
+            gclid: attribution.gclid,
+            utmSource: attribution.utmSource,
+            utmMedium: attribution.utmMedium,
+            utmCampaign: attribution.utmCampaign,
+            utmTerm: attribution.utmTerm,
+            utmContent: attribution.utmContent,
+            landingPath: attribution.landingPath,
+          }
+        : undefined,
       createdAt: now,
       updatedAt: now,
     };
@@ -191,6 +223,21 @@ export async function POST(request: NextRequest) {
 
     try {
       await upsertStoredOrder(order);
+      await upsertOrderAttribution({
+        orderId: order.id,
+        orderNumber: order.orderNumber,
+        purchaseEventId,
+        fbp: attribution?.fbp,
+        fbc: attribution?.fbc,
+        fbclid: attribution?.fbclid,
+        gclid: attribution?.gclid,
+        utmSource: attribution?.utmSource,
+        utmMedium: attribution?.utmMedium,
+        utmCampaign: attribution?.utmCampaign,
+        utmTerm: attribution?.utmTerm,
+        utmContent: attribution?.utmContent,
+        landingPath: attribution?.landingPath,
+      });
       if (order.guestEmail) {
         await markAbandonedCartRecoveredByEmail(order.guestEmail, order.orderNumber);
       }
@@ -212,6 +259,36 @@ export async function POST(request: NextRequest) {
         }
       }
     });
+
+    if (paymentMethod === "cod") {
+      Promise.resolve()
+        .then(async () => {
+          const orderAttribution = {
+            orderId: order.id,
+            orderNumber: order.orderNumber,
+            purchaseEventId,
+            fbp: attribution?.fbp,
+            fbc: attribution?.fbc,
+            fbclid: attribution?.fbclid,
+            gclid: attribution?.gclid,
+            utmSource: attribution?.utmSource,
+            utmMedium: attribution?.utmMedium,
+            utmCampaign: attribution?.utmCampaign,
+            utmTerm: attribution?.utmTerm,
+            utmContent: attribution?.utmContent,
+            landingPath: attribution?.landingPath,
+            updatedAt: new Date().toISOString(),
+          };
+          await sendMetaPurchaseEvent({ order, attribution: orderAttribution });
+          await upsertOrderAttribution({
+            ...orderAttribution,
+            metaPurchaseSentAt: new Date().toISOString(),
+          });
+        })
+        .catch((metaError) => {
+          console.error("Meta CAPI COD send failed:", metaError);
+        });
+    }
 
     return NextResponse.json(order, { status: 201 });
   } catch (error) {

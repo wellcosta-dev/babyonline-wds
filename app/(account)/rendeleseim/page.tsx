@@ -79,7 +79,7 @@ export default function RendeleseimPage() {
 
   return (
     <div>
-      <h1 className="font-display font-bold text-2xl md:text-3xl text-neutral-dark mb-6">
+      <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-dark mb-6">
         Rendeléseim
       </h1>
 

@@ -157,7 +157,7 @@ function ShopSettings() {
         <InputField defaultValue="BabyOnline.hu" />
       </SettingRow>
       <SettingRow label="Email cím" description="Admin értesítésekhez">
-        <InputField defaultValue="hello@jatekonline.hu" />
+        <InputField defaultValue="hello@babyonline.hu" />
       </SettingRow>
       <SettingRow label="Telefonszám">
         <InputField defaultValue="06202982228" />
@@ -238,18 +238,18 @@ function EmailSettings() {
     smtpUser: "",
     smtpPass: "",
     fromName: "BabyOnline.hu",
-    fromEmail: "hello@jatekonline.hu",
-    replyTo: "hello@jatekonline.hu",
+    fromEmail: "hello@babyonline.hu",
+    replyTo: "hello@babyonline.hu",
     orderConfirmationEnabled: true,
     orderStatusUpdateEnabled: true,
     adminNewOrderEnabled: true,
-    adminNotificationEmail: "hello@jatekonline.hu",
+    adminNotificationEmail: "hello@babyonline.hu",
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string>("");
   const [testingEmail, setTestingEmail] = useState(false);
-  const [testRecipient, setTestRecipient] = useState("hello@jatekonline.hu");
+  const [testRecipient, setTestRecipient] = useState("hello@babyonline.hu");
   const [templates, setTemplates] = useState<
     { type: string; title: string; html: string; subject: string }[]
   >([]);

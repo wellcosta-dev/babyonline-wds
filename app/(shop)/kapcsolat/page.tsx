@@ -18,8 +18,8 @@ import { cn } from "@/lib/utils";
 const CONTACT_INFO = [
   {
     title: "E-mail",
-    value: "hello@jatekonline.hu",
-    href: "mailto:hello@jatekonline.hu",
+    value: "hello@babyonline.hu",
+    href: "mailto:hello@babyonline.hu",
     desc: "Általában 24 órán belül válaszolunk",
     icon: Mail,
     color: "text-primary",
@@ -62,10 +62,29 @@ export default function KapcsolatPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitError(null);
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+      const payload = (await response.json()) as { error?: string };
+      if (!response.ok) {
+        throw new Error(payload.error ?? "Az üzenet küldése sikertelen.");
+      }
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Az üzenet küldése sikertelen.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputCls =
@@ -220,11 +239,13 @@ export default function KapcsolatPage() {
                     </div>
                     <button
                       type="submit"
+                      disabled={isSubmitting}
                       className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 rounded-xl bg-primary text-white font-bold text-sm hover:bg-primary-light transition-colors shadow-lg shadow-primary/20"
                     >
                       <Send className="size-4" />
-                      Üzenet küldése
+                      {isSubmitting ? "Küldés..." : "Üzenet küldése"}
                     </button>
+                    {submitError ? <p className="text-sm text-red-600">{submitError}</p> : null}
                   </form>
                 )}
               </div>

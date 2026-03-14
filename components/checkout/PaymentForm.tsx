@@ -18,7 +18,7 @@ import type { CartItem } from "@/store/cartStore";
 
 export type PaymentMethod = "card" | "cod";
 
-export const COD_FEE = 500;
+export const COD_FEE = 990;
 
 function getItemPrice(item: CartItem): number {
   return item.product.salePrice ?? item.product.price;

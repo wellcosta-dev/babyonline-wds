@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProductGalleryProps {
@@ -35,9 +36,20 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   };
 
   const isImageFailed = (index: number) => failedImages.has(index);
+  const canNavigate = displayImages.length > 1;
+
+  const goPrev = () => {
+    if (!canNavigate) return;
+    setActiveIndex((prev) => (prev === 0 ? displayImages.length - 1 : prev - 1));
+  };
+
+  const goNext = () => {
+    if (!canNavigate) return;
+    setActiveIndex((prev) => (prev === displayImages.length - 1 ? 0 : prev + 1));
+  };
 
   return (
-    <div className="space-y-4 w-full max-w-md mx-auto lg:max-w-full">
+    <div className="space-y-4 w-full max-w-none">
       {/* Main image area */}
       <div
         ref={containerRef}
@@ -46,7 +58,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        <div className="relative aspect-square max-h-[420px] overflow-hidden">
+        <div className="relative aspect-square max-h-[520px] lg:max-h-[600px] overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -91,6 +103,26 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           <div className="absolute bottom-3 right-3 badge bg-neutral-dark/80 text-white backdrop-blur-sm">
             {activeIndex + 1}/{displayImages.length}
           </div>
+        )}
+        {canNavigate && (
+          <>
+            <button
+              type="button"
+              onClick={goPrev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 inline-flex size-10 items-center justify-center rounded-full border border-white/70 bg-white/90 text-neutral-dark shadow-sm backdrop-blur transition hover:bg-white"
+              aria-label="Előző termékkép"
+            >
+              <ChevronLeft className="size-5" />
+            </button>
+            <button
+              type="button"
+              onClick={goNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 inline-flex size-10 items-center justify-center rounded-full border border-white/70 bg-white/90 text-neutral-dark shadow-sm backdrop-blur transition hover:bg-white"
+              aria-label="Következő termékkép"
+            >
+              <ChevronRight className="size-5" />
+            </button>
+          </>
         )}
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { Baby, Facebook, Instagram, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -29,6 +30,27 @@ const FOOTER_LINKS = {
 };
 
 export function Footer() {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleNewsletterSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!newsletterEmail.trim() || newsletterStatus === "loading") return;
+    setNewsletterStatus("loading");
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail, source: "footer-newsletter" }),
+      });
+      if (!response.ok) throw new Error("Newsletter subscribe failed");
+      setNewsletterEmail("");
+      setNewsletterStatus("success");
+    } catch {
+      setNewsletterStatus("error");
+    }
+  };
+
   return (
     <footer className="bg-neutral-dark text-white">
       {/* Newsletter section */}
@@ -48,10 +70,14 @@ export function Footer() {
                 Kapj értesítést akciókról és újdonságokról
               </p>
             </div>
-            <form className="flex w-full md:w-auto gap-2 max-w-md">
+            <form onSubmit={handleNewsletterSubmit} className="flex w-full md:w-auto gap-2 max-w-md">
               <input
                 type="email"
                 placeholder="E-mail címed"
+                value={newsletterEmail}
+                onChange={(event) => setNewsletterEmail(event.target.value)}
+                required
+                disabled={newsletterStatus === "loading"}
                 className={cn(
                   "flex-1 px-4 py-3 rounded-xl",
                   "bg-white/10 border border-white/20",
@@ -62,17 +88,26 @@ export function Footer() {
               />
               <button
                 type="submit"
+                disabled={newsletterStatus === "loading"}
                 className={cn(
                   "flex items-center gap-2 px-6 py-3 rounded-xl",
                   "bg-primary hover:bg-primary-light",
                   "font-semibold transition-colors"
                 )}
               >
-                <span className="hidden sm:inline">Feliratkozás</span>
+                <span className="hidden sm:inline">
+                  {newsletterStatus === "loading" ? "Küldés..." : "Feliratkozás"}
+                </span>
                 <Send className="size-4" />
               </button>
             </form>
           </div>
+          {newsletterStatus === "success" ? (
+            <p className="mt-2 text-xs text-emerald-300">Sikeres feliratkozás.</p>
+          ) : null}
+          {newsletterStatus === "error" ? (
+            <p className="mt-2 text-xs text-red-300">A feliratkozás sikertelen. Próbáld újra.</p>
+          ) : null}
         </div>
       </motion.section>
 

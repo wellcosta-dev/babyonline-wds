@@ -8,7 +8,46 @@ declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
     gtag?: (command: "event", eventName: string, params?: EventParams) => void;
+    fbq?: (command: string, eventName: string, params?: Record<string, unknown>, options?: Record<string, unknown>) => void;
   }
+}
+
+const hasGtmConfigured = Boolean(process.env.NEXT_PUBLIC_GTM_ID?.trim());
+
+export function createEventId(prefix = "evt"): string {
+  return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function mapToMetaEvent(
+  eventName: string,
+  params: EventParams
+): { name: string; params: Record<string, unknown> } | null {
+  const currency = String(params.currency ?? "HUF");
+  const value = Number(params.value ?? 0);
+  const items = Array.isArray(params.items) ? params.items : [];
+
+  if (eventName === "view_item") {
+    return { name: "ViewContent", params: { currency, value, content_type: "product", contents: items } };
+  }
+  if (eventName === "add_to_cart") {
+    return { name: "AddToCart", params: { currency, value, content_type: "product", contents: items } };
+  }
+  if (eventName === "begin_checkout") {
+    return { name: "InitiateCheckout", params: { currency, value, content_type: "product", contents: items } };
+  }
+  if (eventName === "purchase") {
+    return {
+      name: "Purchase",
+      params: {
+        currency,
+        value,
+        content_type: "product",
+        contents: items,
+        num_items: items.length,
+      },
+    };
+  }
+  return null;
 }
 
 export function trackEvent(eventName: string, params: EventParams = {}) {
@@ -17,8 +56,14 @@ export function trackEvent(eventName: string, params: EventParams = {}) {
   window.dataLayer = window.dataLayer ?? [];
   window.dataLayer.push({ event: eventName, ...params });
 
-  if (typeof window.gtag === "function") {
+  if (!hasGtmConfigured && typeof window.gtag === "function") {
     window.gtag("event", eventName, params);
+  }
+
+  const mappedMeta = mapToMetaEvent(eventName, params);
+  if (mappedMeta && typeof window.fbq === "function") {
+    const eventId = typeof params.event_id === "string" ? params.event_id : undefined;
+    window.fbq("track", mappedMeta.name, mappedMeta.params, eventId ? { eventID: eventId } : undefined);
   }
 }
 

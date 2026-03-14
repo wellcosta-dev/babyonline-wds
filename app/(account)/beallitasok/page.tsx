@@ -2,14 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Bell, Mail } from "lucide-react";
+import { Bell } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 export default function BeallitasokPage() {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(true);
+  const [deletingAccount, setDeletingAccount] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const [notifications, setNotifications] = useState({
     orderUpdates: true,
@@ -48,18 +51,46 @@ export default function BeallitasokPage() {
   }, []);
 
   const handleSaveProfile = async () => {
-    setNotice(null);
-    const response = await fetch("/api/account/profile", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mode: "profile", name, phone }),
-    });
-    const payload = (await response.json()) as { error?: string };
-    if (!response.ok) {
-      setNotice(payload.error ?? "Nem sikerült menteni a profilt.");
-      return;
+    try {
+      setNotice(null);
+      const response = await fetch("/api/account/profile", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "profile", name, phone }),
+      });
+      const payload = (await response.json()) as { error?: string };
+      if (!response.ok) {
+        setNotice(payload.error ?? "Nem sikerült menteni a profilt.");
+        return;
+      }
+      setNotice("Sikeres mentés.");
+    } catch {
+      setNotice("Hálózati hiba miatt a mentés nem sikerült.");
     }
-    setNotice("Sikeres mentés.");
+  };
+
+  const handleDeleteAccount = async () => {
+    if (deletingAccount) return;
+    const confirmed = window.confirm(
+      "Biztosan törlöd a fiókod? Ez a művelet nem visszavonható."
+    );
+    if (!confirmed) return;
+    setDeletingAccount(true);
+    setNotice(null);
+    try {
+      const response = await fetch("/api/account/delete", { method: "POST" });
+      const payload = (await response.json()) as { error?: string };
+      if (!response.ok) {
+        setNotice(payload.error ?? "A fiók törlése sikertelen.");
+        setDeletingAccount(false);
+        return;
+      }
+      localStorage.removeItem("bo-auth-user");
+      router.replace("/");
+    } catch {
+      setNotice("Hálózati hiba miatt a fiók törlése sikertelen.");
+      setDeletingAccount(false);
+    }
   };
 
   const toggleNotification = (key: keyof typeof notifications) => {
@@ -72,7 +103,7 @@ export default function BeallitasokPage() {
 
   return (
     <div>
-      <h1 className="font-display font-bold text-2xl md:text-3xl text-neutral-dark mb-8">
+      <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-dark mb-8">
         Beállítások
       </h1>
 
@@ -83,7 +114,7 @@ export default function BeallitasokPage() {
           transition={{ duration: 0.4 }}
           className="card p-6 md:p-8"
         >
-          <h2 className="font-display font-bold text-xl text-neutral-dark mb-6">
+          <h2 className="text-xl font-extrabold tracking-tight text-neutral-dark mb-6">
             Személyes adatok
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -133,7 +164,7 @@ export default function BeallitasokPage() {
           transition={{ duration: 0.4, delay: 0.05 }}
           className="card p-6 md:p-8"
         >
-          <h2 className="font-display font-bold text-xl text-neutral-dark mb-2">
+          <h2 className="text-xl font-extrabold tracking-tight text-neutral-dark mb-2">
             Jelszó módosítás
           </h2>
           <p className="text-sm text-neutral-medium">
@@ -147,7 +178,7 @@ export default function BeallitasokPage() {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="card p-6 md:p-8"
         >
-          <h2 className="font-display font-bold text-xl text-neutral-dark mb-6 flex items-center gap-2">
+          <h2 className="text-xl font-extrabold tracking-tight text-neutral-dark mb-6 flex items-center gap-2">
             <Bell className="size-5" />
             Értesítések
           </h2>
@@ -209,7 +240,7 @@ export default function BeallitasokPage() {
           transition={{ duration: 0.4, delay: 0.15 }}
           className="card p-6 md:p-8 border-red-200"
         >
-          <h2 className="font-display font-bold text-xl text-red-600 mb-2">
+          <h2 className="text-xl font-extrabold tracking-tight text-red-600 mb-2">
             Fiók törlése
           </h2>
           <p className="text-neutral-medium text-sm mb-4">
@@ -217,9 +248,11 @@ export default function BeallitasokPage() {
           </p>
           <button
             type="button"
+            onClick={handleDeleteAccount}
+            disabled={deletingAccount}
             className="font-semibold text-red-600 hover:text-red-700 border border-red-300 hover:border-red-400 px-6 py-3 rounded-xl transition-colors"
           >
-            Fiók törlése
+            {deletingAccount ? "Törlés..." : "Fiók törlése"}
           </button>
         </motion.section>
       </div>

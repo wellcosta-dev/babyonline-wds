@@ -41,8 +41,8 @@ export default function AdatvedelemPage() {
                 <li>Levelezési cím, panaszkezelés: 4531 Nyírpazony, Hunyadi utca 6.</li>
                 <li>
                   E-mail:{" "}
-                  <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">
-                    hello@jatekonline.hu
+                  <a href="mailto:hello@babyonline.hu" className="text-primary font-semibold hover:underline">
+                    hello@babyonline.hu
                   </a>
                 </li>
                 <li>Telefonszám: 06202982228</li>
@@ -123,7 +123,7 @@ export default function AdatvedelemPage() {
           <Section title="8. Kapcsolat">
             <p>
               Adatvédelmi kérdéseiddel fordulj hozzánk bizalommal:{" "}
-              <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">hello@jatekonline.hu</a>
+              <a href="mailto:hello@babyonline.hu" className="text-primary font-semibold hover:underline">hello@babyonline.hu</a>
             </p>
           </Section>
         </div>

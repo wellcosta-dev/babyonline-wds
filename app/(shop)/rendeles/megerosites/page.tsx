@@ -15,15 +15,34 @@ import {
 } from "lucide-react";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { useCartStore } from "@/store/cartStore";
+import { trackEvent } from "@/lib/analytics";
 
 function MegerositesContent() {
   const searchParams = useSearchParams();
   const orderNumber = searchParams.get("order") ?? "BO-XXXXXX";
+  const purchaseEventId = searchParams.get("eid");
+  const trackedValue = Number(searchParams.get("v") ?? 0);
   const clearCart = useCartStore((s) => s.clearCart);
 
   useEffect(() => {
     clearCart();
   }, [clearCart]);
+
+  useEffect(() => {
+    if (!purchaseEventId || !orderNumber || !Number.isFinite(trackedValue) || trackedValue <= 0) return;
+    const key = `bo-purchase-tracked-${orderNumber}-${purchaseEventId}`;
+    if (typeof window === "undefined") return;
+    if (window.sessionStorage.getItem(key) === "1") return;
+    trackEvent("purchase", {
+      transaction_id: orderNumber,
+      value: trackedValue,
+      currency: "HUF",
+      payment_type: "card",
+      event_id: purchaseEventId,
+      items: [],
+    });
+    window.sessionStorage.setItem(key, "1");
+  }, [orderNumber, purchaseEventId, trackedValue]);
 
   return (
     <div className="min-h-screen bg-neutral-pale">

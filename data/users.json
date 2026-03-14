@@ -1,5 +1,15 @@
 [
   {
+    "id": "user-1773445761526",
+    "email": "admin@babyonline.hu",
+    "name": "Árpád Kostyál",
+    "addresses": [],
+    "wishlist": [],
+    "createdAt": "2026-03-13T23:49:21.526Z",
+    "role": "CUSTOMER",
+    "passwordHash": "dd651050ac5817d18a23c46a3b426a5ada36890da3a549ab59440182f2e17220"
+  },
+  {
     "id": "user-1773092792476",
     "email": "hello@babyonline.hu",
     "name": "Kostyál Árpád",

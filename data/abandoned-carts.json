@@ -12,11 +12,11 @@
     ],
     "subtotal": 54990,
     "totalItems": 1,
-    "status": "ACTIVE",
+    "status": "ABANDONED",
     "reminderCount": 0,
     "createdAt": "2026-03-12T22:44:19.329Z",
-    "lastActivityAt": "2026-03-12T22:44:19.329Z",
-    "updatedAt": "2026-03-12T22:44:19.329Z"
+    "lastActivityAt": "2026-03-13T23:48:43.765Z",
+    "updatedAt": "2026-03-13T23:48:43.765Z"
   },
   {
     "id": "ac-1773096298814",
@@ -33,11 +33,12 @@
     ],
     "subtotal": 6990,
     "totalItems": 1,
-    "status": "ACTIVE",
-    "reminderCount": 0,
+    "status": "ABANDONED",
+    "reminderCount": 1,
     "createdAt": "2026-03-09T22:44:58.810Z",
     "lastActivityAt": "2026-03-12T23:10:59.320Z",
-    "updatedAt": "2026-03-12T23:10:59.320Z"
+    "updatedAt": "2026-03-14T18:13:05.412Z",
+    "lastReminderAt": "2026-03-14T18:13:05.412Z"
   },
   {
     "id": "ac-1773095121779",

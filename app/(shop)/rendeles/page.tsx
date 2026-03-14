@@ -32,7 +32,30 @@ import {
   generateOrderNumber,
 } from "@/lib/utils";
 import type { LoyaltySettings, Order } from "@/types";
-import { toAnalyticsItem, trackEvent } from "@/lib/analytics";
+import { createEventId, toAnalyticsItem, trackEvent } from "@/lib/analytics";
+
+type CheckoutAttribution = {
+  fbp?: string;
+  fbc?: string;
+  fbclid?: string;
+  gclid?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmTerm?: string;
+  utmContent?: string;
+  landingPath?: string;
+};
+
+function readCookie(name: string): string | undefined {
+  if (typeof document === "undefined") return undefined;
+  const item = document.cookie
+    .split(";")
+    .map((entry) => entry.trim())
+    .find((entry) => entry.startsWith(`${name}=`));
+  if (!item) return undefined;
+  return decodeURIComponent(item.slice(name.length + 1));
+}
 
 function getItemPrice(item: { product: { salePrice?: number; price: number }; quantity: number }) {
   return (item.product.salePrice ?? item.product.price) * item.quantity;
@@ -65,6 +88,7 @@ export default function RendelesPage() {
     pointValueHuf: 1,
     maxRedeemPercent: 100,
   });
+  const [attribution, setAttribution] = useState<CheckoutAttribution>({});
   const checkoutTrackedRef = useRef(false);
 
   const sub = subtotal();
@@ -85,6 +109,23 @@ export default function RendelesPage() {
 
   const loyaltyDiscount = loyaltyPointsToUse * loyaltySettings.pointValueHuf;
   const tot = Math.max(0, baseTotal - loyaltyDiscount);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    setAttribution({
+      fbp: readCookie("_fbp"),
+      fbc: readCookie("_fbc"),
+      fbclid: params.get("fbclid") || undefined,
+      gclid: params.get("gclid") || undefined,
+      utmSource: params.get("utm_source") || undefined,
+      utmMedium: params.get("utm_medium") || undefined,
+      utmCampaign: params.get("utm_campaign") || undefined,
+      utmTerm: params.get("utm_term") || undefined,
+      utmContent: params.get("utm_content") || undefined,
+      landingPath: `${window.location.pathname}${window.location.search}`,
+    });
+  }, []);
 
   useEffect(() => {
     if (!addressData?.email) {
@@ -232,6 +273,7 @@ export default function RendelesPage() {
     setIsPlacingOrder(true);
 
     const orderNumber = generateOrderNumber();
+    const purchaseEventId = createEventId("purchase");
     const orderId = `ord-${Date.now()}`;
     const now = new Date().toISOString();
     const codFee = paymentMethod === "cod" ? COD_FEE : 0;
@@ -317,6 +359,7 @@ export default function RendelesPage() {
       coupon: couponCode || undefined,
       payment_type: paymentMethod,
       shipping_tier: selectedShippingMethod,
+      event_id: purchaseEventId,
       items: order.items.map((item) =>
         toAnalyticsItem({
           id: item.productId,
@@ -332,7 +375,11 @@ export default function RendelesPage() {
       const response = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(order),
+        body: JSON.stringify({
+          ...order,
+          purchaseEventId,
+          attribution,
+        }),
       });
       if (!response.ok) {
         throw new Error("A rendelést nem sikerült rögzíteni.");
@@ -382,6 +429,7 @@ export default function RendelesPage() {
         currency: "HUF",
         coupon: couponCode || undefined,
         shipping: created.shippingPrice,
+        event_id: purchaseEventId,
         items: created.items.map((item) =>
           toAnalyticsItem({
             id: item.productId,

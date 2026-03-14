@@ -28,17 +28,24 @@ export default function CimeimPage() {
   }, []);
 
   const saveAddresses = async (next: Address[]) => {
+    const previous = addresses;
     setAddresses(next);
-    const response = await fetch("/api/account/profile", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mode: "addresses", addresses: next }),
-    });
-    if (!response.ok) {
-      setNotice("Nem sikerült menteni a címeket.");
-      return;
+    try {
+      const response = await fetch("/api/account/profile", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "addresses", addresses: next }),
+      });
+      if (!response.ok) {
+        setAddresses(previous);
+        setNotice("Nem sikerült menteni a címeket.");
+        return;
+      }
+      setNotice("Címek mentve.");
+    } catch {
+      setAddresses(previous);
+      setNotice("Hálózati hiba miatt nem sikerült menteni a címeket.");
     }
-    setNotice("Címek mentve.");
   };
 
   const addEmptyAddress = () => {
@@ -59,7 +66,7 @@ export default function CimeimPage() {
 
   return (
     <div>
-      <h1 className="font-display font-bold text-2xl md:text-3xl text-neutral-dark mb-6">
+      <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-dark mb-6">
         Címeim
       </h1>
       {loading ? (
@@ -69,7 +76,7 @@ export default function CimeimPage() {
           <div className="w-20 h-20 rounded-full bg-primary-pale flex items-center justify-center mx-auto mb-6">
             <MapPin className="size-10 text-primary" />
           </div>
-          <h2 className="font-display font-bold text-xl text-neutral-dark mb-2">
+          <h2 className="text-xl font-extrabold tracking-tight text-neutral-dark mb-2">
             Nincs mentett cím
           </h2>
           <p className="text-neutral-medium mb-6 max-w-md mx-auto">

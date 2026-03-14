@@ -14,12 +14,13 @@ import {
 import Link from "next/link";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { cn } from "@/lib/utils";
+import { MERCHANT_RETURN_DAYS } from "@/lib/merchant-policy";
 
 const STEPS = [
   {
     step: "1",
     title: "Jelezd a szándékod",
-    desc: "Írj nekünk e-mailt a hello@jatekonline.hu címre a rendelésszámoddal és a visszaküldés okával.",
+    desc: "Írj nekünk e-mailt a hello@babyonline.hu címre a rendelésszámoddal és a visszaküldés okával.",
     icon: Mail,
     color: "text-primary",
     bg: "bg-primary/10",
@@ -51,7 +52,7 @@ const STEPS = [
 ];
 
 const CONDITIONS = [
-  "A terméket a kézhezvételtől számított 14 napon belül visszaküldheted indoklás nélkül.",
+  `A terméket a kézhezvételtől számított ${MERCHANT_RETURN_DAYS} napon belül visszaküldheted indoklás nélkül.`,
   "A termék legyen eredeti, bontatlan állapotban, sértetlen csomagolásban.",
   "A visszaküldéshez mellékeld a számlát vagy a rendelésszámot.",
   "Higiéniai termékek (pl. cumisüveg, pelenka) bontatlan állapotban küldhetők vissza.",
@@ -61,7 +62,7 @@ const CONDITIONS = [
 const FAQ = [
   {
     q: "Mennyi időm van a visszaküldésre?",
-    a: "A kézhezvételtől számított 14 naptári napon belül élhetsz az elállási jogoddal, indoklás nélkül.",
+    a: `A kézhezvételtől számított ${MERCHANT_RETURN_DAYS} naptári napon belül élhetsz az elállási jogoddal, indoklás nélkül.`,
   },
   {
     q: "Hogyan kapom vissza a pénzemet?",
@@ -117,10 +118,10 @@ export default function VisszakuldesPage() {
           </div>
           <div>
             <h2 className="text-base font-bold text-neutral-dark tracking-tight">
-              14 napos pénzvisszafizetési garancia
+              {MERCHANT_RETURN_DAYS} napos pénzvisszafizetési garancia
             </h2>
             <p className="text-sm text-neutral-medium mt-0.5">
-              Ha nem vagy elégedett a termékkel, 14 napon belül indoklás nélkül visszaküldheted.
+              Ha nem vagy elégedett a termékkel, {MERCHANT_RETURN_DAYS} napon belül indoklás nélkül visszaküldheted.
             </p>
           </div>
         </div>
@@ -180,7 +181,7 @@ export default function VisszakuldesPage() {
           <div>
             <h3 className="text-sm font-bold text-amber-800 tracking-tight mb-1">Fontos tudnivaló</h3>
             <p className="text-xs text-amber-700 leading-relaxed">
-              Hibás vagy sérült termék esetén kérjük, készíts fotókat a hibáról és a csomagolásról, majd küldd el a hello@jatekonline.hu címre.
+              Hibás vagy sérült termék esetén kérjük, készíts fotókat a hibáról és a csomagolásról, majd küldd el a hello@babyonline.hu címre.
               Ebben az esetben a visszaszállítás költségét mi álljuk, és a lehető leggyorsabban intézzük a cserét vagy visszatérítést.
             </p>
           </div>
@@ -218,7 +219,7 @@ export default function VisszakuldesPage() {
             <div>
               <h3 className="text-sm font-bold text-neutral-dark tracking-tight">Kérdésed van?</h3>
               <p className="text-xs text-neutral-medium mt-0.5">
-                Írj nekünk: <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">hello@jatekonline.hu</a>
+                Írj nekünk: <a href="mailto:hello@babyonline.hu" className="text-primary font-semibold hover:underline">hello@babyonline.hu</a>
               </p>
             </div>
           </div>

@@ -147,7 +147,7 @@ export function ProductCard({ product, listName = "Product Listing" }: ProductCa
 
         {/* Info area */}
         <div className="p-3.5">
-          <h3 className="mb-2 text-[15px] md:text-base font-extrabold leading-tight tracking-tight text-neutral-dark group-hover:text-primary transition-colors break-words [overflow-wrap:anywhere] line-clamp-none sm:line-clamp-3 md:line-clamp-2">
+          <h3 className="mb-2 text-[15px] md:text-base font-extrabold leading-tight tracking-tight text-neutral-dark group-hover:text-primary transition-colors break-words [overflow-wrap:anywhere] line-clamp-3 md:line-clamp-none">
             {product.name}
           </h3>
 

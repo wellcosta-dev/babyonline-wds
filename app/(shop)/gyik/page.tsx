@@ -40,7 +40,7 @@ const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "Módosíthatom a megrendelésemet?",
-        a: "Ha a rendelésed még nem lett feladva, írj nekünk a hello@jatekonline.hu címre és segítünk a módosításban. Feladott csomag esetén sajnos már nem lehetséges a változtatás.",
+        a: "Ha a rendelésed még nem lett feladva, írj nekünk a hello@babyonline.hu címre és segítünk a módosításban. Feladott csomag esetén sajnos már nem lehetséges a változtatás.",
       },
       {
         q: "Van minimális rendelési összeg?",
@@ -115,7 +115,7 @@ const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "Hogyan küldhetem vissza a terméket?",
-        a: "Írj nekünk a hello@jatekonline.hu címre a rendelésszámoddal, majd csomagold be a terméket eredeti állapotban és küldd vissza a megadott címre.",
+        a: "Írj nekünk a hello@babyonline.hu címre a rendelésszámoddal, majd csomagold be a terméket eredeti állapotban és küldd vissza a megadott címre.",
       },
       {
         q: "Mikor kapom vissza a pénzemet?",
@@ -289,11 +289,11 @@ export default function GyikPage() {
             </div>
           </div>
           <a
-            href="mailto:hello@jatekonline.hu"
+            href="mailto:hello@babyonline.hu"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-primary font-bold text-sm hover:bg-gray-50 transition-colors shadow-lg flex-shrink-0"
           >
             <Mail className="size-4" />
-            hello@jatekonline.hu
+            hello@babyonline.hu
           </a>
         </div>
       </div>

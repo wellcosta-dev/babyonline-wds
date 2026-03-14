@@ -23,6 +23,7 @@ const inter = Inter({
 });
 
 const siteUrl = getSiteUrl();
+const CHATBOT_ENABLED = process.env.NEXT_PUBLIC_CHATBOT_ENABLED === "true";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -68,7 +69,7 @@ export default function RootLayout({
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "hello@jatekonline.hu",
+      email: "hello@babyonline.hu",
       areaServed: "HU",
       availableLanguage: "hu",
     },
@@ -106,9 +107,11 @@ export default function RootLayout({
         <LayoutWrapper>{children}</LayoutWrapper>
         <AbandonedCartTracker />
         <CartDrawer />
-        <NonAdminOnly>
-          <ChatBot />
-        </NonAdminOnly>
+        {CHATBOT_ENABLED ? (
+          <NonAdminOnly>
+            <ChatBot />
+          </NonAdminOnly>
+        ) : null}
       </body>
     </html>
   );

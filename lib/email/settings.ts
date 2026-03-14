@@ -10,12 +10,12 @@ export const defaultEmailSettings: EmailSettings = {
   smtpUser: process.env.SMTP_USER ?? "",
   smtpPass: process.env.SMTP_PASS ?? "",
   fromName: "BabyOnline.hu",
-  fromEmail: "hello@jatekonline.hu",
-  replyTo: "hello@jatekonline.hu",
+  fromEmail: "hello@babyonline.hu",
+  replyTo: "hello@babyonline.hu",
   orderConfirmationEnabled: true,
   orderStatusUpdateEnabled: true,
   adminNewOrderEnabled: true,
-  adminNotificationEmail: "hello@jatekonline.hu",
+  adminNotificationEmail: "hello@babyonline.hu",
 };
 
 export async function getEmailSettings(): Promise<EmailSettings> {

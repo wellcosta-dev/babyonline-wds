@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { Product } from "@/types";
 import { getEffectiveProductBySlug } from "@/lib/server/products";
+import { maybeTriggerAutomaticSupplierSync } from "@/lib/server/supplier-sync";
 
 type RouteParams = { params: Promise<{ slug: string }> };
 
@@ -9,6 +10,7 @@ export async function GET(
   { params }: RouteParams
 ) {
   try {
+    await maybeTriggerAutomaticSupplierSync();
     const { slug } = await params;
     const product = await getEffectiveProductBySlug(slug);
 

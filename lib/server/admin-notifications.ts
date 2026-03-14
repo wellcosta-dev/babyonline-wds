@@ -41,6 +41,16 @@ function relativeTime(timestamp: number): string {
   return `${day} napja`;
 }
 
+function getWeeklySummaryTimestampMs(): number {
+  const now = new Date();
+  const day = now.getDay();
+  const diffToMonday = day === 0 ? -6 : 1 - day;
+  const start = new Date(now);
+  start.setDate(now.getDate() + diffToMonday);
+  start.setHours(0, 0, 0, 0);
+  return start.getTime();
+}
+
 export async function getAdminNotifications(): Promise<AdminNotificationItem[]> {
   const [readState, settings, orders, products, aiState] = await Promise.all([
     getReadState(),
@@ -72,16 +82,20 @@ export async function getAdminNotifications(): Promise<AdminNotificationItem[]> 
   }
 
   if (settings.lowStockAlert) {
-    const lowStockCount = products.filter((product) => product.stock > 0 && product.stock < 5).length;
+    const lowStockProducts = products.filter((product) => product.stock > 0 && product.stock < 5);
+    const lowStockCount = lowStockProducts.length;
     if (lowStockCount > 0) {
-      const createdAtMs = Date.now();
+      const createdAtMs = lowStockProducts.reduce((latest, product) => {
+        const productTs = new Date(product.updatedAt || product.createdAt).getTime();
+        return Math.max(latest, productTs);
+      }, 0);
       items.push({
         id: "stock-low",
         title: "Alacsony készlet",
         description: `${lowStockCount} termék 5 db alatt`,
-        time: "Most",
+        time: relativeTime(createdAtMs),
         href: "/admin/termekek",
-        unread: true,
+        unread: createdAtMs > readState.lastReadAt,
         type: "stock",
         createdAtMs,
       });
@@ -114,14 +128,14 @@ export async function getAdminNotifications(): Promise<AdminNotificationItem[]> 
         return Date.now() - created <= 7 * 24 * 60 * 60 * 1000 && order.status !== "CANCELLED";
       })
       .reduce((sum, order) => sum + order.total, 0);
-    const createdAtMs = Date.now();
+    const createdAtMs = getWeeklySummaryTimestampMs();
     items.push({
       id: "weekly-summary",
       title: "Heti összesítő",
       description: `Forgalom 7 napra: ${weeklyRevenue.toLocaleString("hu-HU")} Ft`,
-      time: "Most",
+      time: relativeTime(createdAtMs),
       href: "/admin",
-      unread: true,
+      unread: createdAtMs > readState.lastReadAt,
       type: "summary",
       createdAtMs,
     });

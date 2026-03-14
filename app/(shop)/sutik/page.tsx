@@ -48,12 +48,12 @@ export default function SutikPage() {
               />
               <CookieType
                 name="Analitikai sütik"
-                desc="A weboldal látogatottságának mérésére és a felhasználói viselkedés elemzésére szolgálnak (Google Analytics, Vercel Analytics). Ezzel javítjuk weboldalunkat."
+                desc="A weboldal látogatottságának mérésére és a felhasználói viselkedés elemzésére szolgálnak (Google Analytics 4, Google Tag Manager). Ezzel javítjuk weboldalunkat."
                 duration="Max. 2 év"
               />
               <CookieType
                 name="Marketing sütik"
-                desc="Személyre szabott hirdetések megjelenítésére és a marketing kampányok hatékonyságának mérésére használjuk."
+                desc="Személyre szabott hirdetések megjelenítésére és a marketing kampányok hatékonyságának mérésére használjuk (Google Ads, Meta Pixel/Conversions API)."
                 duration="Max. 1 év"
               />
               <CookieType
@@ -70,12 +70,16 @@ export default function SutikPage() {
               az „Adatvédelem" vagy „Beállítások" menüpontban találod a süti kezelési lehetőségeket.
               Fontos, hogy a sütik letiltása esetén a weboldal egyes funkciói korlátozottan működhetnek.
             </p>
+            <p>
+              A hozzájárulások kezelése Cookiebot CMP-n keresztül történik, és a Google Consent Mode v2 jeleit
+              ennek megfelelően adjuk át a mérési rendszerek felé.
+            </p>
           </Section>
 
           <Section title="Kapcsolat">
             <p>
               Sütikkel kapcsolatos kérdéseiddel fordulj hozzánk:{" "}
-              <a href="mailto:hello@jatekonline.hu" className="text-primary font-semibold hover:underline">hello@jatekonline.hu</a>
+              <a href="mailto:hello@babyonline.hu" className="text-primary font-semibold hover:underline">hello@babyonline.hu</a>
             </p>
           </Section>
 

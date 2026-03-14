@@ -4,16 +4,36 @@ export interface Product {
   name: string;
   description: string;
   shortDesc?: string;
+  manufacturerSku?: string;
+  ean?: string;
+  unitName?: string;
   price: number;
   salePrice?: number;
+  purchasePrice?: number;
+  vatRate?: string;
   sku: string;
   stock: number;
   images: string[];
+  documents?: Array<{ name: string; url: string }>;
   categoryId: string;
+  categoryIds?: string[];
+  manufacturer?: string;
   category?: Category;
   tags: string[];
   weight?: number;
+  weightUnit?: string;
+  sizeValue?: string;
+  sizeUnit?: string;
   attributes?: Record<string, string | string[]>;
+  supplierUrl?: string;
+  excludedPaymentMethods?: string[];
+  excludedShippingMethods?: string[];
+  promotions?: Array<{
+    name: string;
+    startAt?: string;
+    endAt?: string;
+    salePrice?: number;
+  }>;
   rating?: number;
   reviewCount?: number;
   ageGroups?: string[];
@@ -72,6 +92,7 @@ export interface Order {
   total: number;
   paymentMethod: string;
   paymentStatus: PaymentStatus;
+  purchaseEventId?: string;
   stripePaymentId?: string;
   billingoInvoiceId?: string;
   glsTrackingId?: string;
@@ -81,6 +102,19 @@ export interface Order {
   loyaltyDiscount?: number;
   loyaltyPointsEarned?: number;
   loyaltyPointsGranted?: boolean;
+  attribution?: {
+    fbp?: string;
+    fbc?: string;
+    fbclid?: string;
+    gclid?: string;
+    utmSource?: string;
+    utmMedium?: string;
+    utmCampaign?: string;
+    utmTerm?: string;
+    utmContent?: string;
+    landingPath?: string;
+    metaPurchaseSentAt?: string;
+  };
   createdAt: string;
   updatedAt: string;
 }

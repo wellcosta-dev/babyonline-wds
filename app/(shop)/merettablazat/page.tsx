@@ -152,7 +152,7 @@ export default function MerettablazatPage() {
         <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 text-center">
           <p className="text-xs text-amber-700 leading-relaxed">
             A mérettáblázatok tájékoztató jellegűek. A babák fejlődése egyedi, ezért az adatok eltérhetnek.
-            Kérdés esetén keress minket: <a href="mailto:hello@jatekonline.hu" className="font-semibold hover:underline">hello@jatekonline.hu</a>
+            Kérdés esetén keress minket: <a href="mailto:hello@babyonline.hu" className="font-semibold hover:underline">hello@babyonline.hu</a>
           </p>
         </div>
       </div>

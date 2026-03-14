@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getSiteUrl } from "@/lib/seo";
 import { getOrderById, upsertStoredOrder } from "@/lib/server/orders";
+import { getOrderAttributionByOrderId } from "@/lib/server/order-attribution";
 
 function toStripeMinorUnits(value: number, currency: string): number {
   // This Stripe account expects HUF amounts with two decimals in Checkout.
@@ -24,7 +25,16 @@ export async function POST(request: NextRequest) {
     const orderNumber = order.orderNumber;
     const email = order.guestEmail ?? "";
     const siteUrl = getSiteUrl();
-    const successUrl = `${siteUrl}/rendeles/megerosites?order=${encodeURIComponent(orderNumber)}`;
+    const attribution = await getOrderAttributionByOrderId(order.id);
+    const successParams = new URLSearchParams({
+      order: orderNumber,
+      v: String(amount),
+      c: String(currency).toUpperCase(),
+    });
+    if (attribution?.purchaseEventId) {
+      successParams.set("eid", attribution.purchaseEventId);
+    }
+    const successUrl = `${siteUrl}/rendeles/megerosites?${successParams.toString()}`;
     const cancelUrl = `${siteUrl}/rendeles`;
 
     if (amount <= 0) {

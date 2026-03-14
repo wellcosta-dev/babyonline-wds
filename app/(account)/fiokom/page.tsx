@@ -159,7 +159,7 @@ export default function FiokomPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.1 }}
       >
-        <h2 className="font-display font-bold text-xl text-neutral-dark mb-4">
+        <h2 className="text-xl font-extrabold tracking-tight text-neutral-dark mb-4">
           Legutóbbi rendelések
         </h2>
         <div className="space-y-4">

@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getStoredOrders, saveStoredOrders } from "@/lib/server/orders";
+import {
+  getOrderAttributionByOrderId,
+  getOrderAttributionByOrderNumber,
+  markMetaPurchaseSent,
+} from "@/lib/server/order-attribution";
+import { sendMetaPurchaseEvent } from "@/lib/server/meta-conversions";
 
 export async function POST(request: NextRequest) {
   try {
@@ -47,18 +53,35 @@ export async function POST(request: NextRequest) {
     if (targetIndex >= 0) {
       const order = storedOrders[targetIndex];
       if (eventType === "payment_intent.succeeded" || eventType === "checkout.session.completed") {
-        storedOrders[targetIndex] = {
+        const updatedOrder = {
           ...order,
-          paymentStatus: "PAID",
+          paymentStatus: "PAID" as const,
           stripePaymentId: paymentIntentId || order.stripePaymentId,
           status: order.status === "PENDING" ? "CONFIRMED" : order.status,
           updatedAt: new Date().toISOString(),
         };
+        storedOrders[targetIndex] = updatedOrder;
         await saveStoredOrders(storedOrders);
+        const attribution =
+          (await getOrderAttributionByOrderId(updatedOrder.id)) ||
+          (await getOrderAttributionByOrderNumber(updatedOrder.orderNumber));
+        if (attribution && !attribution.metaPurchaseSentAt) {
+          try {
+            const result = await sendMetaPurchaseEvent({
+              order: updatedOrder,
+              attribution,
+            });
+            if (result.sent) {
+              await markMetaPurchaseSent(updatedOrder.id);
+            }
+          } catch (metaError) {
+            console.error("Meta CAPI webhook send failed:", metaError);
+          }
+        }
       } else if (eventType === "payment_intent.payment_failed") {
         storedOrders[targetIndex] = {
           ...order,
-          paymentStatus: "FAILED",
+          paymentStatus: "FAILED" as const,
           updatedAt: new Date().toISOString(),
         };
         await saveStoredOrders(storedOrders);
